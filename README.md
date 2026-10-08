@@ -65,6 +65,13 @@ The code under `reconstruction/` is independently written. FL Studio, its plugin
 
 The native workstation under `Sources/` implements its own musical model, synthesis, timing, mixer and interface. It does not claim whole-application equivalence to FL Studio or derive unverified FLP pitch/velocity meanings from opaque records.
 
+Plugin reconstruction is ongoing. Independently compiled Balance and 3x Osc
+components now have native differential checks, including state/lifecycle and
+engine ABI subsets. They are research libraries and verification hosts; the
+workstation does not yet load them as complete installed plugins. See the
+[plugin status](reconstruction/plugins/STATUS.md) and each component's exact
+test domain. Third-party installed plugins are included in the open checklist.
+
 ## Contributing and license
 
 Bug reports and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the code layout and verification workflow.
