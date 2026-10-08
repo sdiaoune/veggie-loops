@@ -68,6 +68,6 @@ for await (const line of input) {
       const text = result.content?.find(item => item.type === 'text')?.text;
       try { structured = JSON.parse(text); } catch { structured = text; }
     }
-    console.log(JSON.stringify({ completed: command.name, saved: resolve(destination, filename), isError: result.isError, summary: command.full ? structured : typeof structured === 'string' ? structured.slice(0, 1500) : structured && { keys: Object.keys(structured), error: structured.error, evidence_id: structured.evidence_id, result: structured.result && { keys: Object.keys(structured.result) } } }));
+    console.log(JSON.stringify({ completed: command.name, saved: resolve(destination, filename), isError: result.isError, summary: command.full ? structured : typeof structured === 'string' ? structured.slice(0, 1500) : structured && { keys: Object.keys(structured), error: structured.error, evidence_id: structured.evidence_id, result: structured.result && (typeof structured.result === 'string' ? { characters: structured.result.length } : Array.isArray(structured.result) ? { count: structured.result.length } : { keys: Object.keys(structured.result) }) } }));
   } catch (error) { console.log(JSON.stringify({ error: error.message })); }
 }

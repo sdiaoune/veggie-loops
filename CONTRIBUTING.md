@@ -17,6 +17,7 @@ An optional GitHub Actions configuration is provided in [docs/ci-workflow.exampl
 
 - `Sources/VLCore`: musical model, document validation and persistence.
 - `Sources/VLDSP`: mixer and effects.
+- `Sources/VLNativeDSP`: C++ bridge to the reconstructed raw oscillator core.
 - `Sources/VLAudio`: synthesis, sample decoding, native playback and WAV export.
 - `Sources/VLStudio`: macOS app, state and interface.
 - `Sources/VLSmoke`: audio and document integration checks.
@@ -27,4 +28,9 @@ Open an issue for bugs or feature proposals. For a pull request, describe the re
 
 The app currently uses one pattern per channel and its own `.vlp` format. Keep proposed FLP interpretation separate from verified framing and preserve unknown payloads. See [research scope](docs/RESEARCH.md).
 
-Submit original work you can distribute under the project's MIT license. Do not add FL Studio binaries, decompiled source, factory project payloads, plugins, samples, license data or captured user projects. Builds, exports and local research evidence are ignored by Git.
+Submit original work under MIT for the workstation and reconstruction modules.
+The optional `reconstruction/plugins/external/vial/` module explicitly uses
+GPL-3.0-or-later; contributions there must preserve that license and upstream
+notices. Do not add FL Studio binaries, decompiled source, commercial factory
+payloads, plugin binaries, samples, license data or captured user projects.
+Builds, exports and local research evidence are ignored by Git.

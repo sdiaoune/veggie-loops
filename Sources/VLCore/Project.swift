@@ -1,8 +1,8 @@
 import Foundation
 
 public enum InstrumentKind: String, Codable, CaseIterable, Sendable {
-    case kick, snare, hat, bass, synth, sample
-    public var title: String { rawValue.capitalized }
+    case kick, snare, hat, bass, synth, sample, threeOsc
+    public var title: String { self == .threeOsc ? "VL 3 Osc" : rawValue.capitalized }
     public var isDrum: Bool { self == .kick || self == .snare || self == .hat }
     public var defaultPitch: Int { self == .bass ? 36 : 60 }
 }

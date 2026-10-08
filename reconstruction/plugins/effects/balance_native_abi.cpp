@@ -81,7 +81,10 @@ void tick(Plugin*){} // effect tick/MIDI tick callbacks never access GUI state
 void state(Plugin* p,Stream* stream,std::int32_t save){
   if(!stream || !stream->functions)return;
   std::array<std::uint8_t,8> bytes{};std::uint64_t count=0;
-  using Transfer=std::intptr_t(*)(Stream*,void*,std::uint64_t,std::uint64_t*);
+  // The actual engine IStream provider returns HRESULT in W0 and stores a
+  // 32-bit completed count. Wide zeroed storage also accepts fixture providers
+  // that write 64-bit counts without overwriting adjacent state bytes.
+  using Transfer=std::int32_t(*)(Stream*,void*,std::uint32_t,void*);
   if(save){
     if(vl_balance_save_state(instance(p).numerical,bytes.data(),bytes.size()))
       reinterpret_cast<Transfer>(stream->functions[4])(stream,bytes.data(),8,&count);

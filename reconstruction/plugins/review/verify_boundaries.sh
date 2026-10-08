@@ -29,3 +29,13 @@ review_compiler=${CXX:-clang++}
   "$review_sources/review/balance_editor_tick_thread.mm" \
   -framework Cocoa -o "$review_work/test-editor-worker"
 "$review_work/test-editor-worker" "$review_work/VLBalanceEditor.dylib"
+"$review_compiler" -std=c++20 -O1 -g -ffp-contract=off -fno-fast-math \
+  -fno-builtin-sin -fno-builtin-cos -fno-builtin-exp \
+  -fsanitize=address,undefined -fno-sanitize-recover=all \
+  -I "$review_repo/Sources/VLNativeDSP/include" \
+  "$review_sources/review/app_native_bridge_boundary.cpp" \
+  "$review_repo/Sources/VLNativeDSP/Engine.cpp" \
+  "$review_repo/Sources/VLNativeDSP/Wrapper.cpp" \
+  -o "$review_work/test-app-native-boundary"
+"$review_work/test-app-native-boundary"
+"$review_work/test-app-native-boundary" direct-fence

@@ -16,7 +16,7 @@ cd veggie-loops
 
 This builds and opens **dist/VL Studio.app**. The Codex **Run** action uses the same script. The app opens with the original **Fresh produce** demo groove; press **Space** or the green Play button to hear it. Space stops playback and returns to the start.
 
-- **Channel rack:** click steps to add or remove notes on a sixteenth-note grid. Add kick, snare, hat, bass, synth or sample channels from the + menu.
+- **Channel rack:** click steps to add or remove notes on a sixteenth-note grid. Add kick, snare, hat, bass, synth, VL 3 Osc or sample channels from the + menu.
 - **Piano roll:** select a channel, click empty grid cells to add notes, then select a note to edit pitch, start, length and velocity. Piano keys preview notes. Delete selected notes with the inspector or context menu.
 - **Arrangement:** click a bar to place the channel's pattern, or click a clip to remove it. Choose **Song** in the transport to play the arrangement; **Pattern** plays the channel patterns together.
 - **Mixer:** drag channel/master faders, set pan, mute or solo channels, and adjust low-pass cutoff, drive and delay send. Shared delay time and feedback follow the tempo. Playback refreshes after edits while keeping musical position.
@@ -30,15 +30,16 @@ Projects support up to **16 channels**, **1–4 bars per channel pattern**, **16
 ```sh
 swift test
 swift run VLSmoke dist/verification --playback
+swift run VLSmoke dist/verification/three-osc --three-osc --playback
 ./script/build_and_run.sh --verify
 ./script/verify-reconstruction
 ```
 
-The **22 Swift tests** cover project persistence/validation, the mixer, synthesis, note timing, song placement, sample decoding/resampling, WAV export and cancellation. `VLSmoke` additionally renders a demo song, decodes the WAV, roundtrips its project, and checks actual native playback, advancing transport, meters, live refresh and Stop. Its generated demo files and JSON report are in `dist/verification/`. `--playback` briefly plays audio through the current output device.
+The **25 Swift tests** cover project persistence/validation, the mixer, synthesis, note timing, song placement, bounded overlapping-clip expansion, sample decoding/resampling, WAV export and cancellation. The reconstructed oscillator integration also checks MIDI pitch and concurrent renders with different sample rates. `VLSmoke` additionally renders a demo song, decodes the WAV, roundtrips its project, and checks actual native playback, advancing transport, meters, live refresh and Stop. `--three-osc` selects a separate four-note VL 3 Osc project. Its generated files and JSON report are in the requested output directory. `--playback` briefly plays audio through the current output device.
 
 The native UI was exercised for sequencer edits and undo, piano-roll creation/length/velocity, arrangement placement/removal, project save/reopen, sample import and WAV export. See [app verification](analysis/app-verification.json) for the recorded checks.
 
-The Swift package separates `VLCore` (documents/music model), `VLDSP` (signal processing), `VLAudio` (synthesis/playback/export), `VLStudio` (app/state/views), and `VLSmoke` (integration verification). File ownership and shared APIs are recorded in [the development contract](docs/DEVELOPMENT_CONTRACT.md).
+The Swift package separates `VLCore` (documents/music model), `VLDSP` (signal processing), `VLNativeDSP` (the original C++ bridge to the reconstructed oscillator core), `VLAudio` (synthesis/playback/export), `VLStudio` (app/state/views), and `VLSmoke` (integration verification). File ownership and shared APIs are recorded in [the development contract](docs/DEVELOPMENT_CONTRACT.md).
 
 ## FLP analysis CLI
 
@@ -67,8 +68,11 @@ The native workstation under `Sources/` implements its own musical model, synthe
 
 Plugin reconstruction is ongoing. Independently compiled Balance and 3x Osc
 components now have native differential checks, including state/lifecycle and
-engine ABI subsets. They are research libraries and verification hosts; the
-workstation does not yet load them as complete installed plugins. See the
+engine ABI subsets. VL 3 Osc uses the reconstructed raw oscillator core through
+the app's note envelope and mixer with an original VL preset. It does not yet
+include the Fruity plugin's full modulation, envelopes, editor or native factory.
+Other components are research libraries and verification hosts; the
+workstation does not yet load complete installed plugins. See the
 [plugin status](reconstruction/plugins/STATUS.md) and each component's exact
 test domain. Third-party installed plugins are included in the open checklist.
 
@@ -76,4 +80,8 @@ test domain. Third-party installed plugins are included in the open checklist.
 
 Bug reports and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the code layout and verification workflow.
 
-Original source code and documentation in this repository are available under the [MIT License](LICENSE). External applications, user-imported samples and locally generated research evidence are not included in that grant.
+The workstation and original reconstruction source use the [MIT License](LICENSE),
+except for the optional [Vial source-build research](reconstruction/plugins/external/vial/README.md)
+directory, which explicitly uses GPL-3.0-or-later. Its external source and
+dependencies retain their own notices. External applications, user-imported
+samples and locally generated research evidence are not included in the MIT grant.

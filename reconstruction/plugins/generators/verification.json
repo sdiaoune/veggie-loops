@@ -53,14 +53,23 @@
   ],
   "missing_public_exports": [],
   "compiled_source_sha256": {
-    "test_exception_termination.cpp": "362bbfe05eb9589f11a0788263e56252d7d11607d8a23201c58dcea524eea868",
+    "test_exception_termination.cpp": "4267ac725276d26183351d2241742a14251c3b4f752aae74188f2b3db8c83f6c",
     "test_three_osc.cpp": "63c694e77d22edeadd320787851c4047234bf5b6fc8e045cbe55f76e6884078a",
-    "test_three_osc_exports.cpp": "1175af9ced659a415f5b4919bdd879ff3d6c3ff995b1676fe503bcef0745576f",
+    "test_three_osc_exports.cpp": "db6b68d1951022e25e49a03e075ce56e2fd89918384f9e18ddaf19942d653d63",
     "test_three_osc_tables.cpp": "34baa2cbc8f9ce93f887e105be295eebe0af8cb6a63dfa63e0e450ade32eeff3",
     "three_osc.cpp": "7600db3d75e17819aa9640ce83a19d35f7becc24826b8c045538cbd842feedfe",
     "three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
     "three_osc_engine.cpp": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
-    "three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc"
+    "three_osc_envelope.cpp": "d72be41e68ede34befa39dec76bce46c4301e9bf3e47770b8b136c9429cd513c",
+    "three_osc_envelope.hpp": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+    "three_osc_envelope_coefficients.cpp": "db70ff2d0be4b3c5c0abec3c21de4af783f6e20de3acda00e18d463e27bf9538",
+    "three_osc_envelope_coefficients.hpp": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+    "three_osc_legacy_tables.cpp": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+    "three_osc_legacy_tables.hpp": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+    "three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+    "three_osc_voice_output.cpp": "292248df586abd48d769b31c14fd420781c2b6c11abc2bbd95b78d3970a18e51",
+    "three_osc_voice_output.hpp": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+    "three_osc_wrapper_core.cpp": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50"
   },
   "recompiled_library_sha256": "b44046784a42e65a488b37e189f674bf28c3e35c8e716c777a4ddff4248251d0",
   "measurements": {

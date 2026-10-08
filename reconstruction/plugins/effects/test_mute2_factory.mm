@@ -1,4 +1,7 @@
 #import <Cocoa/Cocoa.h>
+#if !defined(__APPLE__) || !defined(__aarch64__)
+#error This measured factory layout test requires macOS arm64.
+#endif
 #include "mute2_plugin.h"
 #include <CommonCrypto/CommonDigest.h>
 #include <dlfcn.h>

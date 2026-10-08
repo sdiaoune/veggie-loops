@@ -2,6 +2,7 @@ import AVFoundation
 import Foundation
 import VLCore
 import VLDSP
+import VLNativeDSP
 
 public enum AudioRenderError: LocalizedError {
     case invalidRate
@@ -10,6 +11,7 @@ public enum AudioRenderError: LocalizedError {
     case invalidSample(String)
     case sampleTooLarge(String)
     case invalidBuffer
+    case nativeInstrumentFailed
 
     public var errorDescription: String? {
         switch self {
@@ -19,6 +21,7 @@ public enum AudioRenderError: LocalizedError {
         case .invalidSample(let name): return "‘\(name)’ could not be decoded as audio. Try a WAV, AIFF, or MP3 file."
         case .sampleTooLarge(let name): return "‘\(name)’ is too large for a sampler. Import audio under two minutes and 256 MB."
         case .invalidBuffer: return "The rendered audio buffer is empty or invalid."
+        case .nativeInstrumentFailed: return "VL 3 Osc could not render this note. Try playing again."
         }
     }
 }
@@ -139,7 +142,8 @@ public enum AudioRenderer {
         var endBeat: Double
     }
 
-    private static func placements(track: Track, project: VLProject, mode: PlaybackMode) -> [Placement] {
+    private static func placements(track: Track, project: VLProject, mode: PlaybackMode) throws -> [Placement] {
+        try Task.checkCancellation()
         if mode == .pattern {
             return track.notes.map { Placement(note: $0, beat: $0.beat, endBeat: project.patternBeats) }
         }
@@ -149,7 +153,12 @@ public enum AudioRenderer {
             let end = Double((clip.startBar + clip.lengthBars) * 4)
             var repeatBeat = start
             while repeatBeat < end {
+                try Task.checkCancellation()
                 for note in track.notes where repeatBeat + note.beat < end {
+                    // Document note/clip limits do not bound their product:
+                    // overlapping clips can repeat millions of placements.
+                    // Keep this temporary expansion small before synthesis.
+                    guard result.count < 65_536 else { throw AudioRenderError.renderTooLarge }
                     result.append(Placement(note: note, beat: repeatBeat + note.beat, endBeat: end))
                 }
                 repeatBeat += project.patternBeats
@@ -160,8 +169,8 @@ public enum AudioRenderer {
 
     private static func synthesize(track: Track, project: VLProject, mode: PlaybackMode,
                                    sampleRate: Double, frameCount: Int) throws -> [Float] {
+        let events = try placements(track: track, project: project, mode: mode)
         var result = [Float](repeating: 0, count: frameCount)
-        let events = placements(track: track, project: project, mode: mode)
         // Decode once per track. A missing sample is actionable even before placing its first note.
         let sample: DecodedSample?
         if track.instrument == .sample {
@@ -184,6 +193,7 @@ public enum AudioRenderer {
             case .hat: voiceSeconds = 0.14
             case .bass: voiceSeconds = gateSeconds + 0.075
             case .synth: voiceSeconds = gateSeconds + 0.18
+            case .threeOsc: voiceSeconds = gateSeconds + 0.12
             case .sample:
                 let sourceDuration = sample.map { Double($0.frames.count) / $0.sampleRate } ?? 0
                 let ratio = pow(2, Double(note.midiNote - 60) / 12)
@@ -192,6 +202,8 @@ public enum AudioRenderer {
             let voiceFrames = max(0, Int((voiceSeconds * sampleRate).rounded()))
             workFrames += Int64(voiceFrames)
             guard workFrames <= 200_000_000 else { throw AudioRenderError.renderTooLarge }
+            let nativeVoice = track.instrument == .threeOsc
+                ? try renderNativeVoice(note: note.midiNote, sampleRate: sampleRate, frames: voiceFrames) : nil
             var seed = UInt32(truncatingIfNeeded: startFrame &* 1_664_525 &+ note.midiNote &* 101_390_4223 &+ 1)
             var previousNoise = 0.0
             let clipEndFrame = Int((placement.endBeat * secondsPerBeat * sampleRate).rounded())
@@ -238,6 +250,10 @@ public enum AudioRenderer {
                     let envelope = min(1, time / 0.009) * (0.55 + 0.45 * exp(-time * 3.8))
                         * release(time: time, gate: gateSeconds, length: 0.18)
                     value = (triangle * 0.35 + second * 0.09) * envelope
+                case .threeOsc:
+                    let envelope = min(1, time / 0.008)
+                        * release(time: time, gate: gateSeconds, length: 0.12)
+                    value = Double(nativeVoice![localFrame]) * envelope * 0.5
                 case .sample:
                     guard let sample, !sample.frames.isEmpty else { continue }
                     let ratio = pow(2, Double(note.midiNote - 60) / 12)
@@ -260,6 +276,25 @@ public enum AudioRenderer {
             }
         }
         return result
+    }
+
+    private static func renderNativeVoice(note: Int, sampleRate: Double, frames: Int) throws -> [Float] {
+        guard let voice = vl_native_oscillator_create(Int32(note), Int32(sampleRate.rounded())) else {
+            throw AudioRenderError.nativeInstrumentFailed
+        }
+        defer { vl_native_oscillator_destroy(voice) }
+        var samples = [Float](repeating: 0, count: frames)
+        var offset = 0
+        while offset < frames {
+            try Task.checkCancellation()
+            let count = min(1_024, frames - offset)
+            let ok = samples.withUnsafeMutableBufferPointer { buffer in
+                vl_native_oscillator_render(voice, buffer.baseAddress!.advanced(by: offset), UInt32(count))
+            }
+            guard ok != 0 else { throw AudioRenderError.nativeInstrumentFailed }
+            offset += count
+        }
+        return samples
     }
 
     private static func release(time: Double, gate: Double, length: Double) -> Double {

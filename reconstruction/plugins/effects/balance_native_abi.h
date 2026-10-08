@@ -28,6 +28,9 @@ struct Info {
 #pragma pack(pop)
 static_assert(offsetof(Info,flags)==20 && offsetof(Info,parameterCount)==24);
 struct Stream {
+  // The inspected engine TStreamAdapter's Read/Write slots return HRESULT32,
+  // forward a 32-bit byte count and store a 32-bit completed count. State code
+  // uses wider zeroed count storage to safely accommodate synthetic providers.
   void** functions;
 };
 struct Functions {

@@ -1,4 +1,7 @@
 #include "three_osc_tables.hpp"
+#if !defined(__APPLE__) || !defined(__aarch64__)
+#error "Native ABI fixtures require the reviewed macOS arm64 slice"
+#endif
 #include <CommonCrypto/CommonDigest.h>
 #include <dlfcn.h>
 #include <cstring>

@@ -1,6 +1,6 @@
 {
   "project": "Veggie Loops / VL Studio",
-  "verified_at_utc": "2026-10-08T21:17:39.922077+00:00",
+  "verified_at_utc": "2026-10-08T23:43:13.409151+00:00",
   "platform": "macOS 26.6.2, arm64; deployment target macOS 14",
   "app_bundle": "dist/VL Studio.app",
   "build_and_launch": {
@@ -13,11 +13,11 @@
   },
   "swift_tests": {
     "command": "swift test",
-    "passed": 22,
+    "passed": 25,
     "failed": 0,
     "core": 4,
     "mixer": 8,
-    "audio": 10
+    "audio": 13
   },
   "native_audio_integration": {
     "command": "swift run VLSmoke dist/verification --playback",
@@ -72,12 +72,69 @@
     "flp_musical_import": false,
     "vst_au_hosting": false,
     "microphone_recording": false,
-    "multiple_patterns_per_channel": false
+    "multiple_patterns_per_channel": false,
+    "reconstructed_raw_oscillator_playable": true
   },
   "limitations": [
     "Each channel has one pattern, repeated in arrangement clips.",
     "Sample documents reference external absolute paths.",
     "Rendered playback refreshes after edits; this is not a plugin host or a complete reconstruction of FL Studio.",
     "Meters follow precomputed render windows; channel meters precede channel effects."
-  ]
+  ],
+  "prior_ui_checks_verified_at_utc": "2026-10-08T21:17:39.922077+00:00",
+  "rebuilt_oscillator_integration": {
+    "command": "swift run VLSmoke dist/verification/three-osc --three-osc --playback",
+    "passed": true,
+    "results": {
+      "instruments": [
+        "threeOsc"
+      ],
+      "live_refresh": true,
+      "master_meter": 0.09389239549636841,
+      "native_playback": true,
+      "pattern_frames": 96000,
+      "peak": 0.1460142731666565,
+      "project_roundtrip": true,
+      "sample_rate": 48000,
+      "song_frames": 192000,
+      "song_seconds": 4,
+      "stop": true,
+      "tracks": [
+        "VL 3 Osc"
+      ],
+      "transport_beat": 1.8346666666666667,
+      "wav_decode": true
+    },
+    "source_sha256": {
+      "Package.swift": "e305db1eff84301dcea60622433962c3b42b74ac6976db0a8fa26f5b7b65d233",
+      "Sources/VLNativeDSP/Engine.cpp": "83bf8491253a209f7bb41119df7ce2ec4964643b749ea9cd4f6bac643f3f63b9",
+      "Sources/VLNativeDSP/Wrapper.cpp": "20eb31c8f8a37f91469aae4d594f29ba75ea9adbf08bac857c07d3f37b94f3f3",
+      "Sources/VLNativeDSP/StudioBridge.cpp": "e21b98c4042f4224efa62f58237cff27cd3ee072d14b7e55db484c8ff73a2e22",
+      "Sources/VLNativeDSP/include/VLNativeDSP.h": "7e60ef7116a3b87749d71c6c55b249426882c8bdd96cd45d201664719362f4f1",
+      "Sources/VLAudio/AudioRenderer.swift": "a51480a3b902325bb5db2583db6ed315d08478680df93fbdc281da6d3f8c064a",
+      "Sources/VLSmoke/VLSmoke.swift": "c2b3c2daa972d98e03d75f7ef8cbd3b124e69dcb968b724654e6e2e20d3fd5f2",
+      "Tests/VLAudioTests/AudioRendererTests.swift": "9b952d1161c66aca91c46faaa92e812b1ef6900e9f7ba715012b820e77574ada",
+      "reconstruction/plugins/generators/three_osc_engine.cpp": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+      "reconstruction/plugins/generators/three_osc_wrapper_core.cpp": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+      "reconstruction/plugins/generators/three_osc_wrapper_core.h": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+      "reconstruction/plugins/generators/three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+      "reconstruction/plugins/generators/three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9"
+    },
+    "native_gui_checked": false,
+    "native_gui_limitation": "The Mac was locked during this integration pass; prior app UI checks remain dated separately.",
+    "native_fruity_plugin_recompiled": false,
+    "preset_envelope_and_mixer": "Original VL preset, app note envelope and app mixer around the separately verified raw oscillator core.",
+    "concurrency": "All bridge engine access serializes through a shared mutex; an atexit fence drains active bridge calls and refuses later calls before raw engine globals are destroyed.",
+    "realtime_processing": false,
+    "independent_review": {
+      "accepted": true,
+      "sanitizers": "ASan and UBSan",
+      "concurrent_voice_renders": 64,
+      "allocation_failure_recovery_points": 7,
+      "actual_atexit_fence_order": true,
+      "queued_fence_waits_for_active_calls": true,
+      "valid_worst_case_clip_expansion_rejected": true,
+      "targeted_fresh_swift_scratch_tests": 3
+    }
+  }
 }

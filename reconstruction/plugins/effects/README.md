@@ -73,7 +73,7 @@ factory and function table. Its original interface description follows measured
 engine adapter offsets and the documented SDK boundary. It includes numerical
 parameters, state transfer, sample rate, resume, name and effect callbacks, with
 safe no-op callbacks for unused generator/voice functions. Its default build has
-no editor; an optional original AppKit editor is described below. The plugin and
+no editor; an optional independently written AppKit editor is described below. The plugin and
 parameter names are original to Veggie Loops.
 
 ```sh
@@ -102,7 +102,19 @@ the numerical factory makes no callbacks through the supplied host interface.
 ./reconstruction/plugins/effects/verify_engine_loader.sh
 ```
 
-`balance_editor.h/.mm` is an original AppKit editor with pan and volume controls,
+The actual engine state-stream check constructs its real memory and COM stream
+adapter classes, then saves and restores both rebuilt effects through real plugin
+wrappers. It proves 32-bit HRESULT and completed-count handling, including failed
+HRESULTs that report full byte counts without allowing state changes:
+
+```sh
+./reconstruction/plugins/effects/verify_engine_stream.sh
+```
+
+The check performs 256 saves and 256 restores across Balance and Mute 2. The
+scope and remaining application/project routing gates are in `ENGINE_STREAMS.md`.
+
+`balance_editor.h/.mm` is an independently written AppKit editor with pan and volume controls,
 gain labels, peak meters and an explicit host locking/notification interface.
 The native wrapper includes it when built with `VL_BALANCE_APPKIT_EDITOR=1` and
 advertises the documented NSView parent flag. Its controls update the verified
@@ -127,5 +139,5 @@ tick, MIDI tick and Idle calls are verified to leave a pending resize for main
 Idle, and off-main destruction is verified to preserve the attached editor.
 No original
 VCL resources or artwork are included. Original GUI parity, actual FL application
-and mixer integration, x86_64, VST/AU formats and 83 other effect families remain
+and mixer integration, x86_64, VST/AU formats and 82 other effect families remain
 open; a complete plugin reconstruction is not certified by these checks.

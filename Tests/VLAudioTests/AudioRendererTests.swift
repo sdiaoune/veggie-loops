@@ -34,6 +34,65 @@ final class AudioRendererTests: XCTestCase {
         XCTAssertEqual(fingerprints.count, 5, "The five voices must use different synthesis")
     }
 
+    func testRebuiltOscillatorUsesMIDIPitchAndPersistsInProjects() throws {
+        let song = project(.threeOsc, duration: 2, pitch: 69)
+        let decoded = try ProjectDocument.decode(ProjectDocument.encode(song))
+        XCTAssertEqual(decoded.tracks[0].instrument, .threeOsc)
+        let samples = try AudioRenderer.renderTrack(track: song.tracks[0], project: song,
+                                                    mode: .pattern, sampleRate: rate)
+        XCTAssertTrue(samples.allSatisfy(\.isFinite))
+        let window = samples[800..<4_800]
+        func magnitude(_ frequency: Double) -> Double {
+            var real = 0.0, imaginary = 0.0
+            for (index, sample) in window.enumerated() {
+                let phase = 2 * Double.pi * frequency * Double(index) / rate
+                real += Double(sample) * cos(phase)
+                imaginary += Double(sample) * sin(phase)
+            }
+            return hypot(real, imaginary)
+        }
+        XCTAssertGreaterThan(magnitude(440), 100)
+        XCTAssertGreaterThan(magnitude(440), 3 * magnitude(220))
+        XCTAssertGreaterThan(magnitude(440), 3 * magnitude(880))
+        XCTAssertGreaterThan(magnitude(440), 20 * magnitude(444))
+    }
+
+    func testOverlappingValidClipsRejectExcessiveNoteExpansion() throws {
+        let track = Track(name: "Dense pattern", instrument: .synth,
+                          notes: (0..<4_096).map { _ in NoteEvent(beat: 0, duration: 0.0625) })
+        let clips = (0..<256).map { _ in ArrangementClip(trackID: track.id, startBar: 0, lengthBars: 16) }
+        let song = VLProject(tempo: 240, arrangementBars: 16, tracks: [track], clips: clips)
+        // Valid document limits would otherwise expand to16,777,216 records,
+        // despite producing only128,000 output frames at this sample rate.
+        try song.validated()
+        XCTAssertThrowsError(try AudioRenderer.render(project: song, mode: .song, sampleRate: rate)) { error in
+            guard case AudioRenderError.renderTooLarge = error else {
+                XCTFail("Expected excessive expansion to be rejected, got \(error)")
+                return
+            }
+        }
+    }
+
+    func testRebuiltOscillatorKeepsConcurrentRatesAndVoicesIndependent() async throws {
+        let requests = [(8_000.0, 60), (44_100.0, 69), (48_000.0, 72), (96_000.0, 81)]
+        let expected = try requests.map { sampleRate, pitch -> [Float] in
+            let song = project(.threeOsc, duration: 0.25, pitch: pitch)
+            return try AudioRenderer.renderTrack(track: song.tracks[0], project: song,
+                                                 mode: .pattern, sampleRate: sampleRate)
+        }
+        let songs = requests.map { project(.threeOsc, duration: 0.25, pitch: $0.1) }
+        try await withThrowingTaskGroup(of: (Int, [Float]).self) { group in
+            for index in requests.indices {
+                let sampleRate = requests[index].0, song = songs[index]
+                group.addTask {
+                    (index, try AudioRenderer.renderTrack(track: song.tracks[0], project: song,
+                                                          mode: .pattern, sampleRate: sampleRate))
+                }
+            }
+            for try await (index, samples) in group { XCTAssertEqual(samples, expected[index]) }
+        }
+    }
+
     func testNoteStartsAtItsBeatAndVelocityScalesEnergy() throws {
         let loudProject = project(.kick, beat: 1, velocity: 0.8)
         let loud = try AudioRenderer.renderTrack(track: loudProject.tracks[0], project: loudProject,

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "component": "GPL Vial1.0.6 source-build research",
+  "status": "fresh_source_build_verified_and_publication_boundaries_reviewed",
+  "source_repository": "https://github.com/mtytel/vital",
+  "source_commit": "636ca0ef517a4db087a6a08a6a8a5e704e21f836",
+  "fresh_public_clone": true,
+  "source_sha256": {
+    "legacy_wrapper.cpp": "6257289cb0125ba76f52ec59b7a8b6562ec09f801430827d926136b5e6fc9f60",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "README.md": "d7fdef410862b628ae7d0383fae52fe76961d83eec7d94f5eb4a1e153354a4af",
+    "build.sh": "27cf7d29b6b7a3d1f257f29e5ae910a663266500cbd30ba1bccd1c01a078e621",
+    "sample-state-offset.patch": "a8a16a722dee40719b5ba91903cc6e8a3f0127c630e70b1b146c11cfcce73114"
+  },
+  "shared_library_sha256": "0f4c8ac88f2fc5ff74a2255cec3cfc024bea84ff81e961973e0ec86beb35a40e",
+  "build_command": "./reconstruction/plugins/external/vial/build.sh /absolute/path/to/new-build-directory",
+  "artifacts": {
+    "vst2": {
+      "name": "Vial Research",
+      "version": "1.0.6",
+      "architecture": "arm64",
+      "binary_sha256": "a7e2e7b812654be761a994d7174a3d92ef48412ab6eec2992483984b764bbd34",
+      "factory_and_finite_nonzero_audio": true,
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "default_peak": 0.358794,
+      "state_validation": {
+        "persistent_settings_equal": true,
+        "pcm_tolerance": 1,
+        "channels": [
+          {
+            "channel": "samples",
+            "samples": 44100,
+            "changed_samples": 1071,
+            "maximum_pcm_delta": 1
+          }
+        ],
+        "scope": "One captured state pair; not full plugin, preset, audio or version equivalence",
+        "passed": true
+      }
+    },
+    "vst3": {
+      "name": "Vial",
+      "version": "1.0.6",
+      "architecture": "arm64",
+      "binary_sha256": "33770aeade9595712554cb380c3ed345d24f00d1a159514be465a7da48167347",
+      "factory_and_finite_nonzero_audio": true,
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "default_peak": 0.358794,
+      "state_validation": {
+        "persistent_settings_equal": true,
+        "pcm_tolerance": 1,
+        "channels": [
+          {
+            "channel": "samples",
+            "samples": 44100,
+            "changed_samples": 1071,
+            "maximum_pcm_delta": 1
+          }
+        ],
+        "scope": "One captured state pair; not full plugin, preset, audio or version equivalence",
+        "passed": true
+      }
+    },
+    "au": {
+      "name": "Vial",
+      "version": "1.0.6",
+      "architecture": "arm64",
+      "binary_sha256": "0e853f08a86089476b73a809cdb656d6a47c88b0df284473314f7230a4a0f6a0",
+      "factory_and_finite_nonzero_audio": true,
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "default_peak": 0.358794,
+      "state_validation": {
+        "persistent_settings_equal": true,
+        "pcm_tolerance": 1,
+        "channels": [
+          {
+            "channel": "samples",
+            "samples": 44100,
+            "changed_samples": 1071,
+            "maximum_pcm_delta": 1
+          }
+        ],
+        "scope": "One captured state pair; not full plugin, preset, audio or version equivalence",
+        "passed": true
+      }
+    }
+  },
+  "deterministic_legacy_comparison": {
+    "scope": "One captured deterministic JSON state and MIDI note sequence at48000Hz/block512 against installed Intel Vital1.0.7 VST2",
+    "samples": 192512,
+    "exact_samples": 99992,
+    "maximum_absolute_error": 1.1920928955078125e-07,
+    "rms_error": 1.9219389695936675e-08,
+    "snr_db": 134.51988754810344,
+    "input_state_sha256": "51b36635ccbf14c8822dc9dbecdaea55e8d8c0aafe0ade60fa18ec75908af07f",
+    "reference_binary_sha256": "02a38c672b085c2a44e65543652effe3c4c88b55aaef3171da11e5647f338280",
+    "full_plugin_equivalence": false
+  },
+  "behavior_change": "Disclosed sample-state offset patch fixes4sample shift and changes installed-reference behavior.",
+  "scope": {
+    "installed_version": "Vital1.0.7",
+    "source_version": "Vial1.0.6",
+    "installed_plugin_fully_recompiled": false,
+    "gui_verified": false,
+    "realtime_verified": false,
+    "host_automation_callback": false,
+    "arbitrary_state_rejection": false,
+    "full_preset_corpus": false,
+    "workstation_plugin_host_integration": false,
+    "binary_release_published": false
+  },
+  "license": "GPL-3.0-or-later; upstream dependencies and assets retain separate notices",
+  "independent_review": "Publication build recipe, GPL exception, patch and stated boundaries accepted; legacy glue independently compiled/replayed against a separately copied source-built library. Whole-upstream fresh build executed by root, not repeated independently."
+}

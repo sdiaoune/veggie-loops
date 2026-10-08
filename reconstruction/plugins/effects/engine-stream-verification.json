@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "component": "VL Balance and VL Mute 2 native engine state streams",
+  "status": "verified_partial_native_stream_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/balance_dsp.hpp": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
+    "reconstruction/plugins/effects/balance_plugin.h": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
+    "reconstruction/plugins/effects/balance_plugin.cpp": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
+    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
+    "reconstruction/plugins/effects/balance_native_abi.cpp": "1019f230d25f064178a359841cfd71496b38d79ba10d58bfc764a5769ef209f2",
+    "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
+    "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "7edb6359523d8b850b2d7f1ec30fad428877b9886f701991a658be536ba8cd51",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "7a8ec30e09c2c7935d81d5569b5e58d200baaf74f7018b42989255f5a6d49b0b",
+    "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
+    "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
+  },
+  "inspected_binary_sha256": {
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "FLEngine arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "checks": {
+    "command": "./reconstruction/plugins/effects/verify_engine_stream.sh",
+    "result": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrappers": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 256,
+      "state_restores": 256,
+      "failed_hresult_full_count_rejections": 2,
+      "application_host_created": false
+    },
+    "saves_per_component": 128,
+    "restores_per_component": 128
+  },
+  "measured_protocol": {
+    "completed_count_store_bits": 32,
+    "length_forwarding_bits": 32,
+    "hresult_return_bits": 32,
+    "static_engine_caller_constructs_same_provider_and_passes_interface": true
+  },
+  "independent_review": "passed on independently copied final source",
+  "limits": [
+    "calls serialized; numerical domain and lifecycle contracts in both native headers",
+    "actual engine classes and wrappers called in a local process; full application caller unexecuted",
+    "original project/preset envelopes, FL application and mixer integration unverified",
+    "macOS arm64 with exact pinned engine only; x86_64 and VST/AU unsupported"
+  ]
+}

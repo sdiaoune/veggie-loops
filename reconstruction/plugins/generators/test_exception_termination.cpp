@@ -1,4 +1,7 @@
 #include <CommonCrypto/CommonDigest.h>
+#if !defined(__APPLE__) || !defined(__aarch64__)
+#error "Native body replay requires the reviewed macOS arm64 slice"
+#endif
 #include <libkern/OSCacheControl.h>
 #include <sys/mman.h>
 #include <sys/resource.h>

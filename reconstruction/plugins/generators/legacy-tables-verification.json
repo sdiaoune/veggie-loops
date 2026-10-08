@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "waveform_count": 6,
+  "waveform_floats_exact": 98304,
+  "noise_seed_cases": 9,
+  "noise_integers_exact": 81000,
+  "independently_generated_from_math_and_prng": true,
+  "native_assets_embedded": false,
+  "wrapper_pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "legacy-tables",
+  "source_sha256": {
+    "three_osc_legacy_tables.hpp": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+    "three_osc_legacy_tables.cpp": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+    "test_three_osc_legacy_tables.mm": "12f99c1ba5361e6336b6fc2beaa633116bd8fc2f2e05b373ffd3ff7377a238e2",
+    "verify-legacy-tables.sh": "ab03cf52e706bb63142409cc6d5d75a1a289eb2c0d4607207346eb505e3369fc",
+    "summarize_dsp_primitive.py": "51240ace0a497f1c2f498b2df0e16e894a52adcec978b8b7c36a406ebc45814a"
+  },
+  "compiled_dylib_sha256": "809f6b7cfceb95ddecf4c6a4973ce393ad772ab45d4e89a2455f9b3369949b35",
+  "reviewed_native_target": {
+    "name": "installed 3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "native_fruity_factory_rebuilt": false,
+    "host_tick_context_production_rebuilt": false,
+    "voice_pipeline_integrated": false,
+    "filter_and_final_mixer_rebuilt": false,
+    "gui_rebuilt": false,
+    "fl_vst_au_host_equivalence": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Prepared-domain/normal-call arithmetic only; see header ranges and table/buffer ownership.",
+    "Native wrapper is an identity-bound read-only oracle, not a dependency of the compiled primitive.",
+    "Isolated primitive equivalence does not establish complete wrapper, plugin, VST or AU equivalence.",
+    "Native GUI/object-allocation/unwind/invalid-input behavior remains outside this component."
+  ]
+}

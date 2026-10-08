@@ -7,19 +7,28 @@
   "source_sha256": {
     "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
     "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
-    "reconstruction/plugins/effects/mute2_native_abi.h": "1ee5f7542a4183ae14ae2bfc54736f8731d18dd97d782f32eafb35e434e09f40",
-    "reconstruction/plugins/effects/mute2_native_abi.cpp": "bffb9831813fbd17ac3fab72dbc622719a6b020daaa9c8af67569769a29603f7",
-    "reconstruction/plugins/effects/test_mute2_factory.mm": "5b5905392ec6e5e586817941fcce2926cff36be3e007d02503c90ac0da569624",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "7edb6359523d8b850b2d7f1ec30fad428877b9886f701991a658be536ba8cd51",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "7a8ec30e09c2c7935d81d5569b5e58d200baaf74f7018b42989255f5a6d49b0b",
+    "reconstruction/plugins/effects/test_mute2_factory.mm": "431cd142ad794baacb327d09876f880e262a0d785d2ed696ed4a92140ed02d9e",
     "reconstruction/plugins/effects/test_mute2_engine_loader.mm": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
     "reconstruction/plugins/effects/verify_mute2.sh": "9a8c0461fbe6d18d3b54a10c61219e6f49ce667f17c94a358bc234a85e6a0a88",
     "reconstruction/plugins/effects/verify_mute2_engine_loader.sh": "debe30cd1b46136c6db1bcb6fb628df1132d4de4fd6a1d1b4344b38469616316",
-    "reconstruction/plugins/effects/MUTE2.md": "9dcd881bb20bbf76abb14909b5dad15b849289241b61f5e2805b1f5615684f22",
-    "reconstruction/plugins/effects/balance_native_abi.h": "bf024ac4c22e4a43bf00db5e21eb8a40c61c2454e2c381be8d6482f7d21f63e4"
+    "reconstruction/plugins/effects/MUTE2.md": "a1d91aa4f5e5a2f29665c0c9e2eb8d08f01ce2677eaf0fdec823e2b223c2a66b",
+    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
+    "reconstruction/plugins/effects/mute2_editor.h": "823d1ea8642ef0cabafffd096f612e56078a98bc0c2bc9a8509781b24e2f977b",
+    "reconstruction/plugins/effects/mute2_editor.mm": "320e8ed57aeb57b6272bd7b461f421d008e0dbb0e3380911f532d7e64e37f939",
+    "reconstruction/plugins/effects/test_mute2_editor.mm": "fef948c2dd7eff4627ccabe2b05163bd483127fba2c2d2d306de515231ced7ab",
+    "reconstruction/plugins/effects/test_mute2_native_editor.mm": "055215a644e66ae60681a3313301c03459ec81b081d9ad8e3f038d57b9747b4e",
+    "reconstruction/plugins/effects/verify_mute2_editor.sh": "35ea119f73ba7071bfacd67feb4ddb8deda4166be18cd64fee515a336e45f7b5",
+    "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
+    "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
   },
   "inspected_binary_sha256": {
     "Fruity Mute 2 universal": "79e0f73c536f4545186cea477e39fd2f4a807a57853e0af3018379a3d8b3ea9a",
     "Fruity Mute 2 arm64": "254019f5291ac54ab8e1cc255b9ce2b36f50b63a3699b1e3826b4b85ec7570ee",
-    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37"
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "FLEngine arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
   },
   "numerical_compiler_flags": [
     "-std=c++20",
@@ -58,20 +67,74 @@
         "fl_application_host_created": false,
         "full_plugin_equivalence": false
       }
+    },
+    "independent_appkit_editor": {
+      "command": "./reconstruction/plugins/effects/verify_mute2_editor.sh",
+      "results": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "control_changes": 2,
+          "automation_display_cases": 2050,
+          "host_notifications_after_unlock": true,
+          "worker_gui_calls_skipped": true,
+          "off_main_destroy_preserves_view": true,
+          "native_fl_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "worker_tick_idle_skipped_gui": true,
+          "off_main_destroy_preserves_state": true,
+          "control_changes": 2,
+          "hints": 3,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    },
+    "actual_engine_stream_provider": {
+      "command": "./reconstruction/plugins/effects/verify_engine_stream.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrappers": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 256,
+        "state_restores": 256,
+        "failed_hresult_full_count_rejections": 2,
+        "application_host_created": false
+      },
+      "saves_per_component": 128,
+      "restores_per_component": 128
+    },
+    "native_architecture_guards": {
+      "macOS_arm64_required": true,
+      "x86_64_compile_refusal_checked": true
     }
   },
   "independent_review": {
     "source_factory_numerical": "passed",
-    "native_loader": "passed within synthetic uint64-stream fixture"
+    "native_loader": "passed on independently copied current signed32/editor source",
+    "optional_editor": "passed on independently copied final DarkAqua source",
+    "signed32_hresult_and_real_stream_provider": "passed on independently copied final source",
+    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed"
   },
   "limits": [
     "finite stereo inputs; separate or identical buffers; partial overlap excluded",
     "raw parameters0..1024; normalized MIDI0..2^30; nearest-even default FP environment",
     "instance access serialized or protected by host mix lock",
     "source-factory valid stream framing compared with null completion outputs",
-    "native loader state fixtures use synthetic uint64 length/count; actual application stream count width unverified",
-    "original editor/hints unimplemented; no commercial resources copied",
+    "original VCL editor/hints equivalence unverified; own AppKit editor implemented; no commercial resources copied",
     "actual FL application/project/mixer hosting unverified",
-    "x86_64 and VST/AU packaging unimplemented"
+    "x86_64 and VST/AU packaging unimplemented",
+    "GUI/hints/editor-present destruction main-thread; refused worker destruction preserves instance/view for main retry",
+    "actual engine TStreamAdapter32-bit HRESULT/count stores verified; full application state routing and project/preset envelopes unexecuted"
   ]
 }

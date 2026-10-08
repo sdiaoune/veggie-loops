@@ -8,22 +8,25 @@
     "reconstruction/plugins/effects/balance_dsp.hpp": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
     "reconstruction/plugins/effects/balance_plugin.h": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
     "reconstruction/plugins/effects/balance_plugin.cpp": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
-    "reconstruction/plugins/effects/balance_native_abi.h": "bf024ac4c22e4a43bf00db5e21eb8a40c61c2454e2c381be8d6482f7d21f63e4",
-    "reconstruction/plugins/effects/balance_native_abi.cpp": "7d4f9eebd5696b5e8f41c5714dcb6054c95a8b9e8f27c55f20dfc1c08b635418",
+    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
+    "reconstruction/plugins/effects/balance_native_abi.cpp": "1019f230d25f064178a359841cfd71496b38d79ba10d58bfc764a5769ef209f2",
     "reconstruction/plugins/effects/balance_editor.h": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f",
     "reconstruction/plugins/effects/balance_editor.mm": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae",
     "reconstruction/plugins/effects/test_balance_model.cpp": "660a08edf8aa1b18e0163c1cefed6467c8c49aa1dc61e2393801fff64187b43f",
     "reconstruction/plugins/effects/test_balance_api.cpp": "d807a1affc79b86fbfdda42cc37f6192698fbf8ff7c68c968f87faf7e820e809",
     "reconstruction/plugins/effects/test_balance_dsp.cpp": "d02b1a55893afe9711593cc5e751b17cdb2a87fae86447ad4725965591602bdf",
-    "reconstruction/plugins/effects/test_balance_factory.mm": "203789431ff2f4e08d5edcf27456e8f94e56e73536410fb758e0dcdbd2e1704b",
+    "reconstruction/plugins/effects/test_balance_factory.mm": "2280f9afef24b1c090c11818b4bd7640a67a9cc2e929b4eb8a9d519dc3734c33",
     "reconstruction/plugins/effects/test_balance_native_abi.cpp": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532",
     "reconstruction/plugins/effects/test_balance_engine_loader.mm": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83",
     "reconstruction/plugins/effects/test_balance_editor.mm": "ab7ad011fe52dbee056688a42e09dda7fc803c3e01f405f9af5abefa28653853",
-    "reconstruction/plugins/effects/test_balance_native_editor.mm": "940f6d604640d35aa81a84259dfccb899fb0ef4e90da74e7aa7fcf4bfc698d20",
+    "reconstruction/plugins/effects/test_balance_native_editor.mm": "8f9a352fc8eac9ed706d2b19f11a813880b1631bf162b8191c28b8ad3db40697",
     "reconstruction/plugins/effects/verify.sh": "43d9ba2c1b5b68992294c33859ace62d617c09dd8b6df4a1ce90acaca2285baf",
     "reconstruction/plugins/effects/verify_engine_loader.sh": "a9ffa392ca6c29dd115e3ef37fe390c9c4ab70418db804c36341adf911dce4a7",
     "reconstruction/plugins/effects/verify_editor.sh": "276a12da6763d4b6c3b9406b29e70fc73a3ff579d1810f9278ff6d8bc555450f",
-    "reconstruction/plugins/effects/README.md": "473ddab36e1b4f42cc67b4c89f8f21a2cdb67927b10144cecbb0e5f21f966b81"
+    "reconstruction/plugins/effects/README.md": "65bcf43a15337e37ec14ace4240fb920a376c958e41281737416d74db4f2b1a0",
+    "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
+    "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
   },
   "inspected_binary_sha256": {
     "Fruity Balance universal": "525e96102a4eddc89de484ec3bc6a3c92788738c1dc50b5a5fa71bbd994e77ef",
@@ -77,13 +80,37 @@
       "resize_notifications": 2,
       "worker_tick_midi_tick_idle_skip_gui": true,
       "off_main_destruction_preserves_attached_editor": true
+    },
+    "actual_engine_stream_provider": {
+      "command": "./reconstruction/plugins/effects/verify_engine_stream.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrappers": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 256,
+        "state_restores": 256,
+        "failed_hresult_full_count_rejections": 2,
+        "application_host_created": false
+      },
+      "saves_per_component": 128,
+      "restores_per_component": 128
+    },
+    "native_architecture_guards": {
+      "macOS_arm64_required": true,
+      "x86_64_compile_refusal_checked": true
     }
   },
   "independent_review": {
-    "fixed_editor_regression": "passed",
-    "fixed_native_adapter": "passed",
-    "fixed_intact_engine_loader": "passed",
-    "canonical_float_flags_numerical": "passed"
+    "fixed_editor_regression": "passed on current signed32 source",
+    "fixed_native_adapter": "passed on current signed32 source",
+    "fixed_intact_engine_loader": "passed on current signed32 source",
+    "canonical_float_flags_numerical": "passed",
+    "signed32_hresult_and_real_stream_provider": "passed on independently copied final source",
+    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed"
   },
   "limits": [
     "finite stereo inputs; separate or identical buffers; partial overlap excluded",

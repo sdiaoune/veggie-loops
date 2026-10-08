@@ -8,7 +8,7 @@ The requested scope includes the installed FL Studio build, its bundled native p
 
 | Owner | Writable paths | Responsibility |
 | --- | --- | --- |
-| Root | `reconstruction/plugins/catalog.py`, `reconstruction/plugins/STATUS.md`, `reconstruction/plugins/common/`, `docs/PLUGIN_RECONSTRUCTION_PLAN.md`, root repository files, `analysis/plugins/inventory/`, `.tools/plugin-work/sdk/`, `.tools/plugin-work/vital/`, `.tools/plugin-work/common/`, `.tools/plugin-work/external/` | Global inventory, shared ABI, integration, source builds, scheduling |
+| Root | `reconstruction/plugins/catalog.py`, `reconstruction/plugins/STATUS.md`, `reconstruction/plugins/common/`, `reconstruction/plugins/external/`, `docs/PLUGIN_RECONSTRUCTION_PLAN.md`, root repository files, `analysis/plugins/inventory/`, `.tools/plugin-work/sdk/`, `.tools/plugin-work/vital/`, `.tools/plugin-work/common/`, `.tools/plugin-work/external/` | Global inventory, shared ABI, integration, source builds, scheduling |
 | Effects agent | `reconstruction/plugins/effects/`, `analysis/plugins/effects/`, `.tools/plugin-work/effects/` | Bundled effect analysis and verified reconstructions |
 | Generators agent | `reconstruction/plugins/generators/`, `analysis/plugins/generators/`, `.tools/plugin-work/generators/` | Bundled generator analysis and verified reconstructions |
 | Independent critic | `reconstruction/plugins/review/`, `analysis/plugins/review/`, `.tools/plugin-work/review/` | Acceptance gates and independent evidence checks |

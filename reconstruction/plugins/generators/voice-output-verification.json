@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "pan_cases": 120000,
+  "slew_cases": 60000,
+  "circular_whole_helper_verified": true,
+  "linear_primitive_with_observed_compensation_verified": true,
+  "pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "voice-output",
+  "source_sha256": {
+    "three_osc_voice_output.hpp": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+    "three_osc_voice_output.cpp": "292248df586abd48d769b31c14fd420781c2b6c11abc2bbd95b78d3970a18e51",
+    "test_three_osc_voice_output.mm": "e541f8109b704435df5dea98e5e5f96b2c3aec956180cf2b1e766a14408cc08b",
+    "verify-voice-output.sh": "4a30a90d41e4a81f5a1980c0c88f6ba0bef0b64fd656617add1b05f1ce62f6bf",
+    "summarize_voice_output.py": "f2d0904949c01333e9ecb66dd4dbc1d827ed17d691e295ef226d4a7e9cc6bc80",
+    "VOICE_OUTPUT.md": "fe891845995f2140be3913f114b033e6df3a8cba5ca6584898a833ee61c3425c"
+  },
+  "compiled_dylib_sha256": "ce469b7f96f61c2f50dfb97f39ff061530934cc89859521df0faba6df97b9e4d",
+  "reviewed_native_target": {
+    "name": "installed 3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "native_fruity_factory_rebuilt": false,
+    "host_pan_preference_routing_rebuilt": false,
+    "voice_pipeline_integrated": false,
+    "filter_and_final_mixer_rebuilt": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Finite prepared-domain normal-call arithmetic only; header preconditions apply to both C entry points.",
+    "The circular whole helper uses the observed native law 0. The linear primitive uses the separately observed compensation.",
+    "Darwin joint sin/cos results are verified; other platform math implementations are not native-equivalence evidence.",
+    "The installed wrapper is a read-only oracle and is not embedded in or required by the compiled primitives.",
+    "Plugin factory, GUI, invalid-input handling, filters, final audio mixing and actual host preference routing remain open."
+  ]
+}

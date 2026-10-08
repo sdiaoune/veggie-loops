@@ -1,4 +1,7 @@
 #import <Cocoa/Cocoa.h>
+#if !defined(__APPLE__) || !defined(__aarch64__)
+#error "Native offsets require the reviewed macOS arm64 slice"
+#endif
 #include "three_osc_wrapper_core.h"
 #include <CommonCrypto/CommonDigest.h>
 #include <dlfcn.h>

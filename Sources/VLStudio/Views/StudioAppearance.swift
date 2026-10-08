@@ -17,6 +17,7 @@ enum StudioAppearance {
         case .bass: return "guitars"
         case .synth: return "pianokeys"
         case .sample: return "waveform"
+        case .threeOsc: return "waveform.circle"
         }
     }
     static func db(_ value: Double) -> String {

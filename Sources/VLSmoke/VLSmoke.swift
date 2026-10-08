@@ -9,21 +9,34 @@ struct VLSmoke {
         let args = Array(CommandLine.arguments.dropFirst())
         let output = URL(fileURLWithPath: args.first(where: { !$0.hasPrefix("--") }) ?? "dist/verification", isDirectory: true)
         try FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
-        let project = VLProject.demo()
+        let useRebuiltOscillator = args.contains("--three-osc")
+        let project: VLProject
+        if useRebuiltOscillator {
+            let track = Track(name: "VL 3 Osc", instrument: .threeOsc,
+                              notes: [NoteEvent(beat: 0, duration: 0.75, midiNote: 60),
+                                      NoteEvent(beat: 1, duration: 0.75, midiNote: 64),
+                                      NoteEvent(beat: 2, duration: 0.75, midiNote: 67),
+                                      NoteEvent(beat: 3, duration: 0.75, midiNote: 72)])
+            project = VLProject(name: "VL 3 Osc verification", arrangementBars: 2,
+                                tracks: [track], clips: [ArrangementClip(trackID: track.id, startBar: 0, lengthBars: 2)])
+        } else {
+            project = VLProject.demo()
+        }
+        let basename = useRebuiltOscillator ? "VL-3-Osc" : "Fresh-produce"
         let pattern = try AudioRenderer.render(project: project, mode: .pattern)
         let song = try AudioRenderer.render(project: project, mode: .song)
         guard pattern.frameCount > 0, song.frameCount > pattern.frameCount,
               pattern.left.allSatisfy(\.isFinite), pattern.right.allSatisfy(\.isFinite),
               pattern.left.contains(where: { abs($0) > 0.01 }) else {
-            throw ProjectError.invalid("The demo did not render finite, audible PCM.")
+            throw ProjectError.invalid("The verification project did not render finite, audible PCM.")
         }
-        let wavURL = output.appendingPathComponent("Fresh-produce.wav")
+        let wavURL = output.appendingPathComponent("\(basename).wav")
         try AudioRenderer.writeWAV(song, to: wavURL)
         let decoded = try AVAudioFile(forReading: wavURL)
         guard decoded.length == song.frameCount, decoded.processingFormat.channelCount == 2 else {
             throw ProjectError.invalid("The WAV did not decode as the expected stereo audio.")
         }
-        let projectURL = output.appendingPathComponent("Fresh-produce.vlp")
+        let projectURL = output.appendingPathComponent("\(basename).vlp")
         try ProjectDocument.save(project, to: projectURL)
         guard try ProjectDocument.load(from: projectURL) == project else {
             throw ProjectError.invalid("Project persistence changed musical data.")
@@ -33,7 +46,8 @@ struct VLSmoke {
             "pattern_frames": pattern.frameCount, "song_frames": song.frameCount,
             "song_seconds": song.duration,
             "peak": song.left.reduce(Float.zero) { max($0, abs($1)) },
-            "tracks": project.tracks.map(\.name)
+            "tracks": project.tracks.map(\.name),
+            "instruments": project.tracks.map { $0.instrument.rawValue }
         ]
         if args.contains("--playback") {
             let engine = VLAudioEngine()

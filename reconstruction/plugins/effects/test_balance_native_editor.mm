@@ -1,4 +1,7 @@
 #import <Cocoa/Cocoa.h>
+#if !defined(__APPLE__) || !defined(__aarch64__)
+#error This identity-bound native editor test requires macOS arm64.
+#endif
 #include "balance_native_abi.h"
 #include <CommonCrypto/CommonDigest.h>
 #include <dlfcn.h>
