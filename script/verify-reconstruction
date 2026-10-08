@@ -1,0 +1,28 @@
+#!/bin/zsh
+# Run from any directory. Corpus checks serialize in memory only.
+set -euo pipefail
+vl_root="${0:A:h:h}"
+cd "$vl_root"
+export PYTHONPATH="$vl_root/reconstruction${PYTHONPATH:+:$PYTHONPATH}"
+python3 -m unittest discover -s reconstruction/tests -p 'test_*.py' -v
+case "${1:-}" in
+  "") exit 0 ;;
+  --local-native) ;;
+  *) print -u2 'usage: verify-reconstruction [--local-native]'; exit 2 ;;
+esac
+if [[ ! -f analysis/flp/analyze_corpus.py || ! -f analysis/flp/extract_note_rtti.py || ! -f analysis/flp/verify_note_record.py ]]; then
+  print -u2 'Local native checks require the unpublished research helpers. See docs/RESEARCH.md.'
+  exit 1
+fi
+python3 analysis/flp/analyze_corpus.py
+python3 analysis/flp/extract_note_rtti.py > /dev/null
+python3 analysis/flp/verify_note_record.py
+mkdir -p .tools/bin
+xcrun clang++ -std=c++20 -O2 -Wall -Wextra -Werror -Wno-deprecated-declarations reconstruction/native/test_host_callback.cpp -o .tools/bin/test_host_callback
+.tools/bin/test_host_callback '/Applications/FL Studio 2024.app/Contents/MacOS/OsxFL' analysis/native/launcher/host-callback-test-stats.json
+if [[ ! -f .tools/targets/FLEngine.arm64.dylib ]]; then
+  mkdir -p .tools/targets
+  xcrun lipo '/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib' -thin arm64 -output .tools/targets/FLEngine.arm64.dylib
+fi
+xcrun clang++ -std=c++20 -O2 -fno-fast-math -frounding-math -Wall -Wextra -Werror -Wno-deprecated-declarations reconstruction/native/test_tempo_gate.cpp -o .tools/bin/test_tempo_gate
+.tools/bin/test_tempo_gate '/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib' .tools/targets/FLEngine.arm64.dylib analysis/native/tempo-gate/test-stats.json

@@ -1,0 +1,24 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Build native app
+        run: swift build --product VLStudio
+      - name: Test project, audio and mixer
+        run: swift test
+      - name: Test FLP framing parser
+        run: ./script/verify-reconstruction
+      - name: Render and verify demo export
+        run: swift run VLSmoke dist/verification

@@ -1,0 +1,15 @@
+.tools/
+.build/
+dist/
+# Local research evidence contains captured proprietary disassembly and tool output.
+# Only original verification summaries are published.
+/analysis/*
+!/analysis/app-verification.json
+!/analysis/verification-summary.json
+.swiftpm/
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+*.py[cod]

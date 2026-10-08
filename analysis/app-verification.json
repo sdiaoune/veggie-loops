@@ -1,0 +1,83 @@
+{
+  "project": "Veggie Loops / VL Studio",
+  "verified_at_utc": "2026-10-08T21:17:39.922077+00:00",
+  "platform": "macOS 26.6.2, arm64; deployment target macOS 14",
+  "app_bundle": "dist/VL Studio.app",
+  "build_and_launch": {
+    "command": "./script/build_and_run.sh --verify",
+    "passed": true
+  },
+  "ad_hoc_signature_verification": {
+    "command": "codesign --verify --deep --strict dist/VL Studio.app",
+    "passed": true
+  },
+  "swift_tests": {
+    "command": "swift test",
+    "passed": 22,
+    "failed": 0,
+    "core": 4,
+    "mixer": 8,
+    "audio": 10
+  },
+  "native_audio_integration": {
+    "command": "swift run VLSmoke dist/verification --playback",
+    "passed": true,
+    "results": {
+      "live_refresh": true,
+      "master_meter": 0.14966610074043274,
+      "native_playback": true,
+      "pattern_frames": 205714,
+      "peak": 0.6727168560028076,
+      "project_roundtrip": true,
+      "sample_rate": 48000,
+      "song_frames": 822857,
+      "song_seconds": 17.142854166666666,
+      "stop": true,
+      "tracks": [
+        "Carrot kick",
+        "Radish snare",
+        "Sprout hats",
+        "Beet bass",
+        "Pea keys"
+      ],
+      "transport_beat": 1.6924444444444444,
+      "wav_decode": true
+    }
+  },
+  "native_ui_checks": {
+    "sequencer_step_toggle_and_undo": true,
+    "piano_note_creation": true,
+    "piano_note_length_and_velocity_edits": true,
+    "piano_timeline_visible_after_pitch_centering": true,
+    "arrangement_clip_placement_and_removal": true,
+    "project_save_and_reopen_with_sample_reference": true,
+    "user_sample_import": true,
+    "song_wav_export_decoded_stereo_48khz_16bit": true,
+    "visible_gain_fader_drag_changes_gain": true,
+    "live_transport_and_master_meter_advance": true,
+    "live_mute_solo_and_drive_edits": true,
+    "live_accessibility_observations_responsive": true,
+    "stop_returns_transport_to_start_and_clears_meters": true,
+    "demo_mix_restored_after_verification": true
+  },
+  "ui_artifacts": [
+    "dist/verification/UI-check.vlp",
+    "dist/verification/UI-check.wav"
+  ],
+  "ui_responsiveness_fix": "Swift Observation tracks individual state properties; unchanged meters are not reassigned. Playback observations completed in under three seconds during final UI checks.",
+  "scope": {
+    "playable_native_daw": true,
+    "original_instruments_and_sampler": true,
+    "fl_studio_feature_parity": false,
+    "flp_musical_import": false,
+    "vst_au_hosting": false,
+    "microphone_recording": false,
+    "multiple_patterns_per_channel": false
+  },
+  "limitations": [
+    "Each channel has one pattern, repeated in arrangement clips.",
+    "Sample documents reference external absolute paths.",
+    "Rendered playback refreshes after edits; this is not a plugin host or a complete reconstruction of FL Studio.",
+    "Meters follow precomputed render windows; channel meters precede channel effects."
+  ]
+}

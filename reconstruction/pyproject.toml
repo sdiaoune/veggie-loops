@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veggie-loops"
+version = "0.1.0"
+description = "VL Studio: independently reconstructed music project foundations"
+requires-python = ">=3.10"
+dependencies = []
+license = {text = "MIT"}
+
+[project.urls]
+Repository = "https://github.com/sdiaoune/veggie-loops"
+Issues = "https://github.com/sdiaoune/veggie-loops/issues"
+
+[project.scripts]
+vl-studio = "veggie_loops.flp:main"
+
+[tool.setuptools.packages.find]
+include = ["veggie_loops*"]

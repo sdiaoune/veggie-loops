@@ -1,0 +1,24 @@
+{
+  "project": "Veggie Loops / VL Studio",
+  "target_version": "24.1.1.3936",
+  "parser_tests": 13,
+  "factory_roundtrips": 36,
+  "factory_events_preserved": 122028,
+  "factory_bytes_preserved": 32118675,
+  "neutral_note_records_preserved": 1011,
+  "launcher_native_differential_cases": 16741,
+  "engine_gate_native_differential_cases": 14997,
+  "combined_native_differential_cases": 31738,
+  "engine_gate_external_calls_stubbed": 4,
+  "check_command": "./script/verify-reconstruction --local-native",
+  "native_evidence_records": {
+    "launcher": 36,
+    "engine": 50
+  },
+  "playable_daw_implemented": true,
+  "fl_studio_feature_parity": false,
+  "swift_tests": 22,
+  "app_verification": "analysis/app-verification.json",
+  "portable_check_command": "./script/verify-reconstruction",
+  "raw_research_evidence_published": false
+}
