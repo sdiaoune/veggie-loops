@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "component": "VL Balance",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/balance_dsp.hpp": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
+    "reconstruction/plugins/effects/balance_plugin.h": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
+    "reconstruction/plugins/effects/balance_plugin.cpp": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
+    "reconstruction/plugins/effects/balance_native_abi.h": "bf024ac4c22e4a43bf00db5e21eb8a40c61c2454e2c381be8d6482f7d21f63e4",
+    "reconstruction/plugins/effects/balance_native_abi.cpp": "7d4f9eebd5696b5e8f41c5714dcb6054c95a8b9e8f27c55f20dfc1c08b635418",
+    "reconstruction/plugins/effects/balance_editor.h": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f",
+    "reconstruction/plugins/effects/balance_editor.mm": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae",
+    "reconstruction/plugins/effects/test_balance_model.cpp": "660a08edf8aa1b18e0163c1cefed6467c8c49aa1dc61e2393801fff64187b43f",
+    "reconstruction/plugins/effects/test_balance_api.cpp": "d807a1affc79b86fbfdda42cc37f6192698fbf8ff7c68c968f87faf7e820e809",
+    "reconstruction/plugins/effects/test_balance_dsp.cpp": "d02b1a55893afe9711593cc5e751b17cdb2a87fae86447ad4725965591602bdf",
+    "reconstruction/plugins/effects/test_balance_factory.mm": "203789431ff2f4e08d5edcf27456e8f94e56e73536410fb758e0dcdbd2e1704b",
+    "reconstruction/plugins/effects/test_balance_native_abi.cpp": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532",
+    "reconstruction/plugins/effects/test_balance_engine_loader.mm": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83",
+    "reconstruction/plugins/effects/test_balance_editor.mm": "ab7ad011fe52dbee056688a42e09dda7fc803c3e01f405f9af5abefa28653853",
+    "reconstruction/plugins/effects/test_balance_native_editor.mm": "940f6d604640d35aa81a84259dfccb899fb0ef4e90da74e7aa7fcf4bfc698d20",
+    "reconstruction/plugins/effects/verify.sh": "43d9ba2c1b5b68992294c33859ace62d617c09dd8b6df4a1ce90acaca2285baf",
+    "reconstruction/plugins/effects/verify_engine_loader.sh": "a9ffa392ca6c29dd115e3ef37fe390c9c4ab70418db804c36341adf911dce4a7",
+    "reconstruction/plugins/effects/verify_editor.sh": "276a12da6763d4b6c3b9406b29e70fc73a3ff579d1810f9278ff6d8bc555450f",
+    "reconstruction/plugins/effects/README.md": "473ddab36e1b4f42cc67b4c89f8f21a2cdb67927b10144cecbb0e5f21f966b81"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Balance universal": "525e96102a4eddc89de484ec3bc6a3c92788738c1dc50b5a5fa71bbd994e77ef",
+    "Fruity Balance arm64": "8a0320e4cf2ba57e076b22264f1c9c78d0b37c2bda9053c8d0e08c98d33b430b",
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "FLEngine arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-sin",
+    "-fno-builtin-cos",
+    "-fno-builtin-exp"
+  ],
+  "checks": {
+    "sparse_numerical": {
+      "command": "./reconstruction/plugins/effects/verify.sh --native",
+      "dsp_callbacks": 19200,
+      "parameter_callbacks": 81212,
+      "stereo_frames": 2076480,
+      "bit_identical_within_declared_domain": true
+    },
+    "factory": {
+      "command": "./reconstruction/plugins/effects/verify.sh --factory",
+      "parameter_and_control_cases": 1024,
+      "valid_state_restores": 205,
+      "stereo_frames": 43441
+    },
+    "adapter": {
+      "command": "./reconstruction/plugins/effects/verify.sh --engine-abi",
+      "unchanged_engine_method_bodies": 21,
+      "callback_slots": 20,
+      "sequences": 1200,
+      "stereo_frames": 140700
+    },
+    "intact_engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_engine_loader.sh",
+      "accepted_compiled_native_dylib": true,
+      "real_engine_wrapper_allocated_and_freed": true,
+      "parameter_calls": 2400,
+      "stereo_frames": 140700
+    },
+    "independent_appkit_editor": {
+      "command": "./reconstruction/plugins/effects/verify_editor.sh",
+      "actual_engine_plugin_and_host_adapters": true,
+      "synthetic_pascal_host": true,
+      "control_changes": 2,
+      "hint_notifications": 3,
+      "resize_notifications": 2,
+      "worker_tick_midi_tick_idle_skip_gui": true,
+      "off_main_destruction_preserves_attached_editor": true
+    }
+  },
+  "independent_review": {
+    "fixed_editor_regression": "passed",
+    "fixed_native_adapter": "passed",
+    "fixed_intact_engine_loader": "passed",
+    "canonical_float_flags_numerical": "passed"
+  },
+  "limits": [
+    "finite stereo inputs; separate or identical buffers; partial overlap excluded",
+    "tested numerical parameter and frame domains described in headers and README",
+    "GUI operations and editor-present destruction require main thread; numeric access serial or locked",
+    "actual FL application, project and mixer integration unverified",
+    "original VCL/artwork parity unverified",
+    "x86_64 and VST/AU formats unimplemented"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "real_native_factory": true,
+  "compiled_dylib_replayed": true,
+  "core_parameter_updates": 2160,
+  "integrated_editor_control_storage_updates": 2160,
+  "version14_prefix_restores": 180,
+  "hq_voice_render_cases": 720,
+  "audio_floats_exact": 262080,
+  "legacy_voice_render_cases": 360,
+  "version14_preserved_field_bytes": 441,
+  "version14_canonical_reserved_bytes": 12,
+  "version14_defined_output_bytes": 453,
+  "reserved_input_mutation_cases": 180,
+  "parameter_contract_size": 114,
+  "custom_wave_replacements_and_fallback": 3,
+  "simultaneous_voices": 2,
+  "release_kill_verified": true,
+  "random_phase_and_noise_verified": true,
+  "full_plugin_recompiled": false,
+  "module": "114-control storage, version-14 preset, raw HQ/legacy wrapper core",
+  "source_files": {
+    "three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+    "three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+    "three_osc_engine.cpp": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+    "three_osc_wrapper_core.h": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+    "three_osc_wrapper_core.cpp": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+    "test_three_osc_wrapper_core.mm": "9e5cf7dcec666cd8142424d3c000840ae8c4730f49fe24061efdc8cb49a96618",
+    "verify-wrapper-core.sh": "865aa1ebd419568e178cd449bbc71326060ebe9664e52fd25e8841c285ccb63a",
+    "verify_wrapper.sh": "726e133698c46b9652c9d1cc6d428f57446f3dc7cef10f86334820a928a7f37a",
+    "summarize_wrapper.py": "90bfff4e3e0b52e74a4ea8806c57d74f4fe58eb084f373a7e9f95655eb470bfd",
+    "WRAPPER_CORE.md": "68461a9cbcd418a48c4b600d7ab0fe5efbe17c6ac2a532539aec6581acd674ee"
+  },
+  "built_library_sha256": "78d1b0ed77bf5519b9024b500a6fe693715caaef69a89e36b62902dd0ba97538",
+  "reviewed_native_targets": {
+    "wrapper": {
+      "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+      "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27"
+    },
+    "engine": {
+      "universal_sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+      "arm64_sha256": "c90d11fe12c86d620aabd135078c7cca49cc2b007b0c750e0db63a1e7508db48"
+    }
+  },
+  "scope": {
+    "control_storage_slots": 114,
+    "oscillator_controls": 21,
+    "editor_group_fields": 85,
+    "editor_globals": 3,
+    "reserved_control_slots": 5,
+    "preset_payload_bytes": 456,
+    "preserved_field_bytes": 441,
+    "canonical_reserved_zero_bytes": 12,
+    "undefined_native_padding_bytes": 3,
+    "new_c_abi": true,
+    "native_fruity_factory_implemented": false,
+    "integrated_editor_modulation_dsp_implemented": false,
+    "integrated_editor_envelope_dsp_implemented": false,
+    "final_generator_mixing_implemented": false,
+    "voice_stealing_implemented": false,
+    "gui_implemented": false,
+    "old_preset_versions_implemented": false,
+    "fl_vst_au_host_integration_verified": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Normal valid serial calls and bounded corpora only; invalid/allocator/unwind behavior differs.",
+    "Host pan law and legacy waveform tables are caller-supplied; corpus uses synthetic inputs.",
+    "Pascal RNG fixture is read from native once per case; model alone is initialized from it.",
+    "Independent small-engine noise globals are synchronized before each render block.",
+    "Control storage/state equivalence does not reconstruct integrated-editor modulation DSP.",
+    "The native factory is an oracle; the rebuilt library exposes a separate bounded C ABI."
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "component": "Original native plugin reference hosts",
+  "whole_installed_plugin_recompiled": false,
+  "source_sha256": {
+    "reconstruction/plugins/common/vst2_probe.mm": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f",
+    "reconstruction/plugins/common/build_legacy_host.sh": "c352620080c44e9a0cece7cd210a1a3f6e515fec649b012351391de7248623f4",
+    "reconstruction/plugins/common/build_hosts.sh": "dffba77fdbb5ddcd677e36e7ae98fb94e96f81680b44ac0c2782bd59b3141166",
+    "reconstruction/plugins/common/README.md": "3b3f18ac32be596ba21db42d24ce0cfe719991e6544e5dd26564a008934bde2f",
+    "reconstruction/plugins/review/vst2_host_contract.mm": "b1f8193e1491f5778f1f57119f4879e9d5cd601a51550813224725989798b131"
+  },
+  "legacy_host_architectures_built": [
+    "arm64",
+    "x86_64"
+  ],
+  "independent_host_contract": "passed",
+  "sanitized_contract_check": "ASan+UBSan passed;40000 concurrent time callbacks",
+  "reference_binary_identities": {
+    "Purity": {
+      "binary_sha256": "ef2675ee69f9498ae10807820660e1158ba3c50684f44dea46b03efd7ceb1b07",
+      "version": null,
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    },
+    "Vital": {
+      "binary_sha256": "02a38c672b085c2a44e65543652effe3c4c88b55aaef3171da11e5647f338280",
+      "version": "1.0.7",
+      "architectures": [
+        "x86_64"
+      ]
+    },
+    "TyrellN6": {
+      "binary_sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+      "version": "V3.0",
+      "architectures": [
+        "i386",
+        "x86_64"
+      ]
+    },
+    "LABS": {
+      "binary_sha256": "9adcab2e452ef499ccdf6269eb8d4f42a7b54a4ece25c0c3a84ec7cfdfa9ec6d",
+      "version": "2.4.0-77be0873",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ]
+    }
+  },
+  "legacy_reference_audio_cases": [
+    {
+      "plugin": "Purity",
+      "architecture": "arm64",
+      "sample_rate": 44100,
+      "block_size": 64,
+      "frames": 88256,
+      "peak": 0.0177145,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "Purity",
+      "architecture": "arm64",
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "peak": 0.0249215,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "Purity",
+      "architecture": "arm64",
+      "sample_rate": 96000,
+      "block_size": 1024,
+      "frames": 192512,
+      "peak": 0.115574,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "Vital",
+      "architecture": "x86_64",
+      "sample_rate": 44100,
+      "block_size": 64,
+      "frames": 88256,
+      "peak": 0.357645,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "Vital",
+      "architecture": "x86_64",
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "peak": 0.358795,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "Vital",
+      "architecture": "x86_64",
+      "sample_rate": 96000,
+      "block_size": 1024,
+      "frames": 192512,
+      "peak": 0.30562,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "TyrellN6",
+      "architecture": "x86_64",
+      "sample_rate": 44100,
+      "block_size": 64,
+      "frames": 88256,
+      "peak": 0.285702,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "TyrellN6",
+      "architecture": "x86_64",
+      "sample_rate": 48000,
+      "block_size": 512,
+      "frames": 96256,
+      "peak": 0.280742,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    },
+    {
+      "plugin": "TyrellN6",
+      "architecture": "x86_64",
+      "sample_rate": 96000,
+      "block_size": 1024,
+      "frames": 192512,
+      "peak": 0.254004,
+      "exit_code": 0,
+      "finite_nonzero_audio": true
+    }
+  ],
+  "LABS_default_reference": {
+    "factory_and_state": true,
+    "nonzero_audio": false
+  },
+  "installed_Vital_VST2_state_negative_control": {
+    "validation_passed": false,
+    "maximum_PCM16_delta": 58565,
+    "tolerance": 1,
+    "sample_shift_observed": true
+  },
+  "limitations": [
+    "Original reference plugin processing is not source recompilation.",
+    "Factory/state/finite audio results cover disclosed inputs only.",
+    "No real-time, GUI, automation or all-plugin equivalence certification.",
+    "VST2 effSetChunk return values and byte equality are measurements; semantics need separate checks.",
+    "Generated hosts are locally ad-hoc signed; installed originals are not modified."
+  ]
+}

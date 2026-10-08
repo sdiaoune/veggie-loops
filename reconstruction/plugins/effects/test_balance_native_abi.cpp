@@ -106,6 +106,7 @@ int main(int argc,char** argv){
     require(factory,"Missing native factory");
     auto* adapted=factory(nullptr,0x12345);auto* direct=factory(nullptr,0x12345);
     require(adapted && direct,"Native factory failed");
+    require(adapted->info==direct->info,"Plugin metadata must have shared module lifetime");
     PascalObject wrapper(adapted);void* self=wrapper.bytes.data();
     engine.at<void(*)(void*)>(0xb4cce0)(self);
     require(wrapper.get<std::intptr_t>(8)==0x12345 && wrapper.get<const Info*>(16)==adapted->info,"Engine field bridge failed");

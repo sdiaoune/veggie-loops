@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "component": "VL Mute 2",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
+    "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "1ee5f7542a4183ae14ae2bfc54736f8731d18dd97d782f32eafb35e434e09f40",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "bffb9831813fbd17ac3fab72dbc622719a6b020daaa9c8af67569769a29603f7",
+    "reconstruction/plugins/effects/test_mute2_factory.mm": "5b5905392ec6e5e586817941fcce2926cff36be3e007d02503c90ac0da569624",
+    "reconstruction/plugins/effects/test_mute2_engine_loader.mm": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
+    "reconstruction/plugins/effects/verify_mute2.sh": "9a8c0461fbe6d18d3b54a10c61219e6f49ce667f17c94a358bc234a85e6a0a88",
+    "reconstruction/plugins/effects/verify_mute2_engine_loader.sh": "debe30cd1b46136c6db1bcb6fb628df1132d4de4fd6a1d1b4344b38469616316",
+    "reconstruction/plugins/effects/MUTE2.md": "9dcd881bb20bbf76abb14909b5dad15b849289241b61f5e2805b1f5615684f22",
+    "reconstruction/plugins/effects/balance_native_abi.h": "bf024ac4c22e4a43bf00db5e21eb8a40c61c2454e2c381be8d6482f7d21f63e4"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Mute 2 universal": "79e0f73c536f4545186cea477e39fd2f4a807a57853e0af3018379a3d8b3ea9a",
+    "Fruity Mute 2 arm64": "254019f5291ac54ab8e1cc255b9ce2b36f50b63a3699b1e3826b4b85ec7570ee",
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math"
+  ],
+  "checks": {
+    "source_factory": {
+      "command": "./reconstruction/plugins/effects/verify_mute2.sh",
+      "result": {
+        "status": "passed",
+        "actual_original_factory_created_and_destroyed": true,
+        "compiled_c_abi_dylib_compared": true,
+        "parameter_and_control_cases": 10248,
+        "valid_state_restore_cases": 512,
+        "render_cases": 4610,
+        "stereo_frames": 495472,
+        "signed_zero_compared": true,
+        "full_plugin_equivalence": false
+      }
+    },
+    "intact_engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_mute2_engine_loader.sh",
+      "result": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "callback_slots_exercised": 20,
+        "state_saves": 1200,
+        "state_restores": 240,
+        "short_read_preserves_state": true,
+        "parameter_calls": 2400,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "independent_review": {
+    "source_factory_numerical": "passed",
+    "native_loader": "passed within synthetic uint64-stream fixture"
+  },
+  "limits": [
+    "finite stereo inputs; separate or identical buffers; partial overlap excluded",
+    "raw parameters0..1024; normalized MIDI0..2^30; nearest-even default FP environment",
+    "instance access serialized or protected by host mix lock",
+    "source-factory valid stream framing compared with null completion outputs",
+    "native loader state fixtures use synthetic uint64 length/count; actual application stream count width unverified",
+    "original editor/hints unimplemented; no commercial resources copied",
+    "actual FL application/project/mixer hosting unverified",
+    "x86_64 and VST/AU packaging unimplemented"
+  ]
+}

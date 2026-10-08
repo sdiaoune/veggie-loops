@@ -8,6 +8,8 @@ extern "C" {
 
 // Original C ABI for the verified Balance numerical implementation. This is
 // not the FL native, VST, or AU ABI and does not export a commercial plugin ID.
+// Each instance requires serialized calls or the host's mix lock; mutable
+// parameter, render, save and restore operations are not internally synchronized.
 typedef struct VLBalancePlugin VLBalancePlugin;
 
 VLBalancePlugin* vl_balance_create(void);

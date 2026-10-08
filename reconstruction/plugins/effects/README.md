@@ -43,7 +43,9 @@ numerical parameter calls with bit-identical outputs and observed state. The
 meter preserves the native tail behavior: complete groups of eight frames use
 absolute peaks, while a remaining tail compares signed samples with zero.
 
-Use the script's exact floating-point compiler flags. Clang's combined sin/cos
+Use the script's exact floating-point compiler flags: `-std=c++20 -O2
+-ffp-contract=off -fno-fast-math -fno-builtin-sin -fno-builtin-cos
+-fno-builtin-exp`. Clang's combined sin/cos
 builtin changes some results by one ULP; the script preserves the inspected
 plugin's separate imported `sin`, `cos` and `exp` calls. Full plugin parity has
 not been established by these callback tests.
@@ -70,8 +72,9 @@ The experimental `balance_native_abi.h/.cpp` adds an independent native FL C++
 factory and function table. Its original interface description follows measured
 engine adapter offsets and the documented SDK boundary. It includes numerical
 parameters, state transfer, sample rate, resume, name and effect callbacks, with
-safe no-op callbacks for unused generator/voice functions. It currently has no
-editor or hint UI. The plugin and parameter names are original to Veggie Loops.
+safe no-op callbacks for unused generator/voice functions. Its default build has
+no editor; an optional original AppKit editor is described below. The plugin and
+parameter names are original to Veggie Loops.
 
 ```sh
 ./reconstruction/plugins/effects/verify.sh --engine-abi
@@ -85,5 +88,44 @@ names and destruction. All 20 public callback slots are exercised, including
 the unused effect voice/generator/MIDI no-ops. The engine loader statically selects its C++ adaptation
 path when `SetExternalAppHandle` is absent; the rebuilt library deliberately
 exports `CreatePlugInstance` as its native factory. This proves the inspected forwarding boundary.
-The full native engine loader and FL Studio application have not loaded the
-rebuilt plugin, and no VST or AU bundle is provided by this wrapper.
+The FL Studio application has not loaded the rebuilt plugin, and no VST or AU
+bundle is provided by this wrapper.
+
+The actual native engine DLL loader check loads the intact inspected engine and
+invokes its measured loader with an immutable managed UTF-16 path to the newly
+compiled plugin. It uses the real engine host and plugin adapter constructors,
+checks 2,400 parameter calls and 140,700 stereo frames, and frees the real plugin
+wrapper after destroying the compiled object. No application instance is created;
+the numerical factory makes no callbacks through the supplied host interface.
+
+```sh
+./reconstruction/plugins/effects/verify_engine_loader.sh
+```
+
+`balance_editor.h/.mm` is an original AppKit editor with pan and volume controls,
+gain labels, peak meters and an explicit host locking/notification interface.
+The native wrapper includes it when built with `VL_BALANCE_APPKIT_EDITOR=1` and
+advertises the documented NSView parent flag. Its controls update the verified
+numerical state, then notify the host after unlocking. Host automation and meters
+refresh during GUI Idle. Resize notification is deferred until Idle so that the
+real engine adapter has copied the newly attached editor handle first.
+Tick and MIDI tick callbacks do no GUI work; Idle skips editor and host state
+when invoked off the main thread. All editor operations, hint flags and native
+plugin destruction while an editor exists must run on the main thread. An
+off-main destruction attempt preserves the object and attached view until a
+main-thread retry; the module and host must remain alive until that retry
+finishes. Numerical callbacks require serial access or the host's mix lock.
+
+```sh
+./reconstruction/plugins/effects/verify_editor.sh
+```
+
+This check uses the intact engine's real plugin and host adapter classes with a
+synthetic Pascal host. It exercises control changes, hint flags, automation,
+audio/meter refresh, resize ordering, detach, reattach and destruction. Worker
+tick, MIDI tick and Idle calls are verified to leave a pending resize for main
+Idle, and off-main destruction is verified to preserve the attached editor.
+No original
+VCL resources or artwork are included. Original GUI parity, actual FL application
+and mixer integration, x86_64, VST/AU formats and 83 other effect families remain
+open; a complete plugin reconstruction is not certified by these checks.

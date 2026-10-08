@@ -20,4 +20,6 @@ xcrun clang++ -arch "$probe_arch" -std=c++17 -O2 -Wno-pragma-pack -Wno-deprecate
   "$sdk/public.sdk/source/vst/vstinitiids.cpp" -framework CoreFoundation -o "$probe_output/vst3_probe"
 xcrun clang++ -arch "$probe_arch" -std=c++17 -O2 "$repo_root/reconstruction/plugins/common/au_probe.cpp" \
   -framework AudioToolbox -framework CoreFoundation -o "$probe_output/au_probe"
+codesign --force --sign - "$probe_output/vst3_probe"
+codesign --force --sign - "$probe_output/au_probe"
 echo "$probe_output"
