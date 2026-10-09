@@ -64,18 +64,27 @@ void hostHint(void *c, const char *text) {
     f(i.host, i.header.hostTag, text);
 }
 #endif
-void destroy(Plugin *p) {
-  if (p) {
+bool finishLifetime(Plugin *p) {
+  if (!p)
+    return false;
 #if defined(VL_CENTER_APPKIT_EDITOR)
-    if (!vl_center_editor_main_thread())
-      return;
-    if (!vl_center_editor_destroy(object(p).editor))
-      return;
+  if (!vl_center_editor_main_thread())
+    return false;
+  if (!vl_center_editor_destroy(object(p).editor))
+    return false;
 #endif
-    vl_center_destroy(object(p).numerical);
-    delete &object(p);
-  }
+  auto *i = &object(p);
+  vl_center_destroy(i->numerical);
+  i->numerical = nullptr;
+  i->~Instance();
+  return true;
 }
+void completeDestructor(Plugin *p) { (void)finishLifetime(p); }
+void destroy(Plugin *p) {
+  if (finishLifetime(p))
+    ::operator delete(static_cast<void *>(p));
+}
+void deletingDestructor(Plugin *p) { destroy(p); }
 intptr_t dispatch(Plugin *p, intptr_t id, intptr_t, intptr_t value) {
 #if defined(VL_CENTER_APPKIT_EDITOR)
   if (id == 0) {
@@ -180,7 +189,7 @@ const Functions functions{
     destroy,    dispatch,    idle,      state,  name,     event,
     parameter,  effect,      generator, voice,  voiceEnd, voiceEnd,
     voiceEvent, voiceRender, tick,      tick,   midi,     message,
-    voiceEvent, voiceEnd,    destroy,   destroy};
+    voiceEvent, voiceEnd,    completeDestructor, deletingDestructor};
 } // namespace
 extern "C" veggie_loops::balance::native::Plugin *
 CreatePlugInstance(void *host, intptr_t tag) {

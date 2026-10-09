@@ -25,12 +25,21 @@ const Info &commonInfo() {
   });
   return info;
 }
-void destroy(Plugin *p) {
-  if (p) {
-    vl_center_destroy(object(p).numerical);
-    delete &object(p);
-  }
+bool finishLifetime(Plugin *p) {
+  if (!p)
+    return false;
+  auto *i = &object(p);
+  vl_center_destroy(i->numerical);
+  i->numerical = nullptr;
+  i->~Instance();
+  return true;
 }
+void completeDestructor(Plugin *p) { (void)finishLifetime(p); }
+void destroy(Plugin *p) {
+  if (finishLifetime(p))
+    ::operator delete(static_cast<void *>(p));
+}
+void deletingDestructor(Plugin *p) { destroy(p); }
 intptr_t dispatch(Plugin *p, intptr_t id, intptr_t, intptr_t value) {
   if (id == 2)
     vl_center_resume(object(p).numerical);
@@ -100,7 +109,7 @@ const Functions functions{
     destroy,    dispatch,    idle,      state,  name,     event,
     parameter,  effect,      generator, voice,  voiceEnd, voiceEnd,
     voiceEvent, voiceRender, tick,      tick,   midi,     message,
-    voiceEvent, voiceEnd,    destroy,   destroy};
+    voiceEvent, voiceEnd,    completeDestructor, deletingDestructor};
 } // namespace
 extern "C" veggie_loops::balance::native::Plugin *
 CreatePlugInstance(void *, intptr_t tag) {

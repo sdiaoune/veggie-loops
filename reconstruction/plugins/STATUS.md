@@ -20,7 +20,11 @@ passed two source runtime reviews and two engine runtime reviews; their current
 public source includes the repairs, and the public package replay passes. Balance
 has a separately accepted retained-view cleanup
 repair. The three experimental oscillator factories now have a reviewed own
-complete/caller-free versus deleting lifetime split. Other factories' complete
+complete/caller-free versus deleting lifetime split. Center's repair passed two
+source runtime reviews and two engine runtime reviews; its public working
+replay passes. Fast Dist's first independent lifetime replay
+failed an O0 editor allocation check and remains unaccepted while the failure
+is traced. Other factories' complete
 destructors remain under separate review.
 
 | Component | Independently built and checked milestone | Remaining work |
@@ -40,6 +44,7 @@ destructors remain under separate review.
 | [Fruity Center numerical subset](effects/CENTER.md) | Own centering filter/control/state C API; 1,516,707 exact stereo frames, live rate/reset/history and strict block-end flush checks; 342 sanitizer alias-rejection intervals independently replayed | Native class/streams/editor integration, complete dispatch/host lifecycle, x86/VST/AU and whole-plugin equivalence |
 | [Fruity Center native bridge](effects/CENTER_NATIVE.md) | Own no-editor factory accepted by real FLEngine DLL loader; 20 callbacks, 140,700 frames and actual two-transfer streams with history-preserving read failures independently replayed | Original Pascal/VCL, full destructor/general-provider ABI, remaining metadata/dispatch, actual application/project/mixer, x86/VST/AU and whole-plugin equivalence |
 | [VL Center optional AppKit editor](effects/CENTER_EDITOR.md) | Real host/plugin adapters, preserved filter displays, four maintained checks and independent enabled-history/ThreadSanitizer replay; refused worker destruction retains ownership | Original GUI/hints/resources, full application/project/mixer and destructor/provider semantics, x86/VST/AU, general concurrency/RT and whole-plugin equivalence |
+| [Own Center factory lifetimes](effects/center-lifetime/README.md) | Complete20 retains raw storage and0/21 free; retained views clear callbacks/context and control targets;9 normal/fatal/O0 source profiles,4 semantic negatives and10 actual-engine documents pass two runtime critics and the public working package's29 signed arm64 products;15 fake-only publication failure controls pass | Original extra destructors/class/GUI/allocator, application scheduling, broader provider/concurrency/RT and whole-plugin equivalence |
 | [Fruity Fast Dist numerical subset](effects/FAST_DIST.md) | Independently regenerated 163,880 table entries, both host DSP branches and five controls; actual factory/initialized host, sanitizer and 1,075,200 additional edge-float comparisons; wrong quality branch fails | Actual host quality production, original class/GUI/host semantics, broader state-provider errors, x86/VST/AU and whole-plugin equivalence |
 | [VL Fast Dist native bridge](effects/FAST_DIST_NATIVE.md) | Actual DLL loader accepts own fixed-quality0 factory; 20 callbacks, 140,700 frames and 128 real-stream roundtrips; two critics and signed-HRESULT/count negative control | Original Pascal/VCL/editor, quality configuration, remaining metadata/dispatch, general provider/extra destructors, actual application/project/mixer, x86/VST/AU and whole-plugin equivalence |
 | [VL Fast Dist optional AppKit editor](effects/FAST_DIST_EDITOR.md) | Four maintained checks through real adapters/loader/streams; main hint locking, 128 enabled attachment cycles, independent 256 interpolated cycles/20 malformed states/ThreadSanitizer and missing-lock negative; own readable controls | Original host quality production, original GUI/hint/resources, full application/project/mixer and remaining ABI/provider/destructor behavior, x86/VST/AU, general RT and whole-plugin equivalence |

@@ -6,18 +6,18 @@
   "architecture": "macOS arm64",
   "source_sha256": {
     "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
-    "reconstruction/plugins/effects/center_native_abi.cpp": "d30d7c0d824c999526dc54905fb5d8be3c3aad975bc0e1e80d5074c7bcb97004",
+    "reconstruction/plugins/effects/center_native_abi.cpp": "1976f4fb6227de809a368eacdda5a5b90f5ff4d4302d93f34dc29c9561576086",
     "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
     "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
     "reconstruction/plugins/effects/verify_center_engine_loader.sh": "7ca6b90fd6c3fc56dae83532cc1f551a9bcbdce9b90aaffe795a4da80fc14b09",
     "reconstruction/plugins/effects/verify_center_engine_stream.sh": "87ce92e00a563fec59cc7bb96c80c0fbf665973ba9e0e6bc7247c364c5a6b8ba",
-    "reconstruction/plugins/effects/CENTER_NATIVE.md": "e3853a69d4d2cf41fcc53fc865cd8f44fc92b519573866efdb1705c91dfb716b"
+    "reconstruction/plugins/effects/CENTER_NATIVE.md": "ed0502749608dd60a713fe9b97697508bfa10299bbc6867f47c3b1d39a5efb3f"
   },
   "dependency_sha256": {
     "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
     "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
     "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
-    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+    "reconstruction/plugins/effects/balance_native_abi.h": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf"
   },
   "numerical_manifest": "center-verification.json",
   "engine_sha256": {
@@ -134,7 +134,7 @@
     "root_owns_final_rebind_and_git": true,
     "independent_review": "Root separately checked four byte-identical runtime/header/test files, restricted script path changes and all dependencies, then rebuilt/replayed both maintained scripts in a copied source tree."
   },
-  "destructor_scope": "Twenty forwarding callbacks and explicit DestroyObject lifecycle were exercised. The two extra complete/deleting C++ destructor table entries were not separately replayed; no complete C++ class/destructor ABI certificate is claimed.",
+  "destructor_scope": "Separate own source lifetimes cover complete20 retaining raw storage and deleting0/21 freeing once, with two source critics and two engine critics. The intact engine fixtures retain their ordinary twenty callbacks. Installed original extra destructors, class ABI and general allocator equivalence remain unproved.",
   "write_failure_scope": "Valid writes use two4-byte transfers. Native state callback returns void and does not propagate failed Write HRESULTs; failed-write rollback/general arbitrary-provider parity are unproved. Restore failure atomicity is tested explicitly.",
   "actual_engine_loader_acceptance": true,
   "actual_engine_stream_provider_classes": true,
@@ -144,12 +144,64 @@
   "actual_fl_application_created": false,
   "x86_vst_au_proof": false,
   "unresolved": [
-    "optional own editor and original VCL/resources/hints parity",
+    "original VCL/resources/hints parity",
     "source metadata/names/events/remaining dispatch equivalent behavior",
     "actual FL application/project/mixer host lifecycle",
     "x86/VST/AU",
     "realtime/concurrency outside serialized contract",
     "whole-plugin equivalence",
     "Separate full C++ destructor ABI/failed-write/general provider behavior"
-  ]
+  ],
+  "historical_source_sha256_before_own_lifetime_promotion_20261009": {
+    "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
+    "reconstruction/plugins/effects/center_native_abi.cpp": "d30d7c0d824c999526dc54905fb5d8be3c3aad975bc0e1e80d5074c7bcb97004",
+    "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
+    "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
+    "reconstruction/plugins/effects/verify_center_engine_loader.sh": "7ca6b90fd6c3fc56dae83532cc1f551a9bcbdce9b90aaffe795a4da80fc14b09",
+    "reconstruction/plugins/effects/verify_center_engine_stream.sh": "87ce92e00a563fec59cc7bb96c80c0fbf665973ba9e0e6bc7247c364c5a6b8ba",
+    "reconstruction/plugins/effects/CENTER_NATIVE.md": "e3853a69d4d2cf41fcc53fc865cd8f44fc92b519573866efdb1705c91dfb716b"
+  },
+  "historical_dependency_sha256_before_own_lifetime_promotion_20261009": {
+    "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+    "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+    "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "own_lifetime_and_retained_editor_repair": {
+    "status": "two_source_and_two_engine_runtime_critics_accepted_public_working_replay_passed_fresh_checkout_pending",
+    "source_routes": [
+      0,
+      20,
+      21
+    ],
+    "complete20_retains_raw_storage_for_matching_caller_release": true,
+    "deleting0_21_free_owned_instance": true,
+    "successful_retained_view_callbacks_context_and_control_targets_cleared": true,
+    "all_optional_editor_destruction_requires_main_thread": true,
+    "historical_checks_preserved_with_prior_source_and_dependency_bindings": true,
+    "two_source_and_two_engine_runtime_critic_acceptance": {
+      "path": "analysis/plugins/review/root-Center-v2-two-critic-runtime-acceptance.json",
+      "sha256": "1f3dbba02301faa9ec13d20b079758db3855100c70ff37fcd6ef22cc051c5ad5"
+    },
+    "public_recipe": "reconstruction/plugins/effects/center-lifetime/verify.py",
+    "public_package_replay_passed": true,
+    "fresh_checkout_replay_passed": false,
+    "original_extra_destructor_GUI_class_allocator_application_scheduler_RT_or_whole_equivalence": false,
+    "full_plugin_equivalence": false,
+    "working_public_recipe_proof": {
+      "path": "analysis/plugins/review/root-Center-public-v2-working-runtime.json",
+      "sha256": "c2c0710f8910c0ed0c7ca19bb8ff2ad7b8e0049821f064c732b29d1ec177969e",
+      "bytes": 285460
+    },
+    "source_profiles": 9,
+    "fatal_semantic_negatives": 4,
+    "native_type_aware_result_documents": 10,
+    "strict_signed_arm64_products_per_replay": 29,
+    "publication_failure_mock_critic": {
+      "path": "analysis/plugins/review/center-public-failure-audit-mixer-v2-independent.json",
+      "sha256": "2c0ba39098ced5fbf87405cf03b272b07e93c8482a132385a2eb15c994644ba8",
+      "bytes": 132172
+    }
+  },
+  "historical_destructor_scope_before_own_lifetime_promotion_20261009": "Twenty forwarding callbacks and explicit DestroyObject lifecycle were exercised. The two extra complete/deleting C++ destructor table entries were not separately replayed; no complete C++ class/destructor ABI certificate is claimed."
 }

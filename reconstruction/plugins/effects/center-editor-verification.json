@@ -8,11 +8,11 @@
     "reconstruction/plugins/effects/center_editor.h": "9fd18903f4964bc16b8e5ed2c4296ea2480f791d6fd10ac937e5d340966d5b62",
     "reconstruction/plugins/effects/center_editor.mm": "cb4e22dfa51e4afacd1fad8333a8bba7105016034704d8e13ff170ec33965e9b",
     "reconstruction/plugins/effects/center_native_editor_candidate.h": "e6ab795d2ec19d26b234a69ce18497b705a6a1fa8573ec4d48bc109f169b79d4",
-    "reconstruction/plugins/effects/center_native_editor_candidate.cpp": "bf7b3f122c32597728f73e03226144e9529e64bb639153c98e5fe0adbea22a9c",
+    "reconstruction/plugins/effects/center_native_editor_candidate.cpp": "690e8cfcbbee3e1b5f4d33d717049451f6a04419ecd615d0d87896b850a2267d",
     "reconstruction/plugins/effects/test_center_editor.mm": "974ff446a37d0d526adfcce61844e9de1f9f2cef6db4b5c67c19605f22ebd79b",
     "reconstruction/plugins/effects/test_center_native_editor.mm": "eec8750c11bd41f767dfb13780c85fb29e468fc9e369375660d77ee9ef078d28",
     "reconstruction/plugins/effects/verify_center_editor.sh": "d28852eec22084d380280fd96c207bb85c7762a7ab550b53e2b31de32d159ef5",
-    "reconstruction/plugins/effects/CENTER_EDITOR.md": "9a0bcf14aaddd7d7b4459b15ae98adfe719b43c5bbc93330c1c0c3ff97b982f1"
+    "reconstruction/plugins/effects/CENTER_EDITOR.md": "9b1fd39854cf27cd2f6143ae9dab842231ba5de1ab98a87b01370f9628c09307"
   },
   "dependency_sha256": {
     "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
@@ -21,7 +21,7 @@
     "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
     "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
     "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
-    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+    "reconstruction/plugins/effects/balance_native_abi.h": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf"
   },
   "numerical_manifest": "center-verification.json",
   "default_native_manifest": "center-native-verification.json",
@@ -166,8 +166,63 @@
   "unresolved": [
     "Original Pascal/VCL/resources/hints/metadata/name/events/remaining dispatch parity",
     "Actual FL application/project/mixer lifecycle",
-    "Extra complete/deleting C++ destructor slots and general failed-write/provider behavior",
+    "Original extra complete/deleting C++ destructor slots and general failed-write/provider behavior",
     "x86/VST/AU,realtime or unsynchronized concurrency",
     "Whole-plugin equivalence"
-  ]
+  ],
+  "historical_source_sha256_before_own_lifetime_promotion_20261009": {
+    "reconstruction/plugins/effects/center_editor.h": "9fd18903f4964bc16b8e5ed2c4296ea2480f791d6fd10ac937e5d340966d5b62",
+    "reconstruction/plugins/effects/center_editor.mm": "cb4e22dfa51e4afacd1fad8333a8bba7105016034704d8e13ff170ec33965e9b",
+    "reconstruction/plugins/effects/center_native_editor_candidate.h": "e6ab795d2ec19d26b234a69ce18497b705a6a1fa8573ec4d48bc109f169b79d4",
+    "reconstruction/plugins/effects/center_native_editor_candidate.cpp": "bf7b3f122c32597728f73e03226144e9529e64bb639153c98e5fe0adbea22a9c",
+    "reconstruction/plugins/effects/test_center_editor.mm": "974ff446a37d0d526adfcce61844e9de1f9f2cef6db4b5c67c19605f22ebd79b",
+    "reconstruction/plugins/effects/test_center_native_editor.mm": "eec8750c11bd41f767dfb13780c85fb29e468fc9e369375660d77ee9ef078d28",
+    "reconstruction/plugins/effects/verify_center_editor.sh": "d28852eec22084d380280fd96c207bb85c7762a7ab550b53e2b31de32d159ef5",
+    "reconstruction/plugins/effects/CENTER_EDITOR.md": "9a0bcf14aaddd7d7b4459b15ae98adfe719b43c5bbc93330c1c0c3ff97b982f1"
+  },
+  "historical_dependency_sha256_before_own_lifetime_promotion_20261009": {
+    "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+    "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+    "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+    "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
+    "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
+    "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "own_lifetime_and_retained_editor_repair": {
+    "status": "two_source_and_two_engine_runtime_critics_accepted_public_working_replay_passed_fresh_checkout_pending",
+    "source_routes": [
+      0,
+      20,
+      21
+    ],
+    "complete20_retains_raw_storage_for_matching_caller_release": true,
+    "deleting0_21_free_owned_instance": true,
+    "successful_retained_view_callbacks_context_and_control_targets_cleared": true,
+    "all_optional_editor_destruction_requires_main_thread": true,
+    "historical_checks_preserved_with_prior_source_and_dependency_bindings": true,
+    "two_source_and_two_engine_runtime_critic_acceptance": {
+      "path": "analysis/plugins/review/root-Center-v2-two-critic-runtime-acceptance.json",
+      "sha256": "1f3dbba02301faa9ec13d20b079758db3855100c70ff37fcd6ef22cc051c5ad5"
+    },
+    "public_recipe": "reconstruction/plugins/effects/center-lifetime/verify.py",
+    "public_package_replay_passed": true,
+    "fresh_checkout_replay_passed": false,
+    "original_extra_destructor_GUI_class_allocator_application_scheduler_RT_or_whole_equivalence": false,
+    "full_plugin_equivalence": false,
+    "working_public_recipe_proof": {
+      "path": "analysis/plugins/review/root-Center-public-v2-working-runtime.json",
+      "sha256": "c2c0710f8910c0ed0c7ca19bb8ff2ad7b8e0049821f064c732b29d1ec177969e",
+      "bytes": 285460
+    },
+    "source_profiles": 9,
+    "fatal_semantic_negatives": 4,
+    "native_type_aware_result_documents": 10,
+    "strict_signed_arm64_products_per_replay": 29,
+    "publication_failure_mock_critic": {
+      "path": "analysis/plugins/review/center-public-failure-audit-mixer-v2-independent.json",
+      "sha256": "2c0ba39098ced5fbf87405cf03b272b07e93c8482a132385a2eb15c994644ba8",
+      "bytes": 132172
+    }
+  }
 }

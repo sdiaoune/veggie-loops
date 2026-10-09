@@ -15,10 +15,10 @@ original Pascal/VCL class or a complete plugin-equivalence certificate.
 Both fixtures require the pinned installed FLEngine, refuse compilation outside
 Apple arm64 and verify its universal SHA-256 before using measured offsets.
 They load the intact library read-only; neither creates an actual FL Studio
-application host. The runtime, header and two native fixtures are byte-identical
-to the independently accepted private candidate. Scripts change only maintained
-source/name/output paths. `center-native-verification.json` binds those files,
-their numerical/shared-header dependencies and the separately reviewed scope.
+application host. The current factory includes the separately accepted own
+lifetime repair. Numerical processing and both native fixtures retain their
+accepted bodies. `center-native-verification.json` preserves the earlier source
+bindings and binds the current source separately.
 
 ## Factory and callbacks
 
@@ -36,9 +36,13 @@ event, name or dispatch path has not been established.
 The intact loader fixture exercises all twenty forwarding callbacks, 1,200
 parameter calls, 1,200 saves, 240 restores and 140,700 stereo frames, then
 destroys the numerical instance through `DestroyObject` and frees the real
-engine wrapper. The two additional complete/deleting C++ destructor table
-entries are present but have not been separately replayed. These checks do not
-certify the complete C++ destructor ABI.
+engine wrapper. A separate [lifetime replay](center-lifetime/README.md) exercises
+all three own cleanup routes with two source critics and two engine critics.
+Complete slot20 ends the Instance lifetime and releases numerical resources
+while retaining raw storage for matching caller deallocation. DestroyObject0
+and deleting slot21 also free that storage. After complete cleanup, no getter or
+second destructor is valid. The installed original's extra destructor entries
+remain untested; these results do not certify its full class/destructor ABI.
 
 ## State streams
 
@@ -73,7 +77,7 @@ objects, not validated opaque handles. The numerical finite-input, frame, rate,
 aliasing and FP-environment limits in `CENTER.md` still apply. There is no
 unrestricted concurrency or realtime certificate.
 
-An own optional editor requires separate source and review. Original VCL,
+The [optional own editor](CENTER_EDITOR.md) has separate source and review. Original VCL,
 resources and hint timing; original metadata/name/event/remaining dispatch
 semantics; actual FL application/project/mixer lifecycle; x86, VST and AU
 hosting; general provider and failed-write behavior; complete destructor ABI;

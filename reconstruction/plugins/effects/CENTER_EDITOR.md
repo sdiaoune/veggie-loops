@@ -13,13 +13,13 @@ VCL, artwork and GUI-equivalence claims remain excluded.
 The separate `center_native_editor_candidate.cpp` wraps the published numerical
 runtime. Define `VL_CENTER_APPKIT_EDITOR` and link `center_editor.mm` with ARC
 and Cocoa to enable its view. Compiling that same wrapper without the macro
-provides the measured no-editor behavior. The existing numerical/default native
-source checkpoint is unchanged. The candidate suffix identifies this separate
+provides the measured no-editor behavior. The numerical implementation retains
+its accepted body. The candidate suffix identifies this separate
 wrapper's reviewed origin; it does not assert full application compatibility.
-All six runtime/header/fixture files are byte-identical to the independently
-accepted private candidate. The script changes only its name, source path and
-ignored output path. Source hashes, dependencies and review scopes are bound in
-`center-editor-verification.json`.
+The current factory includes the separately accepted own lifetime repair;
+editor control code and native fixture bodies retain their accepted versions.
+Source hashes, dependencies, historical bindings and review scopes are bound
+in `center-editor-verification.json`.
 
 ## Controls, locks and ownership
 
@@ -39,7 +39,12 @@ void signature and refuses release off-main; callers must keep the native and
 engine wrappers, numerical instance, host/context and module alive until a
 successful main-thread retry. They must not free the engine wrapper or unload
 the module after a refused call. Main destruction detaches the view before
-freeing numerical state.
+freeing numerical state. Successful cleanup clears retained view callbacks,
+context and control targets. Complete slot20 retains raw storage after ending
+the Instance lifetime; DestroyObject0 and deleting slot21 free it. All routes,
+including complete cleanup, refuse workers. Keep the object, numerical state,
+host and module alive for main-thread retry, and never call getters or a second
+destructor after successful complete cleanup.
 
 Every numerical/getter/state/render/destruction access remains serialized or
 protected by the host mix lock. The optional bridge requires valid paired host
@@ -78,5 +83,12 @@ and 128-roundtrip real-provider proofs described in `CENTER_NATIVE.md`. The
 native editor fixture refuses compilation outside Apple arm64 and validates
 the pinned engine SHA before calling measured offsets. Actual FL application,
 project and mixer hosting; original GUI/hint/metadata/remaining host semantics;
-extra C++ destructor slots; general failed-write/provider behavior; x86/VST/AU;
+original extra C++ destructor slots; general failed-write/provider behavior; x86/VST/AU;
 realtime/unsynchronized concurrency; and whole-plugin equivalence remain open.
+
+The separate [own lifetime replay](center-lifetime/README.md) checks the repaired
+three cleanup routes at normal/fatal O2 and O0, with retained view actions,
+worker refusals, two-instance preservation and four deliberately wrong variants.
+Its native regressions use the existing twenty callbacks and bypassed 128-cycle
+editor fixture. Earlier enabled-history and ThreadSanitizer results retain their
+historical source bindings; this repair does not relabel them as a new replay.

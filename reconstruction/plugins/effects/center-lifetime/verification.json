@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "status": "two_private_runtime_critics_and_public_working_replay_passed_fresh_checkout_pending",
+  "files": [
+    {
+      "path": "reconstruction/plugins/effects/center_native_abi.h",
+      "sha256": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
+      "bytes": 907,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_native_abi.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_native_abi.h",
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
+      "bytes": 3796,
+      "execution_paths": [
+        "reconstruction/plugins/effects/balance_native_abi.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_plugin.h",
+      "sha256": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+      "bytes": 2491,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_plugin.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_native_editor_candidate.h",
+      "sha256": "e6ab795d2ec19d26b234a69ce18497b705a6a1fa8573ec4d48bc109f169b79d4",
+      "bytes": 756,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_native_editor_candidate.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_editor.h",
+      "sha256": "9fd18903f4964bc16b8e5ed2c4296ea2480f791d6fd10ac937e5d340966d5b62",
+      "bytes": 1027,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_editor.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_editor.mm",
+      "sha256": "cb4e22dfa51e4afacd1fad8333a8bba7105016034704d8e13ff170ec33965e9b",
+      "bytes": 4874,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_plugin.cpp",
+      "sha256": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+      "bytes": 3644,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_plugin.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_dsp.hpp",
+      "sha256": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+      "bytes": 1640,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_dsp.hpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_native_abi.cpp",
+      "sha256": "1976f4fb6227de809a368eacdda5a5b90f5ff4d4302d93f34dc29c9561576086",
+      "bytes": 4074,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_native_abi.cpp",
+        ".tools/plugin-work/review/center-lifetime-public-replay/center_native_abi.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center_native_editor_candidate.cpp",
+      "sha256": "690e8cfcbbee3e1b5f4d33d717049451f6a04419ecd615d0d87896b850a2267d",
+      "bytes": 6768,
+      "execution_paths": [
+        "reconstruction/plugins/effects/center_native_editor_candidate.cpp",
+        ".tools/plugin-work/review/center-lifetime-public-replay/center_native_editor_candidate.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_center_engine_loader.mm",
+      "sha256": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
+      "bytes": 15173,
+      "execution_paths": [
+        "reconstruction/plugins/effects/test_center_engine_loader.mm",
+        ".tools/plugin-work/review/center-lifetime-public-replay/test_center_engine_loader.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_center_engine_stream.mm",
+      "sha256": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
+      "bytes": 13297,
+      "execution_paths": [
+        "reconstruction/plugins/effects/test_center_engine_stream.mm",
+        ".tools/plugin-work/review/center-lifetime-public-replay/test_center_engine_stream.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_center_native_editor.mm",
+      "sha256": "eec8750c11bd41f767dfb13780c85fb29e468fc9e369375660d77ee9ef078d28",
+      "bytes": 15693,
+      "execution_paths": [
+        "reconstruction/plugins/effects/test_center_native_editor.mm",
+        ".tools/plugin-work/review/center-lifetime-public-replay/test_center_native_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center-lifetime/README.md",
+      "sha256": "c8bbc5694a744d4aa5330619cac6322c87e8775a8037e3cc7a9701125556e832",
+      "bytes": 4834,
+      "execution_paths": []
+    },
+    {
+      "path": "reconstruction/plugins/effects/center-lifetime/test_lifetime.mm",
+      "sha256": "85c3323d68d33b5b3a0e43504ee8572bafef094db9024f3fd1d08e2888ff15e6",
+      "bytes": 10225,
+      "execution_paths": [
+        ".tools/plugin-work/review/center-lifetime-public-replay/test_lifetime.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center-lifetime/replay_lifetime.py",
+      "sha256": "81ae2223a4d5002e425f4a33781e6d0aedbb410701914866b09daae7b5cb644c",
+      "bytes": 14567,
+      "execution_paths": [
+        ".tools/plugin-work/review/center-lifetime-public-replay/verify_lifetime.py"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center-lifetime/expected-results.json",
+      "sha256": "676d27b9b58ad6a9952f3eac294931beaf45c160e91aa91fc32f05539fb9a950",
+      "bytes": 13900,
+      "execution_paths": [
+        ".tools/plugin-work/review/center-lifetime-public-replay/expected-results.json"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/center-lifetime/verify.py",
+      "sha256": "9831ce84c44bbbe72945754d8f775277b1a33cb53755a9e1aa5eaf9fdeee0b98",
+      "bytes": 14172,
+      "execution_paths": []
+    }
+  ],
+  "original_images": [
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+      "bytes": 63038992
+    }
+  ],
+  "planned_counts": {
+    "source_profiles": 9,
+    "fatal_source_negatives": 4,
+    "native_result_documents": 10,
+    "signed_arm64_products": 29
+  },
+  "literal_proof_hashes": {
+    "accepted_private_candidate": "6fde232fc3a3c11d0bbacd50fbd68872cf0e340ec36b7e3132b14edfa6b29b61",
+    "accepted_outer": "8f80cbfe141baf4ae867539c96e9027f1248444414e91009aa298da490f43897",
+    "two_critic_combined": "1f3dbba02301faa9ec13d20b079758db3855100c70ff37fcd6ef22cc051c5ad5",
+    "first_effects_critic": "2aecc4104376b383057d58b0ade7b43837565cb57ac469f635324b05b24b9c2e",
+    "second_root_critic": "8a96a92ad3ea02afc32a247b920f740bdaad720f0f650daa9ffc40681d5bc35e",
+    "original_canonical_recipe": "115202dbaf7f22a461ca9e377185ee959487950ac1bfe847271973919a5839ca",
+    "original_source_fixture": "85c3323d68d33b5b3a0e43504ee8572bafef094db9024f3fd1d08e2888ff15e6",
+    "working_public_v2": "c2c0710f8910c0ed0c7ca19bb8ff2ad7b8e0049821f064c732b29d1ec177969e",
+    "old_wrapper_mock_blocker": "4c3e758744f0fb4ff23aa90b5c09b058db4d0a20bbdf19729d739d8f278b1242",
+    "repaired_wrapper_independent_15_mock_cases": "2c0ba39098ced5fbf87405cf03b272b07e93c8482a132385a2eb15c994644ba8",
+    "repaired_wrapper_second_source_critic": "78e7c1218cb688ec25739e53798a68f9dc40d7abfbadb78b623bbba3a5dff0e6"
+  },
+  "source_history_assets_required": false,
+  "source_guard_delta": "Canonical recipe only adds early VL_CENTER_PUBLIC_EXECUTION_COPY refusal; all remaining recipe/runtime/fixture bodies exact. New outer wrapper supplies aggregate failure auditing.",
+  "scope": {
+    "own_source_routes": [
+      0,
+      20,
+      21
+    ],
+    "source_host": null,
+    "own_NSApplication_created": true,
+    "actual_FL_application_created": false,
+    "native_editor128cycles_bypass_only": true,
+    "native20callbacks_exclude_original_extra20_21": true,
+    "original_names_events_commercial_GUI_class_allocator_RT_or_full_plugin_equivalence": false
+  },
+  "public_recipe_executed": true,
+  "public_package_runtime_acceptance": true,
+  "full_plugin_equivalence": false,
+  "fresh_checkout_replay_passed": false,
+  "working_public_recipe_proof": {
+    "path": "analysis/plugins/review/root-Center-public-v2-working-runtime.json",
+    "sha256": "c2c0710f8910c0ed0c7ca19bb8ff2ad7b8e0049821f064c732b29d1ec177969e",
+    "bytes": 285460
+  },
+  "working_proof_manifest_before_metadata_only_status": {
+    "path": ".tools/plugin-work/review/root-Center-public-v2-working-manifest-before-status.json",
+    "sha256": "d7fb02a5aa804af67f13ab429512b64d76e33d0c8144ac7f2e9ce488d10f388e",
+    "bytes": 7638
+  },
+  "wrapper_publication_failure_scope": {
+    "15_fake_only_source_phase_controls_passed": true,
+    "fake_verifier_and_child_not_native_or_signature_proof": true,
+    "all23_destinations_registered_and42_attempts_per_mock_case": true,
+    "full_result_write_then_error_rejects_and_records_separate_error": true,
+    "result_file_alone_eligible_for_pass": false,
+    "recording_error_in_aggregate_caller_exception": true,
+    "original_source_native_fixture_or_goldens_changed_by_wrapper_repair": false
+  }
+}

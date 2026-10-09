@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "source": {
+    "positive_profiles": [
+      {
+        "mode": "normal",
+        "variant": "plain",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "editor-disabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "editor-enabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 24,
+          "attached_editors": 12,
+          "retained_view_actions": 12,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "plain",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "editor-disabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "editor-enabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 24,
+          "attached_editors": 12,
+          "retained_view_actions": 12,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "O0",
+        "variant": "plain",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "O0",
+        "variant": "editor-disabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 0,
+          "attached_editors": 0,
+          "retained_view_actions": 0,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "O0",
+        "variant": "editor-enabled",
+        "result": {
+          "status": "passed_source_Center_lifetime_contract",
+          "pairs": 12,
+          "complete_caller_free": 4,
+          "deleting": 4,
+          "DestroyObject": 4,
+          "allocation_failures": 2,
+          "offmain_refusals": 24,
+          "attached_editors": 12,
+          "retained_view_actions": 12,
+          "own_allocator_hooks": true,
+          "original_images_loaded": false,
+          "original_extra_destructor_equivalence": false,
+          "full_plugin_equivalence": false
+        }
+      }
+    ],
+    "fatal_semantic_negatives": [
+      {
+        "name": "complete-frees",
+        "diagnostic": "Complete lifetime must retain caller raw storage"
+      },
+      {
+        "name": "numerical-leak",
+        "diagnostic": "Selected numerical resource must be released exactly once"
+      },
+      {
+        "name": "deleting-retains",
+        "diagnostic": "Deleting lifetime must release selected raw storage once"
+      },
+      {
+        "name": "worker-enters-editor",
+        "diagnostic": "Worker lifetime entered editor cleanup"
+      }
+    ],
+    "signed_products": 13
+  },
+  "native": {
+    "positive_profiles": [
+      {
+        "mode": "normal",
+        "variant": "plain",
+        "fixture": "test_center_engine_loader.mm",
+        "result": {
+          "status": "passed",
+          "intact_original_engine_loaded": true,
+          "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+          "actual_engine_wrapper_allocated_and_freed": true,
+          "callback_slots_exercised": 20,
+          "state_saves": 1200,
+          "state_restores": 240,
+          "failed_read_preserves_state": true,
+          "parameter_calls": 1200,
+          "stereo_frames": 140700,
+          "fl_application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "plain",
+        "fixture": "test_center_engine_stream.mm",
+        "result": {
+          "status": "passed",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 2,
+          "short_count_success_rejections": 2,
+          "two_four_byte_transfers_checked": true,
+          "filter_history_preserved": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "editor-disabled",
+        "fixture": "test_center_engine_loader.mm",
+        "result": {
+          "status": "passed",
+          "intact_original_engine_loaded": true,
+          "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+          "actual_engine_wrapper_allocated_and_freed": true,
+          "callback_slots_exercised": 20,
+          "state_saves": 1200,
+          "state_restores": 240,
+          "failed_read_preserves_state": true,
+          "parameter_calls": 1200,
+          "stereo_frames": 140700,
+          "fl_application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "editor-disabled",
+        "fixture": "test_center_engine_stream.mm",
+        "result": {
+          "status": "passed",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 2,
+          "short_count_success_rejections": 2,
+          "two_four_byte_transfers_checked": true,
+          "filter_history_preserved": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "normal",
+        "variant": "editor-enabled",
+        "fixture": "test_center_native_editor.mm",
+        "result": {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "concurrent_render_reattach_cycles": 128,
+          "filter_display_cases": 65,
+          "worker_tick_idle_skipped_gui": true,
+          "off_main_destroy_preserves_state": true,
+          "control_changes": 2,
+          "hints": 3,
+          "resize_notifications": 129,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "plain",
+        "fixture": "test_center_engine_loader.mm",
+        "result": {
+          "status": "passed",
+          "intact_original_engine_loaded": true,
+          "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+          "actual_engine_wrapper_allocated_and_freed": true,
+          "callback_slots_exercised": 20,
+          "state_saves": 1200,
+          "state_restores": 240,
+          "failed_read_preserves_state": true,
+          "parameter_calls": 1200,
+          "stereo_frames": 140700,
+          "fl_application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "plain",
+        "fixture": "test_center_engine_stream.mm",
+        "result": {
+          "status": "passed",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 2,
+          "short_count_success_rejections": 2,
+          "two_four_byte_transfers_checked": true,
+          "filter_history_preserved": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "editor-disabled",
+        "fixture": "test_center_engine_loader.mm",
+        "result": {
+          "status": "passed",
+          "intact_original_engine_loaded": true,
+          "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+          "actual_engine_wrapper_allocated_and_freed": true,
+          "callback_slots_exercised": 20,
+          "state_saves": 1200,
+          "state_restores": 240,
+          "failed_read_preserves_state": true,
+          "parameter_calls": 1200,
+          "stereo_frames": 140700,
+          "fl_application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "editor-disabled",
+        "fixture": "test_center_engine_stream.mm",
+        "result": {
+          "status": "passed",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 2,
+          "short_count_success_rejections": 2,
+          "two_four_byte_transfers_checked": true,
+          "filter_history_preserved": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      {
+        "mode": "sanitized",
+        "variant": "editor-enabled",
+        "fixture": "test_center_native_editor.mm",
+        "result": {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "concurrent_render_reattach_cycles": 128,
+          "filter_display_cases": 65,
+          "worker_tick_idle_skipped_gui": true,
+          "off_main_destroy_preserves_state": true,
+          "control_changes": 2,
+          "hints": 3,
+          "resize_notifications": 129,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      }
+    ],
+    "signed_products": 16
+  },
+  "full_plugin_equivalence": false
+}
