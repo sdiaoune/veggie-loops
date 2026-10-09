@@ -19,8 +19,11 @@
   "test_source": "test_balance_object_alias.cpp",
   "DSP_math_changed": false,
   "frame_cap": 1024,
-  "public_working_and_fresh_compile": "pending",
+  "public_working_and_fresh_compile": "accepted: four strictly signed arm64 products; alias and existing API checks pass in both layouts",
   "Original_modules_loaded_or_called": false,
   "Original_native_ABI_audio_class_full_verified": false,
-  "full_plugin_equivalence": false
+  "full_plugin_equivalence": false,
+  "fresh_code_commit": "7eab456a680c36c9afd0bcd35db735e227c14271",
+  "retained_public_runtime_receipt_sha256": "96d22442bbe1549f1a8850f6c7299b7eea49b62eb178d34d250832994369fe34",
+  "public_replay_actual_steps": 25
 }

@@ -18,3 +18,5 @@ codesign --verify --strict /tmp/vl-balance-alias
 ```
 
 The fixture includes the own implementation so its pointers refer to legal live members. Its historical comparison macro is used with the retained pre-fix implementation; the default build exercises the repaired contract. No commercial plugin or private analysis files are needed for the default build.
+
+The public working tree and a clean checkout of code commit `7eab456a680c36c9afd0bcd35db735e227c14271` both passed the alias and existing API checks. All four public-replay products were ad-hoc signed, strictly verified and checked as arm64; all seven selected source/document files stayed exact during each run and the clean checkout remained unmodified. Retained replay receipt: SHA256 `96d22442bbe1549f1a8850f6c7299b7eea49b62eb178d34d250832994369fe34`. This final update changes only documentation and validation metadata.
