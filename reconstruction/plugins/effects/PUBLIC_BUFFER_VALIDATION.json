@@ -1,0 +1,26 @@
+{
+  "schema": "VL-Balance-own-buffer-validation-v1",
+  "date_utc": "2026-10-09",
+  "scope": "own C API buffer handling only",
+  "platform": "macOS arm64",
+  "two_non_author_Source_reviews": "accepted revised fixture and unchanged alias guards",
+  "own_actual_compile_sign_arch_run": "three strict arm64 products passed",
+  "baseline_old_alias_reproduced": {
+    "volume_get": 256,
+    "overwrites_pan": true
+  },
+  "repaired_atomic_alias_rejections": 9,
+  "positive_external_adjacent_and_inplace_checks": true,
+  "existing_API_regression_passed": true,
+  "implementation_source_files": [
+    "balance_plugin.cpp",
+    "balance_plugin.h"
+  ],
+  "test_source": "test_balance_object_alias.cpp",
+  "DSP_math_changed": false,
+  "frame_cap": 1024,
+  "public_working_and_fresh_compile": "pending",
+  "Original_modules_loaded_or_called": false,
+  "Original_native_ABI_audio_class_full_verified": false,
+  "full_plugin_equivalence": false
+}

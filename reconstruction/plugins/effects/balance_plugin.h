@@ -10,6 +10,9 @@ extern "C" {
 // not the FL native, VST, or AU ABI and does not export a commercial plugin ID.
 // Each instance requires serialized calls or the host's mix lock; mutable
 // parameter, render, save and restore operations are not internally synchronized.
+// Caller buffers must be live and suitably aligned. Nonempty input/output spans
+// must not overlap instance storage. Rejection preserves the instance and outputs.
+// Meter outputs must also be separate. Render buffers may be exactly identical.
 typedef struct VLBalancePlugin VLBalancePlugin;
 
 VLBalancePlugin* vl_balance_create(void);
