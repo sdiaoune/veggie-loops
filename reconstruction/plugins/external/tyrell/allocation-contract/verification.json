@@ -1,0 +1,98 @@
+{
+  "status": "caller_supplied_contract_source_validation_recipe_see_separate_validation_record",
+  "scope": "caller_supplied_model_and_controlled_callbacks_only",
+  "compiled_sources": [
+    {
+      "name": "allocation_gate.hpp",
+      "sha256": "5de1513925d62752d5a64679bb640d1e8a9004aa4bcded740fff6fe5ea7dacd0",
+      "bytes": 5601
+    },
+    {
+      "name": "allocation_provider.hpp",
+      "sha256": "09702182e50e76d07c6612f5bfc4b1f3dfa3fa97f8e7341527d5df37fcc6b8ce",
+      "bytes": 4761
+    },
+    {
+      "name": "test_fake_ranges.cpp",
+      "sha256": "edc5d3dbc08d15fd0d93897938bb23c8d018e697cc49949464d2135337afd970",
+      "bytes": 3759
+    },
+    {
+      "name": "test_mock_provider.cpp",
+      "sha256": "1f0c8117dd17b2304e1e57946642f9a000480e5f754bacbf659afb2624a2bf99",
+      "bytes": 9242
+    }
+  ],
+  "all_source_files": [
+    {
+      "name": "allocation_gate.hpp",
+      "sha256": "5de1513925d62752d5a64679bb640d1e8a9004aa4bcded740fff6fe5ea7dacd0",
+      "bytes": 5601
+    },
+    {
+      "name": "allocation_provider.hpp",
+      "sha256": "09702182e50e76d07c6612f5bfc4b1f3dfa3fa97f8e7341527d5df37fcc6b8ce",
+      "bytes": 4761
+    },
+    {
+      "name": "test_fake_ranges.cpp",
+      "sha256": "edc5d3dbc08d15fd0d93897938bb23c8d018e697cc49949464d2135337afd970",
+      "bytes": 3759
+    },
+    {
+      "name": "test_mock_provider.cpp",
+      "sha256": "1f0c8117dd17b2304e1e57946642f9a000480e5f754bacbf659afb2624a2bf99",
+      "bytes": 9242
+    },
+    {
+      "name": "expectations.json",
+      "sha256": "bdd271fecc2409dcf3ea70075f012822b91a1dd0b344ea230f28e0f70fc00817",
+      "bytes": 438
+    },
+    {
+      "name": "README.md",
+      "sha256": "524c1dfcc29cf35203c03fbd0a4b7f171f68961b94dcd4a51e87a7c70d9ddb0c",
+      "bytes": 3861
+    },
+    {
+      "name": "verify.py",
+      "sha256": "ca68c7cc3ee8de11044ee764f2552079a0eefac92a781d9f068a05815f760d1e",
+      "bytes": 14912
+    }
+  ],
+  "required_profiles": [
+    "ranges-normal",
+    "ranges-fatal",
+    "provider-normal",
+    "provider-fatal"
+  ],
+  "expected_results": {
+    "ranges": {
+      "status": "passed_fake_range_model_only",
+      "rejections": 20,
+      "live_allocator_or_original_called": false,
+      "live_bounds_certified": false
+    },
+    "provider": {
+      "status": "passed_controlled_provider_callbacks_only",
+      "cases": 25,
+      "shared_production_callback_helper": true,
+      "live_allocator_or_original_called": false,
+      "live_bounds_certified": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "expected_commands": 24,
+  "expected_own_signed_x86_products": 4,
+  "dependency_model": "eight local package files plus standard Python/macOS clang++/codesign/lipo; no private/original/SDK path data required",
+  "historical_mock_reference": {
+    "file_basename": "test_recipe_failures.py",
+    "sha256": "cb06003088fe7b446e3071a0fa79f5219e5b67e74332697783d4e97253af926e",
+    "bytes": 11778,
+    "cases": 18,
+    "description": "private review-only historical reference; not a dependency or reproduced new recipe coverage"
+  },
+  "native_allocator_original_class_factory_state_audio_GUI_RT_or_full_verified": false,
+  "full_plugin_equivalence": false,
+  "live_bounds_certified": false
+}

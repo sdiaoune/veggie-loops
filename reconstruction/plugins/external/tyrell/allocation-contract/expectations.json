@@ -1,0 +1,16 @@
+{
+  "ranges": {
+    "status": "passed_fake_range_model_only",
+    "rejections": 20,
+    "live_allocator_or_original_called": false,
+    "live_bounds_certified": false
+  },
+  "provider": {
+    "status": "passed_controlled_provider_callbacks_only",
+    "cases": 25,
+    "shared_production_callback_helper": true,
+    "live_allocator_or_original_called": false,
+    "live_bounds_certified": false,
+    "full_plugin_equivalence": false
+  }
+}
