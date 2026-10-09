@@ -1,0 +1,174 @@
+{
+  "schema": "vl_labs_meter_standalone_source_contract_v1",
+  "status": "public_working_source_contract_replay_accepted_fresh_checkout_pending",
+  "files": [
+    {
+      "path": "meter.cpp",
+      "sha256": "69d78c566bccdb396848e759a0faca1588d63251e1a184331d24ba9f1491845f",
+      "bytes": 5838
+    },
+    {
+      "path": "meter.hpp",
+      "sha256": "8aa24c10eca63baeef7b77320872213d7e5e39575231033e8e9d06ce9859c654",
+      "bytes": 1954
+    },
+    {
+      "path": "test_meter_contract.cpp",
+      "sha256": "aa7c692e52e65db19756fda7f4ee88ec230c68bc46e3d461888d74159d5d8122",
+      "bytes": 4271
+    },
+    {
+      "path": "contract_boundaries.hpp",
+      "sha256": "337b211639e5554f02a6a37a32f5945b27749b6b0cb45173ef5a36aa1104fbe0",
+      "bytes": 11664
+    },
+    {
+      "path": "expected-results.json",
+      "sha256": "d54ecee6f12ae33baf44da11a7e6170cf08d4f430e7f0d2c96106f23b67d04df",
+      "bytes": 269
+    },
+    {
+      "path": "semantic-mutants.json",
+      "sha256": "3b088be8e20e5920cd16d52d3235c9a1033d2189f3323d11168fb5283c184f31",
+      "bytes": 5942
+    },
+    {
+      "path": "verify.py",
+      "sha256": "8a55e63b8e81d39c4e7ec438f2aa5517ac3b74c739fb33ea78ae3747d4eae9ce",
+      "bytes": 19681
+    },
+    {
+      "path": "README.md",
+      "sha256": "145304e1dcf0c3a81e6eca20d783e20a6ba690247041a082f0002582dd75f9b7",
+      "bytes": 6099
+    }
+  ],
+  "scope": {
+    "original_called": false,
+    "native_equivalence": false,
+    "full_plugin_equivalence": false,
+    "audio_reconstruction": false,
+    "format_reconstruction": false
+  },
+  "planned_counts": {
+    "positive_profiles": 3,
+    "fatal_semantic_negatives": 9,
+    "signed_strict_arm64_products": 12
+  },
+  "per_positive_typed_counts": {
+    "lookup_boundary_cases": 16,
+    "transfer_boundary_cases": 4,
+    "state_boundary_cases": 9,
+    "atomic_rejections": 128
+  },
+  "compile_inputs": [
+    "meter.cpp",
+    "meter.hpp",
+    "test_meter_contract.cpp",
+    "contract_boundaries.hpp"
+  ],
+  "standalone_requirements": [
+    "Python >=3.9 stdlib",
+    "macOS arm64 for source replay",
+    "clang++ C++20 with ASan/UBSan/float-cast-overflow",
+    "codesign",
+    "lipo"
+  ],
+  "original_private_or_SDK_inputs_required": false,
+  "retained_exact_inputs": {
+    "meter.cpp": "69d78c566bccdb396848e759a0faca1588d63251e1a184331d24ba9f1491845f",
+    "meter.hpp": "8aa24c10eca63baeef7b77320872213d7e5e39575231033e8e9d06ce9859c654",
+    "test_meter_contract.cpp": "aa7c692e52e65db19756fda7f4ee88ec230c68bc46e3d461888d74159d5d8122",
+    "contract_boundaries.hpp": "337b211639e5554f02a6a37a32f5945b27749b6b0cb45173ef5a36aa1104fbe0",
+    "expected-results.json": "d54ecee6f12ae33baf44da11a7e6170cf08d4f430e7f0d2c96106f23b67d04df",
+    "semantic-mutants.json": "3b088be8e20e5920cd16d52d3235c9a1033d2189f3323d11168fb5283c184f31"
+  },
+  "historical_private_proofs_not_required_reads": [
+    {
+      "role": "combined_private_source_runtime_acceptance",
+      "sha256": "4f0d71b4dac03ff361e1320256e90a0fced22c8ca972d23f4cf993bb92dec561",
+      "bytes": 2031
+    },
+    {
+      "role": "root_retained_runtime_metadata_review",
+      "sha256": "628a8520a8df539bd360d08d0c17bb2714678f3fa926aad7177d63ad43f50e4e",
+      "bytes": 199306
+    },
+    {
+      "role": "qualified_first_completed_run_metadata",
+      "sha256": "b45e22576af312e5356171272c07a67bc2b33e645d147a2739d1ddd90b169e37",
+      "bytes": 5396
+    },
+    {
+      "role": "second_independent_copied_source_runtime",
+      "sha256": "615170fd65a04a5ad1183d5b9cd073bd2545a91e5849c3364621806d93978317",
+      "bytes": 22579
+    },
+    {
+      "role": "retained_ineligible_first_wrapper_failure",
+      "sha256": "2df808d956319355fe67bf70e6612c8ac461c7bfec73a04386cfaf4ce65447aa",
+      "bytes": 4214
+    }
+  ],
+  "old_first_wrapper_failure_rewritten_or_eligible": false,
+  "public_packaging_recipe_guard_or_check_only_executed": true,
+  "public_packaging_compiler_signature_or_product_executed": true,
+  "public_packaging_runtime_acceptance": true,
+  "full": false,
+  "historical_prospective_source_identities_before_working_receipt": [
+    {
+      "path": "meter.cpp",
+      "sha256": "69d78c566bccdb396848e759a0faca1588d63251e1a184331d24ba9f1491845f",
+      "bytes": 5838
+    },
+    {
+      "path": "meter.hpp",
+      "sha256": "8aa24c10eca63baeef7b77320872213d7e5e39575231033e8e9d06ce9859c654",
+      "bytes": 1954
+    },
+    {
+      "path": "test_meter_contract.cpp",
+      "sha256": "aa7c692e52e65db19756fda7f4ee88ec230c68bc46e3d461888d74159d5d8122",
+      "bytes": 4271
+    },
+    {
+      "path": "contract_boundaries.hpp",
+      "sha256": "337b211639e5554f02a6a37a32f5945b27749b6b0cb45173ef5a36aa1104fbe0",
+      "bytes": 11664
+    },
+    {
+      "path": "expected-results.json",
+      "sha256": "d54ecee6f12ae33baf44da11a7e6170cf08d4f430e7f0d2c96106f23b67d04df",
+      "bytes": 269
+    },
+    {
+      "path": "semantic-mutants.json",
+      "sha256": "3b088be8e20e5920cd16d52d3235c9a1033d2189f3323d11168fb5283c184f31",
+      "bytes": 5942
+    },
+    {
+      "path": "verify.py",
+      "sha256": "8a55e63b8e81d39c4e7ec438f2aa5517ac3b74c739fb33ea78ae3747d4eae9ce",
+      "bytes": 19681
+    },
+    {
+      "path": "README.md",
+      "sha256": "79e05c91398dd80732823ffabf76498f6cc0ad7287bd384c1b2ca5d3aa63d85a",
+      "bytes": 5684
+    }
+  ],
+  "public_working_receipt": {
+    "sha256": "a315f63f6156a5664d73363d0d5f66153d4d4fa4f213f708aa4203f7bb6482bc",
+    "bytes": 372972,
+    "source_only": true,
+    "positive_profiles": 3,
+    "fatal_semantic_negatives": 9,
+    "signed_strict_arm64_products": 12,
+    "guard_refusals": 4,
+    "source_closure_identities": 9,
+    "final_product_sign_strict_arch_checks": 36,
+    "original_called": false,
+    "native_equivalence": false,
+    "full_plugin_equivalence": false
+  }
+}

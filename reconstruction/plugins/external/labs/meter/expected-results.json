@@ -1,0 +1,10 @@
+{
+  "status": "passed_own_meter_source_contract_v2",
+  "lookup_boundary_cases": 16,
+  "transfer_boundary_cases": 4,
+  "state_boundary_cases": 9,
+  "atomic_rejections": 128,
+  "original_called": false,
+  "native_equivalence": false,
+  "full_plugin_equivalence": false
+}
