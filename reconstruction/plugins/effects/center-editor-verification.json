@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "component": "VL Center optional independently written AppKit editor and separate native factory wrapper",
+  "status": "verified_partial_optional_editor_independently_accepted_maintained_rebind",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/center_editor.h": "9fd18903f4964bc16b8e5ed2c4296ea2480f791d6fd10ac937e5d340966d5b62",
+    "reconstruction/plugins/effects/center_editor.mm": "cb4e22dfa51e4afacd1fad8333a8bba7105016034704d8e13ff170ec33965e9b",
+    "reconstruction/plugins/effects/center_native_editor_candidate.h": "e6ab795d2ec19d26b234a69ce18497b705a6a1fa8573ec4d48bc109f169b79d4",
+    "reconstruction/plugins/effects/center_native_editor_candidate.cpp": "bf7b3f122c32597728f73e03226144e9529e64bb639153c98e5fe0adbea22a9c",
+    "reconstruction/plugins/effects/test_center_editor.mm": "974ff446a37d0d526adfcce61844e9de1f9f2cef6db4b5c67c19605f22ebd79b",
+    "reconstruction/plugins/effects/test_center_native_editor.mm": "eec8750c11bd41f767dfb13780c85fb29e468fc9e369375660d77ee9ef078d28",
+    "reconstruction/plugins/effects/verify_center_editor.sh": "d28852eec22084d380280fd96c207bb85c7762a7ab550b53e2b31de32d159ef5",
+    "reconstruction/plugins/effects/CENTER_EDITOR.md": "9a0bcf14aaddd7d7b4459b15ae98adfe719b43c5bbc93330c1c0c3ff97b982f1"
+  },
+  "dependency_sha256": {
+    "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+    "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+    "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+    "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
+    "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
+    "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "numerical_manifest": "center-verification.json",
+  "default_native_manifest": "center-native-verification.json",
+  "engine_sha256": {
+    "universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "command": "./reconstruction/plugins/effects/verify_center_editor.sh",
+  "checks": {
+    "standalone_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "automation_display_cases": 256,
+      "filter_display_cases": 514,
+      "parameter_control_changes": 258,
+      "refresh_preserves_history": true,
+      "bypass_preserves_history": true,
+      "notifications_after_unlock": true,
+      "worker_ui_calls_skipped": true,
+      "off_main_destroy_preserves_view": true,
+      "native_editor_integration": false,
+      "full_plugin_equivalence": false
+    },
+    "actual_engine_host_and_plugin_adapters": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "concurrent_render_reattach_cycles": 128,
+      "filter_display_cases": 65,
+      "worker_tick_idle_skipped_gui": true,
+      "off_main_destroy_preserves_state": true,
+      "control_changes": 2,
+      "hints": 3,
+      "resize_notifications": 129,
+      "source_gui_resources_copied": false,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    },
+    "same_conditional_wrapper_default_loader": {
+      "status": "passed",
+      "intact_original_engine_loaded": true,
+      "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+      "actual_engine_wrapper_allocated_and_freed": true,
+      "callback_slots_exercised": 20,
+      "state_saves": 1200,
+      "state_restores": 240,
+      "failed_read_preserves_state": true,
+      "parameter_calls": 1200,
+      "stereo_frames": 140700,
+      "fl_application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "same_conditional_wrapper_default_real_stream": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrapper": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 128,
+      "state_restores": 128,
+      "failed_hresult_full_count_rejections": 2,
+      "short_count_success_rejections": 2,
+      "two_four_byte_transfers_checked": true,
+      "filter_history_preserved": true,
+      "application_host_created": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "author_concurrent_replay": {
+    "cycles": 128,
+    "centering_enabled": false,
+    "scope": "Bypass bitwise-copy native rendering concurrent with UI reattachment/refresh;does not exercise retained-history writes"
+  },
+  "independent_enabled_history_replay": {
+    "report": "center-editor-independent.json",
+    "cycles": 128,
+    "centering_enabled": true,
+    "sample_rate": 44100,
+    "initial_history": "fresh reset",
+    "reference": "Every native8-frame worker block bitwise compared with separate worker-owned C API reference",
+    "exit_code": 0,
+    "critic_fixture_sha256": "bfb493f9ab555e95d5d6a57b1b92f88ccd7a43cc68894455ff45fc9ed150bef1",
+    "critic_script_sha256": "56d517b1c83fc5c0081da7b81e74ca052c6612b2c5e99d0608574f195a639e7d",
+    "threadsanitizer_exit_code": 0,
+    "threadsanitizer_scope": "Unchanged new module and critic fixture instrumented; original FLEngine is not instrumented; this bounded run is not a general concurrency/RT certificate",
+    "reproduction_scope": "Supplemental critic fixture retained privately;not part of maintained author script counters"
+  },
+  "private_candidate_review": {
+    "status": "accepted",
+    "report": "center-editor-independent.json",
+    "reviewer": "Independent mixer_dsp critic",
+    "all_four_canonical_checks": true,
+    "additional_enabled_history_and_tsan": true,
+    "blocking_defects": [],
+    "visual_review": "readable own generated offscreen bitmap"
+  },
+  "source_review": [
+    "All optional dispatch0/Idle/destruction/hint branches check main before editor/pending/header GUI reads.",
+    "Tick/MIDI tick are no-ops; worker numerical getters remain valid under caller serialization and do not inspect the editor.",
+    "View refresh snapshots enable and all four retained-state doubles within one paired host mix lock; checkbox changes lock numerical writes and emit changed/hint only after unlock.",
+    "Editor/context/numerical ownership remains live until successful main destruction; tested worker refusal preserves state/view both before and after first attachment.",
+    "Native readouts and checkbox use the accepted bounded numerical API; attachment itself does not change numerical/history state.",
+    "Default build of the conditional wrapper retains the accepted loader/32-bit stream behavior; both default regressions reproduced."
+  ],
+  "caller_contracts": [
+    "Every view operation and optional-build native destruction requires main,including before attachment.",
+    "Off-main destruction refuses without release;native voidDestroyObject requires keeping native/engine wrappers,host/context/numerical/module alive for main retry.",
+    "Every numerical/getter/state/render access serialized or protected by host mix lock;valid paired CPP32/33 host methods required.",
+    "View refresh snapshots enable and all4double runtime fields under one mix lock;checkbox mutation under lock,notifications after unlocking.",
+    "Idle/attachment/hint check main before GUI-owned state;tick/MIDI tick noops.",
+    "Bounded numerical,name,storage,provider and default native contracts unchanged."
+  ],
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fobjc-arc -framework Cocoa for AppKit build",
+    "-DVL_CENTER_APPKIT_EDITOR=1 for optional wrapper"
+  ],
+  "promotion": {
+    "runtime_headers_tests_byte_identical": true,
+    "script_changes": [
+      "public script name",
+      "maintained source input paths",
+      "separate ignored work output path"
+    ],
+    "existing17_center_published_paths_unchanged": true,
+    "maintained_path_rebind_status": "accepted_root_independent_copy_replay",
+    "root_owns_final_rebind_and_git": true,
+    "root_review": "root-center-editor-final-independent.json"
+  },
+  "actual_fl_application_created": false,
+  "original_gui_equivalence": false,
+  "general_realtime_concurrency_certificate": false,
+  "unresolved": [
+    "Original Pascal/VCL/resources/hints/metadata/name/events/remaining dispatch parity",
+    "Actual FL application/project/mixer lifecycle",
+    "Extra complete/deleting C++ destructor slots and general failed-write/provider behavior",
+    "x86/VST/AU,realtime or unsynchronized concurrency",
+    "Whole-plugin equivalence"
+  ]
+}
