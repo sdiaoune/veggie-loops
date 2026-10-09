@@ -34,13 +34,21 @@ void hostUnlock(void* context){auto& instance=*static_cast<Instance*>(context);i
 void hostChanged(void* context,int32_t index,int32_t value){auto& instance=*static_cast<Instance*>(context);if(auto f=hostMethod<void(*)(void*,intptr_t,int32_t,int32_t)>(instance,1))f(instance.host,instance.header.hostTag,index,value);}
 void hostHint(void* context,const char* text){auto& instance=*static_cast<Instance*>(context);if(auto f=hostMethod<void(*)(void*,intptr_t,const char*)>(instance,2))f(instance.host,instance.header.hostTag,text);}
 #endif
-void destroy(Plugin* plugin){if(plugin){
+bool finishLifetime(Plugin* plugin){
+  if(!plugin)return false;
 #if defined(VL_MUTE2_APPKIT_EDITOR)
-  if(!vl_mute2_editor_main_thread())return;
-  if(!vl_mute2_editor_destroy(object(plugin).editor))return;
+  if(!vl_mute2_editor_main_thread())return false;
+  if(!vl_mute2_editor_destroy(object(plugin).editor))return false;
 #endif
-  vl_mute2_destroy(object(plugin).numerical);delete &object(plugin);
-}}
+  auto* instance=&object(plugin);
+  vl_mute2_destroy(instance->numerical);
+  instance->numerical=nullptr;
+  instance->~Instance();
+  return true;
+}
+void completeDestructor(Plugin* plugin){(void)finishLifetime(plugin);}
+void destroy(Plugin* plugin){if(finishLifetime(plugin))::operator delete(static_cast<void*>(plugin));}
+void deletingDestructor(Plugin* plugin){destroy(plugin);}
 intptr_t dispatch(Plugin* plugin,intptr_t id,intptr_t,intptr_t value){
 #if defined(VL_MUTE2_APPKIT_EDITOR)
   if(id==0){if(!vl_mute2_editor_main_thread())return 0;auto& instance=object(plugin);
@@ -102,7 +110,7 @@ int32_t voiceEvent(Plugin*,intptr_t,intptr_t,intptr_t,intptr_t){return 0;}
 int32_t voiceRender(Plugin*,intptr_t,float*,int32_t& length){length=0;return 0;}
 void midi(Plugin*,int32_t&){}
 void message(Plugin*,intptr_t){}
-const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,voice,voiceEnd,voiceEnd,voiceEvent,voiceRender,tick,tick,midi,message,voiceEvent,voiceEnd,destroy,destroy};
+const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,voice,voiceEnd,voiceEnd,voiceEvent,voiceRender,tick,tick,midi,message,voiceEvent,voiceEnd,completeDestructor,deletingDestructor};
 }
 extern "C" veggie_loops::balance::native::Plugin* CreatePlugInstance(void* host,intptr_t hostTag){
   auto* instance=new(std::nothrow) Instance;if(!instance)return nullptr;

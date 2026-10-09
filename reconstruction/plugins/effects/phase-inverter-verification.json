@@ -10,17 +10,17 @@
     "reconstruction/plugins/effects/test_phase_inverter_factory.mm": "1c2ccd5521b3e0557f7d46e2fcf0468ca50ae7ac3ac41b1b1c4d6f2691bdef3a",
     "reconstruction/plugins/effects/verify_phase_inverter.sh": "f7d040f6163a811fe9195a3145995f8aea83b7710eb65047698df27c5282bc07",
     "reconstruction/plugins/effects/phase_inverter_native_abi.h": "a925b4b175d2606453ee619baaabb182f8fca43e64ef76ec18c3dee21ddb388f",
-    "reconstruction/plugins/effects/phase_inverter_native_abi.cpp": "044bfd3fc4924a6a6b6f71b0ad945315525c54ef1a7d68ce05a91dc3178bd9ba",
+    "reconstruction/plugins/effects/phase_inverter_native_abi.cpp": "072c29714e2c48282fff29c8a0614f95fb170f7b67d63d83325631d6bad0a308",
     "reconstruction/plugins/effects/test_phase_inverter_engine_loader.mm": "edd90afa4fea04d45296cf5d03c2dd43e2ce87fb7c02c3588b7d45a4cb38d41b",
     "reconstruction/plugins/effects/verify_phase_inverter_engine_loader.sh": "da7b953d595ffc4103f84ff59a0c4bea1ca5c5724255f3d9f972e0736294d581",
     "reconstruction/plugins/effects/test_phase_inverter_engine_stream.mm": "fd659efff18492f36f2900a963f43598e8fa4b891b944d738dae3de0c56cac0a",
     "reconstruction/plugins/effects/verify_phase_inverter_engine_stream.sh": "ba1b4b00ec18fdd5119b2640382a9e602ededbb0485aeac965aeb67500d64837",
     "reconstruction/plugins/effects/phase_inverter_editor.h": "aea02eee3b6310ef584a43397e838d5f7dcfa54cb86e8b04e387b0c1169afb34",
-    "reconstruction/plugins/effects/phase_inverter_editor.mm": "a3d13394b78b9d5edf713a281cff0012b297b393f745c6ed04078755bc27d15b",
+    "reconstruction/plugins/effects/phase_inverter_editor.mm": "42c186db284e31491bf62a533ee254f0bd8583c77e58f9b5e58d77d40ce9aa49",
     "reconstruction/plugins/effects/test_phase_inverter_editor.mm": "255033796726c98ddce5deed31d03e33e316665393522e89cae689e36f030624",
     "reconstruction/plugins/effects/verify_phase_inverter_editor.sh": "dc51a81a4784bf0d5ac9eadb082c58fe0205af66ff2e04d181ef0d2c28de6b5a",
-    "reconstruction/plugins/effects/PHASE_INVERTER.md": "5022bdc53b316653da4d4f63018221e36f16029c3df184ef7f1d5ea3ff1229e4",
-    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/PHASE_INVERTER.md": "539af7638dd922f99abf8bfd333497f10974d958993a8224c802aab55a6d8596",
+    "reconstruction/plugins/effects/balance_native_abi.h": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
     "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8",
     "reconstruction/plugins/effects/test_phase_inverter_native_editor.mm": "10f3989fdec3613f871512a35ee84b5834f7461300c9ea305b34806f40237df3"
   },
@@ -132,5 +132,32 @@
     "live FL application/project/mixer hosting, original VCL/hints equivalence and project/preset envelopes unverified",
     "x86_64 and VST/AU formats unimplemented",
     "optional independent AppKit editor uses actual engine adapters with synthetic host; original VCL/hints and full application UI unverified"
-  ]
+  ],
+  "historical_source_sha256_before_lifetime_repair": {
+    "reconstruction/plugins/effects/phase_inverter_plugin.h": "b0a6970f539d83b2838bdf56092671f224c4bac1c110245107d1b5380b19cb03",
+    "reconstruction/plugins/effects/phase_inverter_plugin.cpp": "5cb52854c9b38b0d091d97df36494beb4f5b8d39868e21764359556d545866f0",
+    "reconstruction/plugins/effects/test_phase_inverter_factory.mm": "1c2ccd5521b3e0557f7d46e2fcf0468ca50ae7ac3ac41b1b1c4d6f2691bdef3a",
+    "reconstruction/plugins/effects/verify_phase_inverter.sh": "f7d040f6163a811fe9195a3145995f8aea83b7710eb65047698df27c5282bc07",
+    "reconstruction/plugins/effects/phase_inverter_native_abi.h": "a925b4b175d2606453ee619baaabb182f8fca43e64ef76ec18c3dee21ddb388f",
+    "reconstruction/plugins/effects/phase_inverter_native_abi.cpp": "044bfd3fc4924a6a6b6f71b0ad945315525c54ef1a7d68ce05a91dc3178bd9ba",
+    "reconstruction/plugins/effects/test_phase_inverter_engine_loader.mm": "edd90afa4fea04d45296cf5d03c2dd43e2ce87fb7c02c3588b7d45a4cb38d41b",
+    "reconstruction/plugins/effects/verify_phase_inverter_engine_loader.sh": "da7b953d595ffc4103f84ff59a0c4bea1ca5c5724255f3d9f972e0736294d581",
+    "reconstruction/plugins/effects/test_phase_inverter_engine_stream.mm": "fd659efff18492f36f2900a963f43598e8fa4b891b944d738dae3de0c56cac0a",
+    "reconstruction/plugins/effects/verify_phase_inverter_engine_stream.sh": "ba1b4b00ec18fdd5119b2640382a9e602ededbb0485aeac965aeb67500d64837",
+    "reconstruction/plugins/effects/phase_inverter_editor.h": "aea02eee3b6310ef584a43397e838d5f7dcfa54cb86e8b04e387b0c1169afb34",
+    "reconstruction/plugins/effects/phase_inverter_editor.mm": "a3d13394b78b9d5edf713a281cff0012b297b393f745c6ed04078755bc27d15b",
+    "reconstruction/plugins/effects/test_phase_inverter_editor.mm": "255033796726c98ddce5deed31d03e33e316665393522e89cae689e36f030624",
+    "reconstruction/plugins/effects/verify_phase_inverter_editor.sh": "dc51a81a4784bf0d5ac9eadb082c58fe0205af66ff2e04d181ef0d2c28de6b5a",
+    "reconstruction/plugins/effects/PHASE_INVERTER.md": "5022bdc53b316653da4d4f63018221e36f16029c3df184ef7f1d5ea3ff1229e4",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8",
+    "reconstruction/plugins/effects/test_phase_inverter_native_editor.mm": "10f3989fdec3613f871512a35ee84b5834f7461300c9ea305b34806f40237df3"
+  },
+  "own_lifetime_repair": {
+    "verification": "mute-phase-lifetime/verification.json",
+    "two_independent_runtime_reviews": true,
+    "public_geometry_replay_passed": true,
+    "original_extra_destructor_equivalence": false,
+    "full_plugin_equivalence": false
+  }
 }

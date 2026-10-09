@@ -68,5 +68,5 @@ extern "C" void vl_mute2_editor_hint(void* editor,int32_t index,int32_t value){
 extern "C" int vl_mute2_editor_main_thread(void){return NSThread.isMainThread;}
 extern "C" int vl_mute2_editor_destroy(void* editor){
   if(!editor)return 1;if(!NSThread.isMainThread)return 0;
-  auto* view=(__bridge_transfer VLMute2EditorView*)editor;[view removeFromSuperview];view.numerical=nullptr;return 1;
+  auto* view=(__bridge_transfer VLMute2EditorView*)editor;[view removeFromSuperview];view.numerical=nullptr;view.callbacks={};view.enabled.target=nil;view.channels.target=nil;return 1;
 }

@@ -91,3 +91,9 @@ No original resources or artwork are included. Original VCL editor/hints equival
 application/project/mixer integration, application state-stream routing,
 x86_64 and VST/AU packaging remain open. This is a verified numerical and native
 loader reconstruction milestone; whole-plugin equivalence is not certified.
+
+The separate [source lifetime repair](mute-phase-lifetime/README.md) distinguishes
+complete/caller raw deallocation from deleting destruction and clears retained
+editor callbacks/context and targets. Two independent runtime reviews and the
+public recipe passed. The ordinary engine regressions exercise 20 callbacks;
+they do not certify the original extra C++ destructor slots.

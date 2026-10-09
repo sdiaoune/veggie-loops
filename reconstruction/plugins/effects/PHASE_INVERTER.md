@@ -84,3 +84,9 @@ VCL controls, artwork and resources are not
 redistributed. Full application/project/mixer hosting, original editor/hint
 parity, project/preset envelopes, x86_64 and VST/AU formats remain open.
 Whole-plugin equivalence is not certified.
+
+The separate [source lifetime repair](mute-phase-lifetime/README.md) distinguishes
+complete/caller raw deallocation from deleting destruction and clears retained
+editor callbacks/context and targets. Two independent runtime reviews and the
+public recipe passed. The ordinary engine regressions exercise 20 callbacks;
+they do not certify the original extra C++ destructor slots.

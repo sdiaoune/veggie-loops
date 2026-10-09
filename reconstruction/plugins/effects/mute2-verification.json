@@ -8,15 +8,15 @@
     "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
     "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
     "reconstruction/plugins/effects/mute2_native_abi.h": "8eae81d971b81ac4dc5e69a9a84a8e3429c35b50dcaf459ea22b6ebc3f8dcd31",
-    "reconstruction/plugins/effects/mute2_native_abi.cpp": "134b8fc9006c25c11a3632261853a4c2814a8b7550e7f4666abfbdbcb0bebd73",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "1c16b342c937bfe01b97fea006d15bdb6b34052137a3979a29f67f54b86eceda",
     "reconstruction/plugins/effects/test_mute2_factory.mm": "431cd142ad794baacb327d09876f880e262a0d785d2ed696ed4a92140ed02d9e",
     "reconstruction/plugins/effects/test_mute2_engine_loader.mm": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
     "reconstruction/plugins/effects/verify_mute2.sh": "9a8c0461fbe6d18d3b54a10c61219e6f49ce667f17c94a358bc234a85e6a0a88",
     "reconstruction/plugins/effects/verify_mute2_engine_loader.sh": "debe30cd1b46136c6db1bcb6fb628df1132d4de4fd6a1d1b4344b38469616316",
-    "reconstruction/plugins/effects/MUTE2.md": "fe2a741e34b4f19de60b75605ffd9f525dd2140dfe23120c3bcae7dc30ca9d81",
-    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/MUTE2.md": "a0a5b29aa7497e7a7b9e79fb0f6298b38cb759bc42495249a91bee0fb1675731",
+    "reconstruction/plugins/effects/balance_native_abi.h": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
     "reconstruction/plugins/effects/mute2_editor.h": "823d1ea8642ef0cabafffd096f612e56078a98bc0c2bc9a8509781b24e2f977b",
-    "reconstruction/plugins/effects/mute2_editor.mm": "320e8ed57aeb57b6272bd7b461f421d008e0dbb0e3380911f532d7e64e37f939",
+    "reconstruction/plugins/effects/mute2_editor.mm": "28f7f53dcfa24d85309aacc9c833aa1b94d947fcc0876f75a86999ee46ef08a4",
     "reconstruction/plugins/effects/test_mute2_editor.mm": "fef948c2dd7eff4627ccabe2b05163bd483127fba2c2d2d306de515231ced7ab",
     "reconstruction/plugins/effects/test_mute2_native_editor.mm": "b688a2e535bae4bc3f8704c691b1dc92c599119f4c33b4dde40283aff6ed910c",
     "reconstruction/plugins/effects/verify_mute2_editor.sh": "35ea119f73ba7071bfacd67feb4ddb8deda4166be18cd64fee515a336e45f7b5",
@@ -139,5 +139,32 @@
     "x86_64 and VST/AU packaging unimplemented",
     "GUI/hints/all native destruction in optional-editor builds main-thread; refused worker destruction preserves instance/view for main retry",
     "actual engine TStreamAdapter32-bit HRESULT/count stores verified; full application state routing and project/preset envelopes unexecuted"
-  ]
+  ],
+  "historical_source_sha256_before_lifetime_repair": {
+    "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
+    "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "8eae81d971b81ac4dc5e69a9a84a8e3429c35b50dcaf459ea22b6ebc3f8dcd31",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "134b8fc9006c25c11a3632261853a4c2814a8b7550e7f4666abfbdbcb0bebd73",
+    "reconstruction/plugins/effects/test_mute2_factory.mm": "431cd142ad794baacb327d09876f880e262a0d785d2ed696ed4a92140ed02d9e",
+    "reconstruction/plugins/effects/test_mute2_engine_loader.mm": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
+    "reconstruction/plugins/effects/verify_mute2.sh": "9a8c0461fbe6d18d3b54a10c61219e6f49ce667f17c94a358bc234a85e6a0a88",
+    "reconstruction/plugins/effects/verify_mute2_engine_loader.sh": "debe30cd1b46136c6db1bcb6fb628df1132d4de4fd6a1d1b4344b38469616316",
+    "reconstruction/plugins/effects/MUTE2.md": "fe2a741e34b4f19de60b75605ffd9f525dd2140dfe23120c3bcae7dc30ca9d81",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/mute2_editor.h": "823d1ea8642ef0cabafffd096f612e56078a98bc0c2bc9a8509781b24e2f977b",
+    "reconstruction/plugins/effects/mute2_editor.mm": "320e8ed57aeb57b6272bd7b461f421d008e0dbb0e3380911f532d7e64e37f939",
+    "reconstruction/plugins/effects/test_mute2_editor.mm": "fef948c2dd7eff4627ccabe2b05163bd483127fba2c2d2d306de515231ced7ab",
+    "reconstruction/plugins/effects/test_mute2_native_editor.mm": "b688a2e535bae4bc3f8704c691b1dc92c599119f4c33b4dde40283aff6ed910c",
+    "reconstruction/plugins/effects/verify_mute2_editor.sh": "35ea119f73ba7071bfacd67feb4ddb8deda4166be18cd64fee515a336e45f7b5",
+    "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
+    "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
+  },
+  "own_lifetime_repair": {
+    "verification": "mute-phase-lifetime/verification.json",
+    "two_independent_runtime_reviews": true,
+    "public_geometry_replay_passed": true,
+    "original_extra_destructor_equivalence": false,
+    "full_plugin_equivalence": false
+  }
 }

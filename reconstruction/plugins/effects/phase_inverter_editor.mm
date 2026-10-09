@@ -58,5 +58,5 @@ extern "C" void vl_phase_inverter_editor_hint(void* editor,int32_t index,int32_t
 extern "C" int vl_phase_inverter_editor_main_thread(void){return NSThread.isMainThread;}
 extern "C" int vl_phase_inverter_editor_destroy(void* editor){
   if(!editor)return 1;if(!NSThread.isMainThread)return 0;
-  auto* view=(__bridge_transfer VLPhaseInverterEditorView*)editor;[view removeFromSuperview];view.numerical=nullptr;return 1;
+  auto* view=(__bridge_transfer VLPhaseInverterEditorView*)editor;[view removeFromSuperview];view.numerical=nullptr;view.callbacks={};view.inversion.target=nil;return 1;
 }

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "status": "two_independently_accepted_own_lifetime_repair_and_public_geometry_replay_passed",
+  "full_plugin_equivalence": false,
+  "files": [
+    {
+      "path": "reconstruction/plugins/effects/mute2_native_abi.cpp",
+      "sha256": "1c16b342c937bfe01b97fea006d15bdb6b34052137a3979a29f67f54b86eceda",
+      "bytes": 6404,
+      "execution_path": "mute2_native_abi.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_native_abi.cpp",
+      "sha256": "072c29714e2c48282fff29c8a0614f95fb170f7b67d63d83325631d6bad0a308",
+      "bytes": 6648,
+      "execution_path": "phase_inverter_native_abi.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute2_editor.mm",
+      "sha256": "28f7f53dcfa24d85309aacc9c833aa1b94d947fcc0876f75a86999ee46ef08a4",
+      "bytes": 4757,
+      "execution_path": "mute2_editor.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_editor.mm",
+      "sha256": "42c186db284e31491bf62a533ee254f0bd8583c77e58f9b5e58d77d40ce9aa49",
+      "bytes": 4230,
+      "execution_path": "phase_inverter_editor.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_mute2_engine_loader.mm",
+      "sha256": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
+      "bytes": 11057,
+      "execution_path": "test_mute2_engine_loader.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_mute2_native_editor.mm",
+      "sha256": "b688a2e535bae4bc3f8704c691b1dc92c599119f4c33b4dde40283aff6ed910c",
+      "bytes": 9192,
+      "execution_path": "test_mute2_native_editor.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_phase_inverter_engine_loader.mm",
+      "sha256": "edd90afa4fea04d45296cf5d03c2dd43e2ce87fb7c02c3588b7d45a4cb38d41b",
+      "bytes": 11127,
+      "execution_path": "test_phase_inverter_engine_loader.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_phase_inverter_native_editor.mm",
+      "sha256": "10f3989fdec3613f871512a35ee84b5834f7461300c9ea305b34806f40237df3",
+      "bytes": 9280,
+      "execution_path": "test_phase_inverter_native_editor.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_phase_inverter_engine_stream.mm",
+      "sha256": "fd659efff18492f36f2900a963f43598e8fa4b891b944d738dae3de0c56cac0a",
+      "bytes": 7988,
+      "execution_path": "test_phase_inverter_engine_stream.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_native_abi.h",
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
+      "bytes": 3796,
+      "execution_path": "dependencies/balance_native_abi.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute2_editor.h",
+      "sha256": "823d1ea8642ef0cabafffd096f612e56078a98bc0c2bc9a8509781b24e2f977b",
+      "bytes": 1171,
+      "execution_path": "dependencies/mute2_editor.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute2_native_abi.h",
+      "sha256": "8eae81d971b81ac4dc5e69a9a84a8e3429c35b50dcaf459ea22b6ebc3f8dcd31",
+      "bytes": 1368,
+      "execution_path": "dependencies/mute2_native_abi.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute2_plugin.cpp",
+      "sha256": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
+      "bytes": 2950,
+      "execution_path": "dependencies/mute2_plugin.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute2_plugin.h",
+      "sha256": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
+      "bytes": 1824,
+      "execution_path": "dependencies/mute2_plugin.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_editor.h",
+      "sha256": "aea02eee3b6310ef584a43397e838d5f7dcfa54cb86e8b04e387b0c1169afb34",
+      "bytes": 1263,
+      "execution_path": "dependencies/phase_inverter_editor.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_native_abi.h",
+      "sha256": "a925b4b175d2606453ee619baaabb182f8fca43e64ef76ec18c3dee21ddb388f",
+      "bytes": 1258,
+      "execution_path": "dependencies/phase_inverter_native_abi.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_plugin.cpp",
+      "sha256": "5cb52854c9b38b0d091d97df36494beb4f5b8d39868e21764359556d545866f0",
+      "bytes": 2696,
+      "execution_path": "dependencies/phase_inverter_plugin.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/effects/phase_inverter_plugin.h",
+      "sha256": "b0a6970f539d83b2838bdf56092671f224c4bac1c110245107d1b5380b19cb03",
+      "bytes": 1835,
+      "execution_path": "dependencies/phase_inverter_plugin.h"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute-phase-lifetime/test_lifetime.mm",
+      "sha256": "73ca5c570f9528ce0ea5b7c2ce1b58652614ab66a29622c03d0a42761bd84749",
+      "bytes": 10323,
+      "execution_path": "test_lifetime.mm"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute-phase-lifetime/replay_lifetime.py",
+      "sha256": "685c53c0745ebe45dd14a0aed57e681749dcde79774095af77e2b00af90909dc",
+      "bytes": 17377,
+      "execution_path": "verify_lifetime.py"
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute-phase-lifetime/verify.py",
+      "sha256": "f682855afb9f86fd2f7b51521b63a4ccaa501bb928813f453f810b6d40890053",
+      "bytes": 3614
+    },
+    {
+      "path": "reconstruction/plugins/effects/mute-phase-lifetime/README.md",
+      "sha256": "d0ea680ba372da3d4f857f0bc5241ca6f8cae55b65a4b593244acb7196e65e51",
+      "bytes": 2564
+    }
+  ],
+  "source_profiles": 12,
+  "fatal_semantic_negatives": 10,
+  "native_outputs": 10,
+  "source_contract": "own C++/AppKit ownership only; complete retains raw allocation;0/21 free; borrowed host is retained; worker refusal preserves optional editor instances",
+  "two_independent_runtime_reviews": [
+    {
+      "reviewer": "root",
+      "sha256": "26e1c6cc341381cd86ff9c4bbba6f32579c51520ebaa9faa4db5226d5468880b",
+      "signatures": 40,
+      "canonical_scalars_equal_author": true
+    },
+    {
+      "reviewer": "mixer_dsp",
+      "sha256": "0ed6cef5dc724739bfd1a3c7badec74e1a36efa61e40ea4b348e0e27690dd0bc",
+      "signatures": 46,
+      "canonical_scalars_equal_author_and_root": true,
+      "own_borrowed_host_supplement": true
+    }
+  ],
+  "public_geometry_replay_passed": true,
+  "original_extra_destructor_equivalence": false,
+  "original_GUI_name_event_equivalence": false,
+  "actual_application_created": false,
+  "new_Mute_real_stream_proof": false,
+  "Python_optimization_refused_before_verification": true,
+  "fresh_git_checkout_replay_passed": false
+}

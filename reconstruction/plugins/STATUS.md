@@ -12,15 +12,13 @@ class/application/format/real-time equivalence remains unproved. The 146
 family/format/application obligations are tracked separately from the 317
 Mach-O binary corpus, which retains nested engines and runtime dependencies.
 
-A later source audit found an open retained-editor lifetime issue in Mute 2,
-Phase Inverter, Soft Clipper and Stereo Shaper: successful teardown
-leaves cached host callbacks/context and control targets in a retained view.
-The earlier lifetime checks did not exercise the retained hint route. Private
-repairs and independent reviews are underway; these editor routes are not
-certified safe by their published milestones. Balance now has a separate
-retained-view cleanup repair with two independent own-source reviews.
-Storage ownership in the other experimental factories' complete destructors
-is also under separate review.
+A source audit found retained-editor lifetime issues in four experimental
+factories. Mute 2 and Phase Inverter now clear retained callbacks/context and
+control targets, with two independent runtime reviews and a passing public
+recipe. Soft Clipper and Stereo Shaper still have open published retained-view
+issues; their private repairs have only source reviews. Balance has a separately
+accepted retained-view cleanup repair. Storage ownership in the other
+experimental factories' complete destructors remains under separate review.
 
 | Component | Independently built and checked milestone | Remaining work |
 | --- | --- | --- |
@@ -31,6 +29,7 @@ is also under separate review.
 | Fruity Mute 2 subset | Independent C ABI and experimental native factory; original-factory audio/state comparisons; intact engine loader, 20 callback slots, AppKit editor controls/automation, tick/thread/lifecycle checks | Original VCL/artwork parity, application/project/mixer and VL Studio integration |
 | Balance and Mute 2 engine streams | Both modules save/restore through actual original memory/stream classes and engine plugin wrappers; signed32 HRESULT and count32 sentinel/error checks | Application-created project/preset serialization and mixer execution |
 | Fruity Phase Inverter subset | Independent numerical core, experimental factory, intact engine loader/streams and own AppKit editor; native audio, state, tick, thread and lifecycle comparisons | Original VCL/artwork parity, full application/project/mixer and VL Studio integration |
+| [VL Mute 2 / Phase Inverter source lifetimes](effects/mute-phase-lifetime/README.md) | 12 source profiles,10 semantic negatives and10 native outputs; complete retains raw storage,0/21 free; retained view targets/context clear; two runtime critics including borrowed-host supplement and public recipe pass | Original extra destructors/class/GUI/names/events, arbitrary concurrency, application/project/mixer, x86/VST/AU, RT and whole-plugin equivalence |
 | Fruity Stereo Shaper subset | Source matrix/delay/phase processing, controls and state; experimental factory/intact engine loader, actual GetOutBuffer adapters/state streams, own AppKit editor and measured send registration; guarded allocation-failure checks | Original VCL, host cleanup ownership, full application/project/mixer and VL Studio integration |
 | [Fruity Soft Clipper numerical subset](effects/SOFT_CLIPPER.md) | Two controls, exponential knee/gain, meters and valid state; 31,480 control cases and 3,422,287 frames, with independently repaired result/object aliasing | Broader control/UI/dispatch behavior, actual application/project/mixer and VST/AU integration |
 | [Fruity Soft Clipper native bridge/editor](effects/SOFT_CLIPPER_NATIVE.md) | Own factory loaded by actual FLEngine DLL adapter; real state streams, 288 AppKit displays and repaired 256-case attachment/render locking independently replayed | Original VCL/resources, remaining dispatch/events/metadata, actual application/project/mixer, x86/VST/AU and whole-plugin equivalence |
