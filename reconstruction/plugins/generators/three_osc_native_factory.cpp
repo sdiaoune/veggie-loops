@@ -34,7 +34,13 @@ bool ensure(Instance&o){if(o.channel)return true;try{if(o.tables.empty()){o.tabl
  std::array<uint8_t,456>payload{};if(!vl_osc_core_save_payload(o.storage,payload.data(),payload.size())||!vl_osc_multimode_channel_restore(next,payload.data(),payload.size())){vl_osc_multimode_channel_destroy(next);return false;}vl_osc_multimode_channel_max_poly(next,o.max_poly);o.channel=next;return true;
  }catch(const std::bad_alloc&){return false;}}
 bool context(Instance&o,int32_t rate,double tempo,uint32_t ppq){if(rate<8000||rate>384000||!std::isfinite(tempo)||tempo<=0||tempo>1000||ppq<4||ppq>(1u<<20)||(o.channel&&vl_osc_multimode_channel_voice_count(o.channel)))return false;if(o.channel){vl_osc_multimode_channel_destroy(o.channel);o.channel=nullptr;}o.rate=rate;o.tempo=tempo;o.ppq=ppq;return true;}
-void destroy(Plugin*p){if(p)delete &instance(p);}
+// Complete destruction ends every owned resource/member lifetime but retains
+// the original allocation. After success the caller may only raw-deallocate;
+// a second plugin callback/destructor is invalid. Host/notes are borrowed.
+bool finishLifetime(Plugin*p){if(!p)return false;instance(p).~Instance();return true;}
+void completeDestructor(Plugin*p){(void)finishLifetime(p);}
+void destroy(Plugin*p){if(finishLifetime(p))::operator delete(static_cast<void*>(p));}
+void deletingDestructor(Plugin*p){destroy(p);}
 intptr_t dispatch(Plugin*p,intptr_t id,intptr_t,intptr_t value){auto&o=instance(p);if(id==4&&value>=8000&&value<=384000)context(o,int32_t(value),o.tempo,o.ppq);if(id==14&&value){uint32_t ppq;std::memcpy(&ppq,reinterpret_cast<const char*>(value)+8,4);context(o,o.rate,o.tempo,ppq);}if(id==13&&o.channel){std::array<double,2>time{};if(auto f=hostMethod<intptr_t(*)(void*,intptr_t,intptr_t,intptr_t,intptr_t)>(o,0)){f(o.host,o.header.tag,36,4,reinterpret_cast<intptr_t>(time.data()));vl_osc_multimode_channel_song_position(o.channel,time[0]);}}return 0;}
 void idle(Plugin*){}
 void state(Plugin*p,void*stream,int32_t save){auto&o=instance(p);if(!stream)return;void**functions=nullptr;std::memcpy(&functions,stream,8);if(!functions)return;std::array<uint8_t,456>payload{};uint32_t version=14,count=0;
@@ -53,7 +59,7 @@ int32_t rawRender(Plugin*,intptr_t,float*,int32_t&){return 0;}
 void tick(Plugin*p){auto&o=instance(p);if(o.channel)vl_osc_multimode_channel_new_tick(o.channel);}
 void midiTick(Plugin*){}void midi(Plugin*,int32_t&){}void message(Plugin*,intptr_t){}
 int32_t outputEvent(Plugin*,intptr_t,intptr_t,intptr_t,intptr_t){return 0;}void outputKill(Plugin*,intptr_t){}
-const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,trigger,release,kill,voiceEvent,rawRender,tick,midiTick,midi,message,outputEvent,outputKill,destroy,destroy};
+const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,trigger,release,kill,voiceEvent,rawRender,tick,midiTick,midi,message,outputEvent,outputKill,completeDestructor,deletingDestructor};
 }
 extern "C" Plugin* CreatePlugInstance(void*host,intptr_t tag){if(!host)return nullptr;try{auto result=std::make_unique<Instance>();result->header={&functions,tag,&metadata(),0,0,{}};result->host=host;result->storage=vl_osc_core_create(storageLR,nullptr);if(!result->storage)return nullptr;return &result.release()->header;}catch(const std::bad_alloc&){return nullptr;}}
 extern "C" int vl_private_osc_prepare(Plugin*p,int32_t rate,double tempo,uint32_t ppq){return p&&context(instance(p),rate,tempo,ppq)&&ensure(instance(p));}

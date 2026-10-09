@@ -12,8 +12,12 @@ if [ "$#" -ne 0 ]; then
 fi
 work_dir=${VL_CONTEXT_DELIVERY_WORK_DIR:-"$project_root/.tools/plugin-work/generators/context-delivery-public/canonical-$mode"}
 mkdir -p "$work_dir/VL 3 Osc"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $sanitize_flags -I "$source_dir" -dynamiclib -framework Accelerate "$source_dir/three_osc_native_factory.cpp" "$source_dir/three_osc_multimode_channel.cpp" "$source_dir/three_osc_sync_lfo.cpp" "$source_dir/three_osc_voice_lifecycle.cpp" "$source_dir/three_osc_declick.cpp" "$source_dir/three_osc_wrapper_core.cpp" "$source_dir/three_osc_engine.cpp" -o "$work_dir/VL 3 Osc/VL 3 Osc_X64.dylib"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $sanitize_flags -I "$source_dir" -framework Cocoa "$candidate_dir/test_three_osc_context_delivery.mm" "$source_dir/three_osc_legacy_tables.cpp" "$source_dir/three_osc_clock_context.cpp" -o "$work_dir/test_context_delivery"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $sanitize_flags -I "$source_dir" -dynamiclib -framework Accelerate "$source_dir/three_osc_native_factory.cpp" "$source_dir/three_osc_multimode_channel.cpp" "$source_dir/three_osc_sync_lfo.cpp" "$source_dir/three_osc_voice_lifecycle.cpp" "$source_dir/three_osc_declick.cpp" "$source_dir/three_osc_wrapper_core.cpp" "$source_dir/three_osc_engine.cpp" -o "$work_dir/VL 3 Osc/VL 3 Osc_X64.dylib"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $sanitize_flags -I "$source_dir" -framework Cocoa "$candidate_dir/test_three_osc_context_delivery.mm" "$source_dir/three_osc_legacy_tables.cpp" "$source_dir/three_osc_clock_context.cpp" -o "$work_dir/test_context_delivery"
+codesign --force --sign - "$work_dir/VL 3 Osc/VL 3 Osc_X64.dylib" >/dev/null 2>&1
+codesign --verify --strict "$work_dir/VL 3 Osc/VL 3 Osc_X64.dylib"
+codesign --force --sign - "$work_dir/test_context_delivery" >/dev/null 2>&1
+codesign --verify --strict "$work_dir/test_context_delivery"
 ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$work_dir/test_context_delivery" '/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib' "$work_dir/VL 3 Osc/VL 3 Osc_X64.dylib" "$work_dir/" > "$work_dir/result.json" 2> "$work_dir/stderr.log"
 python3 - "$work_dir" <<'END_PY'
 import json,sys

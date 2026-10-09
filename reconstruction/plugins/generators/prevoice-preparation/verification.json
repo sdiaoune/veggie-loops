@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "status": "passed_public_bounded_prevoice_preparation_with_reviewed_lifetimes",
+  "files": [
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/README.md",
+      "sha256": "0cb84104e9e1cf723e69c185e2fafc72553928de1476d0f8d3a9b08eaa9a5c0c",
+      "bytes": 2889,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/README.md"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/prevoice_cache.hpp",
+      "sha256": "b3eb7d7e6acf58f7a4aaada6ad7abff2564845d83ec7375986d02e6f786fac68",
+      "bytes": 5800,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/prevoice_cache.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/prevoice_channel.cpp",
+      "sha256": "c150b16f3e0e62c22d60d21eada09d66ae57a3e48adfe41b496e5f6e6c24fe28",
+      "bytes": 19462,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/prevoice_channel.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/prevoice_channel.hpp",
+      "sha256": "7c248a393c442f6a15103b3f27709e7c5abb379294b6bcafd17665649093e51b",
+      "bytes": 2416,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/prevoice_channel.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/prevoice_factory.cpp",
+      "sha256": "b3814a305603e64c607c72ae89671dd94460af543660883d8d2787bde21361e7",
+      "bytes": 12671,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/prevoice_factory.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/summarize_prevoice_repair.py",
+      "sha256": "bcdce6ef9e0f990bfaef95b4259854faabed339557db4eb992b656b017dd82b4",
+      "bytes": 8084,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/summarize_prevoice_repair.py"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/test_prevoice_cache.mm",
+      "sha256": "7316b02fd275fa997840ba1f8e8c2074838e30225ce3a01d2670f10ca420aef0",
+      "bytes": 17340,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/test_prevoice_cache.mm"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/test_prevoice_handoff.mm",
+      "sha256": "e0c4d0eb3c5b08696cdad909ab09fc251fe3567fca2b40db6d8c804a4c6d87fe",
+      "bytes": 12376,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/test_prevoice_handoff.mm"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/test_prevoice_rejections.cpp",
+      "sha256": "3d1bdd1fb23ea1f1cac65757f245736449e0342987d54de525918157a9525d7f",
+      "bytes": 6997,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/test_prevoice_rejections.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/verify_prevoice_negatives.sh",
+      "sha256": "4e44a7c00acf9ae73079d2d5c5a7f37ac627dc8d53eafa1823663f452b36896c",
+      "bytes": 5766,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/verify_prevoice_negatives.sh"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/verify_prevoice_repair.sh",
+      "sha256": "c38aa02c6b4f000e02b74f1feb5e0fe15f0f49fdfd322704d4083d64a0e47570",
+      "bytes": 6096,
+      "execution_path": ".tools/plugin-work/generators/prevoice-preparation-repair/verify_prevoice_repair.sh"
+    },
+    {
+      "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
+      "sha256": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+      "bytes": 2778,
+      "execution_path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm",
+      "sha256": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+      "bytes": 21066,
+      "execution_path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm"
+    },
+    {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm",
+      "sha256": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+      "bytes": 26971,
+      "execution_path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm"
+    },
+    {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm",
+      "sha256": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+      "bytes": 20238,
+      "execution_path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc.hpp",
+      "sha256": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+      "bytes": 7943,
+      "execution_path": "reconstruction/plugins/generators/three_osc.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.cpp",
+      "sha256": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+      "bytes": 1836,
+      "execution_path": "reconstruction/plugins/generators/three_osc_clock_context.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.hpp",
+      "sha256": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+      "bytes": 2433,
+      "execution_path": "reconstruction/plugins/generators/three_osc_clock_context.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_declick.cpp",
+      "sha256": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+      "bytes": 2836,
+      "execution_path": "reconstruction/plugins/generators/three_osc_declick.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_declick.hpp",
+      "sha256": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+      "bytes": 1642,
+      "execution_path": "reconstruction/plugins/generators/three_osc_declick.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_engine.cpp",
+      "sha256": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+      "bytes": 13473,
+      "execution_path": "reconstruction/plugins/generators/three_osc_engine.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_envelope.hpp",
+      "sha256": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+      "bytes": 5832,
+      "execution_path": "reconstruction/plugins/generators/three_osc_envelope.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp",
+      "sha256": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+      "bytes": 2607,
+      "execution_path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_filter.hpp",
+      "sha256": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+      "bytes": 6216,
+      "execution_path": "reconstruction/plugins/generators/three_osc_filter.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp",
+      "sha256": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+      "bytes": 3946,
+      "execution_path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp",
+      "sha256": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+      "bytes": 2230,
+      "execution_path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp",
+      "sha256": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+      "bytes": 515,
+      "execution_path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp",
+      "sha256": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+      "bytes": 2672,
+      "execution_path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_modulation.hpp",
+      "sha256": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+      "bytes": 2431,
+      "execution_path": "reconstruction/plugins/generators/three_osc_modulation.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_multimode_channel.h",
+      "sha256": "38a807f38c9c482b9e2b0903864d9d2defef13ce66c0424e8b0c4ce9da9e8272",
+      "bytes": 5398,
+      "execution_path": "reconstruction/plugins/generators/three_osc_multimode_channel.h"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
+      "sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+      "bytes": 2170,
+      "execution_path": "reconstruction/plugins/generators/three_osc_native_factory.h"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp",
+      "sha256": "5966c658eef2928a07e32f4ffa7913e156e89cea9e28854395e9dd77de4ba892",
+      "bytes": 2236,
+      "execution_path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.h",
+      "sha256": "52757f5b5012a78d697e6e29a03641d6fc0ded032bb551592657a557183ae006",
+      "bytes": 2397,
+      "execution_path": "reconstruction/plugins/generators/three_osc_sync_lfo.h"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_tables.hpp",
+      "sha256": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+      "bytes": 15548,
+      "execution_path": "reconstruction/plugins/generators/three_osc_tables.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp",
+      "sha256": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+      "bytes": 856,
+      "execution_path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h",
+      "sha256": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+      "bytes": 1512,
+      "execution_path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_voice_output.hpp",
+      "sha256": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+      "bytes": 1937,
+      "execution_path": "reconstruction/plugins/generators/three_osc_voice_output.hpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp",
+      "sha256": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+      "bytes": 14885,
+      "execution_path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp"
+    },
+    {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.h",
+      "sha256": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+      "bytes": 4043,
+      "execution_path": "reconstruction/plugins/generators/three_osc_wrapper_core.h"
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/expected-results.json",
+      "sha256": "9f0b48c3a30f96a7a014e0ed0c11f77e438af50e0550ac4b9a4f8005315fc470",
+      "bytes": 12479
+    },
+    {
+      "path": "reconstruction/plugins/generators/prevoice-preparation/verify_public.py",
+      "sha256": "3d08f19ebb0e9d981217a955a0d9f8e2ab7d40374d920eacf4961353796e6d38",
+      "bytes": 4822
+    }
+  ],
+  "original_images": [
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib",
+      "sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/engine.dylib",
+      "sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib",
+      "sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+    }
+  ],
+  "preparation_two_independent_runtime_reviews": [
+    {
+      "reviewer": "root",
+      "sha256": "2848ad3701a066f5f71619ae874681b166b1a781b7b78a6fc23982a0a4b69eaa"
+    },
+    {
+      "reviewer": "plugin_generators",
+      "sha256": "a36984d10e14c96db8c2f61757a1ff6449698977117b4f042f9cea3c0e3b0d79"
+    }
+  ],
+  "lifetime_two_independent_runtime_reviews": [
+    {
+      "reviewer": "mixer_dsp",
+      "sha256": "a4f2ad88d9456f4c12543076d0f859ad3d8f4967e3da52d16208e204a73d512e"
+    },
+    {
+      "reviewer": "root",
+      "sha256": "1e9ba5207c6f101ab92f093075f2bd8a1e2c3c5ffc4e6c577431ae02798e75a1"
+    }
+  ],
+  "combined_public_native_replay_passed": true,
+  "public_factory_new_lifetime_blocks_and_table20_21_only": true,
+  "first20_table_expressions_and_non_lifetime_callbacks_unchanged": true,
+  "destroy0_body_changed": true,
+  "Python_optimization_refused_before_work_or_compiler": true,
+  "own_products_signed_and_strictly_verified_before_use": true,
+  "source_mutants_original_code_uninstrumented": true,
+  "source_mutants_instrumentation": "Five O2 own numerical mutants; safe domain failures, separate from fatal-positive modes.",
+  "full_plugin_equivalence": false,
+  "lifetime_repair_public_layout_replay": {
+    "path": "analysis/plugins/review/root-generator-public-layout-runtime-replay.json",
+    "sha256": "24e1374029b7b102f51321a6e5f65ba7b49ac1330778cbf6fed95b2d3c82e7a4",
+    "bytes": 751064
+  },
+  "historical_artifact_bindings_preserved_scope": "Earlier result artifacts identify their original baseline; they do not claim the new runtime bytes were used historically.",
+  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false
+}

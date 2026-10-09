@@ -16,9 +16,11 @@ A source audit found retained-editor lifetime issues in four experimental
 factories. Mute 2 and Phase Inverter now clear retained callbacks/context and
 control targets, with two independent runtime reviews and a passing public
 recipe. Soft Clipper and Stereo Shaper still have open published retained-view
-issues; their private repairs have only source reviews. Balance has a separately
-accepted retained-view cleanup repair. Storage ownership in the other
-experimental factories' complete destructors remains under separate review.
+issues; their private repairs passed two source runtime reviews, with new engine
+regressions pending. Balance has a separately accepted retained-view cleanup
+repair. The three experimental oscillator factories now have a reviewed own
+complete/caller-free versus deleting lifetime split. Other factories' complete
+destructors remain under separate review.
 
 | Component | Independently built and checked milestone | Remaining work |
 | --- | --- | --- |
@@ -57,6 +59,8 @@ experimental factories' complete destructors remains under separate review.
 | [Prepared engine clock context](generators/CLOCK_CONTEXT.md) | Intact tick provider/direct descriptor producers and real C++ adapters; exact packets, repaired FRINTX inexact status, fatal sanitizers, independent edge/negative and required-two-run checks | Live clock production, queued/project/voice delivery, application-owned manager/host/sender, actual rate producer, general FP/trap/RT and whole-plugin equivalence |
 | [Prevoice context delivery](generators/CONTEXT_DELIVERY.md) | Unchanged source factory receives rate/PPQ/tempo through real descriptor/adapters before first voice; 72 fixtures, 225,072 overwritten audio floats, two fatal/normal replays and independent fail-closed checks | Actual application clock/rate producer and host ownership, queued/live context delivery, general FP/RT and whole-plugin equivalence |
 | [3x Osc active context and preparation cache](generators/live-context/IMMEDIATE_PREPARATION.md) | Source retains voices while refreshing measured active configuration caches; 96 next-use pairs, 16 timing pairs, 240 immediate masks and 44,400 prepared words match; normal/fatal/O0 builds, old-lazy timing negatives and required-result guards independently pass | Immediate prevoice preparation, other active controls/state/sync/release/seek, original class/editor, actual clocks/host ownership, general FP/RT, VST/AU and whole-plugin equivalence |
+| [3x Osc preparation before the first voice](generators/prevoice-preparation/README.md) | Five eager caches, zero-curve/restore history and first-voice handoff; two independent preparation reviews and two separate lifetime reviews; public normal/fatal/O0 replay matches18 documents and rejects five numerical variants and five incomplete summaries | Fresh audio without rate delivery, arbitrary active controls/state/synchronization, original class/GUI, application clock production, VST/AU, general FP/RT and whole-plugin equivalence |
+| [Own 3x Osc factory lifetimes](generators/lifetime/README.md) | Stock/immediate/prevoice complete20 retains raw storage and0/21 free; nine source profiles,12 fatal semantic negatives and27,648 same-source peer floats; two independent runtime critics and public recipe pass; maintained stock/live regression documents remain exact | Original extra destructors/class/GUI/general allocator, application hosting, VST/AU, real-time and whole-plugin equivalence |
 | Vital upstream source | Optional GPL Vial 1.0.6 build recipe: fresh public source builds arm64 VST3/AU and an experimental SDK-free legacy wrapper; native MIDI/audio and semantic state checks; narrow deterministic comparison with installed Intel Vital 1.0.7 | Version gap, editor/automation/playhead/RT and broader preset/layout/rate checks; valid-state-only legacy loader; disclosed sample-state fix changes original behavior |
 | [TyrellN6 parameter conversion subset](external/tyrell/PARAMETER_SCALE.md) | 92 actual descriptors, 920 unmodified-manager round trips and 188,784 native callback comparisons; independent non-grid/FMA/signed-zero and sanitizer checks | Parameter manager, voice/audio/DSP, presets/state, GUI, automation, rebuilt VST/AU factories and full hosting |
 | [TyrellN6 prepared parameter manager](external/tyrell/PARAMETER_MANAGER.md) | 92 real descriptor types/maps, 254,472 native setter decisions and 477 atomic rejects; two independent reviews, nongrid/zero/type/state probes and wrong-rounding negative control | Substituted downstream getter/notifier, real audio target/scheduling, native manager/factory ABI, presets/state, GUI, RT and full DSP/plugin |

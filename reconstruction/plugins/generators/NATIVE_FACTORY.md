@@ -75,7 +75,14 @@ Whole-plugin reconstruction/recompilation remains false.
 Run ./reconstruction/plugins/generators/verify-three-osc-native-factory.sh,
 optionally --sanitize, on macOS arm64 with the pinned installed targets. Outputs
 are written under .tools/plugin-work/generators/native-factory-maintained.
-The maintained header, implementation and two native harnesses are byte-identical
-to the final accepted private candidate; the script only adapts source/project/
-output paths, its usage name and the loader fixture filename. Only independently
-compiled source and harnesses are instrumented; installed code is unmodified.
+The header, numerical callbacks and two native harnesses retain their accepted
+implementations. The factory now uses the separately reviewed own lifetime split:
+complete callback20 cleans the instance while retaining raw storage; callbacks0
+and21 clean and free it. The first twenty table expressions remain unchanged;
+callback0's body changes intentionally. Nine source profiles and twelve fatal
+semantic negatives cover the three experimental oscillator factories. Normal and
+fatal builds of this maintained original-driven factory/loader recipe also pass
+with the repair. These tests do not certify original extra-destructor semantics.
+See [own factory lifetimes](lifetime/README.md). Recipes explicitly build arm64
+and strictly verify signed products before use. Only independently compiled source
+and harnesses are instrumented; installed code is unmodified.

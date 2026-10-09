@@ -1,5 +1,10 @@
 #!/bin/sh
 set -eu
+python3 - <<'VL_PYTHON_VERIFICATION_ENV'
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python optimization disabled.")
+VL_PYTHON_VERIFICATION_ENV
 candidate=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 project=${VL_IMMEDIATE_CONTEXT_PROJECT_ROOT:-$(CDPATH= cd -- "$candidate/../../../.." && pwd)}
 source="$project/reconstruction/plugins/generators"
@@ -11,15 +16,25 @@ if [ "$#" -ne 0 ];then
 fi
 work=${VL_IMMEDIATE_CONTEXT_WORK_DIR:-"$project/.tools/plugin-work/generators/live-context-public/canonical-$mode"}
 mkdir -p "$work/VL 3 Osc"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $flags -I "$candidate" -I "$source" -dynamiclib -framework Accelerate "$candidate/immediate_factory.cpp" "$candidate/immediate_channel.cpp" "$source/three_osc_sync_lfo.cpp" "$source/three_osc_voice_lifecycle.cpp" "$source/three_osc_declick.cpp" "$source/three_osc_wrapper_core.cpp" "$source/three_osc_engine.cpp" -o "$work/VL 3 Osc/VL 3 Osc_X64.dylib"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_live_regression.mm" "$source/three_osc_legacy_tables.cpp" -o "$work/test_immediate_live_regression"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_prevoice_regression.mm" "$source/three_osc_legacy_tables.cpp" "$source/three_osc_clock_context.cpp" -o "$work/test_immediate_prevoice_regression"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $flags -I "$candidate" -I "$source" -dynamiclib -framework Accelerate "$candidate/immediate_factory.cpp" "$candidate/immediate_channel.cpp" "$source/three_osc_sync_lfo.cpp" "$source/three_osc_voice_lifecycle.cpp" "$source/three_osc_declick.cpp" "$source/three_osc_wrapper_core.cpp" "$source/three_osc_engine.cpp" -o "$work/VL 3 Osc/VL 3 Osc_X64.dylib"
+codesign --force --sign - "$work/VL 3 Osc/VL 3 Osc_X64.dylib" > "$work/explicit-signature-0.sign.stdout" 2> "$work/explicit-signature-0.sign.stderr"
+codesign --verify --strict "$work/VL 3 Osc/VL 3 Osc_X64.dylib" > "$work/explicit-signature-0.verify.stdout" 2> "$work/explicit-signature-0.verify.stderr"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_live_regression.mm" "$source/three_osc_legacy_tables.cpp" -o "$work/test_immediate_live_regression"
+codesign --force --sign - "$work/test_immediate_live_regression" > "$work/explicit-signature-1.sign.stdout" 2> "$work/explicit-signature-1.sign.stderr"
+codesign --verify --strict "$work/test_immediate_live_regression" > "$work/explicit-signature-1.verify.stdout" 2> "$work/explicit-signature-1.verify.stderr"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_prevoice_regression.mm" "$source/three_osc_legacy_tables.cpp" "$source/three_osc_clock_context.cpp" -o "$work/test_immediate_prevoice_regression"
+codesign --force --sign - "$work/test_immediate_prevoice_regression" > "$work/explicit-signature-2.sign.stdout" 2> "$work/explicit-signature-2.sign.stderr"
+codesign --verify --strict "$work/test_immediate_prevoice_regression" > "$work/explicit-signature-2.verify.stdout" 2> "$work/explicit-signature-2.verify.stderr"
 ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$work/test_immediate_prevoice_regression" '/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib' "$work/VL 3 Osc/VL 3 Osc_X64.dylib" "$work/" > "$work/prevoice-result.json" 2> "$work/prevoice-stderr.log"
 ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$work/test_immediate_live_regression" '/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib' "$work/VL 3 Osc/VL 3 Osc_X64.dylib" "$work/" > "$work/live-result.json" 2> "$work/live-stderr.log"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_preparation.mm" "$source/three_osc_legacy_tables.cpp" -o "$work/test_immediate_preparation"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror -Wno-deprecated-declarations $flags -I "$source" -framework Cocoa "$candidate/test_immediate_preparation.mm" "$source/three_osc_legacy_tables.cpp" -o "$work/test_immediate_preparation"
+codesign --force --sign - "$work/test_immediate_preparation" > "$work/explicit-signature-3.sign.stdout" 2> "$work/explicit-signature-3.sign.stderr"
+codesign --verify --strict "$work/test_immediate_preparation" > "$work/explicit-signature-3.verify.stdout" 2> "$work/explicit-signature-3.verify.stderr"
 ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$work/test_immediate_preparation" '/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib' "$work/VL 3 Osc/VL 3 Osc_X64.dylib" "$work/" > "$work/preparation-result.json" 2> "$work/preparation-stderr.log"
 mkdir -p "$work/old-lazy"
-clang++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $flags -I "$candidate/lazy-baseline" -I "$source" -dynamiclib -framework Accelerate "$candidate/lazy-baseline/live_context_factory.cpp" "$candidate/lazy-baseline/live_context_channel.cpp" "$source/three_osc_sync_lfo.cpp" "$source/three_osc_voice_lifecycle.cpp" "$source/three_osc_declick.cpp" "$source/three_osc_wrapper_core.cpp" "$source/three_osc_engine.cpp" -o "$work/old-lazy/VL 3 Osc_X64.dylib"
+clang++ -arch arm64 -std=c++20 -O2 -fno-fast-math -ffp-contract=off -Wall -Wextra -Werror $flags -I "$candidate/lazy-baseline" -I "$source" -dynamiclib -framework Accelerate "$candidate/lazy-baseline/live_context_factory.cpp" "$candidate/lazy-baseline/live_context_channel.cpp" "$source/three_osc_sync_lfo.cpp" "$source/three_osc_voice_lifecycle.cpp" "$source/three_osc_declick.cpp" "$source/three_osc_wrapper_core.cpp" "$source/three_osc_engine.cpp" -o "$work/old-lazy/VL 3 Osc_X64.dylib"
+codesign --force --sign - "$work/old-lazy/VL 3 Osc_X64.dylib" > "$work/explicit-signature-4.sign.stdout" 2> "$work/explicit-signature-4.sign.stderr"
+codesign --verify --strict "$work/old-lazy/VL 3 Osc_X64.dylib" > "$work/explicit-signature-4.verify.stdout" 2> "$work/explicit-signature-4.verify.stderr"
 set +e
 ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1 "$work/test_immediate_preparation" '/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib' "$work/old-lazy/VL 3 Osc_X64.dylib" "$work/" > "$work/old-lazy-negative.stdout" 2> "$work/old-lazy-negative.stderr"
 negative_exit=$?

@@ -1,5 +1,5 @@
 {
-  "status": "accepted_bounded_public_prevoice_context_delivery",
+  "status": "accepted_prior_context_delivery_corpus_current_lifetime_repair_rebound_new_context_recipe_replay_pending",
   "implementation": "Unchanged published source factory/channel with prevoice native descriptor delivery; no new runtime variant",
   "candidate_sources": {
     "test_three_osc_context_delivery.mm": {
@@ -9,8 +9,8 @@
     },
     "verify-context-delivery.sh": {
       "path": "reconstruction/plugins/generators/verify-context-delivery.sh",
-      "sha256": "a1b108e1fe96aba871345310e91b49b2dec28a42abb86560474f546382242097",
-      "bytes": 2260
+      "sha256": "59105cbef35096053d02163178c6c15dc19740884aca5419ff06277b30543988",
+      "bytes": 2570
     },
     "CONTEXT_DELIVERY.md": {
       "path": "reconstruction/plugins/generators/CONTEXT_DELIVERY.md",
@@ -19,7 +19,7 @@
     },
     "summarize_context_delivery.py": {
       "path": "reconstruction/plugins/generators/summarize_context_delivery.py",
-      "sha256": "576b6995b2dab57c4fe36d5dcd7f62ca90b90b042ec5e456da653322b44dc424",
+      "sha256": "cc4079a29801a8c900bda3093283bffaa0facce2415e99d8271cd617c34967e9",
       "bytes": 14521
     }
   },
@@ -106,8 +106,8 @@
     },
     "reconstruction/plugins/generators/three_osc_native_factory.cpp": {
       "path": "reconstruction/plugins/generators/three_osc_native_factory.cpp",
-      "sha256": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
-      "bytes": 7406
+      "sha256": "02b6e29900c4b91b95e5ccd8239f6980657cf82d9bd6d6fdfa2e9c59e6c99c2d",
+      "bytes": 7891
     },
     "reconstruction/plugins/generators/three_osc_native_factory.h": {
       "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
@@ -517,5 +517,169 @@
   },
   "full_plugin_equivalence": false,
   "real_time_certificate": false,
-  "post_replay_change_scope": "Document review status and review metadata only; fixture, recipe, summarizer and 26 compiled dependencies unchanged."
+  "post_replay_change_scope": "Document review status and review metadata only; fixture, recipe, summarizer and 26 compiled dependencies unchanged.",
+  "prior_source_bindings_before_lifetime_repair": {
+    "candidate_sources": {
+      "test_three_osc_context_delivery.mm": {
+        "path": "reconstruction/plugins/generators/test_three_osc_context_delivery.mm",
+        "sha256": "293f6b7e808bc1bf361337921992b27da0e991e525634cf724bff5a2a9ed69a2",
+        "bytes": 20234
+      },
+      "verify-context-delivery.sh": {
+        "path": "reconstruction/plugins/generators/verify-context-delivery.sh",
+        "sha256": "a1b108e1fe96aba871345310e91b49b2dec28a42abb86560474f546382242097",
+        "bytes": 2260
+      },
+      "CONTEXT_DELIVERY.md": {
+        "path": "reconstruction/plugins/generators/CONTEXT_DELIVERY.md",
+        "sha256": "9266231611093db9c208f946d2fd0c6c8ba55ab0a2b4acd7853e7d55fade58cc",
+        "bytes": 5511
+      },
+      "summarize_context_delivery.py": {
+        "path": "reconstruction/plugins/generators/summarize_context_delivery.py",
+        "sha256": "576b6995b2dab57c4fe36d5dcd7f62ca90b90b042ec5e456da653322b44dc424",
+        "bytes": 14521
+      }
+    },
+    "unchanged_source_dependencies": {
+      "reconstruction/plugins/generators/three_osc.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc.hpp",
+        "sha256": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+        "bytes": 7943
+      },
+      "reconstruction/plugins/generators/three_osc_clock_context.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_clock_context.cpp",
+        "sha256": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+        "bytes": 1836
+      },
+      "reconstruction/plugins/generators/three_osc_clock_context.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_clock_context.hpp",
+        "sha256": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+        "bytes": 2433
+      },
+      "reconstruction/plugins/generators/three_osc_declick.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_declick.cpp",
+        "sha256": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+        "bytes": 2836
+      },
+      "reconstruction/plugins/generators/three_osc_declick.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_declick.hpp",
+        "sha256": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+        "bytes": 1642
+      },
+      "reconstruction/plugins/generators/three_osc_engine.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_engine.cpp",
+        "sha256": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+        "bytes": 13473
+      },
+      "reconstruction/plugins/generators/three_osc_envelope.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_envelope.hpp",
+        "sha256": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+        "bytes": 5832
+      },
+      "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp",
+        "sha256": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+        "bytes": 2607
+      },
+      "reconstruction/plugins/generators/three_osc_filter.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_filter.hpp",
+        "sha256": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+        "bytes": 6216
+      },
+      "reconstruction/plugins/generators/three_osc_filter_routing.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp",
+        "sha256": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+        "bytes": 3946
+      },
+      "reconstruction/plugins/generators/three_osc_gain_mix.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp",
+        "sha256": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+        "bytes": 2230
+      },
+      "reconstruction/plugins/generators/three_osc_legacy_tables.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp",
+        "sha256": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+        "bytes": 515
+      },
+      "reconstruction/plugins/generators/three_osc_legacy_tables.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp",
+        "sha256": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+        "bytes": 2672
+      },
+      "reconstruction/plugins/generators/three_osc_modulation.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_modulation.hpp",
+        "sha256": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+        "bytes": 2431
+      },
+      "reconstruction/plugins/generators/three_osc_multimode_channel.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_multimode_channel.cpp",
+        "sha256": "26d57cf5b16c0adb1871c218f8202b78ff33add7157d2501335a016b0ca75843",
+        "bytes": 14373
+      },
+      "reconstruction/plugins/generators/three_osc_multimode_channel.h": {
+        "path": "reconstruction/plugins/generators/three_osc_multimode_channel.h",
+        "sha256": "38a807f38c9c482b9e2b0903864d9d2defef13ce66c0424e8b0c4ce9da9e8272",
+        "bytes": 5398
+      },
+      "reconstruction/plugins/generators/three_osc_native_factory.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_native_factory.cpp",
+        "sha256": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+        "bytes": 7406
+      },
+      "reconstruction/plugins/generators/three_osc_native_factory.h": {
+        "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
+        "sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+        "bytes": 2170
+      },
+      "reconstruction/plugins/generators/three_osc_sync_lfo.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp",
+        "sha256": "5966c658eef2928a07e32f4ffa7913e156e89cea9e28854395e9dd77de4ba892",
+        "bytes": 2236
+      },
+      "reconstruction/plugins/generators/three_osc_sync_lfo.h": {
+        "path": "reconstruction/plugins/generators/three_osc_sync_lfo.h",
+        "sha256": "52757f5b5012a78d697e6e29a03641d6fc0ded032bb551592657a557183ae006",
+        "bytes": 2397
+      },
+      "reconstruction/plugins/generators/three_osc_tables.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_tables.hpp",
+        "sha256": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+        "bytes": 15548
+      },
+      "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp",
+        "sha256": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+        "bytes": 856
+      },
+      "reconstruction/plugins/generators/three_osc_voice_lifecycle.h": {
+        "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h",
+        "sha256": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+        "bytes": 1512
+      },
+      "reconstruction/plugins/generators/three_osc_voice_output.hpp": {
+        "path": "reconstruction/plugins/generators/three_osc_voice_output.hpp",
+        "sha256": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+        "bytes": 1937
+      },
+      "reconstruction/plugins/generators/three_osc_wrapper_core.cpp": {
+        "path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp",
+        "sha256": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+        "bytes": 14885
+      },
+      "reconstruction/plugins/generators/three_osc_wrapper_core.h": {
+        "path": "reconstruction/plugins/generators/three_osc_wrapper_core.h",
+        "sha256": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+        "bytes": 4043
+      }
+    }
+  },
+  "dependency_field_name_is_historical": "Numerical dependencies remain unchanged; the factory lifetime and recipe pins have changed. Current bindings describe reviewed source; new context recipe replay is pending.",
+  "lifetime_repair_public_layout_replay": {
+    "path": "analysis/plugins/review/root-generator-public-layout-runtime-replay.json",
+    "sha256": "24e1374029b7b102f51321a6e5f65ba7b49ac1330778cbf6fed95b2d3c82e7a4",
+    "bytes": 751064
+  },
+  "historical_artifact_bindings_preserved_scope": "Earlier result artifacts identify their original baseline; they do not claim the new runtime bytes were used historically.",
+  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false
 }

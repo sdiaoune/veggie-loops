@@ -20,7 +20,7 @@ maskExpected=[{'fixture':i,'label':label,'native_mask':0 if label.startswith('PP
 artifactNames=['prevoice-result.json','live-result.json','preparation-result.json','prevoice-stderr.log','live-stderr.log','preparation-stderr.log','test_immediate_prevoice_regression','test_immediate_live_regression','test_immediate_preparation','VL 3 Osc/VL 3 Osc_X64.dylib','old-lazy/VL 3 Osc_X64.dylib','old-lazy-negative.stdout','old-lazy-negative.stderr','old-lazy-negative-result.json']
 PINNED_COMPILED = {'immediate_channel.hpp': 'c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e',
  'immediate_channel.cpp': '59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9',
- 'immediate_factory.cpp': '55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560',
+ 'immediate_factory.cpp': '7914a78e0eae65c926c18f78e516d991abb32e82610411526850bf27faa2c88c',
  'immediate_coefficients.hpp': '7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28',
  'test_immediate_live_regression.mm': '4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721',
  'test_immediate_prevoice_regression.mm': '99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0',

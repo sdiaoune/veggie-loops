@@ -3,11 +3,11 @@
   "status": "independently_accepted_maintained_bounded_cpp_factory",
   "source_sha256": {
     "reconstruction/plugins/generators/three_osc_native_factory.h": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
-    "reconstruction/plugins/generators/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+    "reconstruction/plugins/generators/three_osc_native_factory.cpp": "02b6e29900c4b91b95e5ccd8239f6980657cf82d9bd6d6fdfa2e9c59e6c99c2d",
     "reconstruction/plugins/generators/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
     "reconstruction/plugins/generators/test_three_osc_native_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
-    "reconstruction/plugins/generators/verify-three-osc-native-factory.sh": "da577336418499c03825d5117ee1636e14a9bdce7b952afcd1062979500dcf3b",
-    "reconstruction/plugins/generators/NATIVE_FACTORY.md": "caf0d43ef820d62250c451b847e06bcd71a69af22e1345089d2af03522cd2dc1"
+    "reconstruction/plugins/generators/verify-three-osc-native-factory.sh": "33277b6deb30339d493222ac5d9ab4a83a30183f6eced8aa1a9d6fc78ba61fa7",
+    "reconstruction/plugins/generators/NATIVE_FACTORY.md": "75e1e69bfb052421bb65d1368eb412a868f306f3b7506f82805a2864cf4df667"
   },
   "dependency_sha256": {
     "reconstruction/plugins/generators/three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
@@ -44,48 +44,6 @@
     "./reconstruction/plugins/generators/verify-three-osc-native-factory.sh",
     "./reconstruction/plugins/generators/verify-three-osc-native-factory.sh --sanitize"
   ],
-  "mechanical_promotion": {
-    "final_private_candidate_sha256": "e6d2726c365c896e30babefae019da5730b266cc408e4eed6be5d3f36edbe96d",
-    "byte_identical_source_map": {
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "reconstruction/plugins/generators/three_osc_native_factory.h",
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "reconstruction/plugins/generators/three_osc_native_factory.cpp",
-      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "reconstruction/plugins/generators/test_three_osc_native_factory.mm",
-      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "reconstruction/plugins/generators/test_three_osc_native_factory_loader.mm"
-    },
-    "script_changes_only": [
-      "Source/project/output paths",
-      "Usage script name",
-      "Loader fixture filename"
-    ],
-    "prior_tested_source_sha256": {
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "586da4125caccfa42995d752392658247c8d85fdaa5e462f78860d7cbab7d687",
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
-      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
-      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
-      ".tools/plugin-work/generators/native-factory/verify_private_native_factory.sh": "bba304b66e21d83947b7b16cac28aa249345737afbb575907b0786964748d8cc",
-      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": "bafafc1d27e13380f00852bf8500637095ac475a6f71a7c764b04611a63f66d9"
-    },
-    "final_private_source_sha256": {
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
-      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
-      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
-      ".tools/plugin-work/generators/native-factory/verify_private_native_factory.sh": "bba304b66e21d83947b7b16cac28aa249345737afbb575907b0786964748d8cc",
-      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": "431ed7f116cd4f238597e1c6cd542556387ee3c92c88cf0ae8562f783a8586a8"
-    },
-    "name_docs_only_qualification": {
-      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": {
-        "old_sha256": "586da4125caccfa42995d752392658247c8d85fdaa5e462f78860d7cbab7d687",
-        "new_sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
-        "inserted_text_only": true
-      },
-      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": {
-        "old_sha256": "bafafc1d27e13380f00852bf8500637095ac475a6f71a7c764b04611a63f66d9",
-        "new_sha256": "431ed7f116cd4f238597e1c6cd542556387ee3c92c88cf0ae8562f783a8586a8",
-        "inserted_text_only": true
-      }
-    }
-  },
   "independent_review": {
     "record": "analysis/plugins/review/root-three-osc-native-factory-independent.json",
     "record_sha256": "0a956a382a8e2946f03459cef6ebceca5c92cea215dcdb40a1e86a52860e183d",
@@ -354,6 +312,63 @@
   "native_editor_rebuilt": false,
   "full_plugin_recompiled": false,
   "full_plugin_equivalence": false,
-  "maintained_path_rebind_status": "accepted_root_copied_native_and_sanitized_replays",
-  "root_final_review": "analysis/plugins/review/root-three-osc-native-factory-final-independent.json"
+  "maintained_path_rebind_status": "own_lifetime_repair_normal_and_fatal_maintained_regressions_passed",
+  "root_final_review": "analysis/plugins/review/root-three-osc-native-factory-final-independent.json",
+  "prior_source_sha256_before_lifetime_repair": {
+    "reconstruction/plugins/generators/three_osc_native_factory.h": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+    "reconstruction/plugins/generators/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+    "reconstruction/plugins/generators/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
+    "reconstruction/plugins/generators/test_three_osc_native_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
+    "reconstruction/plugins/generators/verify-three-osc-native-factory.sh": "da577336418499c03825d5117ee1636e14a9bdce7b952afcd1062979500dcf3b",
+    "reconstruction/plugins/generators/NATIVE_FACTORY.md": "caf0d43ef820d62250c451b847e06bcd71a69af22e1345089d2af03522cd2dc1"
+  },
+  "prior_mechanical_promotion": {
+    "final_private_candidate_sha256": "e6d2726c365c896e30babefae019da5730b266cc408e4eed6be5d3f36edbe96d",
+    "byte_identical_source_map": {
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "reconstruction/plugins/generators/three_osc_native_factory.h",
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "reconstruction/plugins/generators/three_osc_native_factory.cpp",
+      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "reconstruction/plugins/generators/test_three_osc_native_factory.mm",
+      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "reconstruction/plugins/generators/test_three_osc_native_factory_loader.mm"
+    },
+    "script_changes_only": [
+      "Source/project/output paths",
+      "Usage script name",
+      "Loader fixture filename"
+    ],
+    "prior_tested_source_sha256": {
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "586da4125caccfa42995d752392658247c8d85fdaa5e462f78860d7cbab7d687",
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
+      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
+      ".tools/plugin-work/generators/native-factory/verify_private_native_factory.sh": "bba304b66e21d83947b7b16cac28aa249345737afbb575907b0786964748d8cc",
+      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": "bafafc1d27e13380f00852bf8500637095ac475a6f71a7c764b04611a63f66d9"
+    },
+    "final_private_source_sha256": {
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.cpp": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+      ".tools/plugin-work/generators/native-factory/test_three_osc_native_factory.mm": "0fd4f80d784208b3aa0eac05f2a419846c6bf00d57a59213374ad94d1380c721",
+      ".tools/plugin-work/generators/native-factory/test_factory_loader.mm": "f80adcfb04e7687ce376bef3a97cb301687df360cb2da98df889ee1e858e2836",
+      ".tools/plugin-work/generators/native-factory/verify_private_native_factory.sh": "bba304b66e21d83947b7b16cac28aa249345737afbb575907b0786964748d8cc",
+      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": "431ed7f116cd4f238597e1c6cd542556387ee3c92c88cf0ae8562f783a8586a8"
+    },
+    "name_docs_only_qualification": {
+      ".tools/plugin-work/generators/native-factory/three_osc_native_factory.h": {
+        "old_sha256": "586da4125caccfa42995d752392658247c8d85fdaa5e462f78860d7cbab7d687",
+        "new_sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+        "inserted_text_only": true
+      },
+      ".tools/plugin-work/generators/native-factory/PRIVATE_NATIVE_FACTORY.md": {
+        "old_sha256": "bafafc1d27e13380f00852bf8500637095ac475a6f71a7c764b04611a63f66d9",
+        "new_sha256": "431ed7f116cd4f238597e1c6cd542556387ee3c92c88cf0ae8562f783a8586a8",
+        "inserted_text_only": true
+      }
+    }
+  },
+  "lifetime_repair_public_layout_replay": {
+    "path": "analysis/plugins/review/root-generator-public-layout-runtime-replay.json",
+    "sha256": "24e1374029b7b102f51321a6e5f65ba7b49ac1330778cbf6fed95b2d3c82e7a4",
+    "bytes": 751064
+  },
+  "historical_artifact_bindings_preserved_scope": "Earlier result artifacts identify their original baseline; they do not claim the new runtime bytes were used historically.",
+  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false
 }

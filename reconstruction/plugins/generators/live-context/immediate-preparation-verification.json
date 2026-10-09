@@ -1,5 +1,5 @@
 {
-  "status": "independently_accepted_bounded_public_active_preparation",
+  "status": "own_lifetime_repair_normal_fatal_and_O0_maintained_scalars_exact",
   "sources": {
     "immediate_channel.hpp": {
       "path": "reconstruction/plugins/generators/live-context/immediate_channel.hpp",
@@ -13,8 +13,8 @@
     },
     "immediate_factory.cpp": {
       "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
-      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
-      "bytes": 8225
+      "sha256": "7914a78e0eae65c926c18f78e516d991abb32e82610411526850bf27faa2c88c",
+      "bytes": 8710
     },
     "immediate_coefficients.hpp": {
       "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
@@ -53,22 +53,22 @@
     },
     "verify_immediate_context.sh": {
       "path": "reconstruction/plugins/generators/live-context/verify_immediate_context.sh",
-      "sha256": "15ca2c76094ab8a126a60bf112798a5849576762950dea3124d4aeddfe614890",
-      "bytes": 5291
+      "sha256": "88c6adce1a8988bfa7bff0f0efff3cfb3474de7800e295536a3f56fa1a78abf2",
+      "bytes": 7062
     },
     "verify_immediate_O0.sh": {
       "path": "reconstruction/plugins/generators/live-context/verify_immediate_O0.sh",
-      "sha256": "caa63bdd9c726a4052e2f6e516ff03c6954a40dc15ae339456d399bb2421dfec",
-      "bytes": 1326
+      "sha256": "5cfb21ce95d4e8954a236f17f29cfca2015bb438968b40a64416fede01a96a36",
+      "bytes": 1838
     },
     "IMMEDIATE_PREPARATION.md": {
       "path": "reconstruction/plugins/generators/live-context/IMMEDIATE_PREPARATION.md",
-      "sha256": "defd30d441a1d54b4602d1edbfba746ecbe09665264559f380f7bfb3fd8488c0",
-      "bytes": 6480
+      "sha256": "bc4ac2951539d59821475a451e749282ad19e13a677e074fa1f0bc98c5b761ec",
+      "bytes": 7151
     },
     "summarize_immediate_context.py": {
       "path": "reconstruction/plugins/generators/live-context/summarize_immediate_context.py",
-      "sha256": "f10d5e13b76154599c48e690124baa31f057ecf20bc3bffe2c3a845e91b7da2d",
+      "sha256": "ab5478375e620864604a025c4b0f728b55dd16051335f8fe1d09fff0878c65da",
       "bytes": 25219
     },
     "summary_negative_probe.py": {
@@ -80,7 +80,7 @@
   "pinned_compiled_source_hashes": {
     "immediate_channel.hpp": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
     "immediate_channel.cpp": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
-    "immediate_factory.cpp": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+    "immediate_factory.cpp": "7914a78e0eae65c926c18f78e516d991abb32e82610411526850bf27faa2c88c",
     "immediate_coefficients.hpp": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
     "test_immediate_live_regression.mm": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
     "test_immediate_prevoice_regression.mm": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
@@ -107,8 +107,8 @@
     },
     "reconstruction/plugins/generators/live-context/immediate_factory.cpp": {
       "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
-      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
-      "bytes": 8225
+      "sha256": "7914a78e0eae65c926c18f78e516d991abb32e82610411526850bf27faa2c88c",
+      "bytes": 8710
     },
     "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp": {
       "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp",
@@ -2169,5 +2169,273 @@
     "sha256": "9c6a4a438dc827ceea88a6fde3c8e8b610036d7e6b916e781b3d5780736ea781",
     "bytes": 58441
   },
-  "artifact_provenance": "Actual parent source-only40-input mirror replay; paths bind that isolated build and are references, not distributed binaries or replay inputs."
+  "artifact_provenance": "Actual parent source-only40-input mirror replay; paths bind that isolated build and are references, not distributed binaries or replay inputs.",
+  "prior_sources_before_lifetime_repair": {
+    "immediate_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.hpp",
+      "sha256": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+      "bytes": 1206
+    },
+    "immediate_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.cpp",
+      "sha256": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+      "bytes": 16586
+    },
+    "immediate_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
+      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+      "bytes": 8225
+    },
+    "immediate_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
+      "sha256": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+      "bytes": 2778
+    },
+    "test_immediate_live_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm",
+      "sha256": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+      "bytes": 21066
+    },
+    "test_immediate_prevoice_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm",
+      "sha256": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+      "bytes": 20238
+    },
+    "test_immediate_preparation.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm",
+      "sha256": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+      "bytes": 26971
+    },
+    "lazy-baseline/live_context_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp",
+      "sha256": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+      "bytes": 582
+    },
+    "lazy-baseline/live_context_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp",
+      "sha256": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+      "bytes": 15620
+    },
+    "lazy-baseline/live_context_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp",
+      "sha256": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6",
+      "bytes": 8228
+    },
+    "verify_immediate_context.sh": {
+      "path": "reconstruction/plugins/generators/live-context/verify_immediate_context.sh",
+      "sha256": "15ca2c76094ab8a126a60bf112798a5849576762950dea3124d4aeddfe614890",
+      "bytes": 5291
+    },
+    "verify_immediate_O0.sh": {
+      "path": "reconstruction/plugins/generators/live-context/verify_immediate_O0.sh",
+      "sha256": "caa63bdd9c726a4052e2f6e516ff03c6954a40dc15ae339456d399bb2421dfec",
+      "bytes": 1326
+    },
+    "IMMEDIATE_PREPARATION.md": {
+      "path": "reconstruction/plugins/generators/live-context/IMMEDIATE_PREPARATION.md",
+      "sha256": "defd30d441a1d54b4602d1edbfba746ecbe09665264559f380f7bfb3fd8488c0",
+      "bytes": 6480
+    },
+    "summarize_immediate_context.py": {
+      "path": "reconstruction/plugins/generators/live-context/summarize_immediate_context.py",
+      "sha256": "f10d5e13b76154599c48e690124baa31f057ecf20bc3bffe2c3a845e91b7da2d",
+      "bytes": 25219
+    },
+    "summary_negative_probe.py": {
+      "path": "reconstruction/plugins/generators/live-context/summary_negative_probe.py",
+      "sha256": "91371738130a0e9c4cfe07cd5097ea4a1ee7692b34b908b4f38a329e8432c9b7",
+      "bytes": 1975
+    }
+  },
+  "prior_pinned_compiled_source_hashes_before_lifetime_repair": {
+    "immediate_channel.hpp": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+    "immediate_channel.cpp": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+    "immediate_factory.cpp": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+    "immediate_coefficients.hpp": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+    "test_immediate_live_regression.mm": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+    "test_immediate_prevoice_regression.mm": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+    "test_immediate_preparation.mm": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+    "lazy-baseline/live_context_channel.hpp": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+    "lazy-baseline/live_context_channel.cpp": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+    "lazy-baseline/live_context_factory.cpp": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6"
+  },
+  "prior_compilation_closure_before_lifetime_repair": {
+    "reconstruction/plugins/generators/live-context/immediate_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.cpp",
+      "sha256": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+      "bytes": 16586
+    },
+    "reconstruction/plugins/generators/live-context/immediate_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.hpp",
+      "sha256": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+      "bytes": 1206
+    },
+    "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
+      "sha256": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+      "bytes": 2778
+    },
+    "reconstruction/plugins/generators/live-context/immediate_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
+      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+      "bytes": 8225
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp",
+      "sha256": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+      "bytes": 15620
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp",
+      "sha256": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+      "bytes": 582
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp",
+      "sha256": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6",
+      "bytes": 8228
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm",
+      "sha256": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+      "bytes": 21066
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm",
+      "sha256": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+      "bytes": 26971
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm",
+      "sha256": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+      "bytes": 20238
+    },
+    "reconstruction/plugins/generators/three_osc.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc.hpp",
+      "sha256": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+      "bytes": 7943
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.cpp",
+      "sha256": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+      "bytes": 1836
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.hpp",
+      "sha256": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+      "bytes": 2433
+    },
+    "reconstruction/plugins/generators/three_osc_declick.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.cpp",
+      "sha256": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+      "bytes": 2836
+    },
+    "reconstruction/plugins/generators/three_osc_declick.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.hpp",
+      "sha256": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+      "bytes": 1642
+    },
+    "reconstruction/plugins/generators/three_osc_engine.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_engine.cpp",
+      "sha256": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+      "bytes": 13473
+    },
+    "reconstruction/plugins/generators/three_osc_envelope.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope.hpp",
+      "sha256": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+      "bytes": 5832
+    },
+    "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp",
+      "sha256": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+      "bytes": 2607
+    },
+    "reconstruction/plugins/generators/three_osc_filter.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter.hpp",
+      "sha256": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+      "bytes": 6216
+    },
+    "reconstruction/plugins/generators/three_osc_filter_routing.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp",
+      "sha256": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+      "bytes": 3946
+    },
+    "reconstruction/plugins/generators/three_osc_gain_mix.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp",
+      "sha256": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+      "bytes": 2230
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp",
+      "sha256": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+      "bytes": 515
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp",
+      "sha256": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+      "bytes": 2672
+    },
+    "reconstruction/plugins/generators/three_osc_modulation.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_modulation.hpp",
+      "sha256": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+      "bytes": 2431
+    },
+    "reconstruction/plugins/generators/three_osc_multimode_channel.h": {
+      "path": "reconstruction/plugins/generators/three_osc_multimode_channel.h",
+      "sha256": "38a807f38c9c482b9e2b0903864d9d2defef13ce66c0424e8b0c4ce9da9e8272",
+      "bytes": 5398
+    },
+    "reconstruction/plugins/generators/three_osc_native_factory.h": {
+      "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
+      "sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+      "bytes": 2170
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp",
+      "sha256": "5966c658eef2928a07e32f4ffa7913e156e89cea9e28854395e9dd77de4ba892",
+      "bytes": 2236
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.h": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.h",
+      "sha256": "52757f5b5012a78d697e6e29a03641d6fc0ded032bb551592657a557183ae006",
+      "bytes": 2397
+    },
+    "reconstruction/plugins/generators/three_osc_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_tables.hpp",
+      "sha256": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+      "bytes": 15548
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp",
+      "sha256": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+      "bytes": 856
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.h": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h",
+      "sha256": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+      "bytes": 1512
+    },
+    "reconstruction/plugins/generators/three_osc_voice_output.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_output.hpp",
+      "sha256": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+      "bytes": 1937
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp",
+      "sha256": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+      "bytes": 14885
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.h": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.h",
+      "sha256": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+      "bytes": 4043
+    }
+  },
+  "lifetime_repair_public_layout_replay": {
+    "path": "analysis/plugins/review/root-generator-public-layout-runtime-replay.json",
+    "sha256": "24e1374029b7b102f51321a6e5f65ba7b49ac1330778cbf6fed95b2d3c82e7a4",
+    "bytes": 751064
+  },
+  "historical_artifact_bindings_preserved_scope": "Earlier result artifacts identify their original baseline; they do not claim the new runtime bytes were used historically.",
+  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false
 }
