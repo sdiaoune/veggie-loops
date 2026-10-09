@@ -27,6 +27,7 @@ raw core with its own note envelope, preset and mixer.
 | [3x Osc synchronized LFO metadata](generators/SYNC_LFO.md) | 360 native factories, 30,960 controlled public seeks and 4,056,342 exact metadata values; signed64/mod32 boundaries independently checked | Actual clock delivery/scheduling, live contexts, native allocating/concurrent list ABI and full factory/editor/host |
 | [3x Osc synchronized channel](generators/SYNCHRONIZED_CHANNEL.md) | Live flag registration and volume-release refresh; 24,811,720 exact voice-state values and 4,093,200 overwritten audio floats independently replayed under sanitizers; omitted-refresh negative control fails | Supplied fixed contexts/type0, other modes, native factory/state/editor, actual application clock/host and whole-plugin equivalence |
 | Vital upstream source | Optional GPL Vial 1.0.6 build recipe: fresh public source builds arm64 VST3/AU and an experimental SDK-free legacy wrapper; native MIDI/audio and semantic state checks; narrow deterministic comparison with installed Intel Vital 1.0.7 | Version gap, editor/automation/playhead/RT and broader preset/layout/rate checks; valid-state-only legacy loader; disclosed sample-state fix changes original behavior |
+| [TyrellN6 parameter conversion subset](external/tyrell/PARAMETER_SCALE.md) | 92 actual descriptors, 920 unmodified-manager round trips and 188,784 native callback comparisons; independent non-grid/FMA/signed-zero and sanitizer checks | Parameter manager, voice/audio/DSP, presets/state, GUI, automation, rebuilt VST/AU factories and full hosting |
 | Other installed plugins | Identity, architectures, dependencies and factory inventory; further native analysis underway | Independent source reconstruction, native builds, processing/state/UI tests and critique |
 | Purity envelope curve | Independently generated 259-float curve; 532,245 values across 2,055 amounts compared exactly, with guarded output and new-ABI invalid rejection | Native class ABI, voice/audio pipeline, state, MIDI, factory, editor and hosting |
 | Purity ADSR follower | 970,888 exact prepared state records; repeated steep-curve/one-sample and immediate note-off overshoot regressions fixed and independently replayed | Caller scheduling/level accumulation, full voice pipeline, native factory, editor and hosting |
@@ -63,7 +64,9 @@ This remains decompiler analysis, without an independent LABS source build.
 TyrellN6's 8,448 identified internal non-thunk x86_64 VST procedures also have
 local REA decompiler results. Some recovered call signatures and indirect
 dispatch targets remain uncertain. The installed factory and callback mapping
-are reference observations; an independent TyrellN6 source build is unfinished.
+are reference observations. A bounded independently built parameter range/
+conversion subset passed original-callback comparisons. Its sound engine,
+state, GUI and complete native source build remain unfinished.
 
 The successful cases are finite disclosed test domains. Matching export names
 or compiling all identified functions does not prove arbitrary input, exception

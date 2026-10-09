@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "component": "TyrellN6 public descriptor and outer parameter conversion subset",
+  "status": "verified_partial_reconstruction_independently_reviewed",
+  "full_plugin_equivalence": false,
+  "source_sha256": {
+    "reconstruction/plugins/external/tyrell/PARAMETER_SCALE.md": "17ee2ef035ebf0ed16446f4460402dd9f450f42c2e6b486a231b86ceed415e85",
+    "reconstruction/plugins/external/tyrell/test_tyrell_parameter_contract.cpp": "a2174606b5d505c3a25635e0b5ed1a5c12930d846bce5be20bea719a1005349d",
+    "reconstruction/plugins/external/tyrell/test_tyrell_parameter_scale.mm": "e3835f234dd2c413586ad722781245b23f2e3438fbd4c1be8814b52660e39fdb",
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_scale.cpp": "328c70ee01ca132ac7ea0704daef1bbb6c3b903e01fb3409ba6734497d5528ba",
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_scale.h": "ee1c68d40ea328db2492e9db54386d51ed6749d6d69f26f1d9a82b7334ae1494",
+    "reconstruction/plugins/external/tyrell/verify-parameter-scale.sh": "df294cdae3b137dc02894afdb436f29476033020dc169632b7b42b489c07570c",
+    "reconstruction/plugins/common/vst2_probe.mm": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f"
+  },
+  "original_binary_sha256": {
+    "universal": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+    "x86_64": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38"
+  },
+  "original_binary_path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+  "native_architecture": "macOS x86_64 via signed harness; Rosetta on this arm64 machine",
+  "native_identity_checks": [
+    "universal SHA before load",
+    "factory entry0x3ddb0",
+    "public getter0x3c300/setter0x3c320"
+  ],
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-arch x86_64 for native fixture",
+    "-fsanitize=address,undefined for source contract"
+  ],
+  "tested_environment": {
+    "os": "26.6.2",
+    "build": "25G83",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "rounding": "nearest-even",
+    "subnormal_handling": "gradual; FTZ/DAZ/FZ disabled; focused native MXCSR8114"
+  },
+  "results": [
+    {
+      "status": "passed",
+      "source_only_contract": true,
+      "atomic_rejections": 31,
+      "sanitized_source": true,
+      "full_plugin_equivalence": false
+    },
+    {
+      "status": "passed",
+      "actual_original_factory": true,
+      "descriptors": 92,
+      "actual_manager_round_trips": 920,
+      "controlled_native_setter_cases": 94392,
+      "controlled_native_getter_cases": 94392,
+      "synthetic_zero_width_getter_cases": 12,
+      "actual_manager_restored": true,
+      "gui_branch_in_controlled_cases": false,
+      "parameter_manager_rebuilt": false,
+      "full_plugin_equivalence": false
+    }
+  ],
+  "artifact_sha256": {
+    ".tools/plugin-work/external/tyrell/parameter-scale-check/test_contract": "e0e516dc27655bb9fd7607c584ac80831b9113e7c772e7a8403372740b41db6e",
+    ".tools/plugin-work/external/tyrell/parameter-scale-check/test_native": "8cb984b64081337d906bcd2d88a04417a1850dacf4f1a88e9f10cbe04daa0bce"
+  },
+  "fixture_scope": [
+    "Actual factory/open/close and unmodified-manager public setter/getter comparisons",
+    "Temporary controlled instance-manager vtable tests outer original conversion and forwarding; does not reconstruct native manager behavior",
+    "GUI pointer suppressed only during controlled manager cases, both pointers restored before native lifetime calls",
+    "Public/internal descriptor lookup identity compared for 92 known ranges",
+    "Malformed inputs sent only to new checked C API, not the original ABI"
+  ],
+  "caller_contract": "Finite ordered min/max abs<=512; denormalize normalized[-2,2]; normalize raw abs<=4096; writable float output; nearest-even strict separate float operations. Failures preserve output.",
+  "independent_review": {
+    "status": "accepted_within_declared_partial_scope",
+    "reviewer": "Independent generator agent reviewing root-authored source",
+    "report": "tyrell-parameter-scale-independent.json",
+    "focused_native_results": [
+      {
+        "status": "passed",
+        "generic_native_setter_edges": 49,
+        "generic_native_getter_edges": 14,
+        "native_manager_replaced": true,
+        "full_plugin_equivalence": false
+      },
+      {
+        "status": "passed",
+        "independent_non_grid_setters": 47104,
+        "independent_non_grid_getters": 47104,
+        "setter_fma_contrasts": 2749,
+        "signed_zero_setters": 16,
+        "signed_zero_getters": 16,
+        "mxcsr": 8114,
+        "manager_or_gui_equivalence": false,
+        "full_plugin_equivalence": false
+      }
+    ],
+    "focused_source_contract_results": [
+      {
+        "status": "passed",
+        "independent_lookup_cases": 10354,
+        "guarded_failure_preservation_cases": 89,
+        "signed_zero_getter_cases": 16,
+        "subnormal_extent_success": true,
+        "sanitized_source": true,
+        "full_plugin_equivalence": false
+      }
+    ],
+    "docs_rebind": "Header/doc explicitly state gradual-underflow requirement already retained in independent review limitations; CPP/tests/scripts unchanged."
+  },
+  "unresolved": [
+    "Parameter manager including clamping/quantization/MIDI/automation scheduling",
+    "Remaining internal descriptors",
+    "Actual voice/audio/DSP source",
+    "State/presets/GUI/editor behavior",
+    "Native VST/AU rebuilt factory and actual hosting",
+    "Whole-plugin comparison and realtime guarantees",
+    "Alternate floating-point environments"
+  ],
+  "recorded_at": "2026-10-09T01:47:22.596363+00:00"
+}
