@@ -2,13 +2,18 @@
 """Print selected small facets of retained REA MCP responses."""
 import argparse
 import json
+import gzip
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("path", type=Path)
 parser.add_argument("--facet", default="pseudo_code")
 args = parser.parse_args()
-response = json.loads(args.path.read_text())
+if args.path.suffix == ".gz":
+    with gzip.open(args.path, "rt", encoding="utf-8") as source:
+        response = json.load(source)
+else:
+    response = json.loads(args.path.read_text())
 payload = response.get("structuredContent")
 if payload is None:
     text = next(item["text"] for item in response.get("content", []) if item["type"] == "text")

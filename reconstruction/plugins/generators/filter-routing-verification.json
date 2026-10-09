@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "prepared_routing_fixtures": 1200,
+  "route_calls": 14400,
+  "exact_float_state_gain_values": 16747200,
+  "active_calls": 14248,
+  "inactive_calls": 152,
+  "maximum_observed_history_magnitude": 130936,
+  "combined_control_boundaries_tested": true,
+  "filter_types": 8,
+  "one_and_two_passes": true,
+  "native_factory_or_host_routing_rebuilt": false,
+  "audio_voice_pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "filter-routing",
+  "source_sha256": {
+    "three_osc_filter_routing.hpp": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+    "three_osc_filter_routing.cpp": "6f707d6bbe994e2a5c53ba811519dffe1d11464010a25ffc0b7930c0b6b9f8c4",
+    "test_three_osc_filter_routing.mm": "eb7bfb20900b0e517bbd8c4844767bcbc5f8fec4c2b77b7d185cf2f8b71b1d86",
+    "verify-filter-routing.sh": "7a62a6deba0997c127e5f3a366ef49a87d8a5c59d042056904233a352c6e3e81",
+    "summarize_filter_routing.py": "cb5fc5aa70087b27a5dec7b4b95752a9729602ae196b67b8e59299f373c37f75",
+    "FILTER_ROUTING.md": "eb90addae7a2e34a648b834a12d0288b1fc56645007376773d85bf9d6b46fd5d",
+    "three_osc_filter.hpp": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+    "three_osc_voice_output.hpp": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729"
+  },
+  "compiled_dylib_sha256": "05613ed25016e10ed1fc8fae73b63ba6f5bad91cbd9924f741485aa9601a7d19",
+  "reviewed_native_target": {
+    "name": "3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "prepared_filter_activation_slew_double_order_verified": true,
+    "native_factory_context_production_rebuilt": false,
+    "actual_host_editor_routing_rebuilt": false,
+    "full_voice_audio_pipeline_integrated": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Finite prepared-state/control/buffer/gain domain only; routing/kernel headers specify exact preconditions.",
+    "Native comparison uses synthetic voice/context/property/buffer layouts and controlled rate context rather than original constructors or an actual host.",
+    "Types0..7, raw controls0..256, combined normalized values[-2,2], finite input magnitude<=1, zero initial histories and1..4096frames only.",
+    "The routing corpus independently covers larger carried history (observed magnitude130936), extending the standalone kernel corpus's initial-history<=2 scope; no arbitrary initial-history bound is proved.",
+    "Each retained-state fixture fixes type/doubleOrder/rate. Live changes to these modes/rate and native history reset/configuration routing remain unproved.",
+    "Native mode/property mappings, context production, editor control dispatch/configuration updates, general design type8 and full voice audio integration remain open.",
+    "No commercial assets or binaries are embedded; this is not complete Fruity/VST/AU/FL equivalence."
+  ]
+}

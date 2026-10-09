@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "component": "Purity prepared peak compressor process routine",
+  "status": "native_differential_passed_and_independently_accepted",
+  "target": {
+    "name": "installed PurityVST1.4.5.1",
+    "universal_sha256": "ef2675ee69f9498ae10807820660e1158ba3c50684f44dea46b03efd7ceb1b07",
+    "arm64_sha256": "f05490472c0c170b99caa93ce9efa41eb712035bb253d53c29909ea00bc8816f",
+    "native_fixture_architecture": "macOSarm64"
+  },
+  "scope": {
+    "new_prepared_state_abi": true,
+    "prepared_state_bytes": 64,
+    "native_class_factory": false,
+    "parameter_preparation": false,
+    "full_audio_routing": false,
+    "native_plugin_recompiled": false,
+    "state_loader": false,
+    "gui": false,
+    "vst_au_host_equivalence": false
+  },
+  "source_sha256": {
+    "peak_compressor.h": "651b50130c572873666238eb24d347794d8ff990c4d4318413a05051040b269a",
+    "peak_compressor.cpp": "d7461c0d51d864204885585291cce1f55282e7d364c721ad0b8bb172601d2653",
+    "test_peak_compressor.mm": "7b4e9b806dfda4e615955c956b92ffe629721b333756aee5404bd6e0347cabd3",
+    "verify-peak.sh": "df4c3f749fffb9694f0eca56266b982eb6f560dfb9fceae2ef15ff847b7f4106",
+    "PEAK.md": "4129c2ff85c1714efce66b042fe46b3a7906bb21cfb83bfee9481db804995b62"
+  },
+  "native_comparison": {
+    "status": "passed",
+    "prepared_state_cases": 14112,
+    "stereo_frames": 5625216,
+    "repeated_cases": 12816,
+    "invalid_cases": 47,
+    "guarded": true,
+    "native_factory": false,
+    "native_plugin_recompiled": false
+  },
+  "compiled_library_sha256": "c262c3d4661a9d61f866b202f400e3fd3dc0ab1e8dd13bcb0fa65e2f38e078a7",
+  "sanitizers": {
+    "rebuilt_library_and_fixture": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "commercial_reference_instrumented": false
+  },
+  "native_asset_bytes_embedded": false,
+  "limits": [
+    "Finite prepared numeric state in default floating-point environment.",
+    "Input audio[-4,4]; output can exceed that range. Each subsequent input block must satisfy input range.",
+    "No native factory, parameter preparation, complete plugin or realtime certification."
+  ],
+  "independent_review": "Independent copied ASan/UBSan library and fixture replay passed; source/domain/overlap/write-order critique accepted. Prepared process only; no original constructor/factory/full plugin."
+}

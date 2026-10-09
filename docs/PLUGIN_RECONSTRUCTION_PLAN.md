@@ -30,6 +30,14 @@ Every in-scope component must have all applicable gates supported by reproducibl
 
 A tiny DSP routine, an export inventory, a host using the original binary, or a source build of a different version cannot satisfy whole-plugin completion. Unknown or absent evidence fails its gate. Captured target code, binaries, factory payloads and commercial assets remain local; original reconstruction code and external source licenses stay distinct.
 
+The project-local REA client retains complete MCP responses. Set
+`VL_REA_COMPRESS_OUTPUTS=1` to write each response as gzip JSON when analyzing
+large binaries. Compression preserves the complete serialized response;
+`script/read_evidence.py` reads both ordinary and compressed records. Keep raw
+response hashes and evidence identities in the private coverage index. A
+nonempty decompiler result is analysis evidence and does not establish source,
+type, control-flow or whole-binary equivalence.
+
 ## Iteration
 
 Inventory → assign an exclusive component → analyze → reconstruct/build → test against the original → independent critique → repair → rerun the affected checks. Record every unresolved component and continue with work that can progress. Full recompilation is complete only when all in-scope components meet the gates; the ledger must remain incomplete otherwise.

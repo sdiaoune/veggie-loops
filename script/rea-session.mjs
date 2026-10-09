@@ -4,8 +4,10 @@ import { spawn } from 'node:child_process';
 import { createInterface } from 'node:readline';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { gzipSync } from 'node:zlib';
 
 const destination = resolve(process.argv[2] || 'analysis/native');
+const compressOutputs = process.env.VL_REA_COMPRESS_OUTPUTS === '1';
 await mkdir(destination, { recursive: true });
 const child = spawn('npx', ['-y', 'rea-agents@6.0.0', 'mcp'], {
   env: process.env, stdio: ['pipe', 'pipe', 'pipe'],
@@ -61,8 +63,9 @@ for await (const line of input) {
     }
     console.log(JSON.stringify({ started: command.name, time: new Date().toISOString() }));
     const result = await rpc('tools/call', { name: command.name, arguments: command.arguments || {} });
-    const filename = (command.save || `${sequence}-${command.name}`) + '.json';
-    await writeFile(resolve(destination, filename), JSON.stringify(result, null, 2));
+    const filename = (command.save || `${sequence}-${command.name}`) + '.json' + (compressOutputs ? '.gz' : '');
+    const serialized = JSON.stringify(result, null, 2);
+    await writeFile(resolve(destination, filename), compressOutputs ? gzipSync(serialized, { level: 1 }) : serialized);
     let structured = result.structuredContent;
     if (!structured) {
       const text = result.content?.find(item => item.type === 'text')?.text;

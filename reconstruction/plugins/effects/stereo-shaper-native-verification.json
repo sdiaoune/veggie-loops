@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "component": "VL Stereo Shaper native boundary",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/stereo_shaper_native_abi.h": "6dcd7b87e4fa6d524201baf651c96cb0a9636739b28c0733c198809be3671bd7",
+    "reconstruction/plugins/effects/stereo_shaper_native_abi.cpp": "b5caa2c814955528c018645d7d2cd6bd58e9737d1e6d9ad0ee64801008c50d81",
+    "reconstruction/plugins/effects/test_stereo_shaper_engine_loader.mm": "8057af662fd2013b707434c5c036d6e698546df3079937b4b102ddfb678e7f8d",
+    "reconstruction/plugins/effects/verify_stereo_shaper_engine_loader.sh": "fba16ae3ed272affff5d1ed7af8d1e41cf89c653a16c10e56aed0273cbc22344",
+    "reconstruction/plugins/effects/test_stereo_shaper_host_routing.mm": "726597c150a680f1d398134e3cd76defb0cb216e2c3d8d6d3d830330d431c385",
+    "reconstruction/plugins/effects/verify_stereo_shaper_host_routing.sh": "e3d6ecefca0b2868d04d0bb474f46df9ac727f59a9566d22747a8e9176eabab2",
+    "reconstruction/plugins/effects/test_stereo_shaper_engine_stream.mm": "29fe5a0b293311d042b19fca1f767c165c18d798662f5a1f721b320cdb932d05",
+    "reconstruction/plugins/effects/verify_stereo_shaper_engine_stream.sh": "553ed2ce5caac4701488a436e57d5613954d64910aa87d0c2ebaa9dd919a22be",
+    "reconstruction/plugins/effects/STEREO_SHAPER_NATIVE.md": "7317e37311acccd1e35a34f2d75ccdd29a0c1553255bfe01847b9e074fff33c2",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/stereo_shaper_dsp.hpp": "c689553d39afeda9a442a86d27c7a3856866f88486db095fc872c0cf7653635a",
+    "reconstruction/plugins/effects/stereo_shaper_plugin.h": "624b296bde1d5757915c1dce5fecfb65f5c423a7af79c9e4d7734e32436eaf7f",
+    "reconstruction/plugins/effects/stereo_shaper_plugin.cpp": "8104cca7d44334138916816b9d3380bb8b8cd562e178f36cbacb705f8616d453"
+  },
+  "inspected_binary_sha256": {
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "FLEngine arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "checks": {
+    "intact_engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_stereo_shaper_engine_loader.sh",
+      "result": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "callback_slots_exercised": 20,
+        "state_saves": 1200,
+        "state_restores": 240,
+        "short_read_preserves_state": true,
+        "parameter_calls": 7200,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "actual_engine_host_routing": {
+      "command": "./reconstruction/plugins/effects/verify_stereo_shaper_host_routing.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_plugin_and_host_adapters": true,
+        "get_out_buffer_cpp_slot": 37,
+        "pascal_slot": 496,
+        "routing_state_restores": 600,
+        "side_output_sequences": 450,
+        "stereo_frames": 64890,
+        "actual_fl_application_created": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "actual_engine_stream": {
+      "command": "./reconstruction/plugins/effects/verify_stereo_shaper_engine_stream.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrapper": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 128,
+        "state_restores": 128,
+        "failed_hresult_full_count_rejections": 2,
+        "first_and_second_read_failures_checked": true,
+        "application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "independent_review": {
+    "status": "accepted",
+    "report": "stereo-shaper-native-independent.json",
+    "canonical_scripts": 3
+  },
+  "unresolved": [
+    "editor/UI/hints",
+    "remaining original dispatch/events/names/host topology",
+    "actual FL application/project/mixer hosting",
+    "x86/VST/AU",
+    "whole-plugin equivalence",
+    "remaining host side-output registration/latency notifications"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "component": "VL Stereo Shaper",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/stereo_shaper_dsp.hpp": "c689553d39afeda9a442a86d27c7a3856866f88486db095fc872c0cf7653635a",
+    "reconstruction/plugins/effects/stereo_shaper_plugin.h": "624b296bde1d5757915c1dce5fecfb65f5c423a7af79c9e4d7734e32436eaf7f",
+    "reconstruction/plugins/effects/stereo_shaper_plugin.cpp": "8104cca7d44334138916816b9d3380bb8b8cd562e178f36cbacb705f8616d453",
+    "reconstruction/plugins/effects/test_stereo_shaper_factory.mm": "6c493e02f9ccfb47825b21586af65e756cb8a681822a3d77b02003ecf1bf05cf",
+    "reconstruction/plugins/effects/verify_stereo_shaper.sh": "2b01b9226bd7268a797c33cfa27de5065bee1555909d12b5446bf320356102a2",
+    "reconstruction/plugins/effects/STEREO_SHAPER.md": "a81eb279686a21d3ede75ff6556ed5eb14128388053ce612189e04df7f539355"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Stereo Shaper universal": "0087d215734c061be930d5a01282e2a3654306cc595f8acb8ba3142051169804",
+    "Fruity Stereo Shaper arm64": "48f20d161d2d7b772315c242bf0fd8d8c62fdb7bc15b0d7c292a647325619564",
+    "dsp_ippv2 universal": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-sin",
+    "-fno-builtin-cos",
+    "-fno-builtin-exp"
+  ],
+  "checks": {
+    "source_factory": {
+      "command": "./reconstruction/plugins/effects/verify_stereo_shaper.sh",
+      "result": {
+        "status": "passed",
+        "actual_original_factory_created_and_destroyed": true,
+        "compiled_numerical_c_abi_compared": true,
+        "parameter_control_cases": 75833,
+        "render_cases": 128395,
+        "stereo_frames": 436923,
+        "state_restores": 257,
+        "synthetic_host_side_output_sequences": 768,
+        "full_plugin_equivalence": false
+      },
+      "independent_review": {
+        "status": "accepted",
+        "canonical_report": "stereo-shaper-guarded-independent.json",
+        "boundary_report": "stereo-shaper-boundary-independent.json",
+        "atomic_invalid_calls": 51,
+        "injected_allocation_failures": 7
+      }
+    }
+  },
+  "supported_domain": {
+    "sample_rates": [
+      22050,
+      44100,
+      48000,
+      96000,
+      192000
+    ],
+    "frames": [
+      0,
+      1024
+    ],
+    "matrix_raw": [
+      -25600,
+      25600
+    ],
+    "delay_phase_raw": [
+      -4096,
+      4096
+    ],
+    "own_flags": [
+      1,
+      2,
+      32
+    ],
+    "samples": "finite float; absolute input<=4",
+    "aliasing": "exact main alias or disjoint; optional side disjoint",
+    "floating_environment": "default nearest-even",
+    "host_outputs": 4,
+    "send_index": [
+      0,
+      3
+    ],
+    "pre_post": [
+      0,
+      1
+    ],
+    "call_synchronization": "all instance access including getters/save/destruction serialized or under host mix lock"
+  },
+  "unresolved": [
+    "actual engine GetOutBuffer adapter and host output topology",
+    "native wrapper/lifecycle and full original dispatcher/event/name behavior",
+    "original or independent rebuilt editor integration",
+    "actual engine stream/error lifecycle",
+    "actual FL application/project/mixer host integration",
+    "x86/VST/AU",
+    "NaN/Inf and alternate FP environments",
+    "all other effect families",
+    "whole-plugin equivalence"
+  ]
+}
