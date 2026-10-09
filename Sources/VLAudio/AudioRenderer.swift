@@ -94,11 +94,13 @@ public enum AudioRenderer {
         }
     }
 
-    static func prepare(project: VLProject, mode: PlaybackMode, sampleRate: Double) throws -> PreparedAudio {
+    static func prepare(project: VLProject, mode: PlaybackMode, sampleRate: Double,
+                        looping: Bool = false) throws -> PreparedAudio {
         let mono = try renderTracks(project: project, mode: mode, sampleRate: sampleRate)
         try Task.checkCancellation()
         let audio = DSPMixer.mix(monoBuffers: mono, settings: project.tracks.map(\.mixer),
-                                 master: project.master, sampleRate: sampleRate, tempo: project.tempo)
+                                 master: project.master, sampleRate: sampleRate, tempo: project.tempo,
+                                 looping: looping)
         let size = 1_024
         let left = peakWindows(audio.left, size: size)
         let right = peakWindows(audio.right, size: size)

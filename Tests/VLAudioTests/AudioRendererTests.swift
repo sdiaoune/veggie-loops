@@ -190,6 +190,61 @@ final class AudioRendererTests: XCTestCase {
                                                        to: URL(fileURLWithPath: "/tmp/vl-invalid.wav")))
     }
 
+    func testDefaultPreparationRetainsFiniteRenderSemanticsInBothModes() throws {
+        var song = project(.kick, beat: 3.75, duration: 0.25, velocity: 0.2)
+        song.arrangementBars = 1
+        song.clips = [ArrangementClip(trackID: song.tracks[0].id, startBar: 0)]
+        song.tracks[0].mixer.delaySend = 0.75
+        song.master = MasterSettings(volume: 1, delayTimeBeats: 0.5, delayFeedback: 0.5)
+        for mode in PlaybackMode.allCases {
+            let finite = try AudioRenderer.render(project: song, mode: mode, sampleRate: rate)
+            let prepared = try AudioRenderer.prepare(project: song, mode: mode, sampleRate: rate)
+            XCTAssertEqual(prepared.audio.left, finite.left)
+            XCTAssertEqual(prepared.audio.right, finite.right)
+            XCTAssertEqual(prepared.audio.frameCount, finite.frameCount)
+        }
+    }
+
+    func testLoopPreparationMakesFourBeatDelayAudibleInOneBarForBothModes() throws {
+        var song = project(.kick, velocity: 0.2)
+        song.arrangementBars = 1
+        song.clips = [ArrangementClip(trackID: song.tracks[0].id, startBar: 0)]
+        song.tracks[0].mixer.delaySend = 1
+        song.master = MasterSettings(volume: 1, delayTimeBeats: 4, delayFeedback: 0)
+        for mode in PlaybackMode.allCases {
+            let finite = try AudioRenderer.render(project: song, mode: mode, sampleRate: rate)
+            let repeated = try AudioRenderer.prepare(project: song, mode: mode, sampleRate: rate,
+                                                    looping: true)
+            XCTAssertEqual(finite.frameCount, 16_000)
+            XCTAssertEqual(repeated.audio.frameCount, finite.frameCount)
+            XCTAssertGreaterThan(energy(finite.left[...]), 0.1)
+            for frame in finite.left.indices {
+                // Quiet input keeps the existing limiter inactive: a full-loop
+                // echo has the same phase and doubles each dry sample.
+                XCTAssertEqual(repeated.audio.left[frame], 2 * finite.left[frame], accuracy: 0.000001)
+                XCTAssertEqual(repeated.audio.right[frame], 2 * finite.right[frame], accuracy: 0.000001)
+            }
+        }
+    }
+
+    func testLoopPreparationCircularlyDelaysLateNoteWithoutChangingLength() throws {
+        var loop = project(.kick, beat: 3.75, duration: 0.25, velocity: 0.05)
+        loop.tracks[0].mixer.pan = -1
+        loop.master = MasterSettings(volume: 1, delayTimeBeats: 0.5, delayFeedback: 0)
+        let dry = try AudioRenderer.render(project: loop, sampleRate: rate)
+        loop.tracks[0].mixer.delaySend = 1
+        let repeated = try AudioRenderer.prepare(project: loop, mode: .pattern, sampleRate: rate,
+                                                looping: true)
+        let delayFrames = 2_000
+        XCTAssertEqual(repeated.audio.frameCount, dry.frameCount)
+        XCTAssertEqual(repeated.audio.right, dry.right)
+        for frame in dry.left.indices {
+            let sourceFrame = (frame + dry.frameCount - delayFrames) % dry.frameCount
+            XCTAssertEqual(repeated.audio.left[frame], dry.left[frame] + dry.left[sourceFrame],
+                           accuracy: 0.000001)
+        }
+    }
+
     func testSilentProjectStillHasAPlayableDuration() throws {
         let audio = try AudioRenderer.render(project: VLProject(), sampleRate: rate)
         XCTAssertEqual(audio.frameCount, 16_000)

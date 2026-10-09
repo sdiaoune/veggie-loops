@@ -19,7 +19,7 @@ This builds and opens **dist/VL Studio.app**. The Codex **Run** action uses the 
 - **Channel rack:** click steps to add or remove notes on a sixteenth-note grid. Add kick, snare, hat, bass, synth, VL 3 Osc or sample channels from the + menu.
 - **Piano roll:** select a channel, click empty grid cells to add notes, then select a note to edit pitch, start, length and velocity. Piano keys preview notes. Delete selected notes with the inspector or context menu.
 - **Arrangement:** click a bar to place the channel's pattern, or click a clip to remove it. Choose **Song** in the transport to play the arrangement; **Pattern** plays the channel patterns together.
-- **Mixer:** drag channel/master faders, set pan, mute or solo channels, and adjust low-pass cutoff, drive and delay send. Shared delay time and feedback follow the tempo. Playback refreshes after edits while keeping musical position.
+- **Mixer:** drag channel/master faders, set pan, mute or solo channels, and adjust low-pass cutoff, drive and delay send. Shared delay time and feedback follow the tempo. Looping playback carries delay across the boundary, including a delay as long as the complete loop. It begins with periodic delay state; audition and WAV export keep finite processing. Playback refreshes after edits while keeping musical position.
 - **Projects:** ⌘S saves a `.vlp` document, ⌘O opens one, ⌘Z undoes edits, and ⇧⌘Z redoes them. Unsaved changes trigger a native save/discard prompt.
 - **Samples and export:** ⌘I imports user audio; sample pitch C4 preserves the source pitch. **Export WAV** or ⇧⌘E renders the selected Pattern/Song mode to 48 kHz stereo, 16-bit PCM.
 
@@ -35,7 +35,9 @@ swift run VLSmoke dist/verification/three-osc --three-osc --playback
 ./script/verify-reconstruction
 ```
 
-The **25 Swift tests** cover project persistence/validation, the mixer, synthesis, note timing, song placement, bounded overlapping-clip expansion, sample decoding/resampling, WAV export and cancellation. The reconstructed oscillator integration also checks MIDI pitch and concurrent renders with different sample rates. `VLSmoke` additionally renders a demo song, decodes the WAV, roundtrips its project, and checks actual native playback, advancing transport, meters, live refresh and Stop. `--three-osc` selects a separate four-note VL 3 Osc project. Its generated files and JSON report are in the requested output directory. `--playback` briefly plays audio through the current output device.
+The Swift tests cover project persistence/validation, the mixer, synthesis, note timing, song placement, bounded overlapping-clip expansion, sample decoding/resampling, WAV export and cancellation. The reconstructed oscillator integration also checks MIDI pitch and concurrent renders with different sample rates. `VLSmoke` additionally renders a demo song, decodes the WAV, roundtrips its project, and checks actual native playback, advancing transport, meters, live refresh and Stop. `--three-osc` selects a separate four-note VL 3 Osc project. Its generated files and JSON report are in the requested output directory. `--playback` briefly plays audio through the current output device.
+
+The latest loop-delay changes passed **28 mixer/audio tests**, including eight new regression cases. A separate harness using the actual AppState source verified Undo/Redo across a successful save, failed saves, and ordinary edit grouping. See [DAW fix validation](docs/DAW_FIX_VALIDATION_20261009.json) for the scope and remaining checks.
 
 The native UI was exercised for sequencer edits and undo, piano-roll creation/length/velocity, arrangement placement/removal, project save/reopen, sample import and WAV export. See [app verification](analysis/app-verification.json) for the recorded checks.
 

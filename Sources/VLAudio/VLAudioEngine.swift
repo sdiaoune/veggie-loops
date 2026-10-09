@@ -52,7 +52,7 @@ public final class VLAudioEngine {
         renderTask?.cancel()
         let rate = sampleRate
         let task = Task.detached(priority: .userInitiated) {
-            try AudioRenderer.prepare(project: project, mode: mode, sampleRate: rate)
+            try AudioRenderer.prepare(project: project, mode: mode, sampleRate: rate, looping: true)
         }
         renderTask = task
         let rendered: PreparedAudio
@@ -77,7 +77,7 @@ public final class VLAudioEngine {
         renderTask?.cancel()
         let rate = sampleRate
         let task = Task.detached(priority: .userInitiated) {
-            try AudioRenderer.prepare(project: project, mode: mode, sampleRate: rate)
+            try AudioRenderer.prepare(project: project, mode: mode, sampleRate: rate, looping: true)
         }
         renderTask = task
         let rendered: PreparedAudio

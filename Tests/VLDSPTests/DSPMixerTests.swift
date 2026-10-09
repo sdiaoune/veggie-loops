@@ -112,6 +112,81 @@ final class DSPMixerTests: XCTestCase {
         XCTAssertEqual(unequal.right, [0, 0.1, 0])
     }
 
+    func testLoopDelayWrapsLateImpulseEvenWhenDelayExceedsLoop() {
+        let input: [Float] = [0, 0, 0, 0.2]
+        let settings = [MixerSettings(volume: 1, pan: -1, delaySend: 1)]
+        // Five frames of delay on a four-frame periodic signal shifts by one.
+        let master = MasterSettings(volume: 1, delayTimeBeats: 1.25, delayFeedback: 0)
+        let finite = DSPMixer.mix(monoBuffers: [input], settings: settings,
+                                  master: master, sampleRate: 4, tempo: 60)
+        let loop = DSPMixer.mix(monoBuffers: [input], settings: settings,
+                                master: master, sampleRate: 4, tempo: 60, looping: true)
+        XCTAssertEqual(finite.left, input)
+        XCTAssertEqual(finite.right, [0, 0, 0, 0])
+        XCTAssertEqual(loop.frameCount, input.count)
+        XCTAssertEqual(loop.left, [0.2, 0, 0, 0.2])
+        XCTAssertEqual(loop.right, [0, 0, 0, 0])
+    }
+
+    func testLoopDelayEqualToLoopLengthAddsAnEchoWithoutExtendingOutput() {
+        let input: [Float] = [0.2, 0, 0, 0]
+        let settings = [MixerSettings(volume: 1, pan: -1, delaySend: 1)]
+        let master = MasterSettings(volume: 1, delayTimeBeats: 1, delayFeedback: 0)
+        let finite = DSPMixer.mix(monoBuffers: [input], settings: settings,
+                                  master: master, sampleRate: 4, tempo: 60)
+        let loop = DSPMixer.mix(monoBuffers: [input], settings: settings,
+                                master: master, sampleRate: 4, tempo: 60, looping: true)
+        XCTAssertEqual(finite.left, input)
+        XCTAssertEqual(loop.frameCount, input.count)
+        XCTAssertEqual(loop.left, [0.4, 0, 0, 0])
+        XCTAssertEqual(loop.right, [0, 0, 0, 0])
+    }
+
+    func testLoopDelayCrossFeedbackAlternatesSidesAcrossAnEvenCycle() {
+        let input: [Float] = [0.2, 0, 0, 0]
+        let output = DSPMixer.mix(monoBuffers: [input],
+            settings: [MixerSettings(volume: 1, pan: -1, delaySend: 1)],
+            master: MasterSettings(volume: 1, delayTimeBeats: 0.25, delayFeedback: 0.5),
+            sampleRate: 4, tempo: 60, looping: true)
+        // Repeating echoes sum a geometric series with ratio (1/2)^4.
+        let expectedLeft: [Double] = [0.2, 0.2 * 16 / 15, 0, 0.2 * 4 / 15]
+        let expectedRight: [Double] = [0.2 * 2 / 15, 0, 0.2 * 8 / 15, 0]
+        for frame in input.indices {
+            XCTAssertEqual(Double(output.left[frame]), expectedLeft[frame], accuracy: 0.000001)
+            XCTAssertEqual(Double(output.right[frame]), expectedRight[frame], accuracy: 0.000001)
+        }
+    }
+
+    func testLoopDelaySeparatesIndexCyclesAndSolvesOddChannelSwaps() {
+        let input: [Float] = [0.2, 0, 0, 0, 0, 0]
+        let output = DSPMixer.mix(monoBuffers: [input],
+            settings: [MixerSettings(volume: 1, pan: -1, delaySend: 1)],
+            master: MasterSettings(volume: 1, delayTimeBeats: 0.25, delayFeedback: 0.5),
+            sampleRate: 8, tempo: 60, looping: true)
+        // Two-frame advances visit only even frames. Three advances swap sides;
+        // the same side returns after six, giving ratio (1/2)^6 and denominator 63.
+        let expectedLeft: [Double] = [0.2 + 0.2 * 16 / 63, 0, 0.2 * 64 / 63, 0, 0.2 * 4 / 63, 0]
+        let expectedRight: [Double] = [0.2 * 2 / 63, 0, 0.2 * 8 / 63, 0, 0.2 * 32 / 63, 0]
+        for frame in input.indices {
+            XCTAssertEqual(Double(output.left[frame]), expectedLeft[frame], accuracy: 0.000001)
+            XCTAssertEqual(Double(output.right[frame]), expectedRight[frame], accuracy: 0.000001)
+        }
+    }
+
+    func testLoopDelayRemainsFiniteAtMaximumMixerFeedback() {
+        let output = DSPMixer.mix(monoBuffers: [[0.1]],
+            settings: [MixerSettings(volume: 1, pan: -1, delaySend: 1)],
+            master: MasterSettings(volume: 1, delayTimeBeats: 4, delayFeedback: 0.95),
+            sampleRate: 48_000, tempo: 40, looping: true)
+        // A long delay reduces to a one-frame cycle without a delay-sized queue.
+        // With cross-feedback, dry+wet values are 0.1+0.1/(1-0.95^2) and
+        // 0.1*0.95/(1-0.95^2) before the existing master limiter.
+        XCTAssertEqual(output.frameCount, 1)
+        XCTAssertTrue((output.left + output.right).allSatisfy { $0.isFinite && abs($0) <= 1 })
+        XCTAssertGreaterThan(output.left[0], 0.95)
+        XCTAssertGreaterThan(output.right[0], 0.95)
+    }
+
     private func rms(_ samples: [Float]) -> Double {
         sqrt(samples.reduce(0.0) { $0 + Double($1) * Double($1) } / Double(max(1, samples.count)))
     }

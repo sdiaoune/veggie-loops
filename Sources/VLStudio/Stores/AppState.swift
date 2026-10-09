@@ -295,6 +295,7 @@ final class AppState {
         do {
             try ProjectDocument.save(project, to: url)
             currentFileURL = url; savedProject = project; isDirty = false
+            lastEditTime = .distantPast
             statusMessage = "Saved \(url.lastPathComponent)"
         } catch { show(error) }
     }
