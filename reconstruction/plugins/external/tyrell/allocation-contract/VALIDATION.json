@@ -1,0 +1,63 @@
+{
+  "status": "accepted_bounded_own_source_contract",
+  "scope": "caller_supplied_model_and_controlled_callbacks_only",
+  "compiled_sources": [
+    {
+      "name": "allocation_gate.hpp",
+      "sha256": "5de1513925d62752d5a64679bb640d1e8a9004aa4bcded740fff6fe5ea7dacd0",
+      "bytes": 5601
+    },
+    {
+      "name": "allocation_provider.hpp",
+      "sha256": "09702182e50e76d07c6612f5bfc4b1f3dfa3fa97f8e7341527d5df37fcc6b8ce",
+      "bytes": 4761
+    },
+    {
+      "name": "test_fake_ranges.cpp",
+      "sha256": "edc5d3dbc08d15fd0d93897938bb23c8d018e697cc49949464d2135337afd970",
+      "bytes": 3759
+    },
+    {
+      "name": "test_mock_provider.cpp",
+      "sha256": "1f0c8117dd17b2304e1e57946642f9a000480e5f754bacbf659afb2624a2bf99",
+      "bytes": 9242
+    }
+  ],
+  "verifier_sha256": "ca68c7cc3ee8de11044ee764f2552079a0eefac92a781d9f068a05815f760d1e",
+  "manifest_sha256": "9573b4efafcbf0b4b96721080afb1a7242ad7ed23d5a049b16e358ab3531b69c",
+  "two_independent_Source_critics": true,
+  "working_and_independent_fresh_checkout_replays_passed": true,
+  "fresh_source_commit": "fa240a70575024a6939f06a793a3d620441d291d",
+  "per_replay": {
+    "profiles": [
+      "ranges-normal",
+      "ranges-fatal",
+      "provider-normal",
+      "provider-fatal"
+    ],
+    "own_x86_64_products": 4,
+    "commands": 24,
+    "strict_signatures_before_use": 4,
+    "typed_geometry_rejections_each_mode": 20,
+    "typed_controlled_provider_cases_each_mode": 25,
+    "current_source_files_verified": 8,
+    "sealed_runtime_artifacts": 107,
+    "known_command_leaders_waited": 24,
+    "diagnostic_recording_or_cleanup_errors": 0
+  },
+  "retained_private_evidence_digests": {
+    "Root_working": "0f4b9efc200be4c893167dd5bcc099e825e70538cfc383582df74a9020a78450",
+    "Generator_fresh": "41f73c94eb9a7d75debda7a015ba0e66de4787ac00a5bcea42cc48a59636e313",
+    "Root_Source": "8aee9c2c0bc7de05ea22723b907b0a1b15597c47dd70a553306d3e9eccef7bd0",
+    "Generator_Source": "88924333a17a57accd85ca26f03fb5adf8bab39c6cbddabda7e1a89ba1b53962"
+  },
+  "historical_private18_mock_scenarios_shipped_or_replayed": false,
+  "actual_quiescence_established": false,
+  "owner_logical_prefix_established": false,
+  "other_table_logical_spans_established": false,
+  "live_bounds_or_actual_native_allocator_certified": false,
+  "original_library_loaded_or_called": false,
+  "native_plugin_class_factory_state_audio_GUI_RT_equivalence": false,
+  "arbitrary_detached_descendant_or_system_toolchain_closure_certified": false,
+  "full_plugin_equivalence": false
+}
