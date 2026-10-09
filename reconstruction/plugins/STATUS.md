@@ -25,7 +25,8 @@ raw core with its own note envelope, preset and mixer.
 | Other installed plugins | Identity, architectures, dependencies and factory inventory; further native analysis underway | Independent source reconstruction, native builds, processing/state/UI tests and critique |
 | Purity envelope curve | Independently generated 259-float curve; 532,245 values across 2,055 amounts compared exactly, with guarded output and new-ABI invalid rejection | Native class ABI, voice/audio pipeline, state, MIDI, factory, editor and hosting |
 | Purity ADSR follower | 970,888 exact prepared state records; repeated steep-curve/one-sample and immediate note-off overshoot regressions fixed and independently replayed | Caller scheduling/level accumulation, full voice pipeline, native factory, editor and hosting |
-| Purity prepared peak/RMS compressor routines | Each source routine matched 14,112 retained-state cases and 5,625,216 stereo frames; bounds, guards, overlap and rejection behavior independently reviewed | Live classes/constructor/setter preparation, complete effects/voice chain, factory, state, UI and hosting |
+| Purity prepared peak/RMS compressor routines | Each source routine matched 14,112 retained-state cases and 5,625,216 stereo frames; bounds, guards, overlap and rejection behavior independently reviewed | Complete effect-chain/wet-dry preparation, voice chain, factory, state, UI and hosting |
+| [Purity live compressor classes](external/purity/classes/README.md) | Real source Peak64/RMS72 C++ objects and sixteen virtual slots; 864 original factory creations, 5,512,320 frames, 31,104 displays and 18 allocation failures independently replayed under sanitizers | Full effect-chain/wet-dry routing, native VST/AU factory identity, plugin state, editor, MIDI, realtime and application hosting |
 
 The standard-path external inventory contains 12 top-level bundles: five VST2,
 two VST3 and five AU. These represent FL Studio wrappers, LABS, Purity, Vital

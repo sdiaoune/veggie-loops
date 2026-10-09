@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "component": "Purity independently written live compressor C++ classes",
+  "status": "independently_reviewed_partial_reconstruction",
+  "source_sha256": {
+    "live_compressor.h": "c7aa05fc14f2b950c026d30115ded5aa23dba46f6ed430567072a515df41e3b4",
+    "live_compressor.hpp": "1d815f765b88a2f0313add00244bbb78bd4a1da0a2228d89bd3546a14453a120",
+    "live_compressor.cpp": "12cda17cd37814c4858e358a7833d9decba10e9dd659687f343b11b94ad1bcc9",
+    "test_live_compressor.mm": "508e941352f716142159e4ae6c923a431acb5adb13e90fdf2c554eb131618e8a",
+    "test_allocation_failure.cpp": "ed47829e628de6073ca0732b2eea63be2f111c666bef4b32c551d6545b09380c",
+    "verify.sh": "848450187985b5578c690f296d86891eca7463413ab78d2a6f0658715ed0ce83",
+    "README.md": "555157bc0372cdcf58776a1c0fc9b086f613579c108d6b0df2c85b754943f2d7",
+    "summarize.py": "699945117969a562cd959205150608aae0f09bbe41875bea3a3f2457835ba421",
+    "../peak_compressor.h": "651b50130c572873666238eb24d347794d8ff990c4d4318413a05051040b269a",
+    "../peak_compressor.cpp": "d7461c0d51d864204885585291cce1f55282e7d364c721ad0b8bb172601d2653",
+    "../rms_compressor.h": "d33ab675b12962ef015f9d06023ac75265d9b6078aa409ed8606cee5801de506",
+    "../rms_compressor.cpp": "ab90774329e4cdf4c784451c642bdfa49d59cd7dc7ac3491f95efa4a08cffbd2"
+  },
+  "target": {
+    "universal_sha256": "ef2675ee69f9498ae10807820660e1158ba3c50684f44dea46b03efd7ceb1b07",
+    "arm64_sha256": "f05490472c0c170b99caa93ce9efa41eb712035bb253d53c29909ea00bc8816f",
+    "native_fixture_architecture": "Apple arm64"
+  },
+  "compiled_library_sha256": "c6342af55f9e5b3264908dc11662abafeb40bb7f352821fad66de7cc6755fa61",
+  "native_comparison": {
+    "status": "passed",
+    "actual_native_factory_creations": 864,
+    "process_blocks": 4608,
+    "stereo_frames": 5512320,
+    "defined_state_records": 10512,
+    "display_comparisons": 31104,
+    "replacement_sequences": 576,
+    "compiled_raw_virtual_calls": 3744,
+    "atomic_invalid_cases": 44,
+    "full_plugin_equivalence": false
+  },
+  "source_allocation_failures": {
+    "status": "passed",
+    "allocation_failure_cases": 18,
+    "atomic_replacement_failure_preserves_object_and_history": true
+  },
+  "scope": {
+    "live_cpp_classes": true,
+    "peak_object_bytes": 64,
+    "rms_object_bytes": 72,
+    "virtual_slots_including_destructors": 16,
+    "own_bounded_c_factory_control_api": true,
+    "original_native_factory_symbols_exported": false,
+    "full_purity_plugin_recompiled": false,
+    "editor_state_midi_vst_au_host_equivalence": false,
+    "realtime_certification": false
+  },
+  "sanitizers": {
+    "new_library_and_both_fixtures": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "original_commercial_library_instrumented": false
+  },
+  "limitations": [
+    "Finite serialized caller domain; valid buffer/storage and default FP/libc formatting environment.",
+    "Native undefined padding/gain/detector at disabled construction are independently initialized and excluded from native-defined comparison.",
+    "Atomic replacement failure preserves old history, extending the original delete-first factory failure behavior.",
+    "The full application tIFX descriptor/chain, plugin state, native class/factory identities, editor, MIDI, VST/AU and RT behavior remain unproved."
+  ],
+  "independent_review": {
+    "status": "accepted",
+    "reviewer": "root independent from implementation agent",
+    "report": "root-purity-classes-independent.json",
+    "fresh_copied_source_native_replay": {
+      "status": "passed",
+      "actual_native_factory_creations": 864,
+      "process_blocks": 4608,
+      "stereo_frames": 5512320,
+      "defined_state_records": 10512,
+      "display_comparisons": 31104,
+      "replacement_sequences": 576,
+      "compiled_raw_virtual_calls": 3744,
+      "atomic_invalid_cases": 44,
+      "full_plugin_equivalence": false
+    },
+    "fresh_copied_source_allocation_replay": {
+      "status": "passed",
+      "allocation_failure_cases": 18,
+      "atomic_replacement_failure_preserves_object_and_history": true
+    },
+    "raw_cpp_numeric_contract_clarified_without_runtime_changes": true
+  }
+}
