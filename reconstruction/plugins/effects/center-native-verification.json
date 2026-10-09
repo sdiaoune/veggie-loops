@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "component": "VL Center own no-editor native C++ factory bridge",
+  "status": "verified_partial_native_bridge_independently_reviewed",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/center_native_abi.h": "036bf4dc7f7e11b9839909b5f27d3f99fe61dd0e4afbad1049aed8b018666060",
+    "reconstruction/plugins/effects/center_native_abi.cpp": "d30d7c0d824c999526dc54905fb5d8be3c3aad975bc0e1e80d5074c7bcb97004",
+    "reconstruction/plugins/effects/test_center_engine_loader.mm": "a65c49f26d0a42e615ba468288bbe03c22fff43a9aebc5ecb2838ca100b21d7b",
+    "reconstruction/plugins/effects/test_center_engine_stream.mm": "3fb797d41b26413eb6f856f9357256e6921363d965b553e76090f58487e06b7b",
+    "reconstruction/plugins/effects/verify_center_engine_loader.sh": "7ca6b90fd6c3fc56dae83532cc1f551a9bcbdce9b90aaffe795a4da80fc14b09",
+    "reconstruction/plugins/effects/verify_center_engine_stream.sh": "87ce92e00a563fec59cc7bb96c80c0fbf665973ba9e0e6bc7247c364c5a6b8ba",
+    "reconstruction/plugins/effects/CENTER_NATIVE.md": "e3853a69d4d2cf41fcc53fc865cd8f44fc92b519573866efdb1705c91dfb716b"
+  },
+  "dependency_sha256": {
+    "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+    "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+    "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "numerical_manifest": "center-verification.json",
+  "engine_sha256": {
+    "universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "tested_environment": {
+    "architecture": "Apple arm64",
+    "compiler": "Apple clang 21.0.0 (clang-2100.3.34.2)",
+    "os": "macOS 26.6.2",
+    "build": "25G83",
+    "rounding": "nearest-even"
+  },
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-framework Cocoa for native fixtures"
+  ],
+  "checks": {
+    "engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_center_engine_loader.sh",
+      "result": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "callback_slots_exercised": 20,
+        "state_saves": 1200,
+        "state_restores": 240,
+        "failed_read_preserves_state": true,
+        "parameter_calls": 1200,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "engine_stream": {
+      "command": "./reconstruction/plugins/effects/verify_center_engine_stream.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrapper": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 128,
+        "state_restores": 128,
+        "failed_hresult_full_count_rejections": 2,
+        "short_count_success_rejections": 2,
+        "two_four_byte_transfers_checked": true,
+        "filter_history_preserved": true,
+        "application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "source_function_coverage": [
+    {
+      "source": "factory 0x6110 ->0x312a0 /constructor 0x31580",
+      "proof": "Own measured alternate C++ factory loaded through actual intact engine; original Pascal/VCL class construction equivalence excluded."
+    },
+    {
+      "source": "dispatcher 0x31320",
+      "proof": "Own resume2/rate4/classification52 behavior delegated/measured; remaining paths independent no-ops or open."
+    },
+    {
+      "source": "parameter 0x31830 /render 0x31ae0",
+      "proof": "Own numerical API delegation exercised through actual engine callbacks; numerical function proof remains separate."
+    },
+    {
+      "source": "state 0x31410",
+      "proof": "Two4-byte framing through actual stream provider and plugin wrapper; signed HRESULT32/count32 rejection preserves enabled and nonzero history."
+    },
+    {
+      "source": "DestroyObject /engine wrapper lifecycle",
+      "proof": "Explicit destruction and real wrapper free exercised; two extra complete/deleting C++ destructor slots not separately replayed."
+    }
+  ],
+  "caller_contract": [
+    "every numerical/getter/state/render/destruction access serialized or host mix lock",
+    "valid caller audio/name/stream storage outside factory and numerical objects",
+    "name capacity>=8bytes",
+    "default build hasno editor",
+    "source numerical constraints unchanged from frozen candidate"
+  ],
+  "provider_abi": {
+    "hresult": "signed32",
+    "length_bits": 32,
+    "completed_store_bits": 32,
+    "valid_state": "two4-byte transfers;version0/1 restore,1 save;enabled0/1",
+    "restore": "commit only after two successful exact-count reads;does not serialize rate/history",
+    "save": "valid write framing tested;void callback does not propagate failed HRESULT;general failed-write/rollback parity unproved"
+  },
+  "private_candidate_review": {
+    "status": "accepted",
+    "report": "center-native-independent.json",
+    "numerical_prerequisite": "center-numerical-independent.json",
+    "source_runtime_header_tests_byte_identical": true
+  },
+  "promotion": {
+    "runtime_headers_tests_byte_identical": true,
+    "script_changes": [
+      "public script names",
+      "maintained source input paths",
+      "separate maintained output directories"
+    ],
+    "maintained_path_rebind_status": "accepted",
+    "root_owns_final_rebind_and_git": true,
+    "independent_review": "Root separately checked four byte-identical runtime/header/test files, restricted script path changes and all dependencies, then rebuilt/replayed both maintained scripts in a copied source tree."
+  },
+  "destructor_scope": "Twenty forwarding callbacks and explicit DestroyObject lifecycle were exercised. The two extra complete/deleting C++ destructor table entries were not separately replayed; no complete C++ class/destructor ABI certificate is claimed.",
+  "write_failure_scope": "Valid writes use two4-byte transfers. Native state callback returns void and does not propagate failed Write HRESULTs; failed-write rollback/general arbitrary-provider parity are unproved. Restore failure atomicity is tested explicitly.",
+  "actual_engine_loader_acceptance": true,
+  "actual_engine_stream_provider_classes": true,
+  "own_cpp_alternate_factory_rebuilt": true,
+  "original_pascal_factory_class_equivalence": false,
+  "original_editor_rebuilt": false,
+  "actual_fl_application_created": false,
+  "x86_vst_au_proof": false,
+  "unresolved": [
+    "optional own editor and original VCL/resources/hints parity",
+    "source metadata/names/events/remaining dispatch equivalent behavior",
+    "actual FL application/project/mixer host lifecycle",
+    "x86/VST/AU",
+    "realtime/concurrency outside serialized contract",
+    "whole-plugin equivalence",
+    "Separate full C++ destructor ABI/failed-write/general provider behavior"
+  ]
+}

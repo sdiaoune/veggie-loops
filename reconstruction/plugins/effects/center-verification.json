@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "component": "VL Center own numerical C API",
+  "status": "verified_partial_reconstruction_independently_reviewed",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/center_dsp.hpp": "bd8d453f80774d6212fda56b718eb9b6525e834bfca090198d86a8afe4654ccf",
+    "reconstruction/plugins/effects/center_plugin.h": "f4af8b3a1a061629baec7a3e711b8025dccc45fc2455065eb1d17aef2877790a",
+    "reconstruction/plugins/effects/center_plugin.cpp": "a7cbe8ad78f8af0ce1f22b8f6a31c80f519de4c8007e66dd406e7ada341709a1",
+    "reconstruction/plugins/effects/test_center_factory.mm": "0098d83145bf42821fb2bf84afbde03d7c03192e3bef7e27841997dcffbdc624",
+    "reconstruction/plugins/effects/test_center_boundary.cpp": "b7294627b99105892d48e0924474e100059b4b17f09e6c897975e10565d1f565",
+    "reconstruction/plugins/effects/verify_center.sh": "e0f2c340140231992f4c09c05d3ff33b4e8b8a004f260540fd2f8ee1ce774be2",
+    "reconstruction/plugins/effects/verify_center_boundary.sh": "740d04ef4a3a99a940fd6df2d1ca99f6534d9d518c2655b8ee3a85ddf24d96f9",
+    "reconstruction/plugins/effects/CENTER.md": "7d9316c2533e9939ea36b4bce1b15802f140105957bc20d6010c34978b2bdda6"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Center universal": "ab2bf0e97ba0e7a2be06a4711ee29039f32998ef5fd33272c7ded5328e4f5da7",
+    "Fruity Center arm64": "6118a60c9d0e1da97e12b9e5551051af63affd374a0582e9c102d9102cc6da37",
+    "dsp_ippv2 universal": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+  },
+  "tested_environment": {
+    "architecture": "Apple arm64",
+    "compiler": "Apple clang21.0.0(clang-2100.3.34.2)",
+    "os": "macOS26.6.2",
+    "build": "25G83",
+    "rounding": "nearest-even"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "checks": {
+    "original_factory": {
+      "command": "./reconstruction/plugins/effects/verify_center.sh",
+      "result": {
+        "status": "passed_private_compiled_api",
+        "actual_factory_created_and_destroyed": true,
+        "compiled_numerical_c_api_compared": true,
+        "parameter_cases": 1169,
+        "render_callbacks": 5493,
+        "stereo_frames": 1516707,
+        "sample_rate_changes": 62,
+        "resume_resets": 46,
+        "synthetic_runtime_flush_cases": 100,
+        "state_saves": 257,
+        "state_restores": 256,
+        "atomic_rejection_cases": 77,
+        "full_plugin_equivalence": false
+      }
+    },
+    "source_only_sanitizers": {
+      "command": "./reconstruction/plugins/effects/verify_center_boundary.sh",
+      "result": {
+        "status": "passed",
+        "alias_rejection_interval_cases": 342,
+        "zero_frame_nullable_cases": 6,
+        "sanitizers": "address,undefined",
+        "source_binaries_loaded": false
+      }
+    }
+  },
+  "supported_domain": {
+    "enable": "raw0/1,normalized0..2^30;index0",
+    "own_flags": [
+      0,
+      1,
+      2,
+      3,
+      32,
+      33,
+      34,
+      35
+    ],
+    "frames": [
+      0,
+      1024
+    ],
+    "input": "finite float stereo abs(input)<=16",
+    "sample_rate": [
+      8000,
+      384000
+    ],
+    "aliasing": "exact alias or disjoint;partial overlap rejected",
+    "caller_storage": "valid buffers external to live instance; overlap rejects before access, including zero-frame starts inside",
+    "state": "8LEbytes version0/1 for restore,1 for save;enable0/1;does not serialize rate/history",
+    "synchronization": "every instance access serialized or host mix lock"
+  },
+  "source_function_coverage": [
+    {
+      "source": "0x6110 ->0x312a0",
+      "kind": "factory",
+      "status": "original factory created/destroyed; rebuilt native factory not yet implemented"
+    },
+    {
+      "source": "0x31580",
+      "kind": "constructor",
+      "status": "control range/default and own numerical defaults matched; original VCL/host lifecycle not rebuilt"
+    },
+    {
+      "source": "0x31830",
+      "kind": "parameter",
+      "status": "raw enable and all own supported flags/normalization boundaries compared; source hint/UI lifecycle excluded"
+    },
+    {
+      "source": "0x31ae0 ->0x133d80",
+      "kind": "processing",
+      "status": "compiled C API/native sample bits and all four internal doubles matched; source bypass dependency hash and actual kernel addresses validated"
+    },
+    {
+      "source": "0x133bd0 /0x31b70",
+      "kind": "resume",
+      "status": "four used runtime doubles clear; four unused source doubles stay zero; enabled/coefficients preserved"
+    },
+    {
+      "source": "0x31540 ->clock0x134e80",
+      "kind": "rate",
+      "status": "44100/rate double multiplier then float cast; native step and preserved history matched over62 changes"
+    },
+    {
+      "source": "0x31410",
+      "kind": "state",
+      "status": "valid two4byte/null-completion transfers and version0/1 restores match; own validation extension only for malformed inputs"
+    },
+    {
+      "source": "0x31320",
+      "kind": "dispatcher",
+      "status": "resume2/rate4 numerical paths compared; original attach0 and remaining host semantics not rebuilt"
+    },
+    {
+      "source": "0x31a10 /0x171550",
+      "kind": "names/destruction",
+      "status": "source destruction exercised; original names/base lifecycle equivalence not rebuilt"
+    }
+  ],
+  "observations": [
+    "Per-channel double position/velocity updates use separate multiply/add, then float output.",
+    "Each enabled block end flushes absolute runtime values strictly below2^-24 topositive0, including frames0; bypass leaves history unchanged.",
+    "Float step=cast(float)((44100.0/rate)*0x1.327c766a8cde1p-18),float damping0x1.eb851ep-1.",
+    "Own synthetic fixture copies trivially-copyable sole-Processor representation only to match native four-double injected states; no public mutable-state API."
+  ],
+  "private_candidate_review": {
+    "status": "accepted",
+    "report": "center-numerical-independent.json",
+    "additional_critic_checks": [
+      "eight enabled/bypass nullable zero-frame combinations",
+      "twelve history-preservation cases",
+      "sixteen flag-priority cases"
+    ]
+  },
+  "promotion": {
+    "runtime_headers_tests_byte_identical": true,
+    "numerical_script_changes": [
+      "public name",
+      "maintained source input path",
+      "new work output path"
+    ],
+    "sanitizer_script": "separate script reproduces accepted source-only command",
+    "maintained_path_rebind_status": "accepted",
+    "independent_review": "Root independently checked five byte-identical runtime/header/test files, restricted numerical script path delta and source-only sanitizer command, then rebuilt/replayed both maintained scripts in an isolated copied tree."
+  },
+  "unresolved": [
+    "native C++/Pascal factory and actual intact engine acceptance",
+    "real host streams/status/errors",
+    "own/original UI/hints/metadata/remaining dispatcher",
+    "actual FL application/project/mixer lifecycle",
+    "x86/VST/AU",
+    "alternate compiler/FP environments/NaN/Inf",
+    "whole-plugin equivalence"
+  ]
+}
