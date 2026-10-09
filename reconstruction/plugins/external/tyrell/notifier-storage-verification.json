@@ -1,0 +1,406 @@
+{
+  "status": "verified_bounded_notifier_storage_independently_reviewed_public_paths",
+  "module": "bounded TyrellN6 notifier scalar storage and static request decisions",
+  "source_files": [
+    {
+      "path": "reconstruction/plugins/external/tyrell/notifier-storage.h",
+      "sha256": "93dd76fe6c0068f4cc19858e37eddc119e95b1ba02237fe33d689f0aa148a7ad",
+      "bytes": 2424
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/notifier-storage.cpp",
+      "sha256": "1d7bab0b1b332b77b05b42ef03fdedd4a426858961505bc4a2fbc13bebe478b6",
+      "bytes": 3991
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/notifier-contract.cpp",
+      "sha256": "619c4a0c07d84993f4e051356b88e75d706a41d5860904a9bd066efdb60aad80",
+      "bytes": 6423
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/notifier-native.mm",
+      "sha256": "97435461df80d92d3163c1b31d2ab905e75387d217245aefc38a9e413836ddc4",
+      "bytes": 13104
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/notifier-verify.sh",
+      "sha256": "40e0d242c94ae66e4ebeef8e34155fed774ceaddb917885ff5d69da42a4500cc",
+      "bytes": 2392
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/NOTIFIER_STORAGE.md",
+      "sha256": "8b7f4d0e9cf7cc23e7ee04c0410c71122ff2a39f038eda28fce52cea0c7d27cc",
+      "bytes": 4598
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "reconstruction/plugins/common/vst2_probe.mm",
+      "sha256": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f",
+      "bytes": 12399
+    }
+  ],
+  "byte_identical_accepted_runtime_header_and_tests": {
+    "notifier-storage.h": "93dd76fe6c0068f4cc19858e37eddc119e95b1ba02237fe33d689f0aa148a7ad",
+    "notifier-storage.cpp": "1d7bab0b1b332b77b05b42ef03fdedd4a426858961505bc4a2fbc13bebe478b6",
+    "notifier-contract.cpp": "619c4a0c07d84993f4e051356b88e75d706a41d5860904a9bd066efdb60aad80",
+    "notifier-native.mm": "97435461df80d92d3163c1b31d2ab905e75387d217245aefc38a9e413836ddc4"
+  },
+  "canonical_command": "sh reconstruction/plugins/external/tyrell/notifier-verify.sh",
+  "recipe_delta": [
+    "Ignored output moved to project .tools/plugin-work/external/tyrell/notifier-public-check; frozen private notifier-check evidence is preserved.",
+    "Generated source manifest names public NOTIFIER_STORAGE.md. Compiler/runtime/test semantics and all four runtime/header/test files are unchanged."
+  ],
+  "canonical": {
+    "exit_code": 0,
+    "report": {
+      "path": ".tools/plugin-work/external/tyrell/notifier-public-check/verification.json",
+      "sha256": "ac3163c51fed7b415b8d0b4dc6ffe3d52e6fbdb55d0dd4c4228d434b17ffcb29",
+      "bytes": 1824
+    },
+    "results": {
+      "contract": {
+        "status": "passed_prepared_notifier_contract",
+        "success_cases": 33,
+        "atomic_rejections": 6019,
+        "full_plugin_equivalence": false
+      },
+      "native": {
+        "status": "passed_actual_factory_notifier_storage",
+        "ordinary_public_calls": 644,
+        "controlled_queued_calls": 354,
+        "synthetic_calls": 26006,
+        "compared_words": 11287672,
+        "outside_selected_raw_pointee_changes": 55,
+        "ordinary_other_changes": 55,
+        "controlled_other_changes": 0,
+        "substituted_callbacks": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "logs": [
+      {
+        "path": ".tools/plugin-work/external/tyrell/notifier-public-check/contract.log",
+        "sha256": "c474f9252bc87e4ae8ef74d7323a4c505b81a7412be641e41361e8bb260fed5f",
+        "bytes": 123
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/notifier-public-check/native.log",
+        "sha256": "4b88477b6e944c1d765bf4c6475fc98872f45edb69ca762c6b90b1678b235c11",
+        "bytes": 792442
+      }
+    ],
+    "artifacts": [
+      {
+        "path": ".tools/plugin-work/external/tyrell/notifier-public-check/test_contract",
+        "sha256": "fa16dac7660299c8f7ca779f78b2b2957761402859b393a5e8a7976b118ac16c",
+        "bytes": 93200
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/notifier-public-check/test_native",
+        "sha256": "92b92b25e74080624c452bda4b7c82e4ca52b8c8e7f14ae47c0e39a28a59ec04",
+        "bytes": 196944
+      }
+    ],
+    "owned_intel_signed_and_verified": true,
+    "fatal_sanitizer_and_no_diagnostics": true
+  },
+  "native_targets": [
+    {
+      "path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+      "sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+      "bytes": 6974608
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/TyrellN6-x86_64",
+      "sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
+      "bytes": 3546256
+    }
+  ],
+  "native_bodies": [
+    {
+      "address": "0x154430",
+      "bytes": 20,
+      "file_offset": "0x154430",
+      "sha256": "8f4b500fd411d416e7ada08f851d8f760ddf582fdfb7708efb0a1c34f1b7e1c9"
+    },
+    {
+      "address": "0x154450",
+      "bytes": 1545,
+      "file_offset": "0x154450",
+      "sha256": "fd24b787129cbd9d5dfe35e3adb1245b3615069573d535c67924fe343c7f8322"
+    }
+  ],
+  "mapping": {
+    "manager_audio_receiver_offset": "0x40",
+    "manager_notifier_receiver_offset": "0x48",
+    "same_receiver": true,
+    "receiver_vft": "0x3173b0",
+    "notifier_forwarder_slot": "0x298",
+    "notifier_forwarder_address": "0x154430",
+    "notifier_slot": "0x2c8",
+    "notifier_address": "0x154450",
+    "arguments": "receiver RDI; internal ID ESI; force DL; value XMM0; clock XMM1",
+    "native_factory_queue_count": -1,
+    "native_factory_immediate": 0,
+    "native_factory_depth": -1,
+    "ordinary_factory_immediate_override": true
+  },
+  "native_allocated_geometry": {
+    "internal_count": 213,
+    "special_count": 82,
+    "public_count": 92,
+    "raw_base": "cfg+400",
+    "pointer_table": "raw+213*4 (packed4 alignment)",
+    "special_map": "pointers+213*8",
+    "queue": "special_map+213*4",
+    "record_base": "queue+82*4",
+    "following_region": "records+82*16==cfg[0x48]",
+    "bound_before_controlled_count_changes": true
+  },
+  "rea_evidence": [
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-154430.json",
+      "sha256": "f215d114ed8ea56e18186f295e9adb697919ea433e5e45ff833337930b088f6a",
+      "bytes": 7582,
+      "address": "0x154430",
+      "evidence_id": "ev_b0bface470c507d91fa12b8f07569178e3fa41c46b5dab1a6748d48b0498cd65"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-154450.json",
+      "sha256": "c9da6944c3bb71c4f0a3c67f216da2e8fb0a2b25e06d4f4a403705cdcefe73e6",
+      "bytes": 59563,
+      "address": "0x154450",
+      "evidence_id": "ev_7b767ee1eb4012804c19b7fef65750743660081e668e11ce2f4a207afcbf1e99"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-14c0b0.json",
+      "sha256": "39d1684963cdba3b92a2f6a256265d9ed35f274fa1c21aada7449ba4b07c3580",
+      "bytes": 110074,
+      "address": "0x14c0b0",
+      "evidence_id": "ev_8ba1e5c52d07090a96dd286bc614e8c54cb5e72170759be3bad7e7f99b5ca269"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-1370e0.json",
+      "sha256": "782da3f433e6c55d604b85261c35a36b14bf7557c8994e37d08fd768f4f3ca3b",
+      "bytes": 18394,
+      "address": "0x1370e0",
+      "evidence_id": "ev_ea66f810ec7a384e8864b94609ddbc0d8cf0aff169200b67df9d8d73603d0e27"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-137510.json",
+      "sha256": "6e54bee2b8194d1fcbf795bfeb348bc14a80ddd952a93b397b6c148cb70e4432",
+      "bytes": 6223,
+      "address": "0x137510",
+      "evidence_id": "ev_3f6486b9dcc2c38a41f7065cae67a0163a3071aa32cc4aaa829cd13acb65e21c"
+    }
+  ],
+  "llvm_evidence": {
+    "path": ".tools/plugin-work/external/tyrell/notifier-disassembly.txt",
+    "sha256": "921413e9bf0782c65b307719c94d5e8e4355bd944d7ac7c9bc62ab4793ab6dc3",
+    "bytes": 32378
+  },
+  "accepted_private_candidate": {
+    "path": "analysis/plugins/inventory/tyrell-notifier-candidate-source.json",
+    "sha256": "7e4b1640379ecc7c599fe774ac3489cd38472451b5cc486c76daecabe755d24e",
+    "bytes": 9473
+  },
+  "preserved_private_sources": [
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-storage.h",
+      "sha256": "93dd76fe6c0068f4cc19858e37eddc119e95b1ba02237fe33d689f0aa148a7ad",
+      "bytes": 2424
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-storage.cpp",
+      "sha256": "1d7bab0b1b332b77b05b42ef03fdedd4a426858961505bc4a2fbc13bebe478b6",
+      "bytes": 3991
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-contract.cpp",
+      "sha256": "619c4a0c07d84993f4e051356b88e75d706a41d5860904a9bd066efdb60aad80",
+      "bytes": 6423
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-native.mm",
+      "sha256": "97435461df80d92d3163c1b31d2ab905e75387d217245aefc38a9e413836ddc4",
+      "bytes": 13104
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-notes.md",
+      "sha256": "0452d67f02a53111f766812688624cb818354cc7d0eb4153061b1545dda84351",
+      "bytes": 4484
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/notifier-verify.sh",
+      "sha256": "b7eb071a64f646fd92715ee50b06fc6f144c340309e0b94e80d0f9a101a13209",
+      "bytes": 2283
+    }
+  ],
+  "retained_preliminary_evidence": [
+    {
+      "path": "analysis/plugins/inventory/tyrell-notifier-native-initial.log",
+      "sha256": "c6f587634fa9a1d8521c12ecf65e79c9210c1b37d5c9a87a8bb7be13c7f9bca7",
+      "bytes": 4802
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-notifier-native-expanded.log",
+      "sha256": "ba9f9529fcd3e943587c5ee255e7ae8399f261ee0091ccde35664875b83048b5",
+      "bytes": 792442
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-notifier-contract-initial.log",
+      "sha256": "c474f9252bc87e4ae8ef74d7323a4c505b81a7412be641e41361e8bb260fed5f",
+      "bytes": 123
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-notifier-map.log",
+      "sha256": "3cdefeb72836d035fede959ed3649e8c46095013158bf4d8b164a787fa754974",
+      "bytes": 41396
+    }
+  ],
+  "independent_private_reviews": [
+    {
+      "path": "analysis/plugins/review/root-tyrell-notifier-independent.json",
+      "sha256": "08d7a55a277bb008c1b2d61475b2c234860d2ad2b91a3b643ff7c7fd08cb9c66",
+      "bytes": 3824,
+      "status": "accepted_private_bounded_notifier_storage"
+    },
+    {
+      "path": "analysis/plugins/review/tyrell-notifier-effects-independent.json",
+      "sha256": "a2dad89a2bcc22607cc47add1299cdb06d79a7cea38cdcc0cc533f224503aca3",
+      "bytes": 17235,
+      "status": "accepted_independently_in_declared_prepared_notifier_storage_scope"
+    }
+  ],
+  "extra_independent_coverage": {
+    "actual_native": {
+      "status": "passed_critic_notifier_edge_replay",
+      "integer_half_ulp_force_calls": 3168,
+      "float_zero_endpoint_dirty_remaining_queue_calls": 2832,
+      "captured_restore_readbacks": 6002,
+      "integer_other_unit_effects_excluded": 264,
+      "controlled_other_effects": 0,
+      "compared_words": 2508000,
+      "substituted_callbacks": false,
+      "full_plugin_equivalence": false
+    },
+    "source_boundaries_by_architecture": {
+      "arm64": {
+        "status": "passed_critic_notifier_boundaries",
+        "successes": 34,
+        "static_plan_cases": 512,
+        "atomic_rejections": 11143,
+        "full_plugin_equivalence": false
+      },
+      "x86_64": {
+        "status": "passed_critic_notifier_boundaries",
+        "successes": 34,
+        "static_plan_cases": 512,
+        "atomic_rejections": 11143,
+        "full_plugin_equivalence": false
+      }
+    },
+    "wrong_queued_gain_negative": {
+      "exit_code": 1,
+      "mutation": "prepared .02f queue increment gain replaced with .01f in critic-only copy",
+      "expected_assertion": "Special record differs",
+      "log": {
+        "path": "analysis/plugins/review/tyrell-notifier-effects-wrong-gain.log",
+        "sha256": "38de80b80d4efe54ace0855b0e71c39218883ba61bac675ea7f62c96b13139e3",
+        "bytes": 4567
+      }
+    }
+  },
+  "corpora": {
+    "ordinary": {
+      "fresh_factory": true,
+      "calls": 644,
+      "ids": 92,
+      "values": "Valid quantized actual public values. Unchanged real direct/forwarder notifier and actual unit callbacks.",
+      "compared": "Selected raw/pointee and every queue/special word, count/dirty/immediate/depth.",
+      "whole_native_state_restored": false,
+      "destruction": "Normal original lifecycle after isolated corpus.",
+      "additional_change_observations_excluded": 55,
+      "unique_affected_ID_count_unmeasured": true
+    },
+    "baseline_queue": {
+      "fresh_factory": true,
+      "calls": 354,
+      "ids": 59,
+      "input_domain": "Controlled factory queue0, immediate0, depth0; valid public type1 values. Actual live special/pointee/map/VFTs unchanged.",
+      "comparison": "Entire prepared scalar snapshot; no substituted callbacks.",
+      "all_captured_words_restored_and_read_back": true
+    },
+    "synthetic": {
+      "fresh_factories": 3,
+      "calls": 26006,
+      "domain": "Queue membership/stale/remaining0/17/50, immediate0/1/255, depth-1/0/1, force0/1/2/255, clipped values, dirty0, plus512 cyclic-flag and6 low-byte-type cases.",
+      "comparison": "Entire prepared scalar snapshot; no other raw/pointee changes observed.",
+      "metadata_mutations": "Only selected descriptor type/flags in respective isolated corpora; guards restore and read back exact original words.",
+      "not_a_live_scheduler_production_claim": true
+    }
+  },
+  "ordinary_exclusions": {
+    "outside_change_observations_across_calls": 55,
+    "unique_affected_ID_count_unmeasured": true,
+    "additional_unit_effects_excluded_and_not_restored": true,
+    "normal_original_destruction_after_isolated_corpus": true
+  },
+  "domain": {
+    "inputs": "Fully initialized bounded caller-owned scalar state and descriptor arrays; exact header numerical/type/count domain.",
+    "serialization": "All external storage valid, stable and serialized throughout calls. No overlapping descriptor/state/result spans.",
+    "fp": "Nearest-even gradual FP, no contraction/fast math. General exception flags/traps unverified.",
+    "mutation": "Actual queue allocation geometry bound before any count write. Controlled cache/queue/records/pointee/modes and selected descriptor fields restore by byte readback; whole native state is not captured.",
+    "callbacks": "Original native callbacks intact in factory fixture. Independent source returns static callback-request bits only; no unit execution or return effects.",
+    "original_side_effects": "Ordinary original constructor/destructor and diagnostics may write log/preferences/MIDI caches. Original plugin uninstrumented.",
+    "sanitizers": "New source and fixtures fatal ASan/UBSan; installed original code uninstrumented."
+  },
+  "gates": {
+    "full_plugin_equivalence": false,
+    "whole_dsp": false,
+    "native_class_abi": false,
+    "native_factory_reconstruction": false,
+    "native_unit_callback_parity": false,
+    "whole_native_state_restore": false,
+    "live_scheduler_production_or_consumption": false,
+    "actual_audio_state_gui": false,
+    "realtime_certificate": false,
+    "declared_prepared_storage_privately_reviewed": true,
+    "public_path_independent_acceptance": false,
+    "callback_execution_reconstructed": false,
+    "state_reconstruction": false,
+    "gui_reconstruction": false,
+    "vst_au_reconstruction": false,
+    "general_exception_flags_or_traps": false
+  },
+  "captured_code_assets_presets_included": false,
+  "parent_final_path_review": {
+    "status": "accepted_scoped_public_path_replay",
+    "report": "root-tyrell-notifier-public-independent.json",
+    "sha256": "24b657938754abd4cf3283b16cb317fcbda141ffc922203f3421c096acda8a59",
+    "copied_canonical_results": {
+      "contract": {
+        "status": "passed_prepared_notifier_contract",
+        "success_cases": 33,
+        "atomic_rejections": 6019,
+        "full_plugin_equivalence": false
+      },
+      "native": {
+        "status": "passed_actual_factory_notifier_storage",
+        "ordinary_public_calls": 644,
+        "controlled_queued_calls": 354,
+        "synthetic_calls": 26006,
+        "compared_words": 11287672,
+        "outside_selected_raw_pointee_changes": 55,
+        "ordinary_other_changes": 55,
+        "controlled_other_changes": 0,
+        "substituted_callbacks": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "runtime_header_and_tests_byte_identical": true,
+    "recipe_delta_only_paths_manifest_name": true,
+    "full_plugin_equivalence": false
+  }
+}
