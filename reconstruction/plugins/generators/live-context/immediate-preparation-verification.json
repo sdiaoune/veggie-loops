@@ -2437,5 +2437,15 @@
     "bytes": 751064
   },
   "historical_artifact_bindings_preserved_scope": "Earlier result artifacts identify their original baseline; they do not claim the new runtime bytes were used historically.",
-  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false
+  "original_class_GUI_extra_destructor_allocator_RT_and_full_equivalence": false,
+  "fresh_no_local_checkout_replay": {
+    "path": "analysis/plugins/review/root-4a12272-generator-fresh-checkpoint.json",
+    "sha256": "414469838a4973a01fbe1f6957a6cfebe74a7b1deb0dbd0f9d059fbd2efec585",
+    "bytes": 803584
+  },
+  "fresh_no_local_checkout_tracked_worktree_clean": true,
+  "fresh_no_local_checkout_source_and_original_hashes_unchanged": true,
+  "tested_code_commit": "4a122723f847a8146ce5d571620a982423a64b19",
+  "later_commit_changes_verification_metadata_only": true,
+  "signature_scope_qualification": "Signature postflight counts resolved image paths and content hashes separately; copied products and symlink aliases are not additional independent builds."
 }
