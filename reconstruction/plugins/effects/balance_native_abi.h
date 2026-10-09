@@ -11,10 +11,14 @@
 // written editor/hint implementation is optional with VL_BALANCE_APPKIT_EDITOR.
 // In that build, host automation is reflected on GUI Idle; UI calls run on the main
 // thread and use the verified host lock/unlock boundary for numerical access.
-// DestroyObject in an optional-editor build must run on the main thread, even
-// before editor creation. An off-main attempt preserves the object/view until a
-// main-thread retry; do not unload
-// the module or its host before completing destruction. Tick/MIDI tick never
+// All three lifetime callbacks require the main thread in an optional-editor
+// build, even before editor creation. Off-main refusal preserves the object;
+// keep storage/host/module alive and retry on main without freeing on refusal.
+// Successful completeDestructor ends lifetime and releases owned resources,
+// leaving storage for matching raw caller deallocation only. No callback or
+// second destruction is valid afterward. DestroyObject/deletingDestructor also
+// deallocate once. Native calls and max-polyphony snapshots are serialized;
+// editor locks do not provide general synchronization. Tick/MIDI tick never
 // access GUI state. Hint flag 4 is for GUI calls outside the host mixer lock.
 namespace veggie_loops::balance::native {
 struct Plugin;

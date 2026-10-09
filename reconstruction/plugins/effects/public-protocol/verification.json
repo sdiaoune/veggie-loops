@@ -1,0 +1,396 @@
+{
+  "status": "independently_accepted_finite_public_name_event_and_source_lifetime_protocol",
+  "source_closure": [
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/README.md",
+      "sha256": "71c53267fba991de48543e11e1632933bd9b57111352ff02461adec9f4d6777c"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/factory_helpers.mm",
+      "sha256": "64c5924779058cf502140a12afedaa2ccadd88bd1d6d0c15be6e8573b18578d0"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/protocol_probe.cpp",
+      "sha256": "0fe71cc40e626296f835e7b30531df3df89cd0a3037a44ff5a36c73a7f184566"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/summarize_protocol.py",
+      "sha256": "c130881adf6b4c8c9bb4c74790e8f9e668b53fc2ec0dc551f01cbbda4e7963ca"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/test_lifetime.cpp",
+      "sha256": "1e75cd99ee81be6d6e254773c7971d073602a3e7e1e30ed137179fa3d7678256"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/test_protocol.mm",
+      "sha256": "ca712b93e12ba7c8cbbcc032d725801b43b7b8e9891d875b8b54209ea19748d2"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/verify_editor_regression.sh",
+      "sha256": "fbcca0d1189c1013ee0185598acb2ebe9633bb9cc8142464d4202983948f2b2d"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/verify_manifest.py",
+      "sha256": "32dea920744b1a3144972ec402a3ce1d80a860f54e9a3129890ced2837d7d6d5"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/verify_negatives.py",
+      "sha256": "59b77712e7574c3d4e075e056130121f866cf1989e6e3328eda169e2cf0ffe7b"
+    },
+    {
+      "path": "reconstruction/plugins/effects/public-protocol/verify_protocol.sh",
+      "sha256": "981167ff638129837650691c38b4da1e97ad04d644f34582aba652fdd6900c63"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_native_abi.cpp",
+      "sha256": "a0d6e849002ffdf32fe34c68a73aa7acdec6540e03ca73f27940e80d6e261cee"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_native_abi.h",
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_plugin.cpp",
+      "sha256": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_plugin.h",
+      "sha256": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_dsp.hpp",
+      "sha256": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_editor.h",
+      "sha256": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f"
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_editor.mm",
+      "sha256": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_balance_native_abi.cpp",
+      "sha256": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_balance_engine_loader.mm",
+      "sha256": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_balance_native_editor.mm",
+      "sha256": "186ae183e085c2a359d3283eb95c8e519762facf161fd434af98728dc659dce6"
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_balance_factory.mm",
+      "sha256": "2280f9afef24b1c090c11818b4bd7640a67a9cc2e929b4eb8a9d519dc3734c33"
+    }
+  ],
+  "original_targets": [
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Effects/Fruity Balance/Fruity Balance_x64.dylib",
+      "sha256": "525e96102a4eddc89de484ec3bc6a3c92788738c1dc50b5a5fa71bbd994e77ef"
+    }
+  ],
+  "positive": {
+    "normal": {
+      "protocol": {
+        "status": "matched_balance_public_name_and_event_protocol",
+        "factory_pairs": 2,
+        "name_pairs": 120,
+        "different_name_buffers": 0,
+        "nonzero_section_native_buffers_unchanged": 108,
+        "section_difference_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "original_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "source_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "event_pairs": 36,
+        "native_max_poly_writes": 12,
+        "maximum_polyphony_state_comparisons": 40,
+        "intact_engine_bridge_name_calls": 60,
+        "intact_engine_bridge_event_calls": 18,
+        "name_guards_preserved": true,
+        "original_callback_bytes_or_VFT_changed": false,
+        "audio_compared": false,
+        "full_plugin_equivalence": false
+      },
+      "lifetime": {
+        "status": "matched_own_source_lifetime_contract",
+        "instances": 96,
+        "complete_caller_free_routes": 32,
+        "deleting_routes": 32,
+        "DestroyObject_routes": 32,
+        "tracked_plugin_deallocations": 96,
+        "tracked_numerical_deallocations": 96,
+        "optional_editor_off_main_refusals": 0,
+        "original_extra_destructor_invoked": false,
+        "full_plugin_equivalence": false
+      },
+      "optional_editor_lifetime": {
+        "status": "matched_own_source_lifetime_contract",
+        "instances": 96,
+        "complete_caller_free_routes": 32,
+        "deleting_routes": 32,
+        "DestroyObject_routes": 32,
+        "tracked_plugin_deallocations": 96,
+        "tracked_numerical_deallocations": 96,
+        "optional_editor_off_main_refusals": 96,
+        "original_extra_destructor_invoked": false,
+        "full_plugin_equivalence": false
+      },
+      "engine-loader": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "parameter_calls": 2400,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      },
+      "engine-abi": {
+        "status": "passed",
+        "engine_adapter_routines": 21,
+        "public_callback_slots_exercised": 20,
+        "rebuilt_native_factory_loaded": true,
+        "cases": 1200,
+        "stereo_frames": 140700,
+        "full_fl_host_loading": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "sanitized": {
+      "protocol": {
+        "status": "matched_balance_public_name_and_event_protocol",
+        "factory_pairs": 2,
+        "name_pairs": 120,
+        "different_name_buffers": 0,
+        "nonzero_section_native_buffers_unchanged": 108,
+        "section_difference_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "original_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "source_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "event_pairs": 36,
+        "native_max_poly_writes": 12,
+        "maximum_polyphony_state_comparisons": 40,
+        "intact_engine_bridge_name_calls": 60,
+        "intact_engine_bridge_event_calls": 18,
+        "name_guards_preserved": true,
+        "original_callback_bytes_or_VFT_changed": false,
+        "audio_compared": false,
+        "full_plugin_equivalence": false
+      },
+      "lifetime": {
+        "status": "matched_own_source_lifetime_contract",
+        "instances": 96,
+        "complete_caller_free_routes": 32,
+        "deleting_routes": 32,
+        "DestroyObject_routes": 32,
+        "tracked_plugin_deallocations": 96,
+        "tracked_numerical_deallocations": 96,
+        "optional_editor_off_main_refusals": 0,
+        "original_extra_destructor_invoked": false,
+        "full_plugin_equivalence": false
+      },
+      "optional_editor_lifetime": {
+        "status": "matched_own_source_lifetime_contract",
+        "instances": 96,
+        "complete_caller_free_routes": 32,
+        "deleting_routes": 32,
+        "DestroyObject_routes": 32,
+        "tracked_plugin_deallocations": 96,
+        "tracked_numerical_deallocations": 96,
+        "optional_editor_off_main_refusals": 96,
+        "original_extra_destructor_invoked": false,
+        "full_plugin_equivalence": false
+      },
+      "engine-loader": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "parameter_calls": 2400,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      },
+      "engine-abi": {
+        "status": "passed",
+        "engine_adapter_routines": 21,
+        "public_callback_slots_exercised": 20,
+        "rebuilt_native_factory_loaded": true,
+        "cases": 1200,
+        "stereo_frames": 140700,
+        "full_fl_host_loading": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "O0": {
+      "protocol": {
+        "status": "matched_balance_public_name_and_event_protocol",
+        "factory_pairs": 2,
+        "name_pairs": 120,
+        "different_name_buffers": 0,
+        "nonzero_section_native_buffers_unchanged": 108,
+        "section_difference_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "original_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "source_names": [
+          "^b^aBalance",
+          "^b^aVolume"
+        ],
+        "event_pairs": 36,
+        "native_max_poly_writes": 12,
+        "maximum_polyphony_state_comparisons": 40,
+        "intact_engine_bridge_name_calls": 60,
+        "intact_engine_bridge_event_calls": 18,
+        "name_guards_preserved": true,
+        "original_callback_bytes_or_VFT_changed": false,
+        "audio_compared": false,
+        "full_plugin_equivalence": false
+      },
+      "lifetime": {
+        "status": "matched_own_source_lifetime_contract",
+        "instances": 96,
+        "complete_caller_free_routes": 32,
+        "deleting_routes": 32,
+        "DestroyObject_routes": 32,
+        "tracked_plugin_deallocations": 96,
+        "tracked_numerical_deallocations": 96,
+        "optional_editor_off_main_refusals": 0,
+        "original_extra_destructor_invoked": false,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "editor_regression": {
+    "normal": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "worker_tick_idle_skipped_gui": true,
+      "control_changes": 2,
+      "hints": 3,
+      "resize_notifications": 2,
+      "source_gui_resources_copied": false,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    },
+    "sanitized": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "worker_tick_idle_skipped_gui": true,
+      "control_changes": 2,
+      "hints": 3,
+      "resize_notifications": 2,
+      "source_gui_resources_copied": false,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "negative_controls": [
+    {
+      "name": "old_names",
+      "exit_code": 1,
+      "rejected_by": "Native/source name buffer differs",
+      "mutant_source_sha256": "64ad5c29e57c565a8b94efa93bc05e55afa63b2993fb0737b8759b3cc6214219",
+      "kind": "protocol"
+    },
+    {
+      "name": "clear_other_sections",
+      "exit_code": 1,
+      "rejected_by": "Native/source name buffer differs",
+      "mutant_source_sha256": "cdcb5c0c5f2d2c0dc2e36ce93cb8c261fca10e515509d6901773c92cc1b9ee4e",
+      "kind": "protocol"
+    },
+    {
+      "name": "ignore_max_poly",
+      "exit_code": 1,
+      "rejected_by": "Native/source maximum-polyphony state differs",
+      "mutant_source_sha256": "46bab4bdba22602201597b0f2f808cbaeb0bd321faebd0e05d90be4fd9711cf5",
+      "kind": "protocol"
+    },
+    {
+      "name": "write_MonoRender",
+      "exit_code": 1,
+      "rejected_by": "Source MonoRender unexpectedly changed",
+      "mutant_source_sha256": "7d25031354807e78d96d0258633c66992debe383a00c418d0b273a8c280ef766",
+      "kind": "protocol"
+    },
+    {
+      "name": "complete_deallocates",
+      "exit_code": 1,
+      "rejected_by": "Complete destructor must clean ownership without deallocation",
+      "mutant_source_sha256": "6b1e15cd397a342fb0ef8d65b5635c4c84afd15392a605b70e45db3ad908a212",
+      "kind": "lifetime"
+    },
+    {
+      "name": "omit_numerical_cleanup",
+      "exit_code": 1,
+      "rejected_by": "Complete destructor must clean ownership without deallocation",
+      "mutant_source_sha256": "400d51799bae5401447295e55cc8656371049b2a75e256a219d0a37f0b4454f7",
+      "kind": "lifetime"
+    }
+  ],
+  "private_acceptance": {
+    "path": "analysis/plugins/review/root-Balance-protocol-combined-independent.json",
+    "sha256": "0f2e03abb9e2e7ec4b39d569d17ed78d374e381e00ea6ec1ae3e0260ab2ba156"
+  },
+  "promotion_rebind": "Runtime CPP byte-identical; header comments only; source/fixture includes and output/target-slice paths rebound to public repository. Private reports/partial failures remain local immutable history. Own reference-helper EOF blank line normalized only to satisfy git diff --check; code unchanged.",
+  "sanitizers": "Own source/fixtures instrumented in fatal modes; original images uninstrumented. Own allocation hooks verify source lifetimes only.",
+  "original_extra_destructor_equivalence": false,
+  "original_class_GUI_application_audio_scheduler_RT_general_FP_or_allocator_equivalence": false,
+  "full_plugin_equivalence": false
+}

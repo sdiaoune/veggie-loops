@@ -14,6 +14,7 @@ namespace {
 struct Instance {
   Plugin header{};
   VLBalancePlugin* numerical=vl_balance_create();
+  std::int32_t maxPoly=0; // Separate from the public MonoRender header field.
 #if defined(VL_BALANCE_APPKIT_EDITOR)
   void* host=nullptr;
   void* editor=nullptr;
@@ -44,13 +45,21 @@ void hostUnlock(void* context){auto& o=*static_cast<Instance*>(context);if(auto 
 void hostChanged(void* context,std::int32_t index,std::int32_t value){auto& o=*static_cast<Instance*>(context);if(auto f=hostMethod<void(*)(void*,std::intptr_t,std::int32_t,std::int32_t)>(o,1))f(o.host,o.header.hostTag,index,value);}
 void hostHint(void* context,const char* text){auto& o=*static_cast<Instance*>(context);if(auto f=hostMethod<void(*)(void*,std::intptr_t,const char*)>(o,2))f(o.host,o.header.hostTag,text);}
 #endif
-void destroy(Plugin* p){if(p){
+bool finishLifetime(Plugin* p){
+  if(!p)return false;
 #if defined(VL_BALANCE_APPKIT_EDITOR)
-  if(!vl_balance_editor_main_thread())return;
-  if(!vl_balance_editor_destroy(instance(p).editor))return;
+  if(!vl_balance_editor_main_thread())return false;
+  if(!vl_balance_editor_destroy(instance(p).editor))return false;
 #endif
-  vl_balance_destroy(instance(p).numerical);delete &instance(p);
-}}
+  auto* object=&instance(p);
+  vl_balance_destroy(object->numerical);
+  object->numerical=nullptr;
+  object->~Instance();
+  return true;
+}
+void completeDestructor(Plugin* p){(void)finishLifetime(p);}
+void destroy(Plugin* p){if(finishLifetime(p))::operator delete(static_cast<void*>(p));}
+void deletingDestructor(Plugin* p){destroy(p);}
 std::intptr_t dispatch(Plugin* p,std::intptr_t id,std::intptr_t,std::intptr_t value){
 #if defined(VL_BALANCE_APPKIT_EDITOR)
   if(id==0){if(!vl_balance_editor_main_thread())return 0;auto& object=instance(p);
@@ -95,11 +104,14 @@ void state(Plugin* p,Stream* stream,std::int32_t save){
   }
 }
 void name(Plugin*,std::int32_t section,std::int32_t index,std::int32_t,char* output){
-  if(!output)return;
-  const char* text=section==0 && index==0?"Pan":section==0 && index==1?"Volume":"";
+  if(!output || section!=0 || index<0 || index>1)return;
+  const char* text=index==0?"^b^aBalance":"^b^aVolume";
   std::strcpy(output,text);
 }
-std::int32_t event(Plugin*,std::int32_t,std::int32_t,std::int32_t){return 0;}
+std::int32_t event(Plugin* p,std::int32_t id,std::int32_t value,std::int32_t){
+  if(id==1)instance(p).maxPoly=value;
+  return 0;
+}
 std::int32_t parameter(Plugin* p,std::int32_t index,std::int32_t value,std::int32_t flags){
   std::int32_t result=0;
   vl_balance_parameter(instance(p).numerical,index,value,static_cast<std::uint32_t>(flags)&35u,&result);
@@ -120,7 +132,7 @@ void midi(Plugin*,std::int32_t&){}
 void message(Plugin*,std::intptr_t){}
 const Functions functions={destroy,dispatch,idle,state,name,event,parameter,effect,generator,
   voice,voiceEnd,voiceEnd,voiceEvent,voiceRender,tick,tick,midi,message,voiceEvent,voiceEnd,
-  destroy,destroy};
+  completeDestructor,deletingDestructor};
 }
 }
 extern "C" veggie_loops::balance::native::Plugin*
