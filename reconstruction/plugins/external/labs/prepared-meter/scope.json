@@ -1,0 +1,179 @@
+{
+  "schema": "VL.labs.prepared-meter.scope.v1",
+  "namespace": "vl::labs::prepared_meter",
+  "status": "private_public_layout_proposal_pending_two_Source_reviews_and_package_replay",
+  "files": [
+    "prepared_meter.hpp",
+    "prepared_meter.cpp",
+    "test_prepared_meter_arm64.cpp",
+    "README.md",
+    "LICENSE",
+    "scope.json"
+  ],
+  "runtime_dependencies": "Own header/source and standard C++20 library/math only; no private history, original image, captured thresholds or installed plugin.",
+  "new_API": {
+    "State": "own caller-managed 52-byte layout, not native class/ABI",
+    "tables": {
+      "count": 1000,
+      "values": "finite [0,1], signed zeros allowed, monotonicity not required"
+    },
+    "thresholds": {
+      "count": 100,
+      "values": "ordered finite [0,1], signed zeros/repeats allowed, last=1"
+    },
+    "samples": "finite [-2,2]",
+    "state_float_magnitude_max": 1024,
+    "rates": "nonnegative, -0 allowed",
+    "elapsed": "finite [0,64]",
+    "storage": "Valid live aligned objects/spans, serialize all access; defined argument overlaps rejected.",
+    "FP": "IEEE binary32/64, nearest-even, gradual underflow, masked traps, no excess precision or fast-math; contraction off except explicit std::fma."
+  },
+  "historical_own_source_results": {
+    "profiles": [
+      "O0",
+      "O2"
+    ],
+    "architecture": "macOS arm64",
+    "strict_signed_products": 7,
+    "positive_cases_each": 13,
+    "FPCR_each": 0,
+    "negative_variants": 5,
+    "Original_loaded_or_called": false,
+    "references": {
+      "source_proposal": {
+        "sha256": "e974ce0df0808e2d9a81d564e50bbe2e0b316184645559c7387061da171eaa72",
+        "bytes": 44463
+      },
+      "own_runtime": {
+        "sha256": "74dd084146efd0532fa5f5dfb2d2d82af1dc3b0e0605a9cec84085a502b08118",
+        "bytes": 109050
+      },
+      "independent_DATA": {
+        "sha256": "6d0bb5c69416bbc9c16937be1ae0f09e1248a80f5ac23ab372a1fe1d66256121",
+        "bytes": 5832
+      }
+    }
+  },
+  "positive_test": {
+    "profiles_planned": [
+      "O0",
+      "O2"
+    ],
+    "platform_guard": "__APPLE__ and __aarch64__ required by fixture",
+    "control_admission": "Reads FPCR and fegetround without changing them; rejects incompatible control bits. This is not FPSR/exception-status parity.",
+    "reported_success_document": {
+      "own_source_checks_passed": 13,
+      "fpcr": "unsigned observed FPCR; historical value0",
+      "original_called": false,
+      "full": false
+    },
+    "check_groups": [
+      {
+        "label": "synthetic_fused_lookup",
+        "count": 1,
+        "expected_word": "0x3e940ad7"
+      },
+      {
+        "label": "synthetic_fused_decay",
+        "count": 1,
+        "expected_word": "0x3f27aa4b"
+      },
+      {
+        "label": "separated_decay_witness",
+        "count": 1,
+        "expected_word": "0x3f27aa4a"
+      },
+      {
+        "label": "hold_has_no_same_call_residual_decay",
+        "count": 1
+      },
+      {
+        "label": "finite_negative_clamp_positive_zero",
+        "count": 1
+      },
+      {
+        "label": "finite_signed_zero_clamp_with_positive_peer",
+        "count": 8,
+        "reserved_bytes_preserved": true
+      }
+    ]
+  },
+  "historical_semantic_mutants_and_future_exact_public_anchors": [
+    {
+      "name": "unfused-lookup",
+      "replace_once": {
+        "before": "  return std::fma(fraction, distance, table[index]);",
+        "after": "  const float product = distance * fraction;\n  return table[index] + product;"
+      },
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "expected_stderr": "FAIL:synthetic_fused_lookup\n"
+    },
+    {
+      "name": "unfused-decay",
+      "replace_once": {
+        "before": "    const float reduced = std::fma(-rate, elapsed, level);",
+        "after": "    const float amount = elapsed * rate;\n    const float reduced = level - amount;"
+      },
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "expected_stderr": "FAIL:synthetic_fused_decay\n"
+    },
+    {
+      "name": "wrong-decay-sign",
+      "replace_once": {
+        "before": "std::fma(-rate, elapsed, level)",
+        "after": "std::fma(rate, elapsed, level)"
+      },
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "expected_stderr": "FAIL:synthetic_fused_decay\n"
+    },
+    {
+      "name": "negative-zero-retained",
+      "replace_once": {
+        "before": "level = reduced <= 0.0f ? 0.0f : reduced;",
+        "after": "level = reduced < 0.0f ? 0.0f : reduced;"
+      },
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "expected_stderr": "FAIL:finite_signed_zero_clamp_with_positive_peer\n"
+    },
+    {
+      "name": "hold-residual-decay",
+      "replace_once": {
+        "before": "    remaining = remaining - consumed;",
+        "after": "    remaining = remaining - consumed;\n    if (elapsed > consumed) decay(level, rate, remaining, elapsed - consumed);"
+      },
+      "expected_exit": 1,
+      "expected_stdout": "",
+      "expected_stderr": "FAIL:hold_has_no_same_call_residual_decay\n"
+    }
+  ],
+  "separate_unfused_package": {
+    "path": "../meter",
+    "all_nine_files_preserved": true,
+    "prior_goldens_or_128_atomic_or_transfer_history_corpus_qualified_for_fused_package": false
+  },
+  "public_layout_compiled_or_run": false,
+  "public_layout_mutants_executed": false,
+  "pending_before_publication": [
+    "Root and Generator exact Source critiques",
+    "Root separately leased fresh standalone package O0/O2 and five-mutant replay with retained build/signature/runtime evidence"
+  ],
+  "unverified": {
+    "exhaustive_finite_domain": true,
+    "transfer_history_activity_validation_alias_corpus_for_fused_variant": true,
+    "sanitizers": true,
+    "Original_numeric_oracle": true,
+    "native_ABI_class_layout_allocator": true,
+    "Original_lazy_tables_globals_contents_ownership": true,
+    "NaN_FZ_traps_general_modes_exception_status": true,
+    "actual_plugin_host_audio_application": true,
+    "VST_AU_classes_or_installed_architectures": true,
+    "real_time": true
+  },
+  "commercial_binary_asset_table_decompiler_body_included": false,
+  "original_plugin_called": false,
+  "full_plugin_equivalence": false
+}
