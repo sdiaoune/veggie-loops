@@ -1,0 +1,254 @@
+{
+  "status": "independently_accepted_bounded_public_no_XY_queue_consumer",
+  "source_files": {
+    "queue-consumer-storage.h": {
+      "path": "reconstruction/plugins/external/tyrell/queue-consumer-storage.h",
+      "sha256": "8fd9f6371b0fe889455a11611256f6a5e75aded3efe2a0f922780c14fc7e955e",
+      "bytes": 2304
+    },
+    "queue-consumer-storage.cpp": {
+      "path": "reconstruction/plugins/external/tyrell/queue-consumer-storage.cpp",
+      "sha256": "1b710ca3c77b645c5c7574c2ff7272bdb2c046f8d61f04f5169dbdc8634b2aed",
+      "bytes": 2727
+    },
+    "queue-consumer-contract.cpp": {
+      "path": "reconstruction/plugins/external/tyrell/queue-consumer-contract.cpp",
+      "sha256": "1223126d5ca22bc0f95468cf6871c164e0423f5d667339c79cdf7c60779027c2",
+      "bytes": 6329
+    },
+    "queue-consumer-native.mm": {
+      "path": "reconstruction/plugins/external/tyrell/queue-consumer-native.mm",
+      "sha256": "b62be228d964eb2ecc6bd0a0b5face2a709b4a5d7bc7c251c78b3f19189e6d13",
+      "bytes": 14177
+    },
+    "queue-consumer-verify.sh": {
+      "path": "reconstruction/plugins/external/tyrell/queue-consumer-verify.sh",
+      "sha256": "896447eab09208dcfd6bcb16fd87de7186460c31d6b74807143c25c5e953b483",
+      "bytes": 5917
+    },
+    "QUEUE_CONSUMER.md": {
+      "path": "reconstruction/plugins/external/tyrell/QUEUE_CONSUMER.md",
+      "sha256": "a0f75aecc250d28ab3029aeb0e3119d6603a781d3910ed1028f13f14bdd1daa8",
+      "bytes": 8353
+    }
+  },
+  "required_read_only_public_dependency": {
+    "path": "reconstruction/plugins/common/vst2_probe.mm",
+    "sha256": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f",
+    "bytes": 12399
+  },
+  "required_native_target": {
+    "path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+    "sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+    "bytes": 6974608
+  },
+  "public_replay": {
+    "command": "sh reconstruction/plugins/external/tyrell/queue-consumer-verify.sh [optional isolated output directory]",
+    "default_output": ".tools/plugin-work/external/tyrell/queue-consumer-public-check",
+    "environment": "macOS Apple Silicon with Intel/Rosetta runtime, clang++, Python3, codesign, Cocoa/CommonCrypto and pinned installed TyrellN6 VST",
+    "ignored_private_mapping_review_failure_data_required": false,
+    "source_only_snapshot_inputs": 7,
+    "canonical_results": {
+      "contracts": {
+        "arm64": {
+          "status": "passed_queue_consumer_contract",
+          "success_cases": 11,
+          "atomic_rejections": 15488,
+          "full_plugin_equivalence": false
+        },
+        "x86_64": {
+          "status": "passed_queue_consumer_contract",
+          "success_cases": 11,
+          "atomic_rejections": 15488,
+          "full_plugin_equivalence": false
+        }
+      },
+      "native": {
+        "status": "passed_original_queue_consumer",
+        "direct_calls": 17290,
+        "captured_restores": 17290,
+        "ordinary_render_calls": 6609,
+        "ordinary_render_frames": 422976,
+        "completion_checks": 118,
+        "compared_words": 45981676,
+        "outside_visited_pointee_change_observations": 6614,
+        "outside_word_representative_IDs": [
+          {
+            "ID": 18,
+            "observations": 1
+          },
+          {
+            "ID": 45,
+            "observations": 6609
+          },
+          {
+            "ID": 47,
+            "observations": 1
+          },
+          {
+            "ID": 48,
+            "observations": 1
+          },
+          {
+            "ID": 49,
+            "observations": 1
+          },
+          {
+            "ID": 50,
+            "observations": 1
+          }
+        ],
+        "substituted_unit_callbacks": false,
+        "actual_audio_effect_parity": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "negative_controls": [
+      {
+        "name": "wrong-decrement",
+        "exit_code": 1,
+        "failure": "Consumer scalar snapshot differs",
+        "source_sha256": "e212aa966692fe006f12ff0d6f3f483e4301a66b16457d86039968e478abdaab",
+        "log_sha256": "33d31826657bcd70aa192ccd81b9f47f2f699e9f706e3afa6f1ec03d2161308f",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "forward-copy",
+        "exit_code": 1,
+        "failure": "Consumer scalar snapshot differs",
+        "source_sha256": "adc759fb6cd1fa267f2839551e18f58bf5ec1417c106a44dbacaf64523783107",
+        "log_sha256": "09d408c2f1312e4f335a7b20ab75ee1bd7d8a020ba086c7b290bc5a2a6fbc51a",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "wrong-cyclic-range",
+        "exit_code": 1,
+        "failure": "Consumer scalar snapshot differs",
+        "source_sha256": "f3884440197b18f9b040dac03f4b90e1159cae5e8f11a00096ef28d5348aa2c6",
+        "log_sha256": "33d31826657bcd70aa192ccd81b9f47f2f699e9f706e3afa6f1ec03d2161308f",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "skip-revisit",
+        "exit_code": 1,
+        "failure": "Consumer scalar snapshot differs",
+        "source_sha256": "0c16be5e611f83c6845be22e611f05e3745da28adbc697282dbfc53a95e0519a",
+        "log_sha256": "09d408c2f1312e4f335a7b20ab75ee1bd7d8a020ba086c7b290bc5a2a6fbc51a",
+        "original_code_or_callbacks_mutated": false
+      }
+    ],
+    "compiled_artifact_sha256": {
+      "queue-consumer-contract-arm64": "651804d2a325f890a53d5e3ef64acd32fef97c19045c4dcfa7d6dd3667df622f",
+      "queue-consumer-contract-x86_64": "c7cf2df114ad5167c16dea3e17c2cf76b794ffeea5108c0505167750db85578c",
+      "libVLTyrellQueue.dylib": "d519a9b87a661b0d640ec096829ad30f07770a397278ff85effa4575b2adfa18",
+      "queue-consumer-native": "009fba3c93d0f7b3026db83ce03c93b80469667fca804373da2bf190675155bb"
+    },
+    "log_sha256": {
+      "contract-arm64.log": "4f0fd9df2d8cc94306d818987b44759d776dab5998e515a3d90588c10a3a0447",
+      "contract-x86_64.log": "4f0fd9df2d8cc94306d818987b44759d776dab5998e515a3d90588c10a3a0447",
+      "native.log": "b27cb568182201e8a3e29e0080ab328b048128363c94bae681f9a1e59325fda6"
+    },
+    "fatal_sanitizers": true,
+    "all_owned_Intel_signed_and_verified_before_execution": true,
+    "artifact_provenance": "Parent isolated source-only public replay; artifact hashes bind that build, not arbitrary rebuilds."
+  },
+  "historical_private_evidence_references_only": {
+    "candidate_map": {
+      "path": "analysis/plugins/inventory/tyrell-queue-consumer-candidate-source.json",
+      "sha256": "a88a481de232c7352e1a9f26c7637749838a65261234d4083f31da9e6d75e6ae",
+      "bytes": 25112
+    },
+    "combined_acceptance": {
+      "path": "analysis/plugins/review/root-tyrell-queue-combined-independent.json",
+      "sha256": "b2ea0c946bdcc0f3c25ccb029212886fe1c4b98fca4915990738e6f3ae1d3188",
+      "bytes": 3793
+    },
+    "root_review": {
+      "path": "analysis/plugins/review/root-tyrell-queue-independent.json",
+      "sha256": "614b5f1234762358488ae51f3f80a02e10ef0520fdf6cf598f3a7fbc2e6d236b",
+      "bytes": 5169
+    },
+    "generator_review": {
+      "path": "analysis/plugins/review/tyrell-queue-generators-independent.json",
+      "sha256": "69bfb538fe4be6a115456907f7d6358ce0a7b429cfed77fea9247e4d1dc4ed6c",
+      "bytes": 28571
+    },
+    "references_are_public_replay_inputs": false,
+    "additional_private_probes_repeated_by_public_recipe": false
+  },
+  "mechanical_promotion": {
+    "header_runtime_two_fixtures_byte_identical": true,
+    "script_changes": [
+      "derive project root from public directory",
+      "ignored default output location",
+      "own script and documentation source-hash names"
+    ],
+    "compiler_signing_sanitizer_rejection_mutation_semantics_changed": false
+  },
+  "scope": {
+    "native_internal_count": 213,
+    "native_special_record_count": 82,
+    "public_control_count": 92,
+    "independent_prepared_source_capacity": 213,
+    "prepared_XY_counts": [
+      0,
+      0
+    ],
+    "actual_original_callback_getter_invoked": true,
+    "actual_original_receiver_and_unit_callbacks_substituted": false,
+    "direct_captured_state_restorations": 17290,
+    "original_lifecycle_target_completions": 118,
+    "ordinary_original_render_frames": 422976,
+    "excluded_nonvisited_word_change_observations": 6614,
+    "representative_nonvisited_word_IDs": [
+      {
+        "ID": 18,
+        "observations": 1
+      },
+      {
+        "ID": 45,
+        "observations": 6609
+      },
+      {
+        "ID": 47,
+        "observations": 1
+      },
+      {
+        "ID": 48,
+        "observations": 1
+      },
+      {
+        "ID": 49,
+        "observations": 1
+      },
+      {
+        "ID": 50,
+        "observations": 1
+      }
+    ],
+    "representative_IDs_are_exhaustive_alias_or_unit_effects": false,
+    "original_silent_output_private_extension_only": {
+      "source_public_fixture_asserts_sample_zero": false,
+      "private_reviewer_zero_output_samples": 845952,
+      "source_audio_equivalence": false
+    }
+  },
+  "limits": [
+    "Prepared scalar queue progression/revisit/reverse copy only; native213 IDs and82 records do not imply exhaustive every-controller/unit behavior",
+    "Actual setter/unit effects are not reconstructed; model begins at original pre-render snapshot",
+    "7152 configuration bytes, descriptors and unique4-byte pointees captured/restored; no whole class/unit/heap/TLS restoration",
+    "Finite original output and guard checks; separate private silent extension is not ordinary replay or source/musical DSP proof",
+    "6614 nonvisited-word observations remain real unfinished effects; representative first IDs omit other aliased IDs and causes",
+    "Active XY, source audio DSP, scheduler/class/factory/state/GUI/real-time, general fenv/traps/errno and full plugin are false"
+  ],
+  "active_XY_reconstruction": false,
+  "whole_native_unit_effect_parity": false,
+  "actual_source_audio_DSP_equivalence": false,
+  "scheduler_class_factory_state_GUI_RT_reconstruction": false,
+  "full_plugin_equivalence": false,
+  "parent_public_path_acceptance_reference_only": {
+    "path": "analysis/plugins/review/root-tyrell-queue-public-independent.json",
+    "sha256": "554a38e1becdfec803742ee04414c828f7c885ac8c4d2e39d5846215fb64a2ea",
+    "bytes": 7200
+  }
+}
