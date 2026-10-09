@@ -55,5 +55,19 @@
     "Native global initialization, allocation, guard slowpaths, callable original ABI, numerical/fenv/audio and full-plugin equivalence remain unverified."
   ],
   "original_plugin_called": false,
-  "full_plugin_equivalence": false
+  "full_plugin_equivalence": false,
+  "independent_fresh_checkout": {
+    "source_commit": "f2ddab5794331549bd7a120632b1fce7c07513ed",
+    "compile_exit_code": 0,
+    "compile_diagnostics_empty": true,
+    "strict_signature_verified": true,
+    "runtime_checks_passed": 9,
+    "FPCR": 0,
+    "fused_bits": "0x3e940ad7",
+    "separate_bits": "0x3e940ad6",
+    "source_files_unchanged": true,
+    "git_checkout_clean": true,
+    "private_receipt_sha256": "1aa46ec797936a7ff16940090d69113f3f6ea99a109f87eb2d3f2d1c62ed3d16",
+    "limits": "Same finite own-source cases; independent layout, not a new original comparison or exhaustive numeric-domain proof."
+  }
 }

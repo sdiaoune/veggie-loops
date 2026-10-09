@@ -16,7 +16,7 @@ codesign --verify --strict build/test_prepared_lookup_arm64
 ./build/test_prepared_lookup_arm64
 ```
 
-The test checks a synthetic nearest-even, finite-normal interpolation witness (`0x3e940ad7` fused versus `0x3e940ad6` with separate multiply/add), signed-zero/endpoints, a singleton table, and three rejection/preservation cases. Checks remain active without `assert`. It reports nine successful checks and both `original_plugin_called` and `full_plugin_equivalence` as false. The public package compiled with no diagnostics and passed these nine checks with FPCR 0 on macOS arm64. Its product passed strict ad-hoc signature verification. These checks cover the disclosed own-source cases; they do not certify the full numeric domain or an installed plugin.
+The test checks a synthetic nearest-even, finite-normal interpolation witness (`0x3e940ad7` fused versus `0x3e940ad6` with separate multiply/add), signed-zero/endpoints, a singleton table, and three rejection/preservation cases. Checks remain active without `assert`. It reports nine successful checks and both `original_plugin_called` and `full_plugin_equivalence` as false. The public package compiled with no diagnostics and passed these nine checks with FPCR 0 on macOS arm64. Its product passed strict ad-hoc signature verification. A separate clean checkout of source commit `f2ddab5794331549bd7a120632b1fce7c07513ed` passed the same build, signature and nine-check run without changing any tracked files. These checks cover the disclosed own-source cases; they do not certify the full numeric domain or an installed plugin.
 
 Historical private evidence is referenced only by literal digest; none is a build or runtime dependency:
 
