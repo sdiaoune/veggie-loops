@@ -190,7 +190,7 @@
     "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
   },
   "own_lifetime_and_retained_editor_repair": {
-    "status": "two_source_and_two_engine_runtime_critics_accepted_public_working_replay_passed_fresh_checkout_pending",
+    "status": "two_source_and_two_engine_runtime_critics_public_working_and_clean_checkout_recipe_passed",
     "source_routes": [
       0,
       20,
@@ -207,7 +207,7 @@
     },
     "public_recipe": "reconstruction/plugins/effects/center-lifetime/verify.py",
     "public_package_replay_passed": true,
-    "fresh_checkout_replay_passed": false,
+    "fresh_checkout_replay_passed": true,
     "original_extra_destructor_GUI_class_allocator_application_scheduler_RT_or_whole_equivalence": false,
     "full_plugin_equivalence": false,
     "working_public_recipe_proof": {
@@ -223,6 +223,12 @@
       "path": "analysis/plugins/review/center-public-failure-audit-mixer-v2-independent.json",
       "sha256": "2c0ba39098ced5fbf87405cf03b272b07e93c8482a132385a2eb15c994644ba8",
       "bytes": 132172
+    },
+    "fresh_checkout_recipe_proof": {
+      "path": "analysis/plugins/review/root-1929a90-Center-fresh-runtime.json",
+      "sha256": "34c29df7efe3e52c1de12eb9cf09f1bb4f8e686d996a437cec525f1676cb365c",
+      "bytes": 321402,
+      "code_commit": "1929a900722d502e3501db739ebe8925f335c1ea"
     }
   }
 }
