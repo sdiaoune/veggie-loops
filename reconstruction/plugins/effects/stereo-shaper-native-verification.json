@@ -180,7 +180,7 @@
     "reconstruction/plugins/effects/verify_stereo_shaper_editor.sh": "681daa5d322cd1ca22bb5f24a3c61f26f34e37c683757ffdf1c5b3a6bbe2b8a0"
   },
   "own_lifetime_and_retained_editor_repair": {
-    "status": "two_source_and_two_native_independent_runtime_critics_accepted_public_working_replay_passed_fresh_checkout_pending",
+    "status": "two_source_and_two_native_runtime_critics_accepted_public_working_and_clean_checkout_recipe_passed",
     "source_routes": [
       0,
       20,
@@ -206,9 +206,15 @@
       "sha256": "1584ae955747b2d89e6a7d7db40a82d6c4466589e969b02ca57f4a34a6125b8b"
     },
     "public_package_replay_passed": true,
-    "fresh_checkout_replay_passed": false,
+    "fresh_checkout_replay_passed": true,
     "original_installed_effect_DSP_comparison_in_new_recipe": false,
     "original_extra_destructor_GUI_class_allocator_application_registration_owner_scheduler_RT_or_whole_equivalence": false,
-    "full_plugin_equivalence": false
+    "full_plugin_equivalence": false,
+    "fresh_checkout_recipe_proof": {
+      "path": "analysis/plugins/review/root-f5ac22c-Soft-Stereo-fresh-runtime.json",
+      "sha256": "9c69aea91ef40a0ebbb1c86ecd2097894e690079ac1e77fb468586f0f54deb54",
+      "bytes": 516980,
+      "code_commit": "f5ac22c3408f97e90a6fa1d88b87d1fbb04530a5"
+    }
   }
 }

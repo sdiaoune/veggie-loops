@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "two_source_and_two_native_runtime_critics_accepted_public_working_recipe_passed_fresh_checkout_pending",
+  "status": "two_source_and_two_native_runtime_critics_accepted_public_working_and_clean_checkout_recipe_passed",
   "files": [
     {
       "path": "reconstruction/plugins/effects/soft-stereo-lifetime/README.md",
@@ -304,7 +304,7 @@
   "original_extra_destructor_GUI_class_allocator_application_registration_scheduler_RT_or_whole_equivalence": false,
   "historical_private_failure_artifacts_required_by_public_recipe": false,
   "full_plugin_equivalence": false,
-  "fresh_checkout_replay_passed": false,
+  "fresh_checkout_replay_passed": true,
   "working_public_recipe_proof": {
     "path": "analysis/plugins/review/root-Soft-Stereo-public-working-runtime.json",
     "sha256": "b444456b953dae2090fb070e46f45a2804b5b0851d477e578ba1d548645b5831",
@@ -319,5 +319,16 @@
       "path": "analysis/plugins/review/soft-stereo-public-layout-mixer-v2-static-independent.json",
       "sha256": "627f4aa297901266e2b5a9e337709cb769c3202f88f78a0cf9dd9fd7958899a3"
     }
-  ]
+  ],
+  "fresh_checkout_recipe_proof": {
+    "path": "analysis/plugins/review/root-f5ac22c-Soft-Stereo-fresh-runtime.json",
+    "sha256": "9c69aea91ef40a0ebbb1c86ecd2097894e690079ac1e77fb468586f0f54deb54",
+    "bytes": 516980,
+    "code_commit": "f5ac22c3408f97e90a6fa1d88b87d1fbb04530a5"
+  },
+  "wrapper_eight_mock_only_failure_controls": {
+    "path": "analysis/plugins/review/root-Soft-Stereo-public-wrapper-failure-audit-tests.json",
+    "sha256": "00e78014dcf46aea8df9c9988fb491a5d04237ac8a2a7316fd303008c3a9465a",
+    "actual_native_compiler_plugin_or_original_calls": false
+  }
 }
