@@ -1,0 +1,304 @@
+{
+  "status": "verified_bounded_raw_getter_independently_reviewed",
+  "module": "bounded TyrellN6 actual raw storage getter",
+  "source_files": [
+    {
+      "path": "reconstruction/plugins/external/tyrell/downstream-getter.h",
+      "sha256": "79147b104b558d296ffe71f40d44bd525e63d937e473b79c206b59251e555380",
+      "bytes": 2304
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/downstream-getter.cpp",
+      "sha256": "8eb83901e041b4dd03228902a606cbaf022b12a9107260e4b0dee01111c7d2f9",
+      "bytes": 2698
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/downstream-test-contract.cpp",
+      "sha256": "267d6b6b24d4e045e14b162ebe55f2c3f97e49ff35a3ea02d8af81991369cffc",
+      "bytes": 5250
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/downstream-test-getter.mm",
+      "sha256": "e28d9900985f23c0011050a9786298ff5cf4b52de758fce71a0198b5a87e2135",
+      "bytes": 9954
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/DOWNSTREAM_GETTER.md",
+      "sha256": "b588421c92348077350a85a0d327b8dd168fb5c9fa2fff208da81f15e686f3e6",
+      "bytes": 3402
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/verify-downstream-getter.sh",
+      "sha256": "de9b243d322753d3c206061e45d8f9500ec2f75f9e7ad30836590ed7ebb749bf",
+      "bytes": 2317
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "reconstruction/plugins/common/vst2_probe.mm",
+      "sha256": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f",
+      "bytes": 12399
+    }
+  ],
+  "byte_identical_accepted_runtime_header_and_tests": {
+    "downstream-getter.h": "79147b104b558d296ffe71f40d44bd525e63d937e473b79c206b59251e555380",
+    "downstream-getter.cpp": "8eb83901e041b4dd03228902a606cbaf022b12a9107260e4b0dee01111c7d2f9",
+    "downstream-test-contract.cpp": "267d6b6b24d4e045e14b162ebe55f2c3f97e49ff35a3ea02d8af81991369cffc",
+    "downstream-test-getter.mm": "e28d9900985f23c0011050a9786298ff5cf4b52de758fce71a0198b5a87e2135"
+  },
+  "canonical_command": "sh reconstruction/plugins/external/tyrell/verify-downstream-getter.sh",
+  "recipe_delta": [
+    "Output directory moved from source directory to ignored project .tools/plugin-work/external/tyrell/downstream-public-getter-check.",
+    "Manifest source references now name public DOWNSTREAM_GETTER.md and verify-downstream-getter.sh. Compiler/runtime/test semantics unchanged."
+  ],
+  "canonical": {
+    "exit_code": 0,
+    "report": {
+      "path": ".tools/plugin-work/external/tyrell/downstream-public-getter-check/verification.json",
+      "sha256": "bc11dd86872c914d95e99a8b7a1daf57a92009b80ede330f6865c46eb1787d4d",
+      "bytes": 1851
+    },
+    "results": {
+      "contract": {
+        "status": "passed",
+        "source_only_sanitizers": true,
+        "success_cases": 4119,
+        "atomic_rejections": 696
+      },
+      "native": {
+        "status": "passed_actual_factory_storage",
+        "actual_internal_ids": 213,
+        "actual_public_ids": 92,
+        "comparisons": 2440,
+        "special_routes": 82,
+        "int_pointee_routes": 84,
+        "meter_routes": 13,
+        "raw_routes": 34,
+        "same_receiver": true,
+        "fallback_ignored": true,
+        "saved_restored_content_comparisons": 4160,
+        "native_storage_modified": true,
+        "native_storage_restored": true,
+        "whole_plugin_equivalence": false
+      }
+    },
+    "logs": [
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-public-getter-check/contract.log",
+        "sha256": "16f81a65ebd63aa6cbb3dc8fccad59bfe66227518f063c1c9776395ff206ae1d",
+        "bytes": 95
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-public-getter-check/native.log",
+        "sha256": "f387f93739b913be9452e144450359eaddeb366cba09d3ff3527e045b5e9a5ac",
+        "bytes": 12822
+      }
+    ],
+    "artifacts": [
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-public-getter-check/test_contract",
+        "sha256": "f5b46b026620a9d699bc55acc3f93e4a73e6afcdb1cd29365e9f6fffd2c668ab",
+        "bytes": 92080
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-public-getter-check/test_native",
+        "sha256": "8e3d0867d31aa4a7e6dc68a487ddfcdbaeb979760b683992148ce82b6c34950f",
+        "bytes": 181200
+      }
+    ],
+    "owned_intel_signature_verified": true,
+    "fatal_sanitizer_and_no_diagnostics": true
+  },
+  "native_targets": [
+    {
+      "path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+      "sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+      "bytes": 6974608
+    },
+    {
+      "path": ".tools/plugin-work/external/tyrell/TyrellN6-x86_64",
+      "sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
+      "bytes": 3546256
+    }
+  ],
+  "mapping": {
+    "manager_audio_receiver_offset": "0x40",
+    "manager_notifier_receiver_offset": "0x48",
+    "same_receiver": true,
+    "receiver_vft": "0x3173b0",
+    "raw_getter_slot": "0x2d8",
+    "raw_getter_address": "0x153620",
+    "configuration_offset": "0x428",
+    "public_map_slot": "0x320",
+    "public_map_address": "0x153500",
+    "notifier_forwarder_slot": "0x298",
+    "notifier_forwarder_address": "0x154430",
+    "unimplemented_notifier_target_slot": "0x2c8",
+    "unimplemented_notifier_target_address": "0x154450"
+  },
+  "rea_evidence": [
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-153620.json",
+      "sha256": "57521e3b353541c136eb046f80925a61ac8fe2286823c1a225b6b256452aa577",
+      "bytes": 11671,
+      "address": "0x153620",
+      "evidence_id": "ev_ff05d19587307e74ee8af4c596ab29a92a01b0dd39c549372b1a7cb87fb7cbb9"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-153500.json",
+      "sha256": "e3adcd0c9099778ff1bda24eb2e3c1f3d7c5e2b028a6a6d953bebace71bc1012",
+      "bytes": 6331,
+      "address": "0x153500",
+      "evidence_id": "ev_5228df6a9cd59f684702f1e72b91309b00483ebc652b63df4e34569a342b7d1e"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-154430.json",
+      "sha256": "f215d114ed8ea56e18186f295e9adb697919ea433e5e45ff833337930b088f6a",
+      "bytes": 7582,
+      "address": "0x154430",
+      "evidence_id": "ev_b0bface470c507d91fa12b8f07569178e3fa41c46b5dab1a6748d48b0498cd65"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-154450.json",
+      "sha256": "c9da6944c3bb71c4f0a3c67f216da2e8fb0a2b25e06d4f4a403705cdcefe73e6",
+      "bytes": 59563,
+      "address": "0x154450",
+      "evidence_id": "ev_7b767ee1eb4012804c19b7fef65750743660081e668e11ce2f4a207afcbf1e99"
+    },
+    {
+      "path": "analysis/plugins/inventory/tyrell-serial-rea/proc-14c0b0.json",
+      "sha256": "39d1684963cdba3b92a2f6a256265d9ed35f274fa1c21aada7449ba4b07c3580",
+      "bytes": 110074,
+      "address": "0x14c0b0",
+      "evidence_id": "ev_8ba1e5c52d07090a96dd286bc614e8c54cb5e72170759be3bad7e7f99b5ca269"
+    }
+  ],
+  "accepted_private_candidate": {
+    "path": "analysis/plugins/inventory/tyrell-downstream-getter-candidate.json",
+    "sha256": "29c6bb653c268ef3b7ec279a7639e1115bfe850eaa17ec9ca48f5e684481b891",
+    "bytes": 7568
+  },
+  "independent_private_reviews": [
+    {
+      "path": "analysis/plugins/review/tyrell-downstream-generators-independent.json",
+      "sha256": "f30c569b381c460b63c18d668dac31a4e9a10518adc6ef825621a3e92732ced4",
+      "bytes": 7815,
+      "status": "independently_accepted_scoped_raw_storage_getter_after_fixture_fix"
+    },
+    {
+      "path": "analysis/plugins/review/root-tyrell-downstream-independent.json",
+      "sha256": "406dc623806837dec0af5942a2183816c96e08fb47c1df410b4fa1cd745e26e3",
+      "bytes": 4361,
+      "status": "accepted_private_bounded_raw_getter"
+    },
+    {
+      "path": "analysis/plugins/review/root-tyrell-downstream-sanitizer-negative.json",
+      "sha256": "e93f9b4cfbf900cb9776252c330b590967895121283b54f1b19695813e9f0692",
+      "bytes": 603,
+      "status": "sanitizer_negative_control_detected"
+    }
+  ],
+  "extra_independent_coverage": {
+    "source_route_bit_cases": 250000,
+    "actual_native_oracle_cases": 33280,
+    "public_route_cases": 1040,
+    "full_signed32_type_truncation_negative_exit": 1,
+    "packed_alignment_sanitizer_negative_exit": 134,
+    "sanitizer_negative_no_native_run_or_success_manifest": true
+  },
+  "rejected_prior_fixture": {
+    "candidate": {
+      "path": "analysis/plugins/inventory/tyrell-downstream-getter-rejected-ef361da2.json",
+      "sha256": "ef361da2d5b342096f450844fbba9ca45e4b8fcd652bd290ebea49e3d815e9a4",
+      "bytes": 6954
+    },
+    "preserved_files": [
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-getter-rejected-ef361da2/downstream-test-getter.mm",
+        "sha256": "09df1b44ccdc57502cf1cf226fa46efccabc48f269aa825972443619e6b9f442",
+        "bytes": 9747
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-getter-rejected-ef361da2/downstream-verify-getter.sh",
+        "sha256": "8206c2037617466756a588010e677418b997a6d5597e3e8214560a0c621c0513",
+        "bytes": 2007
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-getter-rejected-ef361da2/contract.log",
+        "sha256": "16f81a65ebd63aa6cbb3dc8fccad59bfe66227518f063c1c9776395ff206ae1d",
+        "bytes": 95
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-getter-rejected-ef361da2/native.log",
+        "sha256": "9d04d023eb076a7f8bdc1705d20007554bb33060a9ba62a2e5d9122da6eecca4",
+        "bytes": 16564
+      },
+      {
+        "path": ".tools/plugin-work/external/tyrell/downstream-getter-rejected-ef361da2/verification.json",
+        "sha256": "d60eafe04861b3340549f52df4458d67b327028d4580a066765be60f4c1f68b3",
+        "bytes": 1857
+      }
+    ],
+    "reason": "Final native author fixture had seven misaligned pointer-table reads and sanitizer recovery; previous success JSON is rejected. Replaced all typed pointer indexing with memcpy reads. Source getter unchanged.",
+    "superseded_by_candidate_sha256": "29c6bb653c268ef3b7ec279a7639e1115bfe850eaa17ec9ca48f5e684481b891"
+  },
+  "domain": {
+    "arrays": "Valid external native64-bit storage, caller-owned, bounded counts<=213internal/213special/92public; selected route dependencies present.",
+    "fp": "Nearest-even default gradual FP; float payload bits preserved; FP exception flags unproved.",
+    "serialization": "All view/array/pointee storage unchanged through call and all instance use serialized or host-mix locked.",
+    "output": "Valid float storage disjoint from view, supplied arrays and all nonnull4-byte parameter pointees; rejected calls preserve output/input.",
+    "native_mutation": "Four-byte scalar contents only, saved/restored with post-restore comparison; only actual getter/source calls while modified. Outside DSP/preset semantic domain.",
+    "original_side_effects": "Factory lifecycle can write ordinary Desktop log/preferences/MIDI caches.",
+    "sanitizers": "New source and fixtures ASan/UBSan/fatal recovery disabled. Original installed code uninstrumented."
+  },
+  "gates": {
+    "full_plugin_equivalence": false,
+    "whole_dsp": false,
+    "native_class_abi": false,
+    "native_factory_reconstruction": false,
+    "notifier_scheduling": false,
+    "actual_audio_state_gui": false,
+    "realtime_certificate": false,
+    "float_exception_flags_equivalence": false,
+    "state_reconstruction": false,
+    "gui_reconstruction": false,
+    "vst_au_reconstruction": false
+  },
+  "captured_code_assets_presets_included": false,
+  "parent_final_path_acceptance": {
+    "status": "accepted_bounded_raw_storage_getter",
+    "report": "root-tyrell-downstream-public-independent.json",
+    "canonical_copied_results": {
+      "contract": {
+        "status": "passed",
+        "source_only_sanitizers": true,
+        "success_cases": 4119,
+        "atomic_rejections": 696
+      },
+      "native": {
+        "status": "passed_actual_factory_storage",
+        "actual_internal_ids": 213,
+        "actual_public_ids": 92,
+        "comparisons": 2440,
+        "special_routes": 82,
+        "int_pointee_routes": 84,
+        "meter_routes": 13,
+        "raw_routes": 34,
+        "same_receiver": true,
+        "fallback_ignored": true,
+        "saved_restored_content_comparisons": 4160,
+        "native_storage_modified": true,
+        "native_storage_restored": true,
+        "whole_plugin_equivalence": false
+      }
+    },
+    "canonical_copied_log_sha256": {
+      "contract.log": "16f81a65ebd63aa6cbb3dc8fccad59bfe66227518f063c1c9776395ff206ae1d",
+      "native.log": "f387f93739b913be9452e144450359eaddeb366cba09d3ff3527e045b5e9a5ac"
+    },
+    "runtime_header_and_tests_byte_identical": true,
+    "public_recipe_only_path_name_changes": true,
+    "documentation_rebind_only_after_replay": true,
+    "full_plugin_equivalence": false
+  }
+}
