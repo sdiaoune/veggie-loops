@@ -34,8 +34,13 @@ The low-level public mipmap generation routine requires a freshly constructed
 or cleared destination; it overwrites allocation pointers as the native
 routine does. Rebuilding a complete `WaveTable` clears its previous maps.
 
-The separate Fruity wrapper, UI, presets, automation, complete polyphony/host
-integration and VST/AU formats remain unreconstructed. The library is not
+Later modules reconstruct bounded wrapper controls, version-14 state storage,
+automation, multi-voice channels, envelopes/filters, an experimental C++ factory
+and prevoice context delivery. Their separate proofs and limits are listed in
+[the module status](../STATUS.md), [native factory](NATIVE_FACTORY.md) and
+[prevoice delivery](CONTEXT_DELIVERY.md). Complete original class/editor/GUI,
+application-owned clocks/tables/scheduling, general state/automation/polyphony
+and VST/AU integration remain unfinished. The library is not
 installed over FL Studio's engine. No commercial binary, captured machine
 code, disassembly or asset is bundled in it. Native failure/exception paths,
 allocation tracing and malformed input behavior remain outside the proof.

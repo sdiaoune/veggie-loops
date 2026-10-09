@@ -1,4 +1,10 @@
-# Balance numerical reconstruction
+# Effect reconstruction
+
+This page details Balance. Separate modules cover bounded portions of Mute 2,
+Phase Inverter, Stereo Shaper, Soft Clipper, Center and Fast Dist. Seven of the
+84 native effect families have bounded source proofs; the other 77 remain
+unreconstructed. All 84 full-family obligations remain open. See
+[the module status](../STATUS.md) for their individual evidence and limits.
 
 This independent C++ implementation reconstructs the inspected Fruity Balance
 stereo DSP callback and the numerical set/get subset of its parameter callback.
@@ -141,5 +147,6 @@ GUI-owned editor state. Worker detach and destruction before or after attachment
 preserve the editor and numerical instance for main-thread handling.
 No original
 VCL resources or artwork are included. Original GUI parity, actual FL application
-and mixer integration, x86_64, VST/AU formats and 81 further effect families remain
-open; a complete plugin reconstruction is not certified by these checks.
+and mixer integration, x86_64 and VST/AU formats remain open for this module.
+The later modules listed above have separate bounded proofs; none certifies a
+complete native effect family.

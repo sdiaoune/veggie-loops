@@ -1,9 +1,16 @@
 # Plugin reconstruction status
 
 Full reconstruction is **incomplete**. No full FL Studio application or
-complete installed plugin is certified. The workstation's original audio
-engine now includes an optional VL 3 Osc instrument using the reconstructed
-raw core with its own note envelope, preset and mixer.
+complete installed plugin is certified. VL Studio’s audio engine includes an
+optional VL 3 Osc instrument using the reconstructed raw core with its own
+note envelope, preset and mixer.
+
+Each row describes one bounded module. Later rows add separate proofs for
+wrapper/state, voice integration, native adapters and context delivery; an
+older row’s remaining work does not erase those later milestones. Complete
+class/application/format/real-time equivalence remains unproved. The 146
+family/format/application obligations are tracked separately from the 317
+Mach-O binary corpus, which retains nested engines and runtime dependencies.
 
 | Component | Independently built and checked milestone | Remaining work |
 | --- | --- | --- |
