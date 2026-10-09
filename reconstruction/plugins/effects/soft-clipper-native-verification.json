@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "component": "VL Soft Clipper independent native factory and optional AppKit editor",
+  "status": "verified_partial_reconstruction_independently_reviewed",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/soft_clipper_native_abi.h": "43b43d67ce532987095459d117331d919e0cad0b808005fbcce21b706df59de3",
+    "reconstruction/plugins/effects/soft_clipper_native_abi.cpp": "614564a9702dc6d518e230349178dbe9b525a5441b01143bde79f27354befa44",
+    "reconstruction/plugins/effects/test_soft_clipper_engine_loader.mm": "77508b26d45e6dacfe604c5e21537a26695792752390ebd4710248f456d18e2b",
+    "reconstruction/plugins/effects/test_soft_clipper_engine_stream.mm": "40180ed9a295cd749332e18945c5358ae414d950ea03208db29e065dc4e1cf67",
+    "reconstruction/plugins/effects/soft_clipper_editor.h": "53a2885365a137a8c7aa8a9536dd35f74b0c507f38b09e5ce5f6b8f7cee95d58",
+    "reconstruction/plugins/effects/soft_clipper_editor.mm": "c79893ae2baa535af9128b035cc308fdd005af31d878fbf03cda783c51f7c936",
+    "reconstruction/plugins/effects/test_soft_clipper_editor.mm": "69e44878d41972a38ccb00ce796025e2be28b544b0eb6d0cf36fb743c94c72af",
+    "reconstruction/plugins/effects/test_soft_clipper_native_editor.mm": "0cf9749082fecb0e8ed703c379d4cef496a1121351bcbb0bc2873091b72f8223",
+    "reconstruction/plugins/effects/verify_soft_clipper_engine_loader.sh": "648aca938d8f71e9f7aef13aa09e47c79b9529ecb2bdcd87ade8aad13eea09e9",
+    "reconstruction/plugins/effects/verify_soft_clipper_engine_stream.sh": "61b32da063d9c28c1ee60db80d0600125904006d9a50713c7e6975bc29b68ee9",
+    "reconstruction/plugins/effects/verify_soft_clipper_editor.sh": "437c9ff50dc35138dc91cf676af5f01673e8101266b92ab06d83326167474c48",
+    "reconstruction/plugins/effects/SOFT_CLIPPER_NATIVE.md": "2487f314c73ca6b2f46a352edd28ce51299845f687e591b040968a6c558ee7f4",
+    "reconstruction/plugins/effects/soft_clipper_dsp.hpp": "ace380a6ea0478445e924a3b80e4850277172ebd0876e14314945f28ecadd17e",
+    "reconstruction/plugins/effects/soft_clipper_plugin.h": "b099652e6ae32507ec4b5c4e1789976db1a96a8acc7c7cd07a7b4d4560e0a0f3",
+    "reconstruction/plugins/effects/soft_clipper_plugin.cpp": "216907d562ce68cd69919b107cb6ccbe7c927f1c72fdafc1bde4e09c9ab14266",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "inspected_binary_sha256": {
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "FLEngine arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0",
+    "Fruity Soft Clipper universal": "fe22c1b186c907333210f511f0aced4147d7842d72bd38df1d56661ff337aa8d",
+    "Fruity Soft Clipper arm64": "e7ee57a6c72528531a05bf6f5c165921014a8ef6d5c48314db23438f37dcbcd4",
+    "dsp_ippv2 universal": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-exp"
+  ],
+  "tested_environment": {
+    "os": "macOS26.6.2",
+    "build": "25G83",
+    "compiler": "Apple clang21.0.0(clang-2100.3.34.2)",
+    "system_math": "Apple system libm",
+    "rounding": "nearest-even"
+  },
+  "checks": {
+    "engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_soft_clipper_engine_loader.sh",
+      "results": [
+        {
+          "status": "passed",
+          "intact_original_engine_loaded": true,
+          "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+          "actual_engine_wrapper_allocated_and_freed": true,
+          "callback_slots_exercised": 20,
+          "state_saves": 1200,
+          "state_restores": 240,
+          "failed_read_preserves_state": true,
+          "parameter_calls": 2400,
+          "stereo_frames": 140700,
+          "fl_application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    },
+    "engine_stream": {
+      "command": "./reconstruction/plugins/effects/verify_soft_clipper_engine_stream.sh",
+      "results": [
+        {
+          "status": "passed",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 1,
+          "short_count_success_rejections": 1,
+          "single_eight_byte_transfer_checked": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    },
+    "editor": {
+      "command": "./reconstruction/plugins/effects/verify_soft_clipper_editor.sh",
+      "results": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "parameter_control_changes": 2,
+          "automation_display_cases": 288,
+          "meter_full_group_and_signed_tail_checked": true,
+          "notifications_after_unlock": true,
+          "worker_ui_calls_skipped": true,
+          "off_main_destroy_preserves_view": true,
+          "native_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "concurrent_render_attachment_metering_locked": true,
+          "metering_dispatch_lock_cases": 256,
+          "worker_tick_idle_skipped_gui": true,
+          "off_main_destroy_preserves_state": true,
+          "control_changes": 2,
+          "hints": 3,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    }
+  },
+  "private_candidate_review": {
+    "status": "accepted_after_metering_lock_repair",
+    "report": "soft-clipper-fixed-independent.json"
+  },
+  "promotion": {
+    "runtime_headers_and_tests_byte_identical": true,
+    "script_changes": [
+      "renamed public scripts",
+      "all source inputs reference maintained effects directory",
+      "new independent maintained work directories"
+    ],
+    "maintained_path_rebind_status": "accepted",
+    "independent_review": "Root independently checked eight byte-identical runtime/header/test files, restricted script path changes and all source bindings, then replayed all three maintained scripts in an isolated copied-source tree. All four reported fixtures passed."
+  },
+  "caller_contracts": [
+    "all numerical/native instance access serialized",
+    "valid audio/name/stream storage external to factory and numerical instance",
+    "optional build all native destroy on main even before attachment",
+    "host/plugin/module alive until main destruction retry finishes",
+    "hint4 GUI/main/outside host mix lock",
+    "paired host mix locks for GUI refresh/change/clear and meter-enable attachment update",
+    "no outer nonrecursive mix lock during editor create/dispatch/Idle",
+    "name capacity>=10bytes",
+    "stop/serialize render before main destruction"
+  ],
+  "unresolved": [
+    "original VCL/artwork/GUI behavior parity",
+    "remaining source dispatch/events/names/metadata",
+    "actual FL application/project/mixer lifecycle",
+    "x86/VST/AU",
+    "whole-plugin equivalence",
+    "original malformed-state equivalence",
+    "unrestricted native threading/realtime guarantees",
+    "alternate FP/compiler environments"
+  ],
+  "numerical_proof_manifest": "soft-clipper-verification.json"
+}
