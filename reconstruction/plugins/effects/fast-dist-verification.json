@@ -1,0 +1,144 @@
+{
+  "full_plugin_equivalence": false,
+  "checks": {
+    "actual_factory_and_initialized_host_dsp": {
+      "status": "passed_private_compiled_api",
+      "factory_created_and_destroyed": true,
+      "actual_engine_table_initializer_and_distortion_used": true,
+      "independently_generated_table_entries": 163880,
+      "parameter_cases": 44879,
+      "render_callbacks": 4800,
+      "stereo_frames": 562800,
+      "state_saves": 256,
+      "state_restores": 256,
+      "synthetic_host_quality_states": 2,
+      "source_input_and_independent_guards_checked": true,
+      "full_plugin_equivalence": false
+    },
+    "source_only_sanitizer_boundary": {
+      "status": "passed",
+      "source_only_sanitized": true,
+      "atomic_rejection_cases": 502,
+      "nullable_zero_frame_cases": 8,
+      "original_binaries_loaded": false
+    }
+  },
+  "source_universal_sha256": "22b0fc6fa9f3cc065587f5e142ec047d8877432454ca7c25aba9e4eb195c5b82",
+  "source_arm64_sha256": "f5f39eef0a0faaf653b3f5b5aad25570bdd3e05bd67bf01a42c8bf335c3d7a25",
+  "engine_universal_sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+  "engine_arm64_sha256": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0",
+  "copy_dependency_universal_sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+  "original_factory": "export0x4ba0 ->0x5c030 ->constructor0x5c4f0;PascalVMT0x1bd490;size336",
+  "host_processing_chain": "Fruity Fast Dist render0x5cd60 ->synthetic host slot0x188 typed forwarder ->actual intact engine TFruityHost0x3d5ff0 ->integer0x3542a0 or interpolated0x354350;all coefficients/2*frames observed",
+  "tables": "Actual original no-argument pure-math initializer0x3e5980 invoked within owned fixture process;new Tables computes20rows of8194int16 entries independently from math,all163880 entries compared,no target table bytes distributed",
+  "math": "Native initializer log/exp stubs verified;noninteger power path exp(power*log(base));explicit nearest-even round and measured operation order;FPC source pseudocode does not establish FP grouping,raw instructions+differential do",
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-exp",
+    "-fno-builtin-log",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "native_identity_scope": "Both universal hashes checked before loading/calls;mapped copy dependency path/hash/bodyoffset0x1c70c checked before factory replay;TFruityHost VMT slot188 exact function validated",
+  "domain": {
+    "raw_ranges": [
+      [
+        64,
+        192
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        128
+      ],
+      [
+        0,
+        128
+      ]
+    ],
+    "normalized": "0..2^30;flags0/1/2/3/32/33/34/35,setpriority",
+    "frames": [
+      0,
+      1024
+    ],
+    "input": "finite float stereo abs(input)<=16",
+    "quality": "0integer/1interpolated;synthetic original host-quality byte varied only inside owned process and restored",
+    "state": "20LEbytes5raw values,no version;restoration validates atomically,preserves independent host-quality choice",
+    "buffers": "exact alias/disjoint;partial overlaps/live instance overlaps reject;valid external storage required;nullable only frames0",
+    "synchronization": "ALL instance accesses serialized or host mix lock",
+    "fp": "default nearest-even,macOS arm64 Apple clang21.0.0;NaN/Inf and alternate FP equivalence unproved"
+  },
+  "fixture_scope": {
+    "original_valid_preset_packets_only": true,
+    "source_input_bitwise_immutable": true,
+    "native_model_compiled_guards_each_against_pre_call_value": true,
+    "exact_alias_and_disjoint": true,
+    "known_source_control_fields_inspected": true,
+    "malformed_original_inputs_excluded": true,
+    "source_only_invalid_rejections_preserve_complete_instance_and_relevant_external_outputs": true,
+    "initial_noop_and_uninitialized_table_outputs_are_not_DSP_evidence": true
+  },
+  "source_function_coverage": [
+    {
+      "source": "0x5c4f0",
+      "proof": "Original factory/defaults/control ranges create/destroy;own C numerical allocation only,not native class reconstruction"
+    },
+    {
+      "source": "0x5c7e0",
+      "proof": "All5raw controls,normalized andflag cases;all3coefficient sample bits through compiled C API"
+    },
+    {
+      "source": "0x5c410",
+      "proof": "256valid save/restore comparisons,20byte framing;malformed stream/status/application lifecycle excluded"
+    },
+    {
+      "source": "0x5cd60 ->0x3d5ff0 ->0x3542a0/0x354350",
+      "proof": "4800callbacks/562800frames original factory+actual initialized host vs compiled C API+ownmodel;synthetic qualitystate0/1"
+    },
+    {
+      "source": "0x3e5980/0x89ea40",
+      "proof": "163880independently regenerated int16 table entries inclguards match;noninteger math path inspected"
+    },
+    {
+      "source": "0x5c0b0",
+      "proof": "classification52 values5,5,9,5,5 observed;rest dispatcher/event/names/UI unimplemented"
+    }
+  ],
+  "unresolved": [
+    "Original Pascal/native class, real host-quality selection and general original state-provider/error behavior; own no-editor bridge separately verified",
+    "original metadata/name/event/remaining dispatcher semantics",
+    "own editor and original VCL/assets/hint parity",
+    "actual FL application/project/mixer lifecycle",
+    "x86/VST/AU",
+    "general realtime/concurrency beyond serialized contract",
+    "whole-plugin equivalence"
+  ],
+  "status": "independently_accepted_maintained_numerical_subset",
+  "source_sha256": {
+    "reconstruction/plugins/effects/fast_dist_dsp.hpp": "fefd86bbf36844886f8c4b18283a12a34af9d42f9b40d49d625402ccd859f321",
+    "reconstruction/plugins/effects/fast_dist_plugin.h": "a9b53209c50dd0372a155dda78ebd0f1046382c28dc1ba59c7d8f779562adf4e",
+    "reconstruction/plugins/effects/fast_dist_plugin.cpp": "0349bc8c4476341e265a04bb7585c0c835ec786d244912e339b11a846e93785e",
+    "reconstruction/plugins/effects/test_fast_dist_factory.mm": "e7b3142a0c05964cd76cbe31d4736c97954bb589b2e9669d58fd4a7748ca9940",
+    "reconstruction/plugins/effects/test_fast_dist_boundary.cpp": "196fb83a4cadd931aab2349f785e5a67a531cae47ac09e6622822342a26ce456",
+    "reconstruction/plugins/effects/verify_fast_dist.sh": "f54f2c531b0b86f6757d1051a046ac266b3bdef0ad3feaa57bf7519b45dd6f6f",
+    "reconstruction/plugins/effects/FAST_DIST.md": "8091799fd9961096d18e71cbdaf49969597f8247800e2b3256d2cf4cc7b1d997"
+  },
+  "command": "sh reconstruction/plugins/effects/verify_fast_dist.sh",
+  "independent_review": {
+    "local_ignored_report": "analysis/plugins/review/fast-dist-numerical-independent.json",
+    "sha256": "2bf539319eadda63898b9fcea054dbec59d972145e1f64a916d834b20d4983c1"
+  },
+  "maintained_path_rebind_status": "accepted_root_copied_canonical_replay",
+  "root_final_review": "analysis/plugins/review/root-fast-dist-final-independent.json"
+}

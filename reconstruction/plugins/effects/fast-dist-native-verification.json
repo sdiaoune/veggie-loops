@@ -1,0 +1,107 @@
+{
+  "author_results": {
+    "loader": {
+      "status": "passed",
+      "intact_original_engine_loaded": true,
+      "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+      "actual_engine_wrapper_allocated_and_freed": true,
+      "callback_slots_exercised": 20,
+      "state_saves": 1200,
+      "state_restores": 240,
+      "failed_read_preserves_state": true,
+      "parameter_calls": 6000,
+      "stereo_frames": 140700,
+      "default_integer_quality_checked": true,
+      "fl_application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "stream": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrapper": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 128,
+      "state_restores": 128,
+      "failed_hresult_full_count_rejections": 1,
+      "short_count_success_rejections": 1,
+      "single_twenty_byte_transfer_checked": true,
+      "coefficient_state_preserved_on_rejection": true,
+      "application_host_created": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "declared_scope": {
+    "default_quality": "Own numerical factory is explicitly integer quality0; no actual host quality getter wired. Interpolated quality exists only in separately frozen numerical C API.",
+    "name_bytes": "Independently chosen labels, caller capacity at least10 bytes.",
+    "serialization": "All instance access incl parameter/render/state/getters/destruction serialized or host mix locked.",
+    "state_framing": "One20-byte raw parameter transfer; HRESULT signed32,len/count32; failed/short reads atomically rejected. Save returns void and general failed-write behavior unproved.",
+    "callback_slots": "20 effect callbacks through actual original C++ to Pascal wrapper. Two additional C++ destructor entries exist but not replayed separately."
+  },
+  "gates": {
+    "original_pascal_factory_class_equivalence": false,
+    "original_metadata_names_base_dispatch_events": false,
+    "original_vcl_editor": false,
+    "original_host_quality_configuration_lifecycle": false,
+    "actual_fl_application_host": false,
+    "fl_project_mixer_lifecycle": false,
+    "x86_vst_au": false,
+    "full_plugin_equivalence": false,
+    "realtime_certificate": false
+  },
+  "status": "independently_accepted_maintained_no_editor_native_bridge",
+  "source_sha256": {
+    "reconstruction/plugins/effects/fast_dist_native_abi.h": "32e9dc19a1af9af7ae1927971e6d28415e5cb27f777a69eb18426f79d9269408",
+    "reconstruction/plugins/effects/fast_dist_native_abi.cpp": "5ddd6eada1380c08be5ad25bc710948ae256fed49c2cd9b8844a40c80700102a",
+    "reconstruction/plugins/effects/test_fast_dist_engine_loader.mm": "c68949df13760ae71fa3c6c2685512bf5ec0e1b9d594da771752329e22fb0c97",
+    "reconstruction/plugins/effects/test_fast_dist_engine_stream.mm": "28b9b56b6fca922e15fca473b038f2b86fd6898bf85e33e719157571cd072394",
+    "reconstruction/plugins/effects/verify_fast_dist_engine_loader.sh": "3144691ae079bab9b1f42cc7039ee0b25942273b065d79a76b079e3f6ba68adf",
+    "reconstruction/plugins/effects/verify_fast_dist_engine_stream.sh": "d5de537690507ad84ef95c6db23c74220ef03b175bcc074e9432eaab86e72ac3",
+    "reconstruction/plugins/effects/FAST_DIST_NATIVE.md": "b22d1d94c298d0d06d106183cecc7b99fb0519b5bfb3b1be597184460fd0859a"
+  },
+  "dependency_sha256": {
+    "reconstruction/plugins/effects/fast_dist_plugin.h": "a9b53209c50dd0372a155dda78ebd0f1046382c28dc1ba59c7d8f779562adf4e",
+    "reconstruction/plugins/effects/fast_dist_plugin.cpp": "0349bc8c4476341e265a04bb7585c0c835ec786d244912e339b11a846e93785e",
+    "reconstruction/plugins/effects/fast_dist_dsp.hpp": "fefd86bbf36844886f8c4b18283a12a34af9d42f9b40d49d625402ccd859f321",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "engine_universal_sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+  "canonical_scripts": [
+    "sh reconstruction/plugins/effects/verify_fast_dist_engine_loader.sh",
+    "sh reconstruction/plugins/effects/verify_fast_dist_engine_stream.sh"
+  ],
+  "independent_reviews": [
+    {
+      "local_ignored_report": "analysis/plugins/review/root-fast-dist-native-independent.json",
+      "sha256": "edaf0d19dfbdcb9b73b903a682b46e41248ef4aef03d7db3c592f3c2c56b5e7f"
+    },
+    {
+      "local_ignored_report": "analysis/plugins/review/fast-dist-native-generators-independent.json",
+      "sha256": "c8c58b7ad752ab946d2032528d4e164a2c83facbaadb65e37e0f7a4817122493"
+    }
+  ],
+  "numerical_independent_review": {
+    "local_ignored_report": "analysis/plugins/review/fast-dist-numerical-independent.json",
+    "sha256": "2bf539319eadda63898b9fcea054dbec59d972145e1f64a916d834b20d4983c1"
+  },
+  "header_comment_qualification": {
+    "local_ignored_report": "analysis/plugins/effects/fast-dist/native-header-qualification-delta.json",
+    "sha256": "8a4d304e35b637e8d690e8a69e13b732ed2ff15a335d63ca351a802299504135"
+  },
+  "maintained_path_rebind_status": "accepted_root_copied_canonical_replay",
+  "full_plugin_equivalence": false,
+  "root_final_review": "analysis/plugins/review/root-fast-dist-final-independent.json",
+  "qualified_header_reviews": [
+    {
+      "local_ignored_report": "analysis/plugins/review/root-fast-dist-native-comment-rebind.json",
+      "sha256": "a2e1aeb0ff2dc6e650f7b98747dbc6d11a77feafd6b727b1b84ee3366403006e"
+    },
+    {
+      "local_ignored_report": "analysis/plugins/review/fast-dist-native-generators-docs-only-rebind.json",
+      "sha256": "872cfdf9a1ad6ea085263ec3fc6d763f46ef1749f11b4dbae4711a44aaf1b532"
+    }
+  ],
+  "numerical_dependency_accepted": true
+}
