@@ -8,9 +8,11 @@ note envelope, preset and mixer.
 Each row describes one bounded module. Later rows add separate proofs for
 wrapper/state, voice integration, native adapters and context delivery; an
 older row’s remaining work does not erase those later milestones. Complete
-class/application/format/real-time equivalence remains unproved. The 146
-family/format/application obligations are tracked separately from the 317
-Mach-O binary corpus, which retains nested engines and runtime dependencies.
+class/application/format/real-time equivalence remains unproved. The 147
+family/format/application obligations are tracked separately from 318 known
+Mach-O binaries, including nested engines and runtime dependencies. The
+original 317-binary corpus remains frozen; one newly discovered application
+plugin is recorded in a separate inventory supplement.
 
 A source audit found retained-editor lifetime issues in four experimental
 factories. Mute 2 and Phase Inverter now clear retained callbacks/context and
@@ -24,7 +26,10 @@ complete/caller-free versus deleting lifetime split. Center's repair passed two
 source runtime reviews and two engine runtime reviews; its public working
 replay passes. Fast Dist's first independent lifetime replay
 failed an O0 editor allocation check and remains unaccepted while the failure
-is traced. Other factories' complete
+is traced. A separate instrumented run captured 40,700 events across all three
+cleanup routes without a flagged recorder gap. Two independent data reviews
+agree that the earlier failure did not recur; its cause remains unresolved.
+Other factories' complete
 destructors remain under separate review.
 
 | Component | Independently built and checked milestone | Remaining work |
@@ -87,6 +92,15 @@ two VST3 and five AU. These represent FL Studio wrappers, LABS, Purity, Vital
 and TyrellN6. The bundled native inventories contain 84 effect families and
 49 generator folders. Counts include wrappers and shared engines and must not
 be interpreted as independent reconstructed products.
+
+A direct application-folder scan also identified Adobe's app-internal
+`dvavst3hostchecker.vst3`, version 14.0.0, for Intel Macs. Two raw-data reviews
+confirmed its exported VST3 factory. Its factory behavior, playable audio and
+source reconstruction remain unverified. This adds one external format
+obligation: 13 known external bundles overall, comprising five VST2, three
+VST3 and five AU. Eight FL Studio engine bundles found during the same scan
+already belong to the bundled inventory. Inaccessible directories, unfollowed
+directory symlinks, custom locations and other volumes remain discovery gaps.
 
 The installed FL AU wrapper's 194 identified internal non-thunk procedures now
 have local REA decompiler results. This is analysis coverage, not source builds
