@@ -1,6 +1,6 @@
 {
   "schema": "vl_labs_meter_standalone_source_contract_v1",
-  "status": "public_working_source_contract_replay_accepted_fresh_checkout_pending",
+  "status": "public_working_and_clean_checkout_source_contract_replays_accepted_native_plugin_equivalence_unverified",
   "files": [
     {
       "path": "meter.cpp",
@@ -39,8 +39,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "145304e1dcf0c3a81e6eca20d783e20a6ba690247041a082f0002582dd75f9b7",
-      "bytes": 6099
+      "sha256": "fb441a67367be95f61fae2a732f968219942d4d71bad5ab11385af470f10e7c2",
+      "bytes": 6539
     }
   ],
   "scope": {
@@ -170,5 +170,69 @@
     "original_called": false,
     "native_equivalence": false,
     "full_plugin_equivalence": false
-  }
+  },
+  "historical_code_9da1736_source_identities_before_fresh_receipt": [
+    {
+      "path": "meter.cpp",
+      "sha256": "69d78c566bccdb396848e759a0faca1588d63251e1a184331d24ba9f1491845f",
+      "bytes": 5838
+    },
+    {
+      "path": "meter.hpp",
+      "sha256": "8aa24c10eca63baeef7b77320872213d7e5e39575231033e8e9d06ce9859c654",
+      "bytes": 1954
+    },
+    {
+      "path": "test_meter_contract.cpp",
+      "sha256": "aa7c692e52e65db19756fda7f4ee88ec230c68bc46e3d461888d74159d5d8122",
+      "bytes": 4271
+    },
+    {
+      "path": "contract_boundaries.hpp",
+      "sha256": "337b211639e5554f02a6a37a32f5945b27749b6b0cb45173ef5a36aa1104fbe0",
+      "bytes": 11664
+    },
+    {
+      "path": "expected-results.json",
+      "sha256": "d54ecee6f12ae33baf44da11a7e6170cf08d4f430e7f0d2c96106f23b67d04df",
+      "bytes": 269
+    },
+    {
+      "path": "semantic-mutants.json",
+      "sha256": "3b088be8e20e5920cd16d52d3235c9a1033d2189f3323d11168fb5283c184f31",
+      "bytes": 5942
+    },
+    {
+      "path": "verify.py",
+      "sha256": "8a55e63b8e81d39c4e7ec438f2aa5517ac3b74c739fb33ea78ae3747d4eae9ce",
+      "bytes": 19681
+    },
+    {
+      "path": "README.md",
+      "sha256": "145304e1dcf0c3a81e6eca20d783e20a6ba690247041a082f0002582dd75f9b7",
+      "bytes": 6099
+    }
+  ],
+  "historical_code_9da1736_manifest_identity": {
+    "sha256": "79f1ebae6d444b4f594eb213f0061a296ed0f7da6ed23a62917149d9c69dc2dc",
+    "bytes": 5748
+  },
+  "public_fresh_receipt": {
+    "code_commit": "9da173611464b31c01a82114e184420a6691ad31",
+    "sha256": "ef56758e12e7ca5deb491ee4dcfd52a8945a4590f7f2d1fc0592859d3c55dca0",
+    "bytes": 380976,
+    "source_only": true,
+    "positive_profiles": 3,
+    "fatal_semantic_negatives": 9,
+    "signed_strict_arm64_products": 12,
+    "guard_refusals": 4,
+    "source_closure_identities": 9,
+    "final_product_sign_strict_arch_checks": 36,
+    "retained_artifacts": 385,
+    "tracked_checkout_files_unchanged": 556,
+    "original_called": false,
+    "native_equivalence": false,
+    "full_plugin_equivalence": false
+  },
+  "final_receipt_update_changes_only_README_manifest_and_status_metadata": true
 }
