@@ -1,0 +1,203 @@
+{
+  "status": "accepted_bounded_public_prepared_original_mode_provider_replay",
+  "source_files": [
+    {
+      "path": "reconstruction/plugins/effects/quality-provider/provider_probe.mm",
+      "sha256": "a5cea1f25dcad1f4667c3e2018610563f2cef78f84e4ba6623bd9b771e0fd96b",
+      "bytes": 6272
+    },
+    {
+      "path": "reconstruction/plugins/effects/quality-provider/provider_original_probe.mm",
+      "sha256": "d03b72c8710417b884c383203c4bdd5d971c7009e10e76ca4b6137099c0d3a49",
+      "bytes": 16084
+    },
+    {
+      "path": "reconstruction/plugins/effects/quality-provider/verify.sh",
+      "sha256": "ecb5af6c32fd41bd9c53ed4c92c76b65b35e57dbcfe9a11b79686cf8bf5b1ba0",
+      "bytes": 2852
+    },
+    {
+      "path": "reconstruction/plugins/effects/quality-provider/QUALITY_PROVIDER.md",
+      "sha256": "c0f5edf9365f2ba59ea918a066b46cb37c51a6528d1c5d9496d7c325336934e7",
+      "bytes": 3322
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "reconstruction/plugins/effects/fast_dist_dsp.hpp",
+      "sha256": "fefd86bbf36844886f8c4b18283a12a34af9d42f9b40d49d625402ccd859f321",
+      "bytes": 4875
+    }
+  ],
+  "canonical_command": "sh reconstruction/plugins/effects/quality-provider/verify.sh",
+  "canonical_expected_results": {
+    "provider-normal": {
+      "status": "passed_prepared_actual_mode_provider",
+      "calls": 420,
+      "mode_deliveries": 420,
+      "balanced_interface_retains": 420,
+      "restored_globals": 6,
+      "captured_sender_bytes": 1304,
+      "substituted_lock_and_recipient_callbacks": true,
+      "actual_distwave_selector_writer": false,
+      "actual_application_quality_lifecycle": false,
+      "full_plugin_equivalence": false
+    },
+    "original-normal": {
+      "status": "passed_actual_mode_provider_original_fast_dist",
+      "actual_provider_calls": 420,
+      "original_fast_dist_deliveries": 420,
+      "native_parameter_calls": 2100,
+      "capture_recipient_deliveries": 420,
+      "balanced_interface_retains": 840,
+      "table_entries": 163880,
+      "render_callbacks": 420,
+      "stereo_frames": 71620,
+      "exact_sample_comparisons": 143240,
+      "opposite_quality_different_samples": 10329,
+      "restored_globals": 6,
+      "selector_writer_executed": false,
+      "actual_application_lifecycle": false,
+      "full_plugin_equivalence": false
+    },
+    "provider-sanitized": {
+      "status": "passed_prepared_actual_mode_provider",
+      "calls": 420,
+      "mode_deliveries": 420,
+      "balanced_interface_retains": 420,
+      "restored_globals": 6,
+      "captured_sender_bytes": 1304,
+      "substituted_lock_and_recipient_callbacks": true,
+      "actual_distwave_selector_writer": false,
+      "actual_application_quality_lifecycle": false,
+      "full_plugin_equivalence": false
+    },
+    "original-sanitized": {
+      "status": "passed_actual_mode_provider_original_fast_dist",
+      "actual_provider_calls": 420,
+      "original_fast_dist_deliveries": 420,
+      "native_parameter_calls": 2100,
+      "capture_recipient_deliveries": 420,
+      "balanced_interface_retains": 840,
+      "table_entries": 163880,
+      "render_callbacks": 420,
+      "stereo_frames": 71620,
+      "exact_sample_comparisons": 143240,
+      "opposite_quality_different_samples": 10329,
+      "restored_globals": 6,
+      "selector_writer_executed": false,
+      "actual_application_lifecycle": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "byte_identical_reviewed_fixtures": true,
+  "recipe_delta_only_root_output_paths_and_basename": true,
+  "accepted_private_map": {
+    "path": "analysis/plugins/effects/fast-dist/quality-production-original-candidate-source.json",
+    "sha256": "fdc2f4008de5cf4585dfe2338c9d2b51ddf1e657c684efaaea984164f32c7867"
+  },
+  "independent_combined_review": {
+    "path": "analysis/plugins/review/root-quality-provider-combined-independent.json",
+    "sha256": "3ed3b2fb64a14b1abd34008b5c4cafc9b96cfde0707859767610a1d95d4abec7"
+  },
+  "targets": [
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+      "bytes": 63038992
+    },
+    {
+      "path": ".tools/plugin-work/effects/FLEngine.arm64.dylib",
+      "sha256": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0",
+      "bytes": 26584592
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Effects/Fruity Fast Dist/Fruity Fast Dist_x64.dylib",
+      "sha256": "22b0fc6fa9f3cc065587f5e142ec047d8877432454ca7c25aba9e4eb195c5b82",
+      "bytes": 4590144
+    },
+    {
+      "path": ".tools/plugin-work/effects/FruityFastDist.arm64.dylib",
+      "sha256": "f5f39eef0a0faaf653b3f5b5aad25570bdd3e05bd67bf01a42c8bf335c3d7a25",
+      "bytes": 2329152
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib",
+      "sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "bytes": 34224720
+    }
+  ],
+  "private_evidence_required_by_public_recipe": false,
+  "private_critic_extensions_reproduced_by_public_recipe": false,
+  "source_rebuilt_provider": false,
+  "actual_selector_writer_context": false,
+  "actual_application_lifecycle": false,
+  "general_FP_exception_or_trap_parity": false,
+  "real_time_certificate": false,
+  "full_plugin_equivalence": false,
+  "parent_public_path_review": {
+    "path": "analysis/plugins/review/root-quality-provider-public-independent.json",
+    "sha256": "9beaf4f84491de7514be7a5516a08c33071afbfa219472a9112e80f32f6efb08",
+    "copied_canonical_results": {
+      "provider-normal": {
+        "status": "passed_prepared_actual_mode_provider",
+        "calls": 420,
+        "mode_deliveries": 420,
+        "balanced_interface_retains": 420,
+        "restored_globals": 6,
+        "captured_sender_bytes": 1304,
+        "substituted_lock_and_recipient_callbacks": true,
+        "actual_distwave_selector_writer": false,
+        "actual_application_quality_lifecycle": false,
+        "full_plugin_equivalence": false
+      },
+      "original-normal": {
+        "status": "passed_actual_mode_provider_original_fast_dist",
+        "actual_provider_calls": 420,
+        "original_fast_dist_deliveries": 420,
+        "native_parameter_calls": 2100,
+        "capture_recipient_deliveries": 420,
+        "balanced_interface_retains": 840,
+        "table_entries": 163880,
+        "render_callbacks": 420,
+        "stereo_frames": 71620,
+        "exact_sample_comparisons": 143240,
+        "opposite_quality_different_samples": 10329,
+        "restored_globals": 6,
+        "selector_writer_executed": false,
+        "actual_application_lifecycle": false,
+        "full_plugin_equivalence": false
+      },
+      "provider-sanitized": {
+        "status": "passed_prepared_actual_mode_provider",
+        "calls": 420,
+        "mode_deliveries": 420,
+        "balanced_interface_retains": 420,
+        "restored_globals": 6,
+        "captured_sender_bytes": 1304,
+        "substituted_lock_and_recipient_callbacks": true,
+        "actual_distwave_selector_writer": false,
+        "actual_application_quality_lifecycle": false,
+        "full_plugin_equivalence": false
+      },
+      "original-sanitized": {
+        "status": "passed_actual_mode_provider_original_fast_dist",
+        "actual_provider_calls": 420,
+        "original_fast_dist_deliveries": 420,
+        "native_parameter_calls": 2100,
+        "capture_recipient_deliveries": 420,
+        "balanced_interface_retains": 840,
+        "table_entries": 163880,
+        "render_callbacks": 420,
+        "stereo_frames": 71620,
+        "exact_sample_comparisons": 143240,
+        "opposite_quality_different_samples": 10329,
+        "restored_globals": 6,
+        "selector_writer_executed": false,
+        "actual_application_lifecycle": false,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "post_replay_metadata_only": true
+}
