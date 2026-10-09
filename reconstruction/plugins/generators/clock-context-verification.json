@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "status": "verified_bounded_prepared_clock_independently_reviewed",
+  "source_sha256": {
+    "reconstruction/plugins/generators/three_osc_clock_context.hpp": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+    "reconstruction/plugins/generators/three_osc_clock_context.cpp": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+    "reconstruction/plugins/generators/test_three_osc_clock_context.mm": "8ffb070297ab95708b4fa23a89bc176f57882058702f993fffdfef8eec75bbc6",
+    "reconstruction/plugins/generators/verify-clock-context.sh": "f15807b3d4de1b31d1951fce260c78b1fe8df0e51468cffa5fb35414a0f4d20f",
+    "reconstruction/plugins/generators/CLOCK_CONTEXT.md": "729b5e8dfe8f8c7d66a0b206875de5187d7bce01afdf6a6d8451b8e2f2ba4306",
+    "reconstruction/plugins/generators/summarize_clock_context.py": "9cfb9812592cd985b3acbd913e2120ad70f51406be9ca8b1568a1e0c6cde25cf"
+  },
+  "dependency_sha256": {},
+  "target_identity": {
+    "platform": "macOS arm64 only",
+    "engine_universal_sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "engine_arm64_sha256": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "commands": [
+    "./reconstruction/plugins/generators/verify-clock-context.sh",
+    "./reconstruction/plugins/generators/verify-clock-context.sh --sanitize"
+  ],
+  "builder_runs": {
+    "native": {
+      "result": {
+        "status": "passed",
+        "intact_cpp_host_adapter_and_pascal_GT_Ticks_provider": true,
+        "controlled_cases": 12064,
+        "cached_cases": 4064,
+        "active_sender_cases": 4000,
+        "future_flag_cases": 4000,
+        "rounded_cases": 6052,
+        "local_subtraction_cases": 1221,
+        "sample_offset_cases": 9000,
+        "descriptor_fixtures": 6000,
+        "ordered_descriptor_callbacks": 24000,
+        "balanced_interface_retains": 12000,
+        "source_rejection_preservation_cases": 34,
+        "focused_rounding_exception_tick_cases": 40,
+        "focused_rounding_exception_descriptor_cases": 14,
+        "focused_descriptor_balanced_retains": 28,
+        "full_fenv_snapshots_restored": 2,
+        "general_fenv_or_trap_equivalence": false,
+        "exact_output_bytes_per_case": 8,
+        "second_time_word_preserved": true,
+        "selected_native_global_snapshots_restored": true,
+        "actual_application_clock_production": false,
+        "actual_application_owned_host_or_sender": false,
+        "full_plugin_equivalence": false
+      },
+      "result_sha256": "9b7f12730a4a42cb1d5a25a7be1bd75bdd19f3d6f2b95550b8463521bbdc23c4",
+      "artifacts_sha256": {
+        "libVLClockContext.dylib": "1a436dbf535b8b7d0b9f2c23f9ba601bf5b986763da85518064669664439e9ae",
+        "test_clock_context": "e20187b1fd232e3f634067385a19929773e1140910108e195bbd9dd4a2403444"
+      }
+    },
+    "sanitized": {
+      "result": {
+        "status": "passed",
+        "intact_cpp_host_adapter_and_pascal_GT_Ticks_provider": true,
+        "controlled_cases": 12064,
+        "cached_cases": 4064,
+        "active_sender_cases": 4000,
+        "future_flag_cases": 4000,
+        "rounded_cases": 6052,
+        "local_subtraction_cases": 1221,
+        "sample_offset_cases": 9000,
+        "descriptor_fixtures": 6000,
+        "ordered_descriptor_callbacks": 24000,
+        "balanced_interface_retains": 12000,
+        "source_rejection_preservation_cases": 34,
+        "focused_rounding_exception_tick_cases": 40,
+        "focused_rounding_exception_descriptor_cases": 14,
+        "focused_descriptor_balanced_retains": 28,
+        "full_fenv_snapshots_restored": 2,
+        "general_fenv_or_trap_equivalence": false,
+        "exact_output_bytes_per_case": 8,
+        "second_time_word_preserved": true,
+        "selected_native_global_snapshots_restored": true,
+        "actual_application_clock_production": false,
+        "actual_application_owned_host_or_sender": false,
+        "full_plugin_equivalence": false
+      },
+      "result_sha256": "9b7f12730a4a42cb1d5a25a7be1bd75bdd19f3d6f2b95550b8463521bbdc23c4",
+      "artifacts_sha256": {
+        "libVLClockContext.dylib": "db5cf210e02db7dc16aaee8eb4feef9d67a7c8046897fa6654b78d77a03e2882",
+        "test_clock_context": "20b43769f14f1a51c420a8c6138d89117db56c074968678bf5823fe364cbf953"
+      }
+    }
+  },
+  "measured_protocol": {
+    "cpp_host_constructor": "0xb4cd20",
+    "cpp_host_interface_offset": 16,
+    "cpp_host_bytes": 24,
+    "host_dispatcher": "0x3d00e0",
+    "ticks_jump_target": "0x3d2074",
+    "ticks_store": "0x3d230c",
+    "time_signature_producer": "0x32e000",
+    "tempo_producer": "0x32e1f0",
+    "plugin_resolution_helper": "0x595570",
+    "cpp_plugin_constructor": "0xb4c7c0",
+    "node_vmt": "0x1076760",
+    "node_bytes": 320,
+    "signature_field": 288,
+    "selected_global_snapshot_spans": 12,
+    "snapshot_span_bytes": 8
+  },
+  "scope": {
+    "arithmetic": "Prepared cached/active/future GT_Ticks, nearest-even low32 local subtraction and post-conversion sample offset; only t1 is written",
+    "successful_domain": "Finite cached/fractional/input-offset magnitudes<=2^52, samples/tick[1,2^32], nonnegative int32 latency, valid int32 scalar fields and live borrowed C++ objects",
+    "fp": "Strict separate operations, nearest-even, gradual underflow; focused finite rint/FRINTX exception masks compared, no general fenv/trap parity",
+    "corpus": "12000 ordinary tick cases plus64 cached signedzero/ties/int32,uint32 and2^52 conversion edges;6000 direct descriptor contexts with twelve clock values including low32 overflow to0",
+    "descriptor": "Prepared signature1..1024/PPQ4..2^20/tempo(0,1000]/clock[1,2^32]. Intact engine direct producer+resolution executes; manager refcount/getter replaced; final calls cross actual CPP plugin adapter",
+    "rate": "Prepared rate8000..384000 copy; actual loader dispatcher4 producer statically mapped, not replayed here",
+    "state": "Full controlled320-byte sender compared, only12-byte signature changes; twelve selected8-byte native spans restored and readback verified; no claim over all native globals",
+    "ownership": "Caller-owned controlled host/sender/interface/packet; nonthrow callbacks on valid corpus; serial standalone process. No application-owned objects are present",
+    "rejections": "34 new-source scalar checks only; invalid native calls excluded",
+    "sanitizers": "New separately compiled library and harness instrumented; installed engine uninstrumented",
+    "missing": [
+      "Actual live engine clock production/recomputation",
+      "Queued and real application context/project/voice delivery",
+      "Original manager/interface and application host/sender ownership",
+      "Scheduler, atomic lists, threads and real-time behavior",
+      "Whole generator/plugin/factory equivalence"
+    ]
+  },
+  "author_rounding_repair": {
+    "prior_candidate_sha256": "60e65c616d3fbac70323ef39328553b013cdca7a273b16f2cc134fd7d2c996cf",
+    "prior_cpp_sha256": "36f2d243fd05856d772d31f701080ddf4590e100b057e074fc7489d264e693c9",
+    "independent_finding_sha256": "119cb153670781d909c9ceb0ffd5861f5b8bc1c8d297251d26ac099252a36932",
+    "runtime_change": "roundedWord nearbyint to rint only",
+    "old_nearbyint_negative_control": "Final focused fixture fails with Focused tick rounding bits/exception mask differs",
+    "old_evidence_preserved": true
+  },
+  "focused_rounding_status": {
+    "rounding_helper": "rint, matching measured FRINTX",
+    "cleared_masks": "FE_ALL_EXCEPT:0 orFE_INEXACT",
+    "cached_cases": 40,
+    "descriptor_cases": 14,
+    "full_fenv_snapshots_restored": 2,
+    "general_fenv_or_enabled_trap_equivalence": false
+  },
+  "independent_review_pending": false,
+  "prepared_clock_component_rebuilt": true,
+  "actual_application_clock_production": false,
+  "actual_application_context_delivery_rebuilt": false,
+  "actual_application_host_rebuilt": false,
+  "actual_host_scheduling_rebuilt": false,
+  "full_plugin_recompiled": false,
+  "full_plugin_equivalence": false,
+  "independent_review": {
+    "status": "accepted_bounded_prepared_clock_after_repairs",
+    "reports": [
+      {
+        "name": "root-clock-context-independent.json",
+        "sha256": "73fe7c6e631468d61ff4e09b0e2c65913a0f4f8ef563e95060c1770067b6178f"
+      },
+      {
+        "name": "clock-context-effects-independent.json",
+        "sha256": "f75659c69053b65ed8f1e7caf441ac5c9ee8d9a611de7c76f9c3474ce5c18d41"
+      }
+    ],
+    "reviewer_extended_ticks": 83744,
+    "reviewer_extended_descriptor_contexts": 8060,
+    "root_wrong_offset_order_negative_exit": 1,
+    "old_nearbyint_required_mask_negative_exit": 1,
+    "both_required_results_missing_run_rejections": true,
+    "runtime_header_fixture_scripts_byte_identical_to_reviewed_candidate": true,
+    "post_review_documentation_acceptance_rebind_only": true,
+    "general_fenv_or_trap_equivalence": false,
+    "full_plugin_equivalence": false
+  }
+}
