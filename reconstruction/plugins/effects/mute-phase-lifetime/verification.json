@@ -159,5 +159,7 @@
   "actual_application_created": false,
   "new_Mute_real_stream_proof": false,
   "Python_optimization_refused_before_verification": true,
-  "fresh_git_checkout_replay_passed": false
+  "fresh_git_checkout_replay_passed": true,
+  "fresh_git_checkout_tested_code_commit": "e4d6dc32e33e0f22220332bf4940c9d164bc453f",
+  "fresh_git_checkout_proof_sha256": "49514a4114602dc767db9ff4009bc3ed2ac70d9a004e64fe3c5a2f377c669b07"
 }
