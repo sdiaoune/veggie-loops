@@ -1,0 +1,59 @@
+{
+  "schema": "prepared-lookup-public-validation-v1",
+  "status": "own_source_nine_cases_passed",
+  "platform": "macOS arm64",
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+  "compile_flags": [
+    "-arch",
+    "arm64",
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "source_files": {
+    "prepared_lookup.cpp": {
+      "sha256": "3eaced485086172f1e7bda80a3aaea89a37a5d4de6b6a9700945af48f970d703",
+      "bytes": 2954
+    },
+    "prepared_lookup.hpp": {
+      "sha256": "487a9fdf9a32ee5f0d7d27d14f27a71f1d11dc72cbfe53287bf7eb54821bd24c",
+      "bytes": 1190
+    },
+    "test_prepared_lookup_arm64.cpp": {
+      "sha256": "786aec6a87cab6bda6689835f8b57cd46eb7a5994ed7bfb2ec86a2f927dd57b2",
+      "bytes": 3294
+    },
+    "LICENSE": {
+      "sha256": "28c9e5f451f79b62b6c44ab67ff52e6a309282acddffb8a1a80c76fd6e218f9e",
+      "bytes": 1069
+    }
+  },
+  "compile_exit_code": 0,
+  "compile_diagnostics_empty": true,
+  "strict_adhoc_signature_verified": true,
+  "runtime": {
+    "own_source_checks_passed": 9,
+    "own_process_fpcr": 0,
+    "fused_bits": "0x3e940ad7",
+    "separate_bits": "0x3e940ad6",
+    "original_plugin_called": false,
+    "full_plugin_equivalence": false
+  },
+  "Source_reviews": [
+    "4a3eec0ac23d9c058a96fb5bc01914a1ca88a3e262526584f0b68d5953c7268a",
+    "16fc08b12355b41b318ea6b9b517bf28861490bcc6ed6217ea5044f07d6fe546"
+  ],
+  "private_actual_receipt_sha256": "3636f9d1d9eb4b332c7a35ef426379dca516ad1ac6857ffe311be910f6fc2e1e",
+  "limits": [
+    "Caller-owned initialized stable finite table; defensive limits are new API assumptions.",
+    "The entire table is scanned; no real-time performance certification.",
+    "Nine disclosed functional checks plus the numeric environment precondition; not exhaustive full-domain or sanitizer proof.",
+    "Native global initialization, allocation, guard slowpaths, callable original ABI, numerical/fenv/audio and full-plugin equivalence remain unverified."
+  ],
+  "original_plugin_called": false,
+  "full_plugin_equivalence": false
+}
