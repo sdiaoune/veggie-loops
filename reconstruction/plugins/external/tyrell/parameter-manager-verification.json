@@ -1,0 +1,86 @@
+{
+  "status": "verified_prepared_parameter_manager_independently_reviewed",
+  "source_only_contract": {
+    "source_contract": true,
+    "atomic_rejections": 477
+  },
+  "native_differential": {
+    "native_manager": true,
+    "actual_descriptors": 92,
+    "actual_type0": 33,
+    "actual_type1": 59,
+    "write_cases": 254472,
+    "equal_suppressed": 85456,
+    "notifications": 169016,
+    "get_forwarding": 1472,
+    "synthetic_type_cases": 42
+  },
+  "source_sha256": {
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_manager.h": "3d5562df6e4f478f12195738137cd80f66c7bacde93f7142a93c24c55305e95d",
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_manager.cpp": "f2c5ea32599005fab9446dc5795772f81ed63506e4eb4a08bc4a7f349f53b4d1",
+    "reconstruction/plugins/external/tyrell/test_tyrell_parameter_manager.cpp": "0357788c4cc3ee670574b73fff4f43f65c13d5348750116cab21f88e980cab58",
+    "reconstruction/plugins/external/tyrell/test_tyrell_parameter_manager.mm": "ef0f4461bd5481553c13e9a1c8943427b3949d192d413e54bb90ac6586519d7c",
+    "reconstruction/plugins/external/tyrell/verify-parameter-manager.sh": "6666a8ff52c02969940cb0d30f18f6481a0879e099421a6ba503edec3612d6ed",
+    "reconstruction/plugins/external/tyrell/PARAMETER_MANAGER.md": "8253d9f5c8eeeaddca18e3d8b68b223e441c25cbd37be3fe45c29098504ab064"
+  },
+  "dependency_sha256": {
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_scale.h": "ee1c68d40ea328db2492e9db54386d51ed6749d6d69f26f1d9a82b7334ae1494",
+    "reconstruction/plugins/external/tyrell/tyrell_parameter_scale.cpp": "328c70ee01ca132ac7ea0704daef1bbb6c3b903e01fb3409ba6734497d5528ba",
+    "reconstruction/plugins/common/vst2_probe.mm": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f"
+  },
+  "artifacts_sha256": {
+    "test_contract": "7cd5c027fb91f6fe3aaffc05a727b7512a3340687768e90583ff6b298d470817",
+    "test_native": "d54939cf1c7413a181353876a12445f56aa9719f89eff330f985a2bb51c01802",
+    "VLTyrellParameterManager.dylib": "146b3135ad5ed9f238b47391fb5cfb69daba0149a2a7041a5d11e972dc669d59"
+  },
+  "result_log_sha256": {
+    "contract-result.log": "70b8eee276e2df400328c521200df8e417a4d723b76397f473354a39d60e7484",
+    "native-result.log": "177b412871f136b0853872fe885ace8b83ec87f848d4d46edc767f4904dbc196"
+  },
+  "target_universal_sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+  "target_x86_64_sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
+  "native_slots": {
+    "0x1b8": "0x125630",
+    "0x1c8": "0x125780",
+    "0x250": "0x1255b0"
+  },
+  "native_fixture_architecture": "x86_64 macOS; every generated harness ad-hoc signed",
+  "sanitizers": "ASan/UBSan source fixture, compiled reconstruction dylib and native fixture; original binary is not instrumented",
+  "domain": {
+    "descriptors": "Actual 92 public descriptors, 33 type0/59 type1, known internal IDs only",
+    "raw": "Finite [-4096,4096], no range clamping",
+    "clock": "Every finite float allowed; corpus includes signed zero, subnormal and +/-FLT_MAX",
+    "fp": "nearest-even, gradual subnormals, separate float add then floor, no fast math/FMA contraction",
+    "prepared_storage": "92 valid raw values, valid finite clock, lastID=-1 or known internal ID; serialized access",
+    "prepared_extra_types": "Types0,1,2,3,4,5,255 compared using a synthetic descriptor table, not native public controls"
+  },
+  "substitutions": [
+    "Actual nested raw-getter slot0x2d8 is replaced with a controlled return/argument recorder",
+    "Actual manager target+0x48 and clock pointer+0x58 are replaced; notifier0x298 synchronously commits prepared raw storage",
+    "The separate extra-type corpus substitutes an empty descriptor table, retaining actual public map and manager procedures"
+  ],
+  "open_gates": [
+    "Native raw/audio backend and scheduling",
+    "Native manager class/factory ABI source",
+    "Native meter warning logger",
+    "Complete state/preset and GUI behavior",
+    "Real host integration/RT certificate",
+    "Audio DSP reconstruction",
+    "Arbitrary NaN/Inf, unsupported internal IDs, or other FP modes"
+  ],
+  "full_plugin_equivalence": false,
+  "whole_dsp": false,
+  "native_class_abi": false,
+  "actual_audio_target": false,
+  "real_host_clock": false,
+  "independent_review": {
+    "status": "accepted_only_within_prepared_scalar_subset",
+    "reports": [
+      "root-tyrell-manager-independent.json",
+      "tyrell-parameter-manager-generator-independent.json"
+    ],
+    "negative_rounding_control": "Wrong nearest-even integer quantizer fails actual native fixture; accepted implementation unchanged",
+    "supplemental_scope": "Independent generator reviewer additionally checked nongrid writes, signed-zero permutations, byte types, state/ID/preservation boundaries and adjacent-buffer success",
+    "real_downstream_notifier_scheduling_audio_gui_class_unproved": true
+  }
+}
