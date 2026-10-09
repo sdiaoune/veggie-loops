@@ -1,0 +1,2173 @@
+{
+  "status": "independently_accepted_bounded_public_active_preparation",
+  "sources": {
+    "immediate_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.hpp",
+      "sha256": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+      "bytes": 1206
+    },
+    "immediate_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.cpp",
+      "sha256": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+      "bytes": 16586
+    },
+    "immediate_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
+      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+      "bytes": 8225
+    },
+    "immediate_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
+      "sha256": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+      "bytes": 2778
+    },
+    "test_immediate_live_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm",
+      "sha256": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+      "bytes": 21066
+    },
+    "test_immediate_prevoice_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm",
+      "sha256": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+      "bytes": 20238
+    },
+    "test_immediate_preparation.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm",
+      "sha256": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+      "bytes": 26971
+    },
+    "lazy-baseline/live_context_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp",
+      "sha256": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+      "bytes": 582
+    },
+    "lazy-baseline/live_context_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp",
+      "sha256": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+      "bytes": 15620
+    },
+    "lazy-baseline/live_context_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp",
+      "sha256": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6",
+      "bytes": 8228
+    },
+    "verify_immediate_context.sh": {
+      "path": "reconstruction/plugins/generators/live-context/verify_immediate_context.sh",
+      "sha256": "15ca2c76094ab8a126a60bf112798a5849576762950dea3124d4aeddfe614890",
+      "bytes": 5291
+    },
+    "verify_immediate_O0.sh": {
+      "path": "reconstruction/plugins/generators/live-context/verify_immediate_O0.sh",
+      "sha256": "caa63bdd9c726a4052e2f6e516ff03c6954a40dc15ae339456d399bb2421dfec",
+      "bytes": 1326
+    },
+    "IMMEDIATE_PREPARATION.md": {
+      "path": "reconstruction/plugins/generators/live-context/IMMEDIATE_PREPARATION.md",
+      "sha256": "defd30d441a1d54b4602d1edbfba746ecbe09665264559f380f7bfb3fd8488c0",
+      "bytes": 6480
+    },
+    "summarize_immediate_context.py": {
+      "path": "reconstruction/plugins/generators/live-context/summarize_immediate_context.py",
+      "sha256": "f10d5e13b76154599c48e690124baa31f057ecf20bc3bffe2c3a845e91b7da2d",
+      "bytes": 25219
+    },
+    "summary_negative_probe.py": {
+      "path": "reconstruction/plugins/generators/live-context/summary_negative_probe.py",
+      "sha256": "91371738130a0e9c4cfe07cd5097ea4a1ee7692b34b908b4f38a329e8432c9b7",
+      "bytes": 1975
+    }
+  },
+  "pinned_compiled_source_hashes": {
+    "immediate_channel.hpp": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+    "immediate_channel.cpp": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+    "immediate_factory.cpp": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+    "immediate_coefficients.hpp": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+    "test_immediate_live_regression.mm": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+    "test_immediate_prevoice_regression.mm": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+    "test_immediate_preparation.mm": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+    "lazy-baseline/live_context_channel.hpp": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+    "lazy-baseline/live_context_channel.cpp": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+    "lazy-baseline/live_context_factory.cpp": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6"
+  },
+  "exact_quoted_include_and_linked_source_closure": {
+    "reconstruction/plugins/generators/live-context/immediate_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.cpp",
+      "sha256": "59939a6125e4ebb4f360ae192f8775334ccad44fcb64f0551a64197fc11b39c9",
+      "bytes": 16586
+    },
+    "reconstruction/plugins/generators/live-context/immediate_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_channel.hpp",
+      "sha256": "c605302a66452b790eb96731a3ade20a4236984fa1ab4edade97aa442e58806e",
+      "bytes": 1206
+    },
+    "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_coefficients.hpp",
+      "sha256": "7924811c17e99cd03b66488f7a3569f6343a85f8d1cb4864befb91340588dc28",
+      "bytes": 2778
+    },
+    "reconstruction/plugins/generators/live-context/immediate_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/immediate_factory.cpp",
+      "sha256": "55d9ebde1c8986c43daee936f26ec86881c1a9656510c527a847da84080d8560",
+      "bytes": 8225
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.cpp",
+      "sha256": "40a37f0c45988b4fd5f8ba21b85fb8c7cbb296978b324aeae43ff3deaeac355f",
+      "bytes": 15620
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_channel.hpp",
+      "sha256": "0e72b5424575b06400417dc0fc3eefba74d324fc6e42b448c5e0ef83fe255804",
+      "bytes": 582
+    },
+    "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp": {
+      "path": "reconstruction/plugins/generators/live-context/lazy-baseline/live_context_factory.cpp",
+      "sha256": "367fe37707cf28cc739af8a33986bcc7f645b707643b968368864e432cced6e6",
+      "bytes": 8228
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_live_regression.mm",
+      "sha256": "4e765d7efcde3c40f492edd011964d69012b2fca1822c9fae8c42369e4ee9721",
+      "bytes": 21066
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_preparation.mm",
+      "sha256": "67f9522b0aa9279a279a9dcd6aa4251bc688ecb17cc09b22aea84d1af83d7bdb",
+      "bytes": 26971
+    },
+    "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm": {
+      "path": "reconstruction/plugins/generators/live-context/test_immediate_prevoice_regression.mm",
+      "sha256": "99e5bce5529cdab93121db46a753a47fadc018bb89ce3b790c9750c53ed563e0",
+      "bytes": 20238
+    },
+    "reconstruction/plugins/generators/three_osc.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc.hpp",
+      "sha256": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+      "bytes": 7943
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.cpp",
+      "sha256": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+      "bytes": 1836
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.hpp",
+      "sha256": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+      "bytes": 2433
+    },
+    "reconstruction/plugins/generators/three_osc_declick.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.cpp",
+      "sha256": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+      "bytes": 2836
+    },
+    "reconstruction/plugins/generators/three_osc_declick.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.hpp",
+      "sha256": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+      "bytes": 1642
+    },
+    "reconstruction/plugins/generators/three_osc_engine.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_engine.cpp",
+      "sha256": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+      "bytes": 13473
+    },
+    "reconstruction/plugins/generators/three_osc_envelope.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope.hpp",
+      "sha256": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+      "bytes": 5832
+    },
+    "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp",
+      "sha256": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+      "bytes": 2607
+    },
+    "reconstruction/plugins/generators/three_osc_filter.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter.hpp",
+      "sha256": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+      "bytes": 6216
+    },
+    "reconstruction/plugins/generators/three_osc_filter_routing.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp",
+      "sha256": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+      "bytes": 3946
+    },
+    "reconstruction/plugins/generators/three_osc_gain_mix.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp",
+      "sha256": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+      "bytes": 2230
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp",
+      "sha256": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+      "bytes": 515
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp",
+      "sha256": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+      "bytes": 2672
+    },
+    "reconstruction/plugins/generators/three_osc_modulation.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_modulation.hpp",
+      "sha256": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+      "bytes": 2431
+    },
+    "reconstruction/plugins/generators/three_osc_multimode_channel.h": {
+      "path": "reconstruction/plugins/generators/three_osc_multimode_channel.h",
+      "sha256": "38a807f38c9c482b9e2b0903864d9d2defef13ce66c0424e8b0c4ce9da9e8272",
+      "bytes": 5398
+    },
+    "reconstruction/plugins/generators/three_osc_native_factory.h": {
+      "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
+      "sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+      "bytes": 2170
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp",
+      "sha256": "5966c658eef2928a07e32f4ffa7913e156e89cea9e28854395e9dd77de4ba892",
+      "bytes": 2236
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.h": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.h",
+      "sha256": "52757f5b5012a78d697e6e29a03641d6fc0ded032bb551592657a557183ae006",
+      "bytes": 2397
+    },
+    "reconstruction/plugins/generators/three_osc_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_tables.hpp",
+      "sha256": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+      "bytes": 15548
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp",
+      "sha256": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+      "bytes": 856
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.h": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h",
+      "sha256": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+      "bytes": 1512
+    },
+    "reconstruction/plugins/generators/three_osc_voice_output.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_output.hpp",
+      "sha256": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+      "bytes": 1937
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp",
+      "sha256": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+      "bytes": 14885
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.h": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.h",
+      "sha256": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+      "bytes": 4043
+    }
+  },
+  "exact_native_identities": {
+    "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib": {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+      "bytes": 63038992
+    },
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib": {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib",
+      "sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+      "bytes": 5415424
+    },
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/engine.dylib": {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/engine.dylib",
+      "sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+      "bytes": 154112
+    },
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib": {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib",
+      "sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "bytes": 34224720
+    }
+  },
+  "runs": {
+    "native": {
+      "prevoice-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/prevoice-result.json",
+        "sha256": "ee298de5c71199b108e8d8c7d460055e0ab51984272242ec8d923b6a49b3212a",
+        "bytes": 698
+      },
+      "live-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/live-result.json",
+        "sha256": "61e57d76734a54157f3ded998c1b50b51d2bc364167964c4c386a42f5d5154ae",
+        "bytes": 59320
+      },
+      "preparation-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/preparation-result.json",
+        "sha256": "a75f8cc4975f5b47151f4e17fab6833850f9d2abaf4d89964aaa1c08513c5d6f",
+        "bytes": 18695
+      },
+      "prevoice-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/prevoice-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "live-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/live-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "preparation-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/preparation-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "test_immediate_prevoice_regression": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/test_immediate_prevoice_regression",
+        "sha256": "bf2231a6815800ad103fc9fb1e043f3d52ccf6cad07ac6fa7171ff4ec1b7bb67",
+        "bytes": 77648
+      },
+      "test_immediate_live_regression": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/test_immediate_live_regression",
+        "sha256": "f83f33a03e5a7713f544c7a3f3c1998a4e4d0ef0fbc5b53d8c76e8f2aed4b1e0",
+        "bytes": 93808
+      },
+      "test_immediate_preparation": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/test_immediate_preparation",
+        "sha256": "4ca7c22ba9b7c334bf967644e1804fbc305d43b2a6d493a52dd1fc724f653de2",
+        "bytes": 112920
+      },
+      "VL 3 Osc/VL 3 Osc_X64.dylib": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/VL 3 Osc/VL 3 Osc_X64.dylib",
+        "sha256": "cde5b2c9a808946a5e7e8395fb1c2491501fa9f5cb6a7ffd0c3c39ef8c097578",
+        "bytes": 121728
+      },
+      "old-lazy/VL 3 Osc_X64.dylib": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/old-lazy/VL 3 Osc_X64.dylib",
+        "sha256": "cf0e8fe591b01feeca359fde031b9165e7c8d923b2a1553ceddb5cca2f477609",
+        "bytes": 121712
+      },
+      "old-lazy-negative.stdout": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/old-lazy-negative.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "old-lazy-negative.stderr": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/old-lazy-negative.stderr",
+        "sha256": "75acd339eafa6923de1369fb1202686701565637490c8f427319425ec523c96d",
+        "bytes": 98
+      },
+      "old-lazy-negative-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-native/old-lazy-negative-result.json",
+        "sha256": "3d71bcb34c8de51ed6337a7bff4e6bdf225162aecc3087087d26330f134ac7ba",
+        "bytes": 209
+      }
+    },
+    "sanitized": {
+      "prevoice-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/prevoice-result.json",
+        "sha256": "ee298de5c71199b108e8d8c7d460055e0ab51984272242ec8d923b6a49b3212a",
+        "bytes": 698
+      },
+      "live-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/live-result.json",
+        "sha256": "61e57d76734a54157f3ded998c1b50b51d2bc364167964c4c386a42f5d5154ae",
+        "bytes": 59320
+      },
+      "preparation-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/preparation-result.json",
+        "sha256": "a75f8cc4975f5b47151f4e17fab6833850f9d2abaf4d89964aaa1c08513c5d6f",
+        "bytes": 18695
+      },
+      "prevoice-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/prevoice-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "live-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/live-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "preparation-stderr.log": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/preparation-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "test_immediate_prevoice_regression": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/test_immediate_prevoice_regression",
+        "sha256": "861973f66f560690808e83a58ac8f206129f5474c054fa0485dbdd0420cb9c39",
+        "bytes": 234208
+      },
+      "test_immediate_live_regression": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/test_immediate_live_regression",
+        "sha256": "93bf53c1a4dad9abae722e772ab4425b252632fec078d5e3bd3b354162729ec7",
+        "bytes": 255680
+      },
+      "test_immediate_preparation": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/test_immediate_preparation",
+        "sha256": "501b4951de8fdc550f9b8e1f1fdf8755621e58b6f21681a9de27748f28307cf5",
+        "bytes": 327800
+      },
+      "VL 3 Osc/VL 3 Osc_X64.dylib": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/VL 3 Osc/VL 3 Osc_X64.dylib",
+        "sha256": "fdff10a7221804b369b517fd3a9041150f3c8797a269432088add0074ceeaf7f",
+        "bytes": 419280
+      },
+      "old-lazy/VL 3 Osc_X64.dylib": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/old-lazy/VL 3 Osc_X64.dylib",
+        "sha256": "97b7b4852d1fc9ac7e1c5b9b6131cc8c3ec3b9c4878b139218b61051cd156b72",
+        "bytes": 418608
+      },
+      "old-lazy-negative.stdout": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/old-lazy-negative.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "old-lazy-negative.stderr": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/old-lazy-negative.stderr",
+        "sha256": "75acd339eafa6923de1369fb1202686701565637490c8f427319425ec523c96d",
+        "bytes": 98
+      },
+      "old-lazy-negative-result.json": {
+        "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/canonical-sanitized/old-lazy-negative-result.json",
+        "sha256": "3d71bcb34c8de51ed6337a7bff4e6bdf225162aecc3087087d26330f134ac7ba",
+        "bytes": 209
+      }
+    }
+  },
+  "expected_summaries": {
+    "prevoice": {
+      "status": "passed",
+      "private_variant_prevoice_regression": true,
+      "prevoice_delivery_fixtures": 72,
+      "intact_TExPlugin_descriptor_routes": 144,
+      "balanced_manager_retains": 288,
+      "delivered_original_context_values": 360,
+      "exact_prevoice_coefficient_words": 13320,
+      "exact_semantic_state_bytes": 32904,
+      "exact_voice_state_values": 61560,
+      "GenRender_calls": 576,
+      "exact_overwritten_audio_floats": 225072,
+      "ignored_clock_metadata_pairs": 36,
+      "filter_mode_fixtures": [
+        10,
+        10,
+        10,
+        10,
+        8,
+        8,
+        8,
+        8
+      ],
+      "selected_native_globals_restored": true,
+      "direct_prepared_rate_delivery": true,
+      "native_DLL_loader_rate_production_executed": false,
+      "active_voice_context_updates": false,
+      "actual_application_clock_production": false,
+      "full_plugin_equivalence": false
+    },
+    "live": {
+      "status": "passed_live_context_variant",
+      "fixtures": 96,
+      "exact_initial_prerenders": 96,
+      "exact_voice_state_comparisons": 672,
+      "exact_voice_state_values": 63840,
+      "exact_overwritten_audio_floats": 114816,
+      "render_calls": 576,
+      "fixtures_with_audio_difference": 0,
+      "fixtures_with_first_state_difference": 0,
+      "immediate_native_voice_word_mutations": 0,
+      "immediate_source_voice_word_mutations": 0,
+      "source_channel_replacements": 0,
+      "changed_audio_fixtures_by_action": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed_first_state_fixtures_by_action": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed_coefficient_words_by_action": [
+        0,
+        0,
+        160,
+        0,
+        320,
+        320
+      ],
+      "new_runtime_implementation": true,
+      "selected_wrapper_globals_restored": true,
+      "real_application_clock_production": false,
+      "real_scheduler_or_RT": false,
+      "full_plugin_equivalence": false
+    },
+    "preparation": {
+      "status": "passed_active_immediate_preparation_and_next_use",
+      "fixtures": 16,
+      "immediate_mask_differences": 0,
+      "full_fenv_restorations": 240,
+      "all_measured_masks_equal": true,
+      "exact_prepared_words": 44400,
+      "first_native_mask": 16,
+      "first_source_mask": 16,
+      "rejected_source_contexts": 304,
+      "exact_initial_prerenders": 16,
+      "first_voice_state_comparisons": 208,
+      "immediate_native_mutations": 0,
+      "immediate_source_mutations": 0,
+      "source_channel_replacements": 0,
+      "sequential_context_operations": 288,
+      "second_voice_triggers": 16,
+      "second_voice_state_comparisons": 176,
+      "declared_only_native_coefficient_checks": 128,
+      "render_calls": 192,
+      "exact_audio_floats": 20352,
+      "selected_wrapper_globals_restored": true,
+      "canonical_scope_extended": true,
+      "bounded_active_immediate_preparation_FP_masks_proved": true,
+      "full_plugin_equivalence": false
+    }
+  },
+  "exact_immediate_mask_observations": [
+    {
+      "fixture": 0,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 0,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 0,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 0,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 1,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 1,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 1,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 2,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 2,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 2,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 3,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 3,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 3,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 4,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 4,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 4,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 5,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 5,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 5,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 6,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 6,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 6,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 7,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 7,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 7,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 8,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 8,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 8,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 9,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 9,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 9,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 10,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 10,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 10,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 11,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 11,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 11,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 12,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 12,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 12,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 13,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 13,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 13,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 14,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 14,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 14,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "changed-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "same-tempo60",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "PPQ-only960",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 15,
+      "label": "PPQ-then-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "rate96000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "rate44100",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "PPQ-only240",
+      "native_mask": 0,
+      "source_mask": 0
+    },
+    {
+      "fixture": 15,
+      "label": "PPQ-then-same-tempo120",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "group0-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "group0-same-attack5000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "group0-zero-curve",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "group0-curve16",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "group0-attack4000",
+      "native_mask": 16,
+      "source_mask": 16
+    },
+    {
+      "fixture": 15,
+      "label": "same-active-state-restore",
+      "native_mask": 16,
+      "source_mask": 16
+    }
+  ],
+  "O0_source_runs": {
+    "VL 3 Osc_X64.dylib": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/VL 3 Osc_X64.dylib",
+      "sha256": "11ade2c8380dac7a149d635286fd2335c524568ccf46ffb88ec359b08833700c",
+      "bytes": 467760
+    },
+    "prevoice-result.json": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/prevoice-result.json",
+      "sha256": "ee298de5c71199b108e8d8c7d460055e0ab51984272242ec8d923b6a49b3212a",
+      "bytes": 698
+    },
+    "prevoice-stderr.log": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/prevoice-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "live-result.json": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/live-result.json",
+      "sha256": "61e57d76734a54157f3ded998c1b50b51d2bc364167964c4c386a42f5d5154ae",
+      "bytes": 59320
+    },
+    "live-stderr.log": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/live-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "preparation-result.json": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/preparation-result.json",
+      "sha256": "a75f8cc4975f5b47151f4e17fab6833850f9d2abaf4d89964aaa1c08513c5d6f",
+      "bytes": 18695
+    },
+    "preparation-stderr.log": {
+      "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/extra-O0/preparation-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "fail_closed_summary_probe": {
+    "path": ".tools/plugin-work/review/live-immediate-public-root-snapshot/.tools/plugin-work/generators/live-context-public/summary-negative/results.json",
+    "sha256": "cd7169b3e8b3692eda2e83fcb1cf841cb6c9815dced8ee3b3078264029b34491",
+    "bytes": 809
+  },
+  "local_evidence_references_not_read_or_reproduced": {
+    "analysis/plugins/generators/live-context-immediate-candidate-source.json": {
+      "sha256": "5fa07af596cc5f8f8e504a910fc1ea8e8c249b3aa2acb38e7bc3d78a4324b3b2",
+      "bytes": 36861,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-variant-candidate-source.json": {
+      "sha256": "6be505977847298a1dafbcc4b3148574bd054d505e0776f47976745ff1e89325",
+      "bytes": 16464,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/review/root-live-immediate-combined-independent.json": {
+      "sha256": "caacc054c34b835ede0071b476a42ccf682c3da9f32c595910a4235a471e0555",
+      "bytes": 19588,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/review/root-live-immediate-independent.json": {
+      "sha256": "4b6b6b214b82e46fcaf52139e89802b21f9501ab63078f41b6be14238191fa4b",
+      "bytes": 23224,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/review/live-immediate-mixer-independent.json": {
+      "sha256": "b5a30d2da019194d37bb8c5324888d7152712464cd3acdc1a6c15a30e4cda46e",
+      "bytes": 24471,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/review/live-immediate-effects-independent.json": {
+      "sha256": "2851228493ca9ef2542d48fc6054e0062b489dd61d84a605d9e47da65e46fdea",
+      "bytes": 57001,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/review/live-context-effects-independent.json": {
+      "sha256": "5a5b37f37afa77eefc6510338c2933457c5b24beb968e1f8a5c2c7c9a10d7bdb",
+      "bytes": 40853,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    ".tools/plugin-work/review/live-context-effects-final/live-context-effects-immediate-fenv.mm": {
+      "sha256": "c328f64b101b9eda9196a8a0278aaa649c567937ebacecd25cb3fa53dc2285a4",
+      "bytes": 23460,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-immediate-coefficient-prepare.disasm": {
+      "sha256": "f8d36254e2b227adc1f78fedd449da651e70966245e8b8a67097bf3a82b55162",
+      "bytes": 11430,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-immediate-group-parameter.disasm": {
+      "sha256": "948b19656cb07e281057266a7e9c3f9b33331984f1db412411fbf8a30a88ca62",
+      "bytes": 4747,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-immediate-restore.disasm": {
+      "sha256": "f4527baf437ab439524223922e945d5d185222153ae47734939968ad76b5edbd",
+      "bytes": 4935,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-config-reprepare.disasm": {
+      "sha256": "3d7da1fa3d5fcc1135b16d46dd4dbcb2e840be6b79df835aca2663aec4306ccc",
+      "bytes": 1349,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-rate-handler.disasm": {
+      "sha256": "516e30e26d0f73912eb762ef6c1ad5981daf258491c6f35b41bbcd5e06b8e4fe",
+      "bytes": 1504,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-rate-helper.disasm": {
+      "sha256": "7ace1522eec0f95fb5f3d0d17f8e8253e598c9c43c60b7e33edbb898c08c3738",
+      "bytes": 3968,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-tempo-handler.disasm": {
+      "sha256": "432d3d9367a745eea79a8e9fef6109d8321a5bdc60f474127bc33d603b70bdad",
+      "bytes": 1434,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-PPQ-store.disasm": {
+      "sha256": "b88c9ed742082bfec8cd8768ad570a8362c551fb149495fa1e441253ee1f8085",
+      "bytes": 700,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    },
+    "analysis/plugins/generators/live-context-observations-frozen.json": {
+      "sha256": "66cfb21eb204ab28beefa537f9cfac77a1b6392867e51fe7bb0cfbecc61b17e4",
+      "bytes": 14399,
+      "local_only": true,
+      "required_by_public_recipe": false,
+      "reproduced_by_public_recipe": false
+    }
+  },
+  "extra_critics_separate_from_canonical": [
+    {
+      "review": "analysis/plugins/review/live-immediate-mixer-independent.json",
+      "coverage": "10,840 native helper/FE comparisons; all-five-group800-byte guard/two-voice extension; independent rint-to-round tie negative. Separate from canonical group0 corpus."
+    },
+    {
+      "review": "analysis/plugins/review/live-immediate-effects-independent.json",
+      "coverage": "19,456 inherited sticky FE comparisons,3,599,360 cached words and1,328 source-only preservation rejects across16pairs. Separate from canonical240mask corpus."
+    }
+  ],
+  "baseline_role": "Three byte-identical source support files compiled only for the known native16/source0 lazy negative; baseline is not a completed plugin. Other ignored old source/evidence is referenced by frozen hashes only.",
+  "private_helper_namespace": "veggie_loops::three_osc::immediate",
+  "changed_shared_helper_definitions": false,
+  "runtime_changes": [
+    "Cache actual five prepared configurations at observed active preparation points",
+    "Copy cache at next use; inject current synchronized phase independently",
+    "Use distinct rint helper for measured FRINTX",
+    "Retain voice/filter/history/borrowed params/handles and PPQ-only prepared state"
+  ],
+  "bounded_domain": "Sixteen fixed mode/flag pairs; listed raw group0 controls and same valid active state restore; nontrapping nearest-even, gradual underflow and serial nonthrowing deferred-deletion callbacks",
+  "unproved_domains": [
+    "Immediate lazy prevoice preparation timing",
+    "General fenv/trap/errno and other rounding/flush modes",
+    "Arbitrary active controls/state/release/seek/sync modes or cross-instance timing",
+    "Actual application clocks/rate production/host manager/table ownership/scheduler/RT",
+    "Original Pascal class/editor/metadata/VST/AU/full plugin"
+  ],
+  "public_recipe_requires_ignored_private_evidence": false,
+  "full_plugin_equivalence": false,
+  "public_final_path_review": {
+    "path": "analysis/plugins/review/root-live-immediate-public-independent.json",
+    "sha256": "9c6a4a438dc827ceea88a6fde3c8e8b610036d7e6b916e781b3d5780736ea781",
+    "bytes": 58441
+  },
+  "artifact_provenance": "Actual parent source-only40-input mirror replay; paths bind that isolated build and are references, not distributed binaries or replay inputs."
+}
