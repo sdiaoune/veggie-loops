@@ -1,7 +1,7 @@
 {
   "schema": "VL.labs.prepared-meter.scope.v1",
   "namespace": "vl::labs::prepared_meter",
-  "status": "private_public_layout_proposal_pending_two_Source_reviews_and_package_replay",
+  "status": "own_source_public_working_and_clean_checkout_replays_independently_audited",
   "files": [
     "prepared_meter.hpp",
     "prepared_meter.cpp",
@@ -155,12 +155,9 @@
     "all_nine_files_preserved": true,
     "prior_goldens_or_128_atomic_or_transfer_history_corpus_qualified_for_fused_package": false
   },
-  "public_layout_compiled_or_run": false,
-  "public_layout_mutants_executed": false,
-  "pending_before_publication": [
-    "Root and Generator exact Source critiques",
-    "Root separately leased fresh standalone package O0/O2 and five-mutant replay with retained build/signature/runtime evidence"
-  ],
+  "public_layout_compiled_or_run": true,
+  "public_layout_mutants_executed": true,
+  "pending_before_publication": [],
   "unverified": {
     "exhaustive_finite_domain": true,
     "transfer_history_activity_validation_alias_corpus_for_fused_variant": true,
@@ -175,5 +172,29 @@
   },
   "commercial_binary_asset_table_decompiler_body_included": false,
   "original_plugin_called": false,
-  "full_plugin_equivalence": false
+  "full_plugin_equivalence": false,
+  "public_layout_validation": {
+    "code_commit": "46790feb744a47057780da442dd15775d99585f7",
+    "working_receipt_sha256": "735f1c57699317b111abef92fe28a5cf0ebed457adb0e5e8f340e33aeee78c99",
+    "clean_checkout_receipt_sha256": "31781ee483c8290a3767aebbaa5231eca309187117275db8eb183fa40ed4f0a2",
+    "independent_DATA_sha256": "892886a56b222a1072e686e9a93a7c9fc13cc75c89970d260d10ab45eb50caf6",
+    "Source_reviews_sha256": [
+      "138e1f1df4233390e2fe67b8a95941965b8f4746b6e6f0e3213ff4797884e9cf",
+      "36f35f4783727957a2d7d7c545a07030af0a82dc8a6dee95a688c8d73e08f194"
+    ],
+    "profiles_each_layout": [
+      "O0",
+      "O2"
+    ],
+    "positive_checks_each_profile": 13,
+    "FPCR_each_positive": 0,
+    "negatives_each_layout": 5,
+    "negative_compile_sign_verify_arch_succeeded_before_expected_exit1": true,
+    "strict_signed_arm64_products_total": 14,
+    "steps_total": 75,
+    "fresh_git_checkout_clean": true,
+    "compiler_version_or_selected_toolchain_identity_freshly_probed": false,
+    "Original_called": false,
+    "full_plugin_equivalence": false
+  }
 }
