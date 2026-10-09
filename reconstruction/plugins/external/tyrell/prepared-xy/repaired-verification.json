@@ -1,0 +1,559 @@
+{
+  "status": "two_independent_reviews_accept_finite_prepared_XY_validation_and_order_domain",
+  "native_identities": [
+    {
+      "path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+      "sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+      "bytes": 6974608,
+      "role": "intact original executed via universal x86_64 slice"
+    },
+    {
+      "origin_path": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst/Contents/MacOS/TyrellN6",
+      "architecture": "x86_64",
+      "slice_offset": 3428352,
+      "bytes": 3546256,
+      "sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
+      "role": "same pinned thin bytes derived read-only from universal; no standalone thin-file execution or private-evidence runtime dependency"
+    }
+  ],
+  "results": {
+    "canonical": {
+      "normal": {
+        "contract": {
+          "status": "passed_prepared_XY_contract",
+          "successes": 5,
+          "atomic_rejections": 180,
+          "native_executed": false,
+          "full_plugin_equivalence": false
+        },
+        "native": {
+          "status": "passed_prepared_XY_original",
+          "comparisons": 760,
+          "exact_owned_bytes": 7564080,
+          "full_fenv_restorations": 760,
+          "selected_original_preservation_checks": 760,
+          "aliased_fixtures": 380,
+          "packed_pointer_fixtures": 560,
+          "64_touch_fixtures": 24,
+          "direct_native_byte_writes": false,
+          "callback_or_VFT_replacement": false,
+          "natural_active_XY": false,
+          "positive_queue": false,
+          "audio_rendered": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      "sanitized": {
+        "contract": {
+          "status": "passed_prepared_XY_contract",
+          "successes": 5,
+          "atomic_rejections": 180,
+          "native_executed": false,
+          "full_plugin_equivalence": false
+        },
+        "native": {
+          "status": "passed_prepared_XY_original",
+          "comparisons": 760,
+          "exact_owned_bytes": 7564080,
+          "full_fenv_restorations": 760,
+          "selected_original_preservation_checks": 760,
+          "aliased_fixtures": 380,
+          "packed_pointer_fixtures": 560,
+          "64_touch_fixtures": 24,
+          "direct_native_byte_writes": false,
+          "callback_or_VFT_replacement": false,
+          "natural_active_XY": false,
+          "positive_queue": false,
+          "audio_rendered": false,
+          "full_plugin_equivalence": false
+        }
+      }
+    },
+    "endpoint": {
+      "normal": {
+        "status": "passed_effects_XY_endpoint_order_sticky",
+        "cleared_native_pairs": 144,
+        "inherited_native_pairs": 144,
+        "full_caller_fenv_restorations": 288,
+        "cleared_owned_bytes": 1307088,
+        "cleared_alias_cases": 72,
+        "cleared_packed_pointer_cases": 72,
+        "cleared_64_touch_cases": 32,
+        "controls_at_descriptor_tail": true,
+        "low_byte_type2_distractors": true,
+        "same_native_allocation_reused": false,
+        "original_image_instrumented": false,
+        "standard_FE_masks_compared": true,
+        "arbitrary_FP_traps_or_status_equivalence": false,
+        "original_byte_or_VFT_patches": false,
+        "natural_active_XY": false,
+        "positive_queue": false,
+        "audio_rendered": false,
+        "full_plugin_equivalence": false
+      },
+      "sanitized": {
+        "status": "passed_effects_XY_endpoint_order_sticky",
+        "cleared_native_pairs": 144,
+        "inherited_native_pairs": 144,
+        "full_caller_fenv_restorations": 288,
+        "cleared_owned_bytes": 1307088,
+        "cleared_alias_cases": 72,
+        "cleared_packed_pointer_cases": 72,
+        "cleared_64_touch_cases": 32,
+        "controls_at_descriptor_tail": true,
+        "low_byte_type2_distractors": true,
+        "same_native_allocation_reused": false,
+        "original_image_instrumented": false,
+        "standard_FE_masks_compared": true,
+        "arbitrary_FP_traps_or_status_equivalence": false,
+        "original_byte_or_VFT_patches": false,
+        "natural_active_XY": false,
+        "positive_queue": false,
+        "audio_rendered": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "native-active": {
+      "normal": {
+        "status": "passed_repaired_validation_unused_fields",
+        "pairs": [
+          {
+            "field": "no_unused_subnormal",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_raw_id0",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "replaced_old_target_cell",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_positive_depth",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_minimum_endpoint",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_maximum_endpoint",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "signed_zero_endpoint_order",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "all_skipped_positive_subnormal_coordinate",
+            "source_mask": 2,
+            "native_mask": 2
+          },
+          {
+            "field": "all_skipped_negative_subnormal_coordinate",
+            "source_mask": 2,
+            "native_mask": 2
+          }
+        ],
+        "finite_magnitude_comparison_mask": 2,
+        "finite_endpoint_ordering_mask": 2,
+        "native_pairs": 9,
+        "exact_numerical_and_owned_bytes": true,
+        "full_fenv_restorations": 10,
+        "source_validation_excess_denormal": false,
+        "original_config_VFT_or_code_patched": false,
+        "same_native_allocation_reuse": false,
+        "natural_active_XY": false,
+        "audio_rendered": false,
+        "full_plugin_equivalence": false
+      },
+      "sanitized": {
+        "status": "passed_repaired_validation_unused_fields",
+        "pairs": [
+          {
+            "field": "no_unused_subnormal",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_raw_id0",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "replaced_old_target_cell",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_positive_depth",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_minimum_endpoint",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "unused_maximum_endpoint",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "signed_zero_endpoint_order",
+            "source_mask": 32,
+            "native_mask": 32
+          },
+          {
+            "field": "all_skipped_positive_subnormal_coordinate",
+            "source_mask": 2,
+            "native_mask": 2
+          },
+          {
+            "field": "all_skipped_negative_subnormal_coordinate",
+            "source_mask": 2,
+            "native_mask": 2
+          }
+        ],
+        "finite_magnitude_comparison_mask": 2,
+        "finite_endpoint_ordering_mask": 2,
+        "native_pairs": 9,
+        "exact_numerical_and_owned_bytes": true,
+        "full_fenv_restorations": 10,
+        "source_validation_excess_denormal": false,
+        "original_config_VFT_or_code_patched": false,
+        "same_native_allocation_reuse": false,
+        "natural_active_XY": false,
+        "audio_rendered": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "validation-contract": {
+      "normal-arm64": {
+        "status": "passed_bit_validation_state_and_FP_preservation",
+        "calls": 1488,
+        "accepted": 488,
+        "atomic_rejections": 1000,
+        "endpoint_pairs": 625,
+        "field_magnitude_values": 119,
+        "active_subnormal_coordinate_cases_separately_native_tested": 12,
+        "two_seeded_FP_environments_per_input": true,
+        "full_fenv_readbacks": 1488,
+        "original_executed": false,
+        "full_plugin_equivalence": false
+      },
+      "normal-x86_64": {
+        "status": "passed_bit_validation_state_and_FP_preservation",
+        "calls": 1488,
+        "accepted": 488,
+        "atomic_rejections": 1000,
+        "endpoint_pairs": 625,
+        "field_magnitude_values": 119,
+        "active_subnormal_coordinate_cases_separately_native_tested": 12,
+        "two_seeded_FP_environments_per_input": true,
+        "full_fenv_readbacks": 1488,
+        "original_executed": false,
+        "full_plugin_equivalence": false
+      },
+      "sanitized-arm64": {
+        "status": "passed_bit_validation_state_and_FP_preservation",
+        "calls": 1488,
+        "accepted": 488,
+        "atomic_rejections": 1000,
+        "endpoint_pairs": 625,
+        "field_magnitude_values": 119,
+        "active_subnormal_coordinate_cases_separately_native_tested": 12,
+        "two_seeded_FP_environments_per_input": true,
+        "full_fenv_readbacks": 1488,
+        "original_executed": false,
+        "full_plugin_equivalence": false
+      },
+      "sanitized-x86_64": {
+        "status": "passed_bit_validation_state_and_FP_preservation",
+        "calls": 1488,
+        "accepted": 488,
+        "atomic_rejections": 1000,
+        "endpoint_pairs": 625,
+        "field_magnitude_values": 119,
+        "active_subnormal_coordinate_cases_separately_native_tested": 12,
+        "two_seeded_FP_environments_per_input": true,
+        "full_fenv_readbacks": 1488,
+        "original_executed": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "o0": {
+      "status": "observed_API_O0_coordinate_evaluation_order",
+      "mask_differences": 0,
+      "pairs": [
+        {
+          "field": "no_unused_subnormal",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "unused_raw_id0",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "replaced_old_target_cell",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "unused_positive_depth",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "unused_minimum_endpoint",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "unused_maximum_endpoint",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "signed_zero_endpoint_order",
+          "source_mask": 32,
+          "native_mask": 32
+        },
+        {
+          "field": "all_skipped_positive_subnormal_coordinate",
+          "source_mask": 2,
+          "native_mask": 2
+        },
+        {
+          "field": "all_skipped_negative_subnormal_coordinate",
+          "source_mask": 2,
+          "native_mask": 2
+        }
+      ],
+      "finite_magnitude_comparison_mask": 2,
+      "finite_endpoint_ordering_mask": 2,
+      "native_pairs": 9,
+      "exact_numerical_and_owned_bytes": true,
+      "full_fenv_restorations": 10,
+      "source_validation_excess_denormal": false,
+      "original_config_VFT_or_code_patched": false,
+      "same_native_allocation_reuse": false,
+      "natural_active_XY": false,
+      "audio_rendered": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "negatives": {
+    "scalar": [
+      {
+        "name": "wrong-depth",
+        "exit_code": 1,
+        "source_sha256": "0f5b0f29fa73b3f7bfb8a6615a3fa87e3dfae7456ae33d395abf6ee7dad3fb54",
+        "log_sha256": "9906814b5df7b841e84c19c5fbefe8af17c757aeba342121884858e51c2b067a",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "wrong-factor",
+        "exit_code": 1,
+        "source_sha256": "95b419c5e03bfcd17d34090366affaf4071e27a2e099904104f275a507003694",
+        "log_sha256": "9906814b5df7b841e84c19c5fbefe8af17c757aeba342121884858e51c2b067a",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "deduplicated-contributions",
+        "exit_code": 1,
+        "source_sha256": "a60d47036de0511325bbf2ebf1171b269a548e2d5fceca97dd237aa440f2ca7e",
+        "log_sha256": "d2a83cedac0b8f27984b67bc372781fd2150a7fcd4accfdacdaf97253bdd7f85",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "wrong-fulltype",
+        "exit_code": 1,
+        "source_sha256": "c85fe205f6f90653f414a35b7dc695d30f8b83460c547961294cace8729fa472",
+        "log_sha256": "3374addd57c777ebff590b484c59edfddc59304a3c8b034aaf83180c1c8d62ff",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "wrong-clamp-order",
+        "exit_code": 1,
+        "source_sha256": "86be151fdaefe1db8b51d750d5bb8b83005616a052fdcc707acc338f634f8e6b",
+        "log_sha256": "3460bb87a5190611badb405f994746adae2fce7edc44cd63662c220d8ac4205d",
+        "original_code_or_callbacks_mutated": false
+      },
+      {
+        "name": "unique-scratch-count",
+        "exit_code": 1,
+        "source_sha256": "6ca500ab93b97c4f634400389348aec784729060c2204644cc2764c7ca6d4cc8",
+        "log_sha256": "d2a83cedac0b8f27984b67bc372781fd2150a7fcd4accfdacdaf97253bdd7f85",
+        "original_code_or_callbacks_mutated": false
+      }
+    ],
+    "validation-order": [
+      {
+        "variant": "old_float_magnitude",
+        "route": "native",
+        "exit_code": 1,
+        "expected_failure": "Repaired validation still alters unused-field FE status",
+        "original_patched": false,
+        "wrong_source_sha256": "b010f84356ff9197a2cb574d4a5338a899ba842cfc9190d011fb7fdab7e43b3a"
+      },
+      {
+        "variant": "old_float_endpoint_order",
+        "route": "native",
+        "exit_code": 1,
+        "expected_failure": "Repaired validation still alters unused-field FE status",
+        "original_patched": false,
+        "wrong_source_sha256": "fbcb728d518bd9f1e00828caf2c2079bda5f5dbcb8d891c10701960835c3e0cc"
+      },
+      {
+        "variant": "unequal_signed_zeros",
+        "route": "source",
+        "exit_code": 1,
+        "expected_failure": "Validation acceptance differs from ordinary finite reference",
+        "original_patched": false,
+        "wrong_source_sha256": "e10a3eb972c4af39ffa8e44007bc2ce273fcbe0c6b4672b04cd1fdb8325b36ef"
+      },
+      {
+        "variant": "late_coordinate_comparison",
+        "route": "native-active",
+        "exit_code": 1,
+        "expected_failure": "Repaired validation or active-coordinate native FE status differs",
+        "original_patched": false,
+        "wrong_source_sha256": "e2165033b7ab2620f63d0548fb5b74866c3205c3dea0da4cd17cf20ad16dbc7e"
+      }
+    ]
+  },
+  "source_and_harness_sanitized_in_fatal_mode": true,
+  "original_image_instrumented": false,
+  "original_patched": false,
+  "all_original_calls_valid_fresh_clones": true,
+  "same_native_allocation_reused": false,
+  "independent_acceptance": true,
+  "natural_active_XY": false,
+  "positive_queue": false,
+  "arbitrary_FP_traps_or_compiler_codegen": false,
+  "audio_scheduler_editor_RT_full_plugin_equivalence": false,
+  "source_records": [
+    {
+      "path": "NOTES.md",
+      "sha256": "f6c913b019c6d75a53af56213d79f5724105d79ac7f3a341b576c0c841d34947",
+      "bytes": 316
+    },
+    {
+      "path": "REPAIR.md",
+      "sha256": "c35d8260b6b71eb80e18af3150871ed668368d65fe7f2afddedae5452531b4e5",
+      "bytes": 5781
+    },
+    {
+      "path": "summarize_validation.py",
+      "sha256": "cf5e032cc0ae986aba475f3d4272b5a47a4cdcd57ab2e0eb573a67931d18ea89",
+      "bytes": 5341
+    },
+    {
+      "path": "test_validation_contract_qualified.cpp",
+      "sha256": "c12bebf2bc0cf8cb29f5e9f5c497cc7ac3bb84a94b70debff89be30e16abc62b",
+      "bytes": 4456
+    },
+    {
+      "path": "test_validation_native.mm",
+      "sha256": "cd8cc5757a9c56b1acf3ff7b797ff972e6084b47aec11d51c3ef1dc701748297",
+      "bytes": 23926
+    },
+    {
+      "path": "test_validation_native_active.mm",
+      "sha256": "712ce390472dd119fe9a12eb8b7c9101b88d93b439807ba8ca6d2e1e1ec45dc1",
+      "bytes": 24205
+    },
+    {
+      "path": "test_validation_native_o0.mm",
+      "sha256": "ca2974b9cca0565f816656c6cdb0dad979615a75b61075bed2a28d5885c46857",
+      "bytes": 24481
+    },
+    {
+      "path": "verify-effects-supplement-fenv.sh",
+      "sha256": "03bc3de7921f4ca2970b7032ddba9a508bd564391c9afeaa3ecc44ccfde822e6",
+      "bytes": 2220
+    },
+    {
+      "path": "verify.sh",
+      "sha256": "cb24d6bdbde4b142abb62b68e7d047032f77389b6d8499c489b6007abc3cac34",
+      "bytes": 6556
+    },
+    {
+      "path": "verify_all.sh",
+      "sha256": "74d6819b1a29ba43b4e2f2c06dd8e2cc29dd92e6bdb2f88bf21702578957cfd1",
+      "bytes": 974
+    },
+    {
+      "path": "verify_validation_contract_qualified.sh",
+      "sha256": "0074dc385f78d45d4d03bf7f8b84380fe6c65bf732546b38373ad43d992f21e1",
+      "bytes": 1985
+    },
+    {
+      "path": "verify_validation_native_active.sh",
+      "sha256": "71959e8afe850e82b15f1c04e31b20fc2ffadaf23ce830883ef7e3d690136fad",
+      "bytes": 2093
+    },
+    {
+      "path": "verify_validation_negatives.py",
+      "sha256": "c8acd3b93a1d56ae48ed53b1dd00972787ac8e1dd3d76de3f17bf2cbe6505bfd",
+      "bytes": 4337
+    },
+    {
+      "path": "verify_validation_o0.sh",
+      "sha256": "b1620e9ff92bcf70075e66b20d1ed3597861873b818a764d12ca550f2d4cfec5",
+      "bytes": 1778
+    },
+    {
+      "path": "xy-api.cpp",
+      "sha256": "98609c2c52df8c8158d4a1ffebe71755718be13fa4a8666b5a8b74ebd4127161",
+      "bytes": 4514
+    },
+    {
+      "path": "xy-api.h",
+      "sha256": "94d699031fa219b196a21bd1f599d4a536ed0895393048b19d2c3e0c1686cf74",
+      "bytes": 2993
+    },
+    {
+      "path": "xy-contract.cpp",
+      "sha256": "02044125a50137865287ac89df3d85781b2647850c0f1200f54afce95302bdf0",
+      "bytes": 8182
+    },
+    {
+      "path": "xy-effects-supplement-fenv.mm",
+      "sha256": "6d53b3530120969e734c61e7578b8a967074f6f288c0a8cf69819f974d4f6d15",
+      "bytes": 20690
+    },
+    {
+      "path": "xy-native.mm",
+      "sha256": "d9edd39de02ce4e285dba82141a2ad5da4b63cc89a5413691b9fde27f26ba79e",
+      "bytes": 16096
+    }
+  ],
+  "independent_review_bindings": [
+    {
+      "reviewer": "mixer_dsp",
+      "sha256": "d604ad04a715d628168e37d8dfe2314c9a1602467808e4011eabcaff7ca92bb3",
+      "source_checks_per_module": 90123,
+      "native_pairs_per_mode": 2304,
+      "own_mutants_rejected": 3
+    },
+    {
+      "reviewer": "root",
+      "sha256": "c91b7c3e1df4b01a913e641938e788fb461aaaff74cf6adc061701551fa7e2ab",
+      "own_native_pairs_per_mode": 6,
+      "same_native_allocation_reused": false
+    }
+  ]
+}

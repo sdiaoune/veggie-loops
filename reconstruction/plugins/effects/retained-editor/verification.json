@@ -1,0 +1,82 @@
+{
+  "status": "two_independent_reviews_and_public_layout_replay_accept_own_retained_editor_teardown",
+  "sources": [
+    {
+      "path": "balance_native_abi.cpp",
+      "sha256": "a0d6e849002ffdf32fe34c68a73aa7acdec6540e03ca73f27940e80d6e261cee",
+      "bytes": 6994
+    },
+    {
+      "path": "balance_native_abi.h",
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
+      "bytes": 3796
+    },
+    {
+      "path": "balance_plugin.cpp",
+      "sha256": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
+      "bytes": 3163
+    },
+    {
+      "path": "balance_plugin.h",
+      "sha256": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
+      "bytes": 1678
+    },
+    {
+      "path": "balance_dsp.hpp",
+      "sha256": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
+      "bytes": 6140
+    },
+    {
+      "path": "balance_editor.mm",
+      "sha256": "1ba0a7f2af258fee6dc48c672cc3e35d517795a2542b88e8fd41817c89c9668c",
+      "bytes": 6042
+    },
+    {
+      "path": "balance_editor.h",
+      "sha256": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f",
+      "bytes": 1029
+    },
+    {
+      "path": "retained-editor/test_retained_editor.mm",
+      "sha256": "2ff4a734d75249d0a2c3d2d95558fa04c019500408b1282f04364addc026c2ad",
+      "bytes": 8403
+    },
+    {
+      "path": "retained-editor/verify_retained_editor.py",
+      "sha256": "b71bc50415e63beb64e06a9a3d038666efd21c5792169a51a3bb98ecc16d228d",
+      "bytes": 4826
+    },
+    {
+      "path": "retained-editor/README.md",
+      "sha256": "274d4e2673cfaacc39b4d64b1181fed3da03b4c7ec046a3f3d8f4743dee69399",
+      "bytes": 1550
+    }
+  ],
+  "private_candidate_manifest_sha256": "2a2a9f2de6e719eaa3fe177c5f089e00cfc9ad7cf6628c2ae42fb65279839d87",
+  "independent_reviews": [
+    {
+      "path": "analysis/plugins/review/balance-retained-hint-generators-v2-independent.json",
+      "sha256": "f3841be790228c75fe92342da113a4684fe0e478f79f7a57c0344eedead2933a"
+    },
+    {
+      "path": "analysis/plugins/review/balance-retained-hint-effects-v2-independent.json",
+      "sha256": "836c970a6f629a7675317384f82ecc2f79e257b7c3c2c17d12a58abe3488f90b"
+    }
+  ],
+  "source_only_scope": true,
+  "original_editor_compared": false,
+  "full_plugin_equivalence": false,
+  "public_layout_replay": {
+    "positive_modes": [
+      "normal",
+      "fatal ASan/UBSan/float-cast-overflow",
+      "O0"
+    ],
+    "instances_per_mode": 144,
+    "attached_worker_refusals_per_mode": 72,
+    "retained_actions_per_mode": 432,
+    "live_peer_actions_per_mode": 216,
+    "three_semantic_mutants_rejected": true,
+    "all_six_executables_signed_strictly_verified": true
+  }
+}

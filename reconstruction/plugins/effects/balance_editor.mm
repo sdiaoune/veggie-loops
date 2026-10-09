@@ -100,5 +100,7 @@ extern "C" int vl_balance_editor_destroy(void* editor){
   if(!editor)return 1;
   if(!NSThread.isMainThread)return 0;
   auto* view=(__bridge_transfer VLBalanceEditorView*)editor;[view removeFromSuperview];view.numerical=nullptr;
+  view.callbacks={};
+  for(NSControl* control in view.sliders)control.target=nil;
   return 1;
 }

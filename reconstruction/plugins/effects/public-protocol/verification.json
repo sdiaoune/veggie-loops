@@ -3,87 +3,108 @@
   "source_closure": [
     {
       "path": "reconstruction/plugins/effects/public-protocol/README.md",
-      "sha256": "71c53267fba991de48543e11e1632933bd9b57111352ff02461adec9f4d6777c"
+      "sha256": "6ac9a48c300e2857f6615f0c4d5f45e8380cacf8dbe7567466a5ee3295cff38c",
+      "bytes": 3742
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/factory_helpers.mm",
-      "sha256": "64c5924779058cf502140a12afedaa2ccadd88bd1d6d0c15be6e8573b18578d0"
+      "sha256": "64c5924779058cf502140a12afedaa2ccadd88bd1d6d0c15be6e8573b18578d0",
+      "bytes": 3551
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/protocol_probe.cpp",
-      "sha256": "0fe71cc40e626296f835e7b30531df3df89cd0a3037a44ff5a36c73a7f184566"
+      "sha256": "0fe71cc40e626296f835e7b30531df3df89cd0a3037a44ff5a36c73a7f184566",
+      "bytes": 271
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/summarize_protocol.py",
-      "sha256": "c130881adf6b4c8c9bb4c74790e8f9e668b53fc2ec0dc551f01cbbda4e7963ca"
+      "sha256": "c130881adf6b4c8c9bb4c74790e8f9e668b53fc2ec0dc551f01cbbda4e7963ca",
+      "bytes": 1917
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/test_lifetime.cpp",
-      "sha256": "1e75cd99ee81be6d6e254773c7971d073602a3e7e1e30ed137179fa3d7678256"
+      "sha256": "1e75cd99ee81be6d6e254773c7971d073602a3e7e1e30ed137179fa3d7678256",
+      "bytes": 3273
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/test_protocol.mm",
-      "sha256": "ca712b93e12ba7c8cbbcc032d725801b43b7b8e9891d875b8b54209ea19748d2"
+      "sha256": "ca712b93e12ba7c8cbbcc032d725801b43b7b8e9891d875b8b54209ea19748d2",
+      "bytes": 6350
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_editor_regression.sh",
-      "sha256": "fbcca0d1189c1013ee0185598acb2ebe9633bb9cc8142464d4202983948f2b2d"
+      "sha256": "fbcca0d1189c1013ee0185598acb2ebe9633bb9cc8142464d4202983948f2b2d",
+      "bytes": 1932
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_manifest.py",
-      "sha256": "32dea920744b1a3144972ec402a3ce1d80a860f54e9a3129890ced2837d7d6d5"
+      "sha256": "32dea920744b1a3144972ec402a3ce1d80a860f54e9a3129890ced2837d7d6d5",
+      "bytes": 858
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_negatives.py",
-      "sha256": "59b77712e7574c3d4e075e056130121f866cf1989e6e3328eda169e2cf0ffe7b"
+      "sha256": "59b77712e7574c3d4e075e056130121f866cf1989e6e3328eda169e2cf0ffe7b",
+      "bytes": 3671
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_protocol.sh",
-      "sha256": "981167ff638129837650691c38b4da1e97ad04d644f34582aba652fdd6900c63"
+      "sha256": "981167ff638129837650691c38b4da1e97ad04d644f34582aba652fdd6900c63",
+      "bytes": 3045
     },
     {
       "path": "reconstruction/plugins/effects/balance_native_abi.cpp",
-      "sha256": "a0d6e849002ffdf32fe34c68a73aa7acdec6540e03ca73f27940e80d6e261cee"
+      "sha256": "a0d6e849002ffdf32fe34c68a73aa7acdec6540e03ca73f27940e80d6e261cee",
+      "bytes": 6994
     },
     {
       "path": "reconstruction/plugins/effects/balance_native_abi.h",
-      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf"
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
+      "bytes": 3796
     },
     {
       "path": "reconstruction/plugins/effects/balance_plugin.cpp",
-      "sha256": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08"
+      "sha256": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
+      "bytes": 3163
     },
     {
       "path": "reconstruction/plugins/effects/balance_plugin.h",
-      "sha256": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f"
+      "sha256": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
+      "bytes": 1678
     },
     {
       "path": "reconstruction/plugins/effects/balance_dsp.hpp",
-      "sha256": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00"
+      "sha256": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
+      "bytes": 6140
     },
     {
       "path": "reconstruction/plugins/effects/balance_editor.h",
-      "sha256": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f"
+      "sha256": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f",
+      "bytes": 1029
     },
     {
       "path": "reconstruction/plugins/effects/balance_editor.mm",
-      "sha256": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae"
+      "sha256": "1ba0a7f2af258fee6dc48c672cc3e35d517795a2542b88e8fd41817c89c9668c",
+      "bytes": 6042
     },
     {
       "path": "reconstruction/plugins/effects/test_balance_native_abi.cpp",
-      "sha256": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532"
+      "sha256": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532",
+      "bytes": 10732
     },
     {
       "path": "reconstruction/plugins/effects/test_balance_engine_loader.mm",
-      "sha256": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83"
+      "sha256": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83",
+      "bytes": 7112
     },
     {
       "path": "reconstruction/plugins/effects/test_balance_native_editor.mm",
-      "sha256": "186ae183e085c2a359d3283eb95c8e519762facf161fd434af98728dc659dce6"
+      "sha256": "186ae183e085c2a359d3283eb95c8e519762facf161fd434af98728dc659dce6",
+      "bytes": 8975
     },
     {
       "path": "reconstruction/plugins/effects/test_balance_factory.mm",
-      "sha256": "2280f9afef24b1c090c11818b4bd7640a67a9cc2e929b4eb8a9d519dc3734c33"
+      "sha256": "2280f9afef24b1c090c11818b4bd7640a67a9cc2e929b4eb8a9d519dc3734c33",
+      "bytes": 11240
     }
   ],
   "original_targets": [
@@ -392,5 +413,25 @@
   "sanitizers": "Own source/fixtures instrumented in fatal modes; original images uninstrumented. Own allocation hooks verify source lifetimes only.",
   "original_extra_destructor_equivalence": false,
   "original_class_GUI_application_audio_scheduler_RT_general_FP_or_allocator_equivalence": false,
-  "full_plugin_equivalence": false
+  "full_plugin_equivalence": false,
+  "retained_editor_rebind": {
+    "prior_editor_record": {
+      "path": "reconstruction/plugins/effects/balance_editor.mm",
+      "sha256": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae"
+    },
+    "current_editor_sha256": "1ba0a7f2af258fee6dc48c672cc3e35d517795a2542b88e8fd41817c89c9668c",
+    "two_independent_source_reviews": [
+      {
+        "path": "analysis/plugins/review/balance-retained-hint-generators-v2-independent.json",
+        "sha256": "f3841be790228c75fe92342da113a4684fe0e478f79f7a57c0344eedead2933a"
+      },
+      {
+        "path": "analysis/plugins/review/balance-retained-hint-effects-v2-independent.json",
+        "sha256": "836c970a6f629a7675317384f82ecc2f79e257b7c3c2c17d12a58abe3488f90b"
+      }
+    ],
+    "public_recipe_replay_pending": false,
+    "original_editor_equivalence": false,
+    "public_protocol_editor_and_six_negatives_replayed": true
+  }
 }

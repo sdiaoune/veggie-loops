@@ -1,0 +1,125 @@
+{
+  "status": "published_original_source_closure_for_bounded_prepared_XY",
+  "sources": [
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/NOTES.md",
+      "sha256": "f6c913b019c6d75a53af56213d79f5724105d79ac7f3a341b576c0c841d34947",
+      "bytes": 316
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/README.md",
+      "sha256": "2ca9c5a29d0e6529612f32fb14e8c694805163faa2a33924b61585a3c30d9d81",
+      "bytes": 1693
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/REPAIR.md",
+      "sha256": "c35d8260b6b71eb80e18af3150871ed668368d65fe7f2afddedae5452531b4e5",
+      "bytes": 5781
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/repaired-verification.json",
+      "sha256": "79dfe23ff28d6c9100f82bba553c4e2df0d682dbbab3125df9b2bf24380fa1b8",
+      "bytes": 18926
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/summarize_validation.py",
+      "sha256": "cf5e032cc0ae986aba475f3d4272b5a47a4cdcd57ab2e0eb573a67931d18ea89",
+      "bytes": 5341
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/test_validation_contract_qualified.cpp",
+      "sha256": "c12bebf2bc0cf8cb29f5e9f5c497cc7ac3bb84a94b70debff89be30e16abc62b",
+      "bytes": 4456
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/test_validation_native.mm",
+      "sha256": "cd8cc5757a9c56b1acf3ff7b797ff972e6084b47aec11d51c3ef1dc701748297",
+      "bytes": 23926
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/test_validation_native_active.mm",
+      "sha256": "712ce390472dd119fe9a12eb8b7c9101b88d93b439807ba8ca6d2e1e1ec45dc1",
+      "bytes": 24205
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/test_validation_native_o0.mm",
+      "sha256": "ca2974b9cca0565f816656c6cdb0dad979615a75b61075bed2a28d5885c46857",
+      "bytes": 24481
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify-effects-supplement-fenv.sh",
+      "sha256": "03bc3de7921f4ca2970b7032ddba9a508bd564391c9afeaa3ecc44ccfde822e6",
+      "bytes": 2220
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify.sh",
+      "sha256": "cb24d6bdbde4b142abb62b68e7d047032f77389b6d8499c489b6007abc3cac34",
+      "bytes": 6556
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_all.sh",
+      "sha256": "74d6819b1a29ba43b4e2f2c06dd8e2cc29dd92e6bdb2f88bf21702578957cfd1",
+      "bytes": 974
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_public.py",
+      "sha256": "ffac5e8c855d0ccbd68e65c2413e3eb56ed58d14695b7220da37a7b6c99d98af",
+      "bytes": 1657
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_contract_qualified.sh",
+      "sha256": "0074dc385f78d45d4d03bf7f8b84380fe6c65bf732546b38373ad43d992f21e1",
+      "bytes": 1985
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_native_active.sh",
+      "sha256": "71959e8afe850e82b15f1c04e31b20fc2ffadaf23ce830883ef7e3d690136fad",
+      "bytes": 2093
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_negatives.py",
+      "sha256": "c8acd3b93a1d56ae48ed53b1dd00972787ac8e1dd3d76de3f17bf2cbe6505bfd",
+      "bytes": 4337
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_o0.sh",
+      "sha256": "b1620e9ff92bcf70075e66b20d1ed3597861873b818a764d12ca550f2d4cfec5",
+      "bytes": 1778
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-api.cpp",
+      "sha256": "98609c2c52df8c8158d4a1ffebe71755718be13fa4a8666b5a8b74ebd4127161",
+      "bytes": 4514
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-api.h",
+      "sha256": "94d699031fa219b196a21bd1f599d4a536ed0895393048b19d2c3e0c1686cf74",
+      "bytes": 2993
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-contract.cpp",
+      "sha256": "02044125a50137865287ac89df3d85781b2647850c0f1200f54afce95302bdf0",
+      "bytes": 8182
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-effects-supplement-fenv.mm",
+      "sha256": "6d53b3530120969e734c61e7578b8a967074f6f288c0a8cf69819f974d4f6d15",
+      "bytes": 20690
+    },
+    {
+      "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-native.mm",
+      "sha256": "d9edd39de02ce4e285dba82141a2ad5da4b63cc89a5413691b9fde27f26ba79e",
+      "bytes": 16096
+    },
+    {
+      "path": "reconstruction/plugins/common/vst2_probe.mm",
+      "sha256": "081da7eaed1244260191cba3e363ae7efbfb0feffe0b9773361eb769c80d9d2f",
+      "bytes": 12399
+    }
+  ],
+  "reference_target": "/Library/Audio/Plug-Ins/VST/u-he/TyrellN6.vst",
+  "reference_executable_sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
+  "reference_x86_64_slice_sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
+  "original_binaries_resources_or_decompiler_output_included": false,
+  "full_plugin_equivalence": false
+}
