@@ -49,6 +49,14 @@ mathematical primitive. The optional Vial source build also passed a 56-case
 processing/state matrix using generated state without loading installed Vital.
 Both remain partial milestones, with whole-plugin completion false.
 
+LABS now has nonempty local REA output for all 26,396 identified internal
+non-thunk arm64 VST2 procedures across two disclosed analysis profiles. Its
+default 50MiB decompiler limit failed for one procedure, including a repeat
+check. A separate copied bridge with a 256MiB limit and a distinct profile
+commitment supplied that complementary result. Original failures and outputs
+are preserved; all compressed/raw and semantic evidence hashes were checked.
+This remains decompiler analysis, without an independent LABS source build.
+
 TyrellN6's 8,448 identified internal non-thunk x86_64 VST procedures also have
 local REA decompiler results. Some recovered call signatures and indirect
 dispatch targets remain uncertain. The installed factory and callback mapping
