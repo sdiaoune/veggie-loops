@@ -1,3 +1,6 @@
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 from pathlib import Path
 import subprocess,os,json,hashlib
 own=Path(__file__).resolve().parent;root=Path(os.environ.get('VL_BALANCE_PROTOCOL_ROOT',own.parents[3]));shared=root/'reconstruction/plugins/effects';work=Path(os.environ.get('VL_BALANCE_PROTOCOL_NEGATIVE_WORK',root/'.tools/plugin-work/effects/balance-public-protocol/negative-work'));work.mkdir(parents=True,exist_ok=True)

@@ -18,8 +18,8 @@
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/summarize_protocol.py",
-      "sha256": "c130881adf6b4c8c9bb4c74790e8f9e668b53fc2ec0dc551f01cbbda4e7963ca",
-      "bytes": 1917
+      "sha256": "569ee0190f72ecfa440361f7b32cddcff03ac554f32d74d35b7db76b1f81e813",
+      "bytes": 2050
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/test_lifetime.cpp",
@@ -38,13 +38,13 @@
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_manifest.py",
-      "sha256": "32dea920744b1a3144972ec402a3ce1d80a860f54e9a3129890ced2837d7d6d5",
-      "bytes": 858
+      "sha256": "d2ee0ca611d44fa27d27627662c03d1941207fe9ffff6528229e8343bb382a77",
+      "bytes": 991
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_negatives.py",
-      "sha256": "59b77712e7574c3d4e075e056130121f866cf1989e6e3328eda169e2cf0ffe7b",
-      "bytes": 3671
+      "sha256": "b14aeb956326b20b42793a91e8689fb6309c432ac7960e9ae125cf21392623db",
+      "bytes": 3804
     },
     {
       "path": "reconstruction/plugins/effects/public-protocol/verify_protocol.sh",
@@ -433,5 +433,6 @@
     "public_recipe_replay_pending": false,
     "original_editor_equivalence": false,
     "public_protocol_editor_and_six_negatives_replayed": true
-  }
+  },
+  "Python_optimization_refused_before_verification": true
 }

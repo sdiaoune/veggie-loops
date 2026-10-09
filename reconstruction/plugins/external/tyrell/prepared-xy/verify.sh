@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+python3 -c 'import sys; sys.exit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.") if sys.flags.optimize else None'
 source_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 work_dir=${VL_TYRELL_XY_WORK_DIR:-"$source_dir/canonical"}
 if [ "$#" -ne 0 ]; then exit 2; fi

@@ -1,3 +1,6 @@
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 from pathlib import Path
 import hashlib,json
 own=Path(__file__).resolve().parent;root=own.parents[3]

@@ -1,3 +1,6 @@
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 import json,sys
 from pathlib import Path
 p=Path(sys.argv[1]);results={}

@@ -18,13 +18,13 @@
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/repaired-verification.json",
-      "sha256": "79dfe23ff28d6c9100f82bba553c4e2df0d682dbbab3125df9b2bf24380fa1b8",
-      "bytes": 18926
+      "sha256": "90e1df6cf8b806fb3bce93d1bd62cb3c9540cbe1483d33f31f0298ffd74ebf5e",
+      "bytes": 18986
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/summarize_validation.py",
-      "sha256": "cf5e032cc0ae986aba475f3d4272b5a47a4cdcd57ab2e0eb573a67931d18ea89",
-      "bytes": 5341
+      "sha256": "b5382fe52affee43841458d106e34581d4077077605e545c17951e7515efba0a",
+      "bytes": 5474
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/test_validation_contract_qualified.cpp",
@@ -48,43 +48,43 @@
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify-effects-supplement-fenv.sh",
-      "sha256": "03bc3de7921f4ca2970b7032ddba9a508bd564391c9afeaa3ecc44ccfde822e6",
-      "bytes": 2220
+      "sha256": "6d68c9e487dd5bca05ba983fa462202b40ba9433800394aa6bf58619a73a4cba",
+      "bytes": 2364
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify.sh",
-      "sha256": "cb24d6bdbde4b142abb62b68e7d047032f77389b6d8499c489b6007abc3cac34",
-      "bytes": 6556
+      "sha256": "f53015c9ffd2c36b3e84683ed9fe4acf011aac7335f71ba42ed389ed0d69319f",
+      "bytes": 6700
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_all.sh",
-      "sha256": "74d6819b1a29ba43b4e2f2c06dd8e2cc29dd92e6bdb2f88bf21702578957cfd1",
-      "bytes": 974
+      "sha256": "4c1fb852e1fb3114c7b011059a7380b2a81d415942c93944ed54a9a3d7c7c04b",
+      "bytes": 1118
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_public.py",
-      "sha256": "ffac5e8c855d0ccbd68e65c2413e3eb56ed58d14695b7220da37a7b6c99d98af",
-      "bytes": 1657
+      "sha256": "4ef9c309b1dfd4b3ab265a17512e4cee5cb57d10cfd66a95c50de3d923cc25ff",
+      "bytes": 1790
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_contract_qualified.sh",
-      "sha256": "0074dc385f78d45d4d03bf7f8b84380fe6c65bf732546b38373ad43d992f21e1",
-      "bytes": 1985
+      "sha256": "3823e34eb6d270e61b6e06f9b003afa02156e4861cb4dba3ef467ab532114c08",
+      "bytes": 2129
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_native_active.sh",
-      "sha256": "71959e8afe850e82b15f1c04e31b20fc2ffadaf23ce830883ef7e3d690136fad",
-      "bytes": 2093
+      "sha256": "162ec1af3c5a8b6f0670985a657b4dd9a914bbacda3aaacb4cf34b86874703f6",
+      "bytes": 2237
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_negatives.py",
-      "sha256": "c8acd3b93a1d56ae48ed53b1dd00972787ac8e1dd3d76de3f17bf2cbe6505bfd",
-      "bytes": 4337
+      "sha256": "8eb87e07f9b6475b134b66b333db19d81d8b4f022a796b615d2a458e0446a981",
+      "bytes": 4470
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/verify_validation_o0.sh",
-      "sha256": "b1620e9ff92bcf70075e66b20d1ed3597861873b818a764d12ca550f2d4cfec5",
-      "bytes": 1778
+      "sha256": "20f16d37df8ead13828c21b69089a70a0bd0047da3e3619a70fde0391972652b",
+      "bytes": 1922
     },
     {
       "path": "reconstruction/plugins/external/tyrell/prepared-xy/xy-api.cpp",
@@ -121,5 +121,6 @@
   "reference_executable_sha256": "a825551500600e8c0194c285602cf58c2288b090de5e83da876ae3a7cc42ce54",
   "reference_x86_64_slice_sha256": "8d76659f91ce432b1d58f835b2c6ee1bfd30ac9de61e579500d3c712b22def38",
   "original_binaries_resources_or_decompiler_output_included": false,
-  "full_plugin_equivalence": false
+  "full_plugin_equivalence": false,
+  "Python_optimization_refused_before_verification": true
 }

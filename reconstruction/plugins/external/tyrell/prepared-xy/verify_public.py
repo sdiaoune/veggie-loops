@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """Reproduce the bounded native comparison in an isolated source copy."""
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 import hashlib,json,os,pathlib,shutil,subprocess,tempfile
 own=pathlib.Path(__file__).resolve().parent;root=own.parents[4]
 manifest=json.loads((own/'publication-manifest.json').read_text())

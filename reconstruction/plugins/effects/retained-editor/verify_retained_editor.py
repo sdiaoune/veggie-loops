@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """Verify own retained-editor teardown against the published source closure."""
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 import argparse, hashlib, json, os, pathlib, subprocess
 p=argparse.ArgumentParser();p.add_argument('work',type=pathlib.Path);a=p.parse_args()
 own=pathlib.Path(__file__).resolve().parent;shared=own.parent;work=a.work.resolve();work.mkdir(parents=True,exist_ok=False)

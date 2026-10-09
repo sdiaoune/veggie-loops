@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+import sys
+if sys.flags.optimize:
+    raise SystemExit("Verification requires Python assertions; unset PYTHONOPTIMIZE and omit -O.")
 import hashlib,json,pathlib,sys,struct
 if len(sys.argv)!=3:raise SystemExit(2)
 source=pathlib.Path(sys.argv[1]);work=pathlib.Path(sys.argv[2])

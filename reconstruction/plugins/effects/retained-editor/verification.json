@@ -43,8 +43,8 @@
     },
     {
       "path": "retained-editor/verify_retained_editor.py",
-      "sha256": "b71bc50415e63beb64e06a9a3d038666efd21c5792169a51a3bb98ecc16d228d",
-      "bytes": 4826
+      "sha256": "ff23cf86a102e12b8790eb1e9dd56c5eceeb90734e8e17f248c8f1bcd8f20466",
+      "bytes": 4959
     },
     {
       "path": "retained-editor/README.md",
@@ -78,5 +78,6 @@
     "live_peer_actions_per_mode": 216,
     "three_semantic_mutants_rejected": true,
     "all_six_executables_signed_strictly_verified": true
-  }
+  },
+  "Python_optimization_refused_before_verification": true
 }
