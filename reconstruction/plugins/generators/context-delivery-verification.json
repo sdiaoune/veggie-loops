@@ -1,0 +1,521 @@
+{
+  "status": "accepted_bounded_public_prevoice_context_delivery",
+  "implementation": "Unchanged published source factory/channel with prevoice native descriptor delivery; no new runtime variant",
+  "candidate_sources": {
+    "test_three_osc_context_delivery.mm": {
+      "path": "reconstruction/plugins/generators/test_three_osc_context_delivery.mm",
+      "sha256": "293f6b7e808bc1bf361337921992b27da0e991e525634cf724bff5a2a9ed69a2",
+      "bytes": 20234
+    },
+    "verify-context-delivery.sh": {
+      "path": "reconstruction/plugins/generators/verify-context-delivery.sh",
+      "sha256": "a1b108e1fe96aba871345310e91b49b2dec28a42abb86560474f546382242097",
+      "bytes": 2260
+    },
+    "CONTEXT_DELIVERY.md": {
+      "path": "reconstruction/plugins/generators/CONTEXT_DELIVERY.md",
+      "sha256": "9266231611093db9c208f946d2fd0c6c8ba55ab0a2b4acd7853e7d55fade58cc",
+      "bytes": 5511
+    },
+    "summarize_context_delivery.py": {
+      "path": "reconstruction/plugins/generators/summarize_context_delivery.py",
+      "sha256": "576b6995b2dab57c4fe36d5dcd7f62ca90b90b042ec5e456da653322b44dc424",
+      "bytes": 14521
+    }
+  },
+  "unchanged_source_dependencies": {
+    "reconstruction/plugins/generators/three_osc.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc.hpp",
+      "sha256": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+      "bytes": 7943
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.cpp",
+      "sha256": "4ae56856c3827f05b9a5de95d1ca519a0eda627f6c5bec77926a8aa6d6baca06",
+      "bytes": 1836
+    },
+    "reconstruction/plugins/generators/three_osc_clock_context.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_clock_context.hpp",
+      "sha256": "1be8a2b5bbee71d675b97df5dfffe1346aa0a982b67496d3447243e8dfaf0a8e",
+      "bytes": 2433
+    },
+    "reconstruction/plugins/generators/three_osc_declick.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.cpp",
+      "sha256": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+      "bytes": 2836
+    },
+    "reconstruction/plugins/generators/three_osc_declick.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_declick.hpp",
+      "sha256": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+      "bytes": 1642
+    },
+    "reconstruction/plugins/generators/three_osc_engine.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_engine.cpp",
+      "sha256": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+      "bytes": 13473
+    },
+    "reconstruction/plugins/generators/three_osc_envelope.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope.hpp",
+      "sha256": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+      "bytes": 5832
+    },
+    "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_envelope_coefficients.hpp",
+      "sha256": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+      "bytes": 2607
+    },
+    "reconstruction/plugins/generators/three_osc_filter.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter.hpp",
+      "sha256": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+      "bytes": 6216
+    },
+    "reconstruction/plugins/generators/three_osc_filter_routing.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_filter_routing.hpp",
+      "sha256": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7",
+      "bytes": 3946
+    },
+    "reconstruction/plugins/generators/three_osc_gain_mix.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_gain_mix.hpp",
+      "sha256": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+      "bytes": 2230
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.cpp",
+      "sha256": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+      "bytes": 515
+    },
+    "reconstruction/plugins/generators/three_osc_legacy_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_legacy_tables.hpp",
+      "sha256": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+      "bytes": 2672
+    },
+    "reconstruction/plugins/generators/three_osc_modulation.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_modulation.hpp",
+      "sha256": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+      "bytes": 2431
+    },
+    "reconstruction/plugins/generators/three_osc_multimode_channel.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_multimode_channel.cpp",
+      "sha256": "26d57cf5b16c0adb1871c218f8202b78ff33add7157d2501335a016b0ca75843",
+      "bytes": 14373
+    },
+    "reconstruction/plugins/generators/three_osc_multimode_channel.h": {
+      "path": "reconstruction/plugins/generators/three_osc_multimode_channel.h",
+      "sha256": "38a807f38c9c482b9e2b0903864d9d2defef13ce66c0424e8b0c4ce9da9e8272",
+      "bytes": 5398
+    },
+    "reconstruction/plugins/generators/three_osc_native_factory.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_native_factory.cpp",
+      "sha256": "a2c9106dd7dd38024317c1c7ca908ae757079f2e7d5edd0b247c9d6f144d37c7",
+      "bytes": 7406
+    },
+    "reconstruction/plugins/generators/three_osc_native_factory.h": {
+      "path": "reconstruction/plugins/generators/three_osc_native_factory.h",
+      "sha256": "b5dfc694cda975ee2e2a0348f6f16cce5ee94e1a721510b923c03ef5d8d20bfb",
+      "bytes": 2170
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.cpp",
+      "sha256": "5966c658eef2928a07e32f4ffa7913e156e89cea9e28854395e9dd77de4ba892",
+      "bytes": 2236
+    },
+    "reconstruction/plugins/generators/three_osc_sync_lfo.h": {
+      "path": "reconstruction/plugins/generators/three_osc_sync_lfo.h",
+      "sha256": "52757f5b5012a78d697e6e29a03641d6fc0ded032bb551592657a557183ae006",
+      "bytes": 2397
+    },
+    "reconstruction/plugins/generators/three_osc_tables.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_tables.hpp",
+      "sha256": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+      "bytes": 15548
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.cpp",
+      "sha256": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+      "bytes": 856
+    },
+    "reconstruction/plugins/generators/three_osc_voice_lifecycle.h": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_lifecycle.h",
+      "sha256": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+      "bytes": 1512
+    },
+    "reconstruction/plugins/generators/three_osc_voice_output.hpp": {
+      "path": "reconstruction/plugins/generators/three_osc_voice_output.hpp",
+      "sha256": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+      "bytes": 1937
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.cpp": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.cpp",
+      "sha256": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+      "bytes": 14885
+    },
+    "reconstruction/plugins/generators/three_osc_wrapper_core.h": {
+      "path": "reconstruction/plugins/generators/three_osc_wrapper_core.h",
+      "sha256": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+      "bytes": 4043
+    }
+  },
+  "mapping_evidence_reference": {
+    "path": "analysis/plugins/generators/context-delivery-mapping.json",
+    "sha256": "44fb3e92ebb6c4f3a61f58f084519cc1670e3da47c9c57fac4ff683f304f8532",
+    "bytes": 6003
+  },
+  "installed_target_sha256": {
+    "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/3x Osc_x64.dylib": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Generators/3x Osc/engine.dylib": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+  },
+  "architecture": "macOS arm64",
+  "canonical_commands": [
+    "./verify-context-delivery.sh",
+    "./verify-context-delivery.sh --sanitize",
+    "python3 summarize_context_delivery.py"
+  ],
+  "runs": {
+    "native": {
+      "result": {
+        "status": "passed",
+        "unchanged_published_cpp_factory": true,
+        "prevoice_delivery_fixtures": 72,
+        "intact_TExPlugin_descriptor_routes": 144,
+        "balanced_manager_retains": 288,
+        "delivered_original_context_values": 360,
+        "exact_prevoice_coefficient_words": 13320,
+        "exact_semantic_state_bytes": 32904,
+        "exact_voice_state_values": 61560,
+        "GenRender_calls": 576,
+        "exact_overwritten_audio_floats": 225072,
+        "ignored_clock_metadata_pairs": 36,
+        "filter_mode_fixtures": [
+          10,
+          10,
+          10,
+          10,
+          8,
+          8,
+          8,
+          8
+        ],
+        "selected_native_globals_restored": true,
+        "direct_prepared_rate_delivery": true,
+        "native_DLL_loader_rate_production_executed": false,
+        "active_voice_context_updates": false,
+        "actual_application_clock_production": false,
+        "full_plugin_equivalence": false
+      },
+      "artifacts": {
+        "result.json": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-native/result.json",
+          "sha256": "02bf023ef6914fa843669f2b0bfe69494582334bbdae05269565089c884709e9",
+          "bytes": 694
+        },
+        "stderr.log": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-native/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "test_context_delivery": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-native/test_context_delivery",
+          "sha256": "934f1ddeba698547bc750e0ff97be0cbb07fcda7a90952811daa8ac573687e35",
+          "bytes": 77624
+        },
+        "VL 3 Osc/VL 3 Osc_X64.dylib": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-native/VL 3 Osc/VL 3 Osc_X64.dylib",
+          "sha256": "596aebc6478090ec73e664f4150778f73e74b50d5609c5f81be5fda1ad7efc4d",
+          "bytes": 121552
+        }
+      }
+    },
+    "sanitized": {
+      "result": {
+        "status": "passed",
+        "unchanged_published_cpp_factory": true,
+        "prevoice_delivery_fixtures": 72,
+        "intact_TExPlugin_descriptor_routes": 144,
+        "balanced_manager_retains": 288,
+        "delivered_original_context_values": 360,
+        "exact_prevoice_coefficient_words": 13320,
+        "exact_semantic_state_bytes": 32904,
+        "exact_voice_state_values": 61560,
+        "GenRender_calls": 576,
+        "exact_overwritten_audio_floats": 225072,
+        "ignored_clock_metadata_pairs": 36,
+        "filter_mode_fixtures": [
+          10,
+          10,
+          10,
+          10,
+          8,
+          8,
+          8,
+          8
+        ],
+        "selected_native_globals_restored": true,
+        "direct_prepared_rate_delivery": true,
+        "native_DLL_loader_rate_production_executed": false,
+        "active_voice_context_updates": false,
+        "actual_application_clock_production": false,
+        "full_plugin_equivalence": false
+      },
+      "artifacts": {
+        "result.json": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-sanitized/result.json",
+          "sha256": "02bf023ef6914fa843669f2b0bfe69494582334bbdae05269565089c884709e9",
+          "bytes": 694
+        },
+        "stderr.log": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-sanitized/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "test_context_delivery": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-sanitized/test_context_delivery",
+          "sha256": "b9c39b8e9838d0f004343fabd1afe073e054e4fc0ebc85df6c429cd0eea6c10c",
+          "bytes": 234200
+        },
+        "VL 3 Osc/VL 3 Osc_X64.dylib": {
+          "path": ".tools/plugin-work/generators/context-delivery-public/canonical-sanitized/VL 3 Osc/VL 3 Osc_X64.dylib",
+          "sha256": "faf8b1b36076a62f0ae57a4f037227d9004d76d58b173a4a667c09130cf47308",
+          "bytes": 418016
+        }
+      }
+    }
+  },
+  "corpus": {
+    "paired_contexts": 36,
+    "clock_metadata_variants": 2,
+    "prepared_correlated_rate_tempo_pairs": [
+      [
+        8000,
+        60
+      ],
+      [
+        22050,
+        90
+      ],
+      [
+        44100,
+        120
+      ],
+      [
+        48000,
+        137.125
+      ],
+      [
+        96000,
+        240
+      ],
+      [
+        384000,
+        1000
+      ]
+    ],
+    "PPQ_values": [
+      4,
+      48,
+      96,
+      240,
+      960,
+      4096
+    ],
+    "signature": [
+      16,
+      4
+    ],
+    "flags": "0..31 exclude synchronized flag32",
+    "filter_modes": "0..7 fixed per instance",
+    "pitch": "static [-900,900] cents",
+    "frames": [
+      1,
+      7,
+      8,
+      63,
+      441,
+      1024,
+      16,
+      3
+    ],
+    "raw_modes": "both HQ and legacy; deterministic oscillators0..2; no noise/random/custom"
+  },
+  "controlled_substitutions": [
+    "Manager interface retain/release/get callbacks; original object resolution and intf assignment remain intact",
+    "Pascal host methods for paths, ComputeLR and nondeleting notifications; actual C++ source host/plugin adapters execute intact",
+    "Six independently generated raw oscillator tables supplied to controlled original host; original internal LFO tables left unmodified and compared",
+    "Prepared integer rate called directly at exact dispatcher entry; engine loader rate producer mapped only",
+    "Prepared engine global values and direct-delivery path selector byte; selected byte spans restored after all instances destroyed"
+  ],
+  "exact_prevoice_coefficient_domain": "185 words per instance; pointer words0x68/0x6c and synchronized phase0x78 excluded; internal pointer identity/table content checked separately",
+  "state_domain": "457 bytes including4 version bytes; framed93..95 undefined padding excluded",
+  "required_environment": [
+    "nearest-even",
+    "gradual underflow",
+    "strict separate operations",
+    "valid borrowed addresses/tables",
+    "all raw engines/factories serial",
+    "nonthrowing host callbacks defer note deletion until render returns"
+  ],
+  "remaining_false_gates": [
+    "actual_application_clock_production",
+    "actual_application_owned_host_manager_tables",
+    "queued_delivery",
+    "active_voice_context_updates",
+    "real_scheduler_or_application_session",
+    "general_fenv_or_trap_parity",
+    "complete_original_pascal_factory_metadata_editor_GUI",
+    "failed_allocation_atomicity_reentrant_invalid_native_inputs",
+    "full_plugin_equivalence"
+  ],
+  "private_prior_findings_references": {
+    "first-sanitizer-build-disk-failure.json": {
+      "path": ".tools/plugin-work/generators/context-delivery-integration/first-sanitizer-build-disk-failure.json",
+      "sha256": "3ef17c11eb113b2ea9e4b30ddc0b262e5ca724aa667191cbb2ac4098b46ef247",
+      "bytes": 494
+    },
+    "rejected-host-LFO-pointer-assumption/finding.json": {
+      "path": ".tools/plugin-work/generators/context-delivery-integration/rejected-host-LFO-pointer-assumption/finding.json",
+      "sha256": "0285828c4f8a79c451519968355a16bc58241f3517ff0be217d75b25ba6f46c2",
+      "bytes": 562
+    },
+    "rejected-host-LFO-pointer-assumption/reconstructed-rejected-assertion.mm": {
+      "path": ".tools/plugin-work/generators/context-delivery-integration/rejected-host-LFO-pointer-assumption/reconstructed-rejected-assertion.mm",
+      "sha256": "82c12e806285bedbe69206ea0c2aed45e700c129e2aecfd47d1023d5e37cb52a",
+      "bytes": 20048
+    }
+  },
+  "private_negative_control_references": {
+    ".tools/plugin-work/generators/context-delivery-negative-ppq/negative-result.json": {
+      "path": ".tools/plugin-work/generators/context-delivery-negative-ppq/negative-result.json",
+      "sha256": "a9c1339d17b18be7305762caabf29f855d86c50e0d11eb119404094239a02690",
+      "bytes": 555
+    },
+    ".tools/plugin-work/generators/context-delivery-negative-ppq/factory_ppq_delivery_omitted.cpp": {
+      "path": ".tools/plugin-work/generators/context-delivery-negative-ppq/factory_ppq_delivery_omitted.cpp",
+      "sha256": "940247d8541aa95aea6ce576b08fe000dcc8f0817c9b17c6f74721ead02c0e01",
+      "bytes": 7407
+    },
+    ".tools/plugin-work/generators/context-delivery-negative-ppq/stderr.log": {
+      "path": ".tools/plugin-work/generators/context-delivery-negative-ppq/stderr.log",
+      "sha256": "4763e324562c178f148aafba5da98810baed9b90899b90b70e078ee09b7c6525",
+      "bytes": 30
+    },
+    ".tools/plugin-work/generators/context-delivery-summary-negative/result.json": {
+      "path": ".tools/plugin-work/generators/context-delivery-summary-negative/result.json",
+      "sha256": "80c14a8eb15615bf5a72d3e3beecd1789166b14899da4120390d9fc2973db6e4",
+      "bytes": 776
+    }
+  },
+  "accepted_private_candidate": {
+    "path": "analysis/plugins/generators/context-delivery-candidate-source.json",
+    "sha256": "676f4afa4f20759cb3288fd2e45f40556db46f1f4150a6a39e0afee8e363cf26",
+    "bytes": 15504
+  },
+  "independent_private_reviews": [
+    {
+      "path": "analysis/plugins/review/root-context-delivery-independent.json",
+      "sha256": "bfcec9f867699c62d68df46dc7718694a26bbc765aea44ebbf9bf48fb814d134",
+      "bytes": 9247
+    },
+    {
+      "path": "analysis/plugins/review/context-delivery-mixer-independent.json",
+      "sha256": "ae8e2abc73b1352d3c008582d06f0af79346109c34cdafbddb725d688d764e58",
+      "bytes": 47768
+    }
+  ],
+  "reviewer_directory_error_excluded_from_independent_proof": {
+    "path": "analysis/plugins/review/context-delivery-mixer-directory-error.json",
+    "sha256": "348f4a2256b0ecef4a3612ce1ecd4f6f2f3407837363d5da5f36342eff2589e3",
+    "bytes": 14812
+  },
+  "private_evidence_data_required_by_public_recipe": false,
+  "private_mapping_failure_negative_and_review_data_reproduced_by_public_recipe": false,
+  "reference_scope": "Frozen hashes record previously reviewed local evidence only; an ordinary public build does not reproduce or require that ignored data.",
+  "canonical_and_critic_corpora_are_distinct": true,
+  "critic_uncorrelated_context_extension_reference": {
+    "report": {
+      "path": "analysis/plugins/review/context-delivery-mixer-independent.json",
+      "sha256": "ae8e2abc73b1352d3c008582d06f0af79346109c34cdafbddb725d688d764e58",
+      "bytes": 47768
+    },
+    "fixtures": 72,
+    "rate_tempo_pairs": 36,
+    "first_second_signature_words": [
+      1,
+      1024
+    ],
+    "clock": "max(1,rate*60/(tempo*PPQ)), an explicitly prepared bounded fixture",
+    "ordinary_canonical_recipe_runs_this_extension": false
+  },
+  "independent_public_path_review": {
+    "status": "accepted_bounded_public_prevoice_context_delivery",
+    "path": "analysis/plugins/review/root-context-delivery-public-independent.json",
+    "sha256": "df78c49511aba2079bfc401924629b64e9f7ae5df32f9bb67004af9f41352fc9",
+    "canonical_results": {
+      "native": {
+        "status": "passed",
+        "unchanged_published_cpp_factory": true,
+        "prevoice_delivery_fixtures": 72,
+        "intact_TExPlugin_descriptor_routes": 144,
+        "balanced_manager_retains": 288,
+        "delivered_original_context_values": 360,
+        "exact_prevoice_coefficient_words": 13320,
+        "exact_semantic_state_bytes": 32904,
+        "exact_voice_state_values": 61560,
+        "GenRender_calls": 576,
+        "exact_overwritten_audio_floats": 225072,
+        "ignored_clock_metadata_pairs": 36,
+        "filter_mode_fixtures": [
+          10,
+          10,
+          10,
+          10,
+          8,
+          8,
+          8,
+          8
+        ],
+        "selected_native_globals_restored": true,
+        "direct_prepared_rate_delivery": true,
+        "native_DLL_loader_rate_production_executed": false,
+        "active_voice_context_updates": false,
+        "actual_application_clock_production": false,
+        "full_plugin_equivalence": false
+      },
+      "sanitized": {
+        "status": "passed",
+        "unchanged_published_cpp_factory": true,
+        "prevoice_delivery_fixtures": 72,
+        "intact_TExPlugin_descriptor_routes": 144,
+        "balanced_manager_retains": 288,
+        "delivered_original_context_values": 360,
+        "exact_prevoice_coefficient_words": 13320,
+        "exact_semantic_state_bytes": 32904,
+        "exact_voice_state_values": 61560,
+        "GenRender_calls": 576,
+        "exact_overwritten_audio_floats": 225072,
+        "ignored_clock_metadata_pairs": 36,
+        "filter_mode_fixtures": [
+          10,
+          10,
+          10,
+          10,
+          8,
+          8,
+          8,
+          8
+        ],
+        "selected_native_globals_restored": true,
+        "direct_prepared_rate_delivery": true,
+        "native_DLL_loader_rate_production_executed": false,
+        "active_voice_context_updates": false,
+        "actual_application_clock_production": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "summary_rejection_controls": 5,
+    "isolated_tree_has_ignored_private_data": false
+  },
+  "full_plugin_equivalence": false,
+  "real_time_certificate": false,
+  "post_replay_change_scope": "Document review status and review metadata only; fixture, recipe, summarizer and 26 compiled dependencies unchanged."
+}
