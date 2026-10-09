@@ -28,8 +28,8 @@
     },
     "QUEUE_CONSUMER.md": {
       "path": "reconstruction/plugins/external/tyrell/QUEUE_CONSUMER.md",
-      "sha256": "a0f75aecc250d28ab3029aeb0e3119d6603a781d3910ed1028f13f14bdd1daa8",
-      "bytes": 8353
+      "sha256": "160f004d220f2911776a5f51aad06b29ee3187f4d3b7f518b5f8476d14f9adb9",
+      "bytes": 8665
     }
   },
   "required_read_only_public_dependency": {
@@ -150,7 +150,8 @@
     },
     "fatal_sanitizers": true,
     "all_owned_Intel_signed_and_verified_before_execution": true,
-    "artifact_provenance": "Parent isolated source-only public replay; artifact hashes bind that build, not arbitrary rebuilds."
+    "artifact_provenance": "Parent isolated source-only public replay; artifact hashes bind that build, not arbitrary rebuilds.",
+    "excluded_observations_are_fixed_canonical_expectation": false
   },
   "historical_private_evidence_references_only": {
     "candidate_map": {
@@ -231,7 +232,8 @@
       "source_public_fixture_asserts_sample_zero": false,
       "private_reviewer_zero_output_samples": 845952,
       "source_audio_equivalence": false
-    }
+    },
+    "excluded_nonvisited_word_observation_count_is_exhaustive_or_run_invariant": false
   },
   "limits": [
     "Prepared scalar queue progression/revisit/reverse copy only; native213 IDs and82 records do not imply exhaustive every-controller/unit behavior",
@@ -239,7 +241,8 @@
     "7152 configuration bytes, descriptors and unique4-byte pointees captured/restored; no whole class/unit/heap/TLS restoration",
     "Finite original output and guard checks; separate private silent extension is not ordinary replay or source/musical DSP proof",
     "6614 nonvisited-word observations remain real unfinished effects; representative first IDs omit other aliased IDs and causes",
-    "Active XY, source audio DSP, scheduler/class/factory/state/GUI/real-time, general fenv/traps/errno and full plugin are false"
+    "Active XY, source audio DSP, scheduler/class/factory/state/GUI/real-time, general fenv/traps/errno and full plugin are false",
+    "Fresh committed replay observed6618 excluded nonvisited-word changes, including four represented byID54; earlier6614 is one historical corpus, not a run-invariant or exhaustive unit-effect count. All in-scope comparisons and four mutants still passed."
   ],
   "active_XY_reconstruction": false,
   "whole_native_unit_effect_parity": false,
@@ -250,5 +253,18 @@
     "path": "analysis/plugins/review/root-tyrell-queue-public-independent.json",
     "sha256": "554a38e1becdfec803742ee04414c828f7c885ac8c4d2e39d5846215fb64a2ea",
     "bytes": 7200
+  },
+  "fresh_committed_checkout_excluded_observations": {
+    "count": 6618,
+    "additional_representative_ID": 54,
+    "additional_observations": 4,
+    "in_scope_counts_and_four_negative_controls_equal": true,
+    "raw_result_sha256": "fde7987643be9ee6e19144aeaefe45d3173481b3bd17aa762dba1847b2e0c8a4",
+    "cause_reconstructed": false,
+    "private_delta_reference_only": {
+      "path": "analysis/plugins/review/root-tyrell-queue-fresh-excluded-delta.json",
+      "sha256": "3ff506e3ed55e5ecf97e340ceef022c0c843485495563754228281b8eaf5f72b",
+      "bytes": 1321
+    }
   }
 }

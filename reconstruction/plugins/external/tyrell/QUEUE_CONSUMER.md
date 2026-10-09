@@ -72,7 +72,11 @@ audio effect or source audio comparison is claimed.
 The maintained render run observed 6,614 changes outside visited pointee words:
 representative ID 45 changed 6,609 times; IDs 18/47/48/49/50 changed once each.
 These are per-call word-change observations, not every aliased logical ID or
-complete unit effects. The earlier descriptor probe classifies ID 45 as type 4
+complete unit effects. A later fresh committed checkout observed 6,618 such
+changes, including four additional changes represented by ID 54. All in-scope
+queue comparisons and negative controls still passed. These excluded counts
+can differ between runs; their causes remain unfinished and no exhaustive
+unit-effect parity is claimed. The earlier descriptor probe classifies ID 45 as type 4
 and the other representatives as type 3. Their actual causes/effects are not
 reconstructed by this scalar step; no timing or audio equivalence is inferred.
 
