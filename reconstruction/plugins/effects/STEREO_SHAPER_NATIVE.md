@@ -1,54 +1,80 @@
 # VL Stereo Shaper native boundary
 
-This original native wrapper builds over the measured arm64 FL C++ protocol and
-the reviewed numerical C ABI. The three checks below passed independent copied
-source builds and replays. This build has no editor. Original VCL behavior,
-the actual FL application, projects, mixer topology, VST/AU and whole-plugin
-equivalence remain separate open gates.
+This independently written wrapper builds over the measured arm64 FL C++
+protocol and reviewed numerical C ABI. The optional AppKit editor supplies six
+sliders, a side-output selector and before/after processing controls. Numerical,
+loader, routing, stream and editor checks pass under the commands below. The
+editor/registration candidate passed independent copied-source replay; its final
+maintained-path binding is recorded in the verification manifest. Original VCL
+behavior, actual FL application hosting, projects, mixer topology, VST/AU and
+whole-plugin equivalence remain separate open gates.
 
 ```sh
+./reconstruction/plugins/effects/verify_stereo_shaper.sh
 ./reconstruction/plugins/effects/verify_stereo_shaper_engine_loader.sh
 ./reconstruction/plugins/effects/verify_stereo_shaper_host_routing.sh
 ./reconstruction/plugins/effects/verify_stereo_shaper_engine_stream.sh
+./reconstruction/plugins/effects/verify_stereo_shaper_editor.sh
 ```
 
-The first test uses the intact engine's DLL loader and allocates/frees its actual
+The loader test uses the intact engine's DLL loader and allocates/frees its actual
 C++-to-Pascal plugin wrapper. All 20 callback slots are exercised: 7,200 parameter
-sets, 1,200 state saves, 240 restores, and 140,700 stereo frames. The numerical
-rate/resume behavior is replayed; unused generator/voice/MIDI callbacks are
-explicit independent no-ops. Name labels are original descriptive labels.
-The supported dispatchers are resume 2, sample rate 4, and classification 52;
-remaining commercial dispatcher/event behavior is not claimed.
+sets, 1,200 state saves, 240 restores and 140,700 stereo frames. Rate/resume
+behavior is replayed; unused generator/voice/MIDI callbacks are explicit
+independent no-ops. Name labels are original descriptive labels. Supported
+numerical dispatchers are resume 2, sample rate 4 and classification 52. The
+optional editor adds attach/detach dispatcher 0 and GUI Idle.
 
-The routing test allocates both of the actual engine's host and plugin adapters.
-The C++ host interface's slot 37 enters thunk `0xb4e990`, which subtracts the
-interface offset and branches to `0xb4d040`. That body calls the Pascal host's
-VMT slot `0x1f0` with the existing sender/index/descriptor arguments. Live probes
-preserved pointer and flags values, including a null output. The measured packed
-descriptor has a pointer at 0, a 32-bit flags value at 8, and size 12.
+The routing test allocates the actual engine host and plugin adapters. C++ host
+slot 37 enters thunk `0xb4e990`, subtracts the interface offset and branches to
+`0xb4d040`, which calls Pascal host VMT slot `0x1f0`. Live probes preserved the
+sender, index, descriptor pointer and flags, including a null output. The packed
+descriptor has a pointer at 0, 32-bit flags at 8 and size 12.
 
-The own effect renders first, then requests the side buffer with flags 0, adds
-dry minus processed samples when available, and releases it with flags 1.
-The canonical adapter test passes 600 routing/state sequences, 450 active send
-sequences and 64,890 frames. It covers the four-output fixture, indices 1..3,
-pre/post selection, five rates, zero/odd/vector-boundary blocks, exact alias,
-four-byte offsets, source immutability, and independent main/side guard checks.
-Both a supplied and null output are exercised. This validates the actual engine
-adapter and compiled wrapper with a synthetic Pascal host, not an instantiated
-FL application or a project/mixer configuration.
+The effect renders, requests the side buffer with flags 0, adds dry minus
+processed samples when available, and releases with flags 1. The canonical test
+passes 1,200 routing/state restores, 450 active send sequences and 64,890 frames.
+It covers four outputs, indices 1..3, pre/post selection, five rates,
+zero/odd/vector-boundary blocks, exact alias, four-byte offsets, source
+immutability and independent main/side guards. Supplied and null outputs pass.
+Positive send changes unregister the previous index with FHD73 value 0 and
+register the new index with value 1. Repetition emits no event. The test verifies
+899 registration events through the actual host adapter. Source-factory
+repetition and destruction were independently replayed under the pinned source
+SHA: destruction with final positive send 3 emitted no FHD73. Our destruction
+also emits none. Actual application host cleanup ownership remains untraced.
 
-The stream test uses actual engine TMemoryStream/TStreamAdapter objects and the
-actual plugin wrapper. It passes 128 saves/restores of the 36-byte state, adjacent
-completion-count sentinels, the provider's negative HRESULT32 invalid-pointer
-path, and atomic rejection of synthetic full-count HRESULT32 failures on either
-the first or second read. State transfers use 4 then 32 bytes. This wrapper
-requests completion outputs and rejects malformed data; the commercial source
-factory used null counts and only valid framing is compared to that source.
+The stream test uses actual TMemoryStream/TStreamAdapter objects and the plugin
+wrapper. It passes 128 saves/restores of the 36-byte state, adjacent count
+sentinels, the provider's negative HRESULT32 invalid-pointer path and atomic
+rejection of synthetic full-count HRESULT32 failures on either read. Transfers
+use 4 then 32 bytes. This wrapper requests completion outputs and rejects
+malformed data; valid framing is compared with the commercial source factory.
 
-All native instance access, including getters, streams and destruction, requires
-serialized host access. Numerical sample/rate/state domains and FP flags match
-[STEREO_SHAPER.md](STEREO_SHAPER.md) and the public C header. A side buffer supplied
-by the host must contain finite samples and be disjoint from both main buffers.
-The host/module must remain alive until native destruction finishes. Fixed engine
-offset tests refuse builds outside macOS arm64 and verify the universal engine
-SHA-256 before calling its methods. No original runtime/assets are distributed.
+The editor script first checks the standalone AppKit view: six parameter changes,
+two routing changes and 50 automation displays. It then builds with
+`VL_STEREO_SHAPER_APPKIT_EDITOR=1` and checks attachment, detachment, main-thread
+retry after refused worker destruction, six controls, seven hints and two resize
+notifications through actual engine host/plugin adapters. Host automation
+refreshes on GUI Idle. Change/hint notifications occur after the numerical lock
+is released. Worker hint/get calls during first attachment, pre-attachment
+worker destruction, tick/MIDI tick/Idle and worker UI entry points preserve the
+main-thread UI boundary. Tick/MIDI tick are no-ops. GUI state is inspected only
+after a main-thread check. No commercial GUI resources or artwork are copied.
+
+All native instance access, including getters, streams, numerical/routing
+updates, registration notifications and destruction, requires serialized host
+access. UI numerical reads/writes use paired host lock/unlock callbacks. Hint
+flag 4 is a main-thread GUI operation outside the mixer lock. In an optional
+editor build, all native destruction must run on main even before attachment;
+an off-main attempt retains the instance for a main-thread retry. Keep the
+instance, host and module alive until destruction completes. Other UI calls
+require main as well. The default build contains no editor.
+
+Numerical domains and FP flags match [STEREO_SHAPER.md](STEREO_SHAPER.md) and the
+public C header. A supplied side buffer must contain finite samples and be
+disjoint from both main buffers. Fixed engine-offset tests refuse non-macOS-arm64
+builds and verify the universal engine SHA before calls. These fixtures use a
+synthetic Pascal host behind the real adapters; an actual FL application or
+project/mixer configuration is not instantiated. Remaining dispatcher/event,
+latency and host-topology behavior is open. No original runtime is distributed.

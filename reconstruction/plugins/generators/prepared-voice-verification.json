@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "real_native_factory_fixtures": 360,
+  "two_live_voices": true,
+  "actual_GenRender_blocks": 8640,
+  "stereo_float_values_exact": 8186400,
+  "state_values_exact": 1486080,
+  "actual_native441sample_release_tables": 360,
+  "rejection_preservation_cases": 6480,
+  "maximum_observed_filter_history": 22.213701801131304,
+  "maximum_observed_output": 11.389184951782227,
+  "maximum_observed_working_sample": 30.74102783203125,
+  "maximum_observed_gain": 1.9413520097732544,
+  "prepared_active_editor_context": true,
+  "host_pan_callback_controlled": true,
+  "native_factory_rebuilt": false,
+  "bounded_modulation_single_filter_pipeline_rebuilt": true,
+  "native_editor_rebuilt": false,
+  "full_plugin_recompiled": false,
+  "module": "prepared-voice",
+  "source_sha256": {
+    "three_osc_prepared_voice.h": "df5ad981aa510577160067ef3af6e1de88ff704b6b802c2edc593835bed20de1",
+    "three_osc_prepared_voice.cpp": "30fc12f6b4745c2788c029d6231678fa4d8dc5602bcfb6a22438668acf89aad1",
+    "test_three_osc_prepared_voice.mm": "4a52c5c5df418e8dc2cd3eeb8c4c15abec5e357933c043b93f8258983f57817a",
+    "verify-prepared-voice.sh": "95b0b00cd01cec71e405eee79499315632d45f56f3eb194c7336314d313cadbe",
+    "summarize_prepared_voice.py": "57d0159ac60a4f1ec3428c8419c18cfae36c4668bddbdc7927829fba2c2bb88c",
+    "PREPARED_VOICE.md": "8f31930186690c859aa90a6c406eaeebecef7328761cf8bf7aa106807837aa51",
+    "three_osc_wrapper_core.h": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+    "three_osc_wrapper_core.cpp": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+    "three_osc_engine.cpp": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+    "three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+    "three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+    "three_osc_declick.hpp": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+    "three_osc_declick.cpp": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+    "three_osc_envelope.hpp": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+    "three_osc_gain_mix.hpp": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+    "three_osc_voice_output.hpp": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+    "three_osc_legacy_tables.hpp": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+    "three_osc_legacy_tables.cpp": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135",
+    "three_osc_envelope_coefficients.hpp": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57",
+    "three_osc_modulation.hpp": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+    "three_osc_filter.hpp": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+    "three_osc_filter_routing.hpp": "02a88d145fae30bb0eb9e536e3a2230fdeb5311cd91893af555c4076d69c8cd7"
+  },
+  "compiled_dylib_sha256": "d34d1ad09bc38209bef60f805f0ed90a0885b82b8c3ad47d2cae49cd0dbd2f7c",
+  "reviewed_native_targets": [
+    {
+      "name": "3x Osc Fruity wrapper",
+      "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+      "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27"
+    },
+    {
+      "name": "3x Osc engine.dylib",
+      "universal_sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+      "arm64_sha256": "c90d11fe12c86d620aabd135078c7cca49cc2b007b0c750e0db63a1e7508db48"
+    },
+    {
+      "name": "dsp_ippv2_x64.dylib",
+      "universal_sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "arm64_sha256": "72a166d85676bc317bc3556b88f2eddb30fd955156bf8fbd696cb5de847aa1b3"
+    }
+  ],
+  "fixture_architecture_guard": "macOS arm64 only",
+  "scope": {
+    "new_c_abi": true,
+    "prepared_five_group_modulation_single_filter_voice_pipeline": true,
+    "actual_native_factory_GenRender_differential_replay": true,
+    "native_fruity_factory_rebuilt": false,
+    "actual_host_voice_notifications_integrated": false,
+    "host_tick_context_production_rebuilt": false,
+    "synchronized_lfo_rebuilt": false,
+    "filter_mode_switching_rebuilt": false,
+    "gui_rebuilt": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Fixed type0 filter, observed circular master pan law0, controlled host pan callback, global113=0 and no synchronized LFO flag32.",
+    "Six fixed rate/tempo pairs, each crossed with six explicit PPQs delivered through dispatcher14 SetTimeSig Value+8; live context changes and actual host time-signature/context delivery remain open.",
+    "Native replay covers deterministic oscillator waveforms0..4, random-phase0, default inversion/ring switches, HQ/legacy and initial44100Hz release context.",
+    "Other initializer rates/oscillator modes are independent generalizations, not additional native pipeline evidence.",
+    "Final pitch automation is replayed in[-2400,2400] cents; callers reset base final pitch before each block.",
+    "Carried type0 filter history and measured finite working samples/gains extend smaller isolated primitive corpora, without an arbitrary-history or arbitrary-amplitude proof.",
+    "Two live voices render in creation order into positive zero. Final host addition into preexisting audio remains outside this API.",
+    "Original host-kill callbacks are no-ops; final native cleanup is explicit. Voice stealing and application voice notifications remain open.",
+    "Borrowed raw core/voice and readable finite[-1,1] LFO tables outlive the composer. Caller serializes all raw-engine instances sharing factory/RNG state.",
+    "Rejection-preservation checks concern the new C API, not invalid-call equivalence with the original. No injected allocation-failure/unwind proof.",
+    "Native factory/state/editor ABI, actual host time-signature/context delivery and project execution, live application rendering and complete Fruity/VST/AU equivalence remain open."
+  ]
+}

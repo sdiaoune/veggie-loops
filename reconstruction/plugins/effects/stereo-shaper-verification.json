@@ -89,11 +89,9 @@
     "call_synchronization": "all instance access including getters/save/destruction serialized or under host mix lock"
   },
   "unresolved": [
-    "actual engine GetOutBuffer adapter and host output topology",
-    "native wrapper/lifecycle and full original dispatcher/event/name behavior",
-    "original or independent rebuilt editor integration",
-    "actual engine stream/error lifecycle",
-    "actual FL application/project/mixer host integration",
+    "native/editor integration covered separately by stereo-shaper-native-verification.json",
+    "remaining original dispatcher/event/name/editor behavior and host topology",
+    "actual FL application/project/mixer host integration and host send cleanup",
     "x86/VST/AU",
     "NaN/Inf and alternate FP environments",
     "all other effect families",

@@ -5,19 +5,24 @@
   "full_plugin_equivalence": false,
   "architecture": "macOS arm64",
   "source_sha256": {
-    "reconstruction/plugins/effects/stereo_shaper_native_abi.h": "6dcd7b87e4fa6d524201baf651c96cb0a9636739b28c0733c198809be3671bd7",
-    "reconstruction/plugins/effects/stereo_shaper_native_abi.cpp": "b5caa2c814955528c018645d7d2cd6bd58e9737d1e6d9ad0ee64801008c50d81",
+    "reconstruction/plugins/effects/stereo_shaper_native_abi.h": "c3ca6b0a273ecf10c73c7ec30812a3925fcde91a263d23472fb09e25303f9989",
+    "reconstruction/plugins/effects/stereo_shaper_native_abi.cpp": "30ab48863e7c67bf2d6577502376976a3970d749aea4cf346ab2dbabf7c011aa",
     "reconstruction/plugins/effects/test_stereo_shaper_engine_loader.mm": "8057af662fd2013b707434c5c036d6e698546df3079937b4b102ddfb678e7f8d",
     "reconstruction/plugins/effects/verify_stereo_shaper_engine_loader.sh": "fba16ae3ed272affff5d1ed7af8d1e41cf89c653a16c10e56aed0273cbc22344",
-    "reconstruction/plugins/effects/test_stereo_shaper_host_routing.mm": "726597c150a680f1d398134e3cd76defb0cb216e2c3d8d6d3d830330d431c385",
+    "reconstruction/plugins/effects/test_stereo_shaper_host_routing.mm": "fdd853ae66366ba472b791827334690118b6058d27968b856771bc69d4f87af4",
     "reconstruction/plugins/effects/verify_stereo_shaper_host_routing.sh": "e3d6ecefca0b2868d04d0bb474f46df9ac727f59a9566d22747a8e9176eabab2",
     "reconstruction/plugins/effects/test_stereo_shaper_engine_stream.mm": "29fe5a0b293311d042b19fca1f767c165c18d798662f5a1f721b320cdb932d05",
     "reconstruction/plugins/effects/verify_stereo_shaper_engine_stream.sh": "553ed2ce5caac4701488a436e57d5613954d64910aa87d0c2ebaa9dd919a22be",
-    "reconstruction/plugins/effects/STEREO_SHAPER_NATIVE.md": "7317e37311acccd1e35a34f2d75ccdd29a0c1553255bfe01847b9e074fff33c2",
+    "reconstruction/plugins/effects/STEREO_SHAPER_NATIVE.md": "890a312f325f96cc9b2a758881274e78da1d901b619bc4d97ce16f678b704f1c",
     "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
     "reconstruction/plugins/effects/stereo_shaper_dsp.hpp": "c689553d39afeda9a442a86d27c7a3856866f88486db095fc872c0cf7653635a",
     "reconstruction/plugins/effects/stereo_shaper_plugin.h": "624b296bde1d5757915c1dce5fecfb65f5c423a7af79c9e4d7734e32436eaf7f",
-    "reconstruction/plugins/effects/stereo_shaper_plugin.cpp": "8104cca7d44334138916816b9d3380bb8b8cd562e178f36cbacb705f8616d453"
+    "reconstruction/plugins/effects/stereo_shaper_plugin.cpp": "8104cca7d44334138916816b9d3380bb8b8cd562e178f36cbacb705f8616d453",
+    "reconstruction/plugins/effects/stereo_shaper_editor.h": "bc464ec4d9a08c03309338b16283f0459af64ef37e4efa7e4200b801c74e3e01",
+    "reconstruction/plugins/effects/stereo_shaper_editor.mm": "ae7839f5ed0aecf22baed3625d181137318969f4de1d2d21a56849390d507003",
+    "reconstruction/plugins/effects/test_stereo_shaper_editor.mm": "17fba1f2faca42b3365997bb538b2ffe4c8c504ab74df757f717c9a7ec07c80e",
+    "reconstruction/plugins/effects/test_stereo_shaper_native_editor.mm": "ca364d2c160b21022f74338cdc933fbcc453a5b0bbc0d6be53213f0abf40c36c",
+    "reconstruction/plugins/effects/verify_stereo_shaper_editor.sh": "681daa5d322cd1ca22bb5f24a3c61f26f34e37c683757ffdf1c5b3a6bbe2b8a0"
   },
   "inspected_binary_sha256": {
     "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
@@ -48,9 +53,12 @@
         "actual_engine_plugin_and_host_adapters": true,
         "get_out_buffer_cpp_slot": 37,
         "pascal_slot": 496,
-        "routing_state_restores": 600,
+        "routing_state_restores": 1200,
         "side_output_sequences": 450,
         "stereo_frames": 64890,
+        "routing_registration_events": 899,
+        "repeated_send_has_no_duplicate_registration": true,
+        "no_unobserved_registration_during_destroy": true,
         "actual_fl_application_created": false,
         "full_plugin_equivalence": false
       }
@@ -72,19 +80,83 @@
         "application_host_created": false,
         "full_plugin_equivalence": false
       }
+    },
+    "independent_appkit_editor": {
+      "command": "./reconstruction/plugins/effects/verify_stereo_shaper_editor.sh",
+      "result": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "parameter_control_changes": 6,
+          "routing_changes": 2,
+          "automation_display_cases": 50,
+          "notifications_after_unlock": true,
+          "worker_ui_calls_skipped": true,
+          "off_main_destroy_preserves_view": true,
+          "native_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "worker_tick_idle_skipped_gui": true,
+          "control_changes": 6,
+          "hints": 7,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
     }
   },
   "independent_review": {
     "status": "accepted",
     "report": "stereo-shaper-native-independent.json",
-    "canonical_scripts": 3
+    "canonical_scripts": 3,
+    "editor_registration_candidate": {
+      "status": "accepted",
+      "reports": [
+        "stereo-editor-candidate-independent.json",
+        "stereo-registration-destroy-independent.json"
+      ],
+      "maintained_path_rebind_status": "accepted",
+      "unchanged_runtime_promoted": true,
+      "maintained_path_review_report": "root-stereo-editor-final-independent.json",
+      "maintained_path_editor_replay": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "parameter_control_changes": 6,
+          "routing_changes": 2,
+          "automation_display_cases": 50,
+          "notifications_after_unlock": true,
+          "worker_ui_calls_skipped": true,
+          "off_main_destroy_preserves_view": true,
+          "native_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "worker_tick_idle_skipped_gui": true,
+          "control_changes": 6,
+          "hints": 7,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    }
   },
   "unresolved": [
-    "editor/UI/hints",
-    "remaining original dispatch/events/names/host topology",
-    "actual FL application/project/mixer hosting",
+    "original VCL editor/artwork/behavior equivalence",
+    "remaining original dispatch/events/names/host topology/latency",
+    "actual FL application/project/mixer hosting and host send cleanup ownership",
     "x86/VST/AU",
-    "whole-plugin equivalence",
-    "remaining host side-output registration/latency notifications"
+    "whole-plugin equivalence"
   ]
 }

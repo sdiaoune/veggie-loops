@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "actual_native_factory_fixtures": 120,
+  "voice_triggers": 7200,
+  "polyphony_quick_release_cases": 3775,
+  "normal_or_repeated_release_cases": 4200,
+  "actual_GenRender_calls": 2400,
+  "host_completion_notifications": 3261,
+  "metadata_values_exact": 1554240,
+  "explicit_native_deletions": 7200,
+  "direct_release_metadata_cases": 5760,
+  "rebuilt_native_factory": false,
+  "envelope_state_rebuilt_by_this_module": false,
+  "audio_rebuilt_by_this_module": false,
+  "actual_host_scheduling_rebuilt": false,
+  "full_plugin_recompiled": false,
+  "module": "voice-lifecycle",
+  "source_sha256": {
+    "three_osc_voice_lifecycle.h": "4a6e2b1ca34ce98e981dcce67f420de16588088e4fb83496cea63c8edf2db641",
+    "three_osc_voice_lifecycle.cpp": "61d50da9dbfcba794811ff899cfa0d19dbb785ddbfeddd0b529f34f65eeefc79",
+    "test_three_osc_voice_lifecycle.mm": "38025b830ac5ceccac7216098f704f0afb73b1988e1c5b62d657b6f3c2de30fb",
+    "verify-voice-lifecycle.sh": "4af919c1e59f5500de048646e564f961d2722a90bc466d971cfc2cbc57188e1f",
+    "summarize_voice_lifecycle.py": "dad0b01ad8a50ad4266c3ec6e5110388f3be5451070f89374624163548dbb575",
+    "VOICE_LIFECYCLE.md": "34d4d32ad533eff27ebbb4d253cc809a438d57d0b05510bc2a727801c928542e"
+  },
+  "compiled_dylib_sha256": "861f9a2bf371493963bb5a47a902e925ee5aefa71aed2eb089e4823b9558ff3e",
+  "reviewed_native_targets": [
+    {
+      "name": "3x Osc Fruity wrapper",
+      "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+      "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27"
+    },
+    {
+      "name": "3x Osc engine.dylib",
+      "universal_sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+      "arm64_sha256": "c90d11fe12c86d620aabd135078c7cca49cc2b007b0c750e0db63a1e7508db48"
+    },
+    {
+      "name": "dsp_ippv2_x64.dylib",
+      "universal_sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "arm64_sha256": "72a166d85676bc317bc3556b88f2eddb30fd955156bf8fbd696cb5de847aa1b3"
+    }
+  ],
+  "fixture_architecture_guard": "macOS arm64 only",
+  "scope": {
+    "new_c_abi": true,
+    "metadata_only": true,
+    "actual_factory_trigger_release_kill_render_metadata_replay": true,
+    "controlled_host_completion_notifications": true,
+    "native_fruity_factory_rebuilt": false,
+    "actual_host_scheduling_rebuilt": false,
+    "active_envelope_state_rebuilt_by_this_module": false,
+    "audio_rebuilt_by_this_module": false,
+    "integrated_with_prepared_voice_composer": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Default native editor controls, HQ rendering and actual441-sample initial release context.",
+    "Soft polyphony selection marks an existing voice but neither deletes it nor prevents a new trigger.",
+    "Controlled host shim records ordered VoiceKill(tag,-1) requests and explicitly removes voices after GenRender; real host timing and reentrant deletion remain open.",
+    "Direct quick-release/advance helpers use controlled metadata in live original editor objects; arbitrary injected fields are not host-production evidence.",
+    "Ordinary-release metadata is tested with default disabled volume envelopes. Active envelope-stage changes are outside this module.",
+    "Generic completion lengths and the thin API's wider metadata preconditions are generalizations beyond the actual factory release context.",
+    "Output finite/guard checks do not constitute reconstructed-audio comparison in this metadata fixture.",
+    "Native object allocation/lifetime ABI, invalid-call/failure behavior, host clocks, composer integration, state/editor/factory and full Fruity/VST/AU equivalence remain open."
+  ]
+}
