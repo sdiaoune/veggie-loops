@@ -15,9 +15,10 @@ Mach-O binary corpus, which retains nested engines and runtime dependencies.
 A source audit found retained-editor lifetime issues in four experimental
 factories. Mute 2 and Phase Inverter now clear retained callbacks/context and
 control targets, with two independent runtime reviews and a passing public
-recipe. Soft Clipper and Stereo Shaper still have open published retained-view
-issues; their private repairs passed two source runtime reviews, with new engine
-regressions pending. Balance has a separately accepted retained-view cleanup
+recipe. Soft Clipper and Stereo Shaper's own retained-view and storage repairs
+passed two source runtime reviews and two engine runtime reviews; their current
+public source includes the repairs, and the public package replay passes. Balance
+has a separately accepted retained-view cleanup
 repair. The three experimental oscillator factories now have a reviewed own
 complete/caller-free versus deleting lifetime split. Other factories' complete
 destructors remain under separate review.
@@ -35,6 +36,7 @@ destructors remain under separate review.
 | Fruity Stereo Shaper subset | Source matrix/delay/phase processing, controls and state; experimental factory/intact engine loader, actual GetOutBuffer adapters/state streams, own AppKit editor and measured send registration; guarded allocation-failure checks | Original VCL, host cleanup ownership, full application/project/mixer and VL Studio integration |
 | [Fruity Soft Clipper numerical subset](effects/SOFT_CLIPPER.md) | Two controls, exponential knee/gain, meters and valid state; 31,480 control cases and 3,422,287 frames, with independently repaired result/object aliasing | Broader control/UI/dispatch behavior, actual application/project/mixer and VST/AU integration |
 | [Fruity Soft Clipper native bridge/editor](effects/SOFT_CLIPPER_NATIVE.md) | Own factory loaded by actual FLEngine DLL adapter; real state streams, 288 AppKit displays and repaired 256-case attachment/render locking independently replayed | Original VCL/resources, remaining dispatch/events/metadata, actual application/project/mixer, x86/VST/AU and whole-plugin equivalence |
+| [Own Soft Clipper / Stereo Shaper lifetimes](effects/soft-stereo-lifetime/README.md) | Complete20 retains raw storage and0/21 free; retained views clear callbacks/context and control targets;12 normal/fatal/O0 source profiles,14 semantic negatives and18 actual-engine documents pass two separate pairs of runtime critics and the public package's52 signed arm64 products | Original extra destructors/class/GUI/allocator, actual application registration cleanup owner, broader provider/concurrency/RT and whole-plugin equivalence |
 | [Fruity Center numerical subset](effects/CENTER.md) | Own centering filter/control/state C API; 1,516,707 exact stereo frames, live rate/reset/history and strict block-end flush checks; 342 sanitizer alias-rejection intervals independently replayed | Native class/streams/editor integration, complete dispatch/host lifecycle, x86/VST/AU and whole-plugin equivalence |
 | [Fruity Center native bridge](effects/CENTER_NATIVE.md) | Own no-editor factory accepted by real FLEngine DLL loader; 20 callbacks, 140,700 frames and actual two-transfer streams with history-preserving read failures independently replayed | Original Pascal/VCL, full destructor/general-provider ABI, remaining metadata/dispatch, actual application/project/mixer, x86/VST/AU and whole-plugin equivalence |
 | [VL Center optional AppKit editor](effects/CENTER_EDITOR.md) | Real host/plugin adapters, preserved filter displays, four maintained checks and independent enabled-history/ThreadSanitizer replay; refused worker destruction retains ownership | Original GUI/hints/resources, full application/project/mixer and destructor/provider semantics, x86/VST/AU, general concurrency/RT and whole-plugin equivalence |

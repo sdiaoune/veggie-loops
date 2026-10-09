@@ -6,21 +6,21 @@
   "architecture": "macOS arm64",
   "source_sha256": {
     "reconstruction/plugins/effects/soft_clipper_native_abi.h": "43b43d67ce532987095459d117331d919e0cad0b808005fbcce21b706df59de3",
-    "reconstruction/plugins/effects/soft_clipper_native_abi.cpp": "614564a9702dc6d518e230349178dbe9b525a5441b01143bde79f27354befa44",
+    "reconstruction/plugins/effects/soft_clipper_native_abi.cpp": "fed8deb6272ad571a55f4f02e947ee1cd0c552386fdeb296c32b20caa2b2764c",
     "reconstruction/plugins/effects/test_soft_clipper_engine_loader.mm": "77508b26d45e6dacfe604c5e21537a26695792752390ebd4710248f456d18e2b",
     "reconstruction/plugins/effects/test_soft_clipper_engine_stream.mm": "40180ed9a295cd749332e18945c5358ae414d950ea03208db29e065dc4e1cf67",
     "reconstruction/plugins/effects/soft_clipper_editor.h": "53a2885365a137a8c7aa8a9536dd35f74b0c507f38b09e5ce5f6b8f7cee95d58",
-    "reconstruction/plugins/effects/soft_clipper_editor.mm": "c79893ae2baa535af9128b035cc308fdd005af31d878fbf03cda783c51f7c936",
+    "reconstruction/plugins/effects/soft_clipper_editor.mm": "b81a66e12a67ce64633735f499de9e3a2b8d4f14a62a9399ae0ef84e4c150923",
     "reconstruction/plugins/effects/test_soft_clipper_editor.mm": "69e44878d41972a38ccb00ce796025e2be28b544b0eb6d0cf36fb743c94c72af",
     "reconstruction/plugins/effects/test_soft_clipper_native_editor.mm": "0cf9749082fecb0e8ed703c379d4cef496a1121351bcbb0bc2873091b72f8223",
     "reconstruction/plugins/effects/verify_soft_clipper_engine_loader.sh": "648aca938d8f71e9f7aef13aa09e47c79b9529ecb2bdcd87ade8aad13eea09e9",
     "reconstruction/plugins/effects/verify_soft_clipper_engine_stream.sh": "61b32da063d9c28c1ee60db80d0600125904006d9a50713c7e6975bc29b68ee9",
     "reconstruction/plugins/effects/verify_soft_clipper_editor.sh": "437c9ff50dc35138dc91cf676af5f01673e8101266b92ab06d83326167474c48",
-    "reconstruction/plugins/effects/SOFT_CLIPPER_NATIVE.md": "2487f314c73ca6b2f46a352edd28ce51299845f687e591b040968a6c558ee7f4",
+    "reconstruction/plugins/effects/SOFT_CLIPPER_NATIVE.md": "27ab8f04d16958ebdc6c82fac55d59efff60b72594c761a6135de83a61878ffe",
     "reconstruction/plugins/effects/soft_clipper_dsp.hpp": "ace380a6ea0478445e924a3b80e4850277172ebd0876e14314945f28ecadd17e",
     "reconstruction/plugins/effects/soft_clipper_plugin.h": "b099652e6ae32507ec4b5c4e1789976db1a96a8acc7c7cd07a7b4d4560e0a0f3",
     "reconstruction/plugins/effects/soft_clipper_plugin.cpp": "216907d562ce68cd69919b107cb6ccbe7c927f1c72fdafc1bde4e09c9ab14266",
-    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+    "reconstruction/plugins/effects/balance_native_abi.h": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf"
   },
   "inspected_binary_sha256": {
     "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
@@ -152,5 +152,55 @@
     "unrestricted native threading/realtime guarantees",
     "alternate FP/compiler environments"
   ],
-  "numerical_proof_manifest": "soft-clipper-verification.json"
+  "numerical_proof_manifest": "soft-clipper-verification.json",
+  "historical_source_sha256_before_own_lifetime_promotion_20261009": {
+    "reconstruction/plugins/effects/soft_clipper_native_abi.h": "43b43d67ce532987095459d117331d919e0cad0b808005fbcce21b706df59de3",
+    "reconstruction/plugins/effects/soft_clipper_native_abi.cpp": "614564a9702dc6d518e230349178dbe9b525a5441b01143bde79f27354befa44",
+    "reconstruction/plugins/effects/test_soft_clipper_engine_loader.mm": "77508b26d45e6dacfe604c5e21537a26695792752390ebd4710248f456d18e2b",
+    "reconstruction/plugins/effects/test_soft_clipper_engine_stream.mm": "40180ed9a295cd749332e18945c5358ae414d950ea03208db29e065dc4e1cf67",
+    "reconstruction/plugins/effects/soft_clipper_editor.h": "53a2885365a137a8c7aa8a9536dd35f74b0c507f38b09e5ce5f6b8f7cee95d58",
+    "reconstruction/plugins/effects/soft_clipper_editor.mm": "c79893ae2baa535af9128b035cc308fdd005af31d878fbf03cda783c51f7c936",
+    "reconstruction/plugins/effects/test_soft_clipper_editor.mm": "69e44878d41972a38ccb00ce796025e2be28b544b0eb6d0cf36fb743c94c72af",
+    "reconstruction/plugins/effects/test_soft_clipper_native_editor.mm": "0cf9749082fecb0e8ed703c379d4cef496a1121351bcbb0bc2873091b72f8223",
+    "reconstruction/plugins/effects/verify_soft_clipper_engine_loader.sh": "648aca938d8f71e9f7aef13aa09e47c79b9529ecb2bdcd87ade8aad13eea09e9",
+    "reconstruction/plugins/effects/verify_soft_clipper_engine_stream.sh": "61b32da063d9c28c1ee60db80d0600125904006d9a50713c7e6975bc29b68ee9",
+    "reconstruction/plugins/effects/verify_soft_clipper_editor.sh": "437c9ff50dc35138dc91cf676af5f01673e8101266b92ab06d83326167474c48",
+    "reconstruction/plugins/effects/SOFT_CLIPPER_NATIVE.md": "2487f314c73ca6b2f46a352edd28ce51299845f687e591b040968a6c558ee7f4",
+    "reconstruction/plugins/effects/soft_clipper_dsp.hpp": "ace380a6ea0478445e924a3b80e4850277172ebd0876e14314945f28ecadd17e",
+    "reconstruction/plugins/effects/soft_clipper_plugin.h": "b099652e6ae32507ec4b5c4e1789976db1a96a8acc7c7cd07a7b4d4560e0a0f3",
+    "reconstruction/plugins/effects/soft_clipper_plugin.cpp": "216907d562ce68cd69919b107cb6ccbe7c927f1c72fdafc1bde4e09c9ab14266",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "own_lifetime_and_retained_editor_repair": {
+    "status": "two_source_and_two_native_independent_runtime_critics_accepted_public_working_replay_passed_fresh_checkout_pending",
+    "source_routes": [
+      0,
+      20,
+      21
+    ],
+    "complete20_retains_raw_storage_for_matching_caller_release": true,
+    "deleting0_21_free_owned_instance": true,
+    "retained_view_callbacks_context_and_control_targets_cleared": true,
+    "all_optional_editor_destruction_requires_main_thread": true,
+    "historical_checks_preserved_with_prior_source_bindings": true,
+    "current_source_hashes_rebound": true,
+    "working_public_recipe_proof": {
+      "path": "analysis/plugins/review/root-Soft-Stereo-public-working-runtime.json",
+      "sha256": "b444456b953dae2090fb070e46f45a2804b5b0851d477e578ba1d548645b5831",
+      "bytes": 446547
+    },
+    "source_positive_profiles_combined": 12,
+    "fatal_semantic_negatives_combined": 14,
+    "native_result_documents_combined": 18,
+    "strict_signed_arm64_products_combined_per_public_replay": 52,
+    "two_source_and_two_native_runtime_critic_acceptance": {
+      "path": "analysis/plugins/review/root-Soft-Stereo-two-critic-native-acceptance.json",
+      "sha256": "1584ae955747b2d89e6a7d7db40a82d6c4466589e969b02ca57f4a34a6125b8b"
+    },
+    "public_package_replay_passed": true,
+    "fresh_checkout_replay_passed": false,
+    "original_installed_effect_DSP_comparison_in_new_recipe": false,
+    "original_extra_destructor_GUI_class_allocator_application_registration_owner_scheduler_RT_or_whole_equivalence": false,
+    "full_plugin_equivalence": false
+  }
 }

@@ -71,6 +71,15 @@ an off-main attempt retains the instance for a main-thread retry. Keep the
 instance, host and module alive until destruction completes. Other UI calls
 require main as well. The default build contains no editor.
 
+The current factory/editor use the reviewed [own lifetime repair](soft-stereo-lifetime/README.md).
+Successful complete callback20 ends the instance and retains raw storage for the
+matching caller release; callbacks0/21 end and free it. Successful editor cleanup
+clears retained callbacks/context and slider, send and position targets. The
+existing policy of emitting no invented send-unregister event is preserved; the
+actual application cleanup owner remains unknown. Two independent source and two
+engine runtime critics accepted the bounded repair. Original extra-destructor,
+class/GUI and application ownership equivalence remain unproved.
+
 Numerical domains and FP flags match [STEREO_SHAPER.md](STEREO_SHAPER.md) and the
 public C header. A supplied side buffer must contain finite samples and be
 disjoint from both main buffers. Fixed engine-offset tests refuse non-macOS-arm64

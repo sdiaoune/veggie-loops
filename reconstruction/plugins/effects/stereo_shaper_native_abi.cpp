@@ -38,12 +38,21 @@ void hostChanged(void*c,int32_t index,int32_t value){auto&i=*static_cast<Instanc
 void hostHint(void*c,const char*text){auto&i=*static_cast<Instance*>(c);if(auto f=hostMethod<void(*)(void*,intptr_t,const char*)>(i,2))f(i.host,i.header.hostTag,text);}
 void hostRouting(void*c,int32_t send,int32_t){notifyRouting(*static_cast<Instance*>(c),send);}
 #endif
-void destroy(Plugin*p){if(p){
+bool finishLifetime(Plugin* p){
+  if(!p)return false;
 #if defined(VL_STEREO_SHAPER_APPKIT_EDITOR)
-if(!vl_stereo_shaper_editor_main_thread())return;
-if(!vl_stereo_shaper_editor_destroy(object(p).editor))return;
+  if(!vl_stereo_shaper_editor_main_thread())return false;
+  if(!vl_stereo_shaper_editor_destroy(object(p).editor))return false;
 #endif
-vl_stereo_shaper_destroy(object(p).numerical);delete &object(p);}}
+  auto* instance=&object(p);
+  vl_stereo_shaper_destroy(instance->numerical);
+  instance->numerical=nullptr;
+  instance->~Instance();
+  return true;
+}
+void completeDestructor(Plugin* p){(void)finishLifetime(p);}
+void destroy(Plugin* p){if(finishLifetime(p))::operator delete(static_cast<void*>(p));}
+void deletingDestructor(Plugin* p){destroy(p);}
 intptr_t dispatch(Plugin*p,intptr_t id,intptr_t index,intptr_t value){
 #if defined(VL_STEREO_SHAPER_APPKIT_EDITOR)
 if(id==0){if(!vl_stereo_shaper_editor_main_thread())return 0;auto&i=object(p);if(value&&!i.editor){const VLStereoShaperEditorHost callbacks{&i,hostLock,hostUnlock,hostChanged,hostHint,hostRouting};i.editor=vl_stereo_shaper_editor_create(i.numerical,&callbacks);}vl_stereo_shaper_editor_attach(i.editor,reinterpret_cast<void*>(value));i.header.editor=value&&i.editor?reinterpret_cast<intptr_t>(i.editor):0;i.resizePending=value&&i.editor;}
@@ -87,6 +96,6 @@ int32_t voiceEvent(Plugin*,intptr_t,intptr_t,intptr_t,intptr_t){return 0;}
 int32_t voiceRender(Plugin*,intptr_t,float*,int32_t&count){count=0;return 0;}
 void midi(Plugin*,int32_t&){}
 void message(Plugin*,intptr_t){}
-const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,voice,voiceEnd,voiceEnd,voiceEvent,voiceRender,tick,tick,midi,message,voiceEvent,voiceEnd,destroy,destroy};
+const Functions functions{destroy,dispatch,idle,state,name,event,parameter,effect,generator,voice,voiceEnd,voiceEnd,voiceEvent,voiceRender,tick,tick,midi,message,voiceEvent,voiceEnd,completeDestructor,deletingDestructor};
 }
 extern "C" veggie_loops::balance::native::Plugin* CreatePlugInstance(void*host,intptr_t tag){auto*instance=new(std::nothrow)Instance;if(!instance)return nullptr;if(!instance->numerical){delete instance;return nullptr;}instance->host=host;instance->header.functions=&functions;instance->header.hostTag=tag;instance->header.info=&commonInfo();return &instance->header;}

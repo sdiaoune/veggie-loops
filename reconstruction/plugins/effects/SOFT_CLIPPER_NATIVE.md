@@ -26,10 +26,13 @@ The separate original-factory numerical comparison remains:
 The native and numerical verification JSON files bind their own sources,
 compiler settings, target identities and independent review scope. The native
 scripts use separate output directories; they do not overwrite another effect
-family or the retained private candidate artifacts. All eight promoted
-runtime/header/test files are byte-identical to the independently accepted
-private candidate. Only script names, source input paths and output directory
-names changed during promotion.
+family or the retained private candidate artifacts. The earlier runtime/header/test
+promotion remains recorded as historical evidence. The current factory and editor
+include the separately reviewed own lifetime/retained-view repair, with the
+numerical implementation and other callbacks preserved. Two source runtime critics
+and two engine runtime critics accepted the repair. See
+[own Soft/Stereo lifetimes](soft-stereo-lifetime/README.md) for the complete/caller-free
+versus deleting split, preserved worker refusals and public replay status.
 
 ## Measured behavior and scope
 

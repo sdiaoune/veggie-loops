@@ -1,0 +1,130 @@
+{
+  "soft_clipper": {
+    "loader": {
+      "status": "passed",
+      "intact_original_engine_loaded": true,
+      "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+      "actual_engine_wrapper_allocated_and_freed": true,
+      "callback_slots_exercised": 20,
+      "state_saves": 1200,
+      "state_restores": 240,
+      "failed_read_preserves_state": true,
+      "parameter_calls": 2400,
+      "stereo_frames": 140700,
+      "fl_application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "stream": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrapper": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 128,
+      "state_restores": 128,
+      "failed_hresult_full_count_rejections": 1,
+      "short_count_success_rejections": 1,
+      "single_eight_byte_transfer_checked": true,
+      "application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "standalone_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "parameter_control_changes": 2,
+      "automation_display_cases": 288,
+      "meter_full_group_and_signed_tail_checked": true,
+      "notifications_after_unlock": true,
+      "worker_ui_calls_skipped": true,
+      "off_main_destroy_preserves_view": true,
+      "native_editor_integration": false
+    },
+    "native_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "concurrent_render_attachment_metering_locked": true,
+      "metering_dispatch_lock_cases": 256,
+      "worker_tick_idle_skipped_gui": true,
+      "off_main_destroy_preserves_state": true,
+      "control_changes": 2,
+      "hints": 3,
+      "resize_notifications": 2,
+      "source_gui_resources_copied": false,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "stereo_shaper": {
+    "loader": {
+      "status": "passed",
+      "intact_original_engine_loaded": true,
+      "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+      "actual_engine_wrapper_allocated_and_freed": true,
+      "callback_slots_exercised": 20,
+      "state_saves": 1200,
+      "state_restores": 240,
+      "short_read_preserves_state": true,
+      "parameter_calls": 7200,
+      "stereo_frames": 140700,
+      "fl_application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "stream": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrapper": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 128,
+      "state_restores": 128,
+      "failed_hresult_full_count_rejections": 2,
+      "first_and_second_read_failures_checked": true,
+      "application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "routing": {
+      "status": "passed",
+      "actual_engine_plugin_and_host_adapters": true,
+      "get_out_buffer_cpp_slot": 37,
+      "pascal_slot": 496,
+      "routing_state_restores": 1200,
+      "side_output_sequences": 450,
+      "stereo_frames": 64890,
+      "routing_registration_events": 899,
+      "repeated_send_has_no_duplicate_registration": true,
+      "no_unobserved_registration_during_destroy": true,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    },
+    "standalone_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "parameter_control_changes": 6,
+      "routing_changes": 2,
+      "automation_display_cases": 50,
+      "notifications_after_unlock": true,
+      "worker_ui_calls_skipped": true,
+      "off_main_destroy_preserves_view": true,
+      "native_editor_integration": false
+    },
+    "native_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "worker_tick_idle_skipped_gui": true,
+      "control_changes": 6,
+      "hints": 7,
+      "resize_notifications": 2,
+      "source_gui_resources_copied": false,
+      "actual_fl_application_created": false,
+      "full_plugin_equivalence": false
+    }
+  }
+}

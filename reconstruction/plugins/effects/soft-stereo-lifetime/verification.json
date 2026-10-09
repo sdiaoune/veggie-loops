@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "status": "two_source_and_two_native_runtime_critics_accepted_public_working_recipe_passed_fresh_checkout_pending",
+  "files": [
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/README.md",
+      "sha256": "6fffcfdbfa21479b1442510ff83f819906b13cc33d7ec33f85eb524c874877fe",
+      "bytes": 2742,
+      "execution_paths": [
+        "source-plan/LIFETIME.md",
+        "native-plan/README.md"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/test_lifetime.mm",
+      "sha256": "864beeb6a1423eca2e9f92ac761ab24d8af8e230a8856ef79152a3a2ad47466f",
+      "bytes": 18312,
+      "execution_paths": [
+        "source-plan/test_lifetime.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/replay_lifetime.py",
+      "sha256": "bf90c6edd3a9069c11cc6def6c14abeee4641b3819ba2ac9d5ba6d863075798b",
+      "bytes": 12369,
+      "execution_paths": [
+        "source-plan/verify_lifetime.py"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/replay_native.py",
+      "sha256": "84a06cc751bfa8b97f55e1d1196430f5a18647d2a21669bf16ccf0b16c192453",
+      "bytes": 11221,
+      "execution_paths": [
+        "native-plan/verify_native.py"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/expected-results.json",
+      "sha256": "2f31f866990d2fa29a48f585f3b313c486e09eca4f8448d6288a5fc4e899ebe4",
+      "bytes": 4628,
+      "execution_paths": [
+        "native-plan/expected-results.json"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft-stereo-lifetime/verify.py",
+      "sha256": "71580aec74c17993640907a8d2aec3f77bb5de7b932cf806cb94ead48f2083bc",
+      "bytes": 8072,
+      "execution_paths": []
+    },
+    {
+      "path": "reconstruction/plugins/effects/balance_native_abi.h",
+      "sha256": "39091f5d4cb0541fa5625b9532cf631b9a805dde3f2d0ad9593bcdf65a251bdf",
+      "bytes": 3796,
+      "execution_paths": [
+        "source-plan/dependencies/balance_native_abi.h",
+        "native-plan/project/reconstruction/plugins/effects/balance_native_abi.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_dsp.hpp",
+      "sha256": "ace380a6ea0478445e924a3b80e4850277172ebd0876e14314945f28ecadd17e",
+      "bytes": 2794,
+      "execution_paths": [
+        "source-plan/dependencies/soft_clipper_dsp.hpp",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_dsp.hpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_editor.h",
+      "sha256": "53a2885365a137a8c7aa8a9536dd35f74b0c507f38b09e5ce5f6b8f7cee95d58",
+      "bytes": 1126,
+      "execution_paths": [
+        "source-plan/dependencies/soft_clipper_editor.h",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_editor.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_native_abi.h",
+      "sha256": "43b43d67ce532987095459d117331d919e0cad0b808005fbcce21b706df59de3",
+      "bytes": 1317,
+      "execution_paths": [
+        "source-plan/dependencies/soft_clipper_native_abi.h",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_native_abi.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_plugin.cpp",
+      "sha256": "216907d562ce68cd69919b107cb6ccbe7c927f1c72fdafc1bde4e09c9ab14266",
+      "bytes": 3873,
+      "execution_paths": [
+        "source-plan/dependencies/soft_clipper_plugin.cpp",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_plugin.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_plugin.h",
+      "sha256": "b099652e6ae32507ec4b5c4e1789976db1a96a8acc7c7cd07a7b4d4560e0a0f3",
+      "bytes": 2595,
+      "execution_paths": [
+        "source-plan/dependencies/soft_clipper_plugin.h",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_plugin.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_dsp.hpp",
+      "sha256": "c689553d39afeda9a442a86d27c7a3856866f88486db095fc872c0cf7653635a",
+      "bytes": 5156,
+      "execution_paths": [
+        "source-plan/dependencies/stereo_shaper_dsp.hpp",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_dsp.hpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_editor.h",
+      "sha256": "bc464ec4d9a08c03309338b16283f0459af64ef37e4efa7e4200b801c74e3e01",
+      "bytes": 1365,
+      "execution_paths": [
+        "source-plan/dependencies/stereo_shaper_editor.h",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_editor.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_native_abi.h",
+      "sha256": "c3ca6b0a273ecf10c73c7ec30812a3925fcde91a263d23472fb09e25303f9989",
+      "bytes": 2123,
+      "execution_paths": [
+        "source-plan/dependencies/stereo_shaper_native_abi.h",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_native_abi.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_plugin.cpp",
+      "sha256": "8104cca7d44334138916816b9d3380bb8b8cd562e178f36cbacb705f8616d453",
+      "bytes": 4250,
+      "execution_paths": [
+        "source-plan/dependencies/stereo_shaper_plugin.cpp",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_plugin.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_plugin.h",
+      "sha256": "624b296bde1d5757915c1dce5fecfb65f5c423a7af79c9e4d7734e32436eaf7f",
+      "bytes": 3174,
+      "execution_paths": [
+        "source-plan/dependencies/stereo_shaper_plugin.h",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_plugin.h"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_native_abi.cpp",
+      "sha256": "fed8deb6272ad571a55f4f02e947ee1cd0c552386fdeb296c32b20caa2b2764c",
+      "bytes": 6871,
+      "execution_paths": [
+        "source-plan/soft_clipper_native_abi.cpp",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_native_abi.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/soft_clipper_editor.mm",
+      "sha256": "b81a66e12a67ce64633735f499de9e3a2b8d4f14a62a9399ae0ef84e4c150923",
+      "bytes": 7341,
+      "execution_paths": [
+        "source-plan/soft_clipper_editor.mm",
+        "native-plan/project/reconstruction/plugins/effects/soft_clipper_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_native_abi.cpp",
+      "sha256": "1d135543132d9f18d16776c984ac9070a38d2cb7aab63798ac151be9d55aea70",
+      "bytes": 7368,
+      "execution_paths": [
+        "source-plan/stereo_shaper_native_abi.cpp",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_native_abi.cpp"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/stereo_shaper_editor.mm",
+      "sha256": "4d97350d866a51c3b65b3ee30f4cf569b27dfec399912b4b9c2775bd949f84f6",
+      "bytes": 6497,
+      "execution_paths": [
+        "source-plan/stereo_shaper_editor.mm",
+        "native-plan/project/reconstruction/plugins/effects/stereo_shaper_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_soft_clipper_editor.mm",
+      "sha256": "69e44878d41972a38ccb00ce796025e2be28b544b0eb6d0cf36fb743c94c72af",
+      "bytes": 6511,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_soft_clipper_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_soft_clipper_engine_loader.mm",
+      "sha256": "77508b26d45e6dacfe604c5e21537a26695792752390ebd4710248f456d18e2b",
+      "bytes": 15419,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_soft_clipper_engine_loader.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_soft_clipper_engine_stream.mm",
+      "sha256": "40180ed9a295cd749332e18945c5358ae414d950ea03208db29e065dc4e1cf67",
+      "bytes": 10205,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_soft_clipper_engine_stream.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_soft_clipper_native_editor.mm",
+      "sha256": "0cf9749082fecb0e8ed703c379d4cef496a1121351bcbb0bc2873091b72f8223",
+      "bytes": 15443,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_soft_clipper_native_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_stereo_shaper_editor.mm",
+      "sha256": "17fba1f2faca42b3365997bb538b2ffe4c8c504ab74df757f717c9a7ec07c80e",
+      "bytes": 4745,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_stereo_shaper_editor.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_stereo_shaper_engine_loader.mm",
+      "sha256": "8057af662fd2013b707434c5c036d6e698546df3079937b4b102ddfb678e7f8d",
+      "bytes": 11634,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_stereo_shaper_engine_loader.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_stereo_shaper_engine_stream.mm",
+      "sha256": "29fe5a0b293311d042b19fca1f767c165c18d798662f5a1f721b320cdb932d05",
+      "bytes": 8415,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_stereo_shaper_engine_stream.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_stereo_shaper_host_routing.mm",
+      "sha256": "fdd853ae66366ba472b791827334690118b6058d27968b856771bc69d4f87af4",
+      "bytes": 9285,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_stereo_shaper_host_routing.mm"
+      ]
+    },
+    {
+      "path": "reconstruction/plugins/effects/test_stereo_shaper_native_editor.mm",
+      "sha256": "ca364d2c160b21022f74338cdc933fbcc453a5b0bbc0d6be53213f0abf40c36c",
+      "bytes": 9596,
+      "execution_paths": [
+        "native-plan/project/reconstruction/plugins/effects/test_stereo_shaper_native_editor.mm"
+      ]
+    }
+  ],
+  "original_images": [
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib",
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+      "bytes": 63038992,
+      "role": "executed_intact_engine"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib",
+      "sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "bytes": 34224720,
+      "role": "engine_dependency_identity_only_not_directly_called_by_harness"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Effects/Fruity Soft Clipper/Fruity Soft Clipper_x64.dylib",
+      "sha256": "fe22c1b186c907333210f511f0aced4147d7842d72bd38df1d56661ff337aa8d",
+      "bytes": 4623264,
+      "role": "static_origin_not_loaded_by_new_recipe"
+    },
+    {
+      "path": "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Effects/Fruity Stereo Shaper/Fruity Stereo Shaper_x64.dylib",
+      "sha256": "0087d215734c061be930d5a01282e2a3654306cc595f8acb8ba3142051169804",
+      "bytes": 4788000,
+      "role": "static_origin_not_loaded_by_new_recipe"
+    }
+  ],
+  "source_profiles": 12,
+  "fatal_source_semantic_negatives": 14,
+  "engine_result_documents": 18,
+  "own_signed_arm64_products_source_recipe": 26,
+  "own_signed_arm64_products_engine_recipe": 26,
+  "source_two_independent_runtime_review_reports": [
+    "analysis/plugins/review/soft-stereo-lifetime-generators-runtime-independent.json",
+    "analysis/plugins/review/soft-stereo-lifetime-mixer-runtime-independent.json"
+  ],
+  "engine_two_independent_runtime_review_reports": [
+    "analysis/plugins/review/soft-stereo-native-runtime-mixer-independent.json",
+    "analysis/plugins/review/root-Soft-Stereo-native-runtime-independent.json"
+  ],
+  "combined_acceptance": {
+    "path": "analysis/plugins/review/root-Soft-Stereo-two-critic-native-acceptance.json",
+    "sha256": "1584ae955747b2d89e6a7d7db40a82d6c4466589e969b02ca57f4a34a6125b8b"
+  },
+  "public_package_replay_passed": true,
+  "original_extra_destructor_GUI_class_allocator_application_registration_scheduler_RT_or_whole_equivalence": false,
+  "historical_private_failure_artifacts_required_by_public_recipe": false,
+  "full_plugin_equivalence": false,
+  "fresh_checkout_replay_passed": false,
+  "working_public_recipe_proof": {
+    "path": "analysis/plugins/review/root-Soft-Stereo-public-working-runtime.json",
+    "sha256": "b444456b953dae2090fb070e46f45a2804b5b0851d477e578ba1d548645b5831",
+    "bytes": 446547
+  },
+  "two_independent_public_package_static_reviews": [
+    {
+      "path": "analysis/plugins/review/soft-stereo-public-packaging-generators-v2-source-independent.json",
+      "sha256": "3bd0548d55544197c631a6c8b4d7efe6091b4fb9eb4299a85aee28ac914af2f0"
+    },
+    {
+      "path": "analysis/plugins/review/soft-stereo-public-layout-mixer-v2-static-independent.json",
+      "sha256": "627f4aa297901266e2b5a9e337709cb769c3202f88f78a0cf9dd9fd7958899a3"
+    }
+  ]
+}

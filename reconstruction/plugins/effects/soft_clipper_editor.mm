@@ -191,5 +191,7 @@ extern "C" int vl_soft_clipper_editor_destroy(void *e) {
   auto *v = (__bridge_transfer VLSoftClipperEditorView *)e;
   [v removeFromSuperview];
   v.numerical = nullptr;
+  v.callbacks = {};
+  for(NSControl* control in v.sliders)control.target=nil;
   return 1;
 }
