@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "component": "VL Phase Inverter",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/phase_inverter_plugin.h": "b0a6970f539d83b2838bdf56092671f224c4bac1c110245107d1b5380b19cb03",
+    "reconstruction/plugins/effects/phase_inverter_plugin.cpp": "5cb52854c9b38b0d091d97df36494beb4f5b8d39868e21764359556d545866f0",
+    "reconstruction/plugins/effects/test_phase_inverter_factory.mm": "1c2ccd5521b3e0557f7d46e2fcf0468ca50ae7ac3ac41b1b1c4d6f2691bdef3a",
+    "reconstruction/plugins/effects/verify_phase_inverter.sh": "f7d040f6163a811fe9195a3145995f8aea83b7710eb65047698df27c5282bc07",
+    "reconstruction/plugins/effects/phase_inverter_native_abi.h": "a925b4b175d2606453ee619baaabb182f8fca43e64ef76ec18c3dee21ddb388f",
+    "reconstruction/plugins/effects/phase_inverter_native_abi.cpp": "044bfd3fc4924a6a6b6f71b0ad945315525c54ef1a7d68ce05a91dc3178bd9ba",
+    "reconstruction/plugins/effects/test_phase_inverter_engine_loader.mm": "edd90afa4fea04d45296cf5d03c2dd43e2ce87fb7c02c3588b7d45a4cb38d41b",
+    "reconstruction/plugins/effects/verify_phase_inverter_engine_loader.sh": "da7b953d595ffc4103f84ff59a0c4bea1ca5c5724255f3d9f972e0736294d581",
+    "reconstruction/plugins/effects/test_phase_inverter_engine_stream.mm": "fd659efff18492f36f2900a963f43598e8fa4b891b944d738dae3de0c56cac0a",
+    "reconstruction/plugins/effects/verify_phase_inverter_engine_stream.sh": "ba1b4b00ec18fdd5119b2640382a9e602ededbb0485aeac965aeb67500d64837",
+    "reconstruction/plugins/effects/phase_inverter_editor.h": "aea02eee3b6310ef584a43397e838d5f7dcfa54cb86e8b04e387b0c1169afb34",
+    "reconstruction/plugins/effects/phase_inverter_editor.mm": "a3d13394b78b9d5edf713a281cff0012b297b393f745c6ed04078755bc27d15b",
+    "reconstruction/plugins/effects/test_phase_inverter_editor.mm": "255033796726c98ddce5deed31d03e33e316665393522e89cae689e36f030624",
+    "reconstruction/plugins/effects/verify_phase_inverter_editor.sh": "dc51a81a4784bf0d5ac9eadb082c58fe0205af66ff2e04d181ef0d2c28de6b5a",
+    "reconstruction/plugins/effects/PHASE_INVERTER.md": "5022bdc53b316653da4d4f63018221e36f16029c3df184ef7f1d5ea3ff1229e4",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8",
+    "reconstruction/plugins/effects/test_phase_inverter_native_editor.mm": "10f3989fdec3613f871512a35ee84b5834f7461300c9ea305b34806f40237df3"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Phase Inverter universal": "1112f888d7b489d45bbbe74e20aec729b385c949feb6506363107743cfe38bc4",
+    "Fruity Phase Inverter arm64": "86d2b23ba8e66bb18d3cdaa296aa2157894b5a122e8d7b4340f18fa22c88c2b7",
+    "FLEngine universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math"
+  ],
+  "checks": {
+    "source_factory": {
+      "command": "./reconstruction/plugins/effects/verify_phase_inverter.sh",
+      "result": {
+        "status": "passed",
+        "actual_original_factory_created_and_destroyed": true,
+        "compiled_c_abi_dylib_compared": true,
+        "parameter_and_control_cases": 4099,
+        "valid_state_restore_cases": 512,
+        "render_cases": 2561,
+        "stereo_frames": 274830,
+        "sample_class_bit_patterns_compared": true,
+        "full_plugin_equivalence": false
+      }
+    },
+    "intact_engine_loader": {
+      "command": "./reconstruction/plugins/effects/verify_phase_inverter_engine_loader.sh",
+      "result": {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "callback_slots_exercised": 20,
+        "state_saves": 1200,
+        "state_restores": 240,
+        "short_read_preserves_state": true,
+        "parameter_calls": 1200,
+        "stereo_frames": 140700,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "actual_engine_stream_classes": {
+      "command": "./reconstruction/plugins/effects/verify_phase_inverter_engine_stream.sh",
+      "result": {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrapper": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 128,
+        "state_restores": 128,
+        "failed_hresult_full_count_rejections": 2,
+        "first_and_second_read_failures_checked": true,
+        "application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    },
+    "independent_appkit_editor": {
+      "command": "./reconstruction/plugins/effects/verify_phase_inverter_editor.sh",
+      "results": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "control_changes": 3,
+          "automation_display_cases": 1025,
+          "host_notifications_after_unlock": true,
+          "worker_gui_calls_skipped": true,
+          "off_main_destroy_preserves_view": true,
+          "native_fl_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "worker_tick_idle_skipped_gui": true,
+          "off_main_destroy_preserves_state": true,
+          "control_changes": 3,
+          "hints": 4,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
+    }
+  },
+  "independent_review": {
+    "source_factory_numerical": "passed",
+    "native_loader_and_stream": "passed on independently copied final outer-thread-guard source",
+    "standalone_appkit_editor": "passed with native editor and actual engine adapters on final source",
+    "worker_hint_main_thread_guard": "passed on independently copied final outer-thread-guard source",
+    "worker_hint_and_destroy_outer_guards": "passed on independently copied final outer-thread-guard source",
+    "signed32_hresult_and_real_stream_provider": "passed on independently copied final outer-thread-guard source"
+  },
+  "limits": [
+    "valid stereo32-bit sample storage,0..1024frames; separate or identical buffers; partial overlap rejected",
+    "raw0..1024 or normalized MIDI0..2^30; default nearest-even FP environment",
+    "instance calls serialized or protected by host mix lock",
+    "source factory valid4+4state framing with null completion outputs",
+    "main-thread GUI/hints/editor destruction; keep host/numerical state alive until main retry",
+    "live FL application/project/mixer hosting, original VCL/hints equivalence and project/preset envelopes unverified",
+    "x86_64 and VST/AU formats unimplemented",
+    "optional independent AppKit editor uses actual engine adapters with synthetic host; original VCL/hints and full application UI unverified"
+  ]
+}

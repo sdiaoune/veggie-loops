@@ -46,13 +46,14 @@ void hostHint(void* context,const char* text){auto& o=*static_cast<Instance*>(co
 #endif
 void destroy(Plugin* p){if(p){
 #if defined(VL_BALANCE_APPKIT_EDITOR)
+  if(!vl_balance_editor_main_thread())return;
   if(!vl_balance_editor_destroy(instance(p).editor))return;
 #endif
   vl_balance_destroy(instance(p).numerical);delete &instance(p);
 }}
 std::intptr_t dispatch(Plugin* p,std::intptr_t id,std::intptr_t,std::intptr_t value){
 #if defined(VL_BALANCE_APPKIT_EDITOR)
-  if(id==0){auto& object=instance(p);
+  if(id==0){if(!vl_balance_editor_main_thread())return 0;auto& object=instance(p);
     if(value && !object.editor){const VLBalanceEditorHost callbacks{&object,hostLock,hostUnlock,hostChanged,hostHint};
       object.editor=vl_balance_editor_create(object.numerical,&callbacks);}
     vl_balance_editor_attach(object.editor,reinterpret_cast<void*>(value));
@@ -103,7 +104,7 @@ std::int32_t parameter(Plugin* p,std::int32_t index,std::int32_t value,std::int3
   std::int32_t result=0;
   vl_balance_parameter(instance(p).numerical,index,value,static_cast<std::uint32_t>(flags)&35u,&result);
 #if defined(VL_BALANCE_APPKIT_EDITOR)
-  if(flags&4)vl_balance_editor_hint(instance(p).editor,index,result);
+  if((flags&4) && vl_balance_editor_main_thread())vl_balance_editor_hint(instance(p).editor,index,result);
 #endif
   return result;
 }

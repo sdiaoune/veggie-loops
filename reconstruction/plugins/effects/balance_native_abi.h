@@ -7,12 +7,13 @@
 // This experimental wrapper is separately tested through unchanged engine
 // adapters. Loading it into the FL Studio application is a further gate.
 // Numerical preconditions match balance_plugin.h: finite stereo buffers,
-// 0..1024 frames, 8..192 kHz, pan -128..128 and volume 0..320. An original
-// editor/hint implementation is optional with VL_BALANCE_APPKIT_EDITOR. In that
-// build, host automation is reflected on GUI Idle; UI calls run on the main
+// 0..1024 frames, 8..192 kHz, pan -128..128 and volume 0..320. An independently
+// written editor/hint implementation is optional with VL_BALANCE_APPKIT_EDITOR.
+// In that build, host automation is reflected on GUI Idle; UI calls run on the main
 // thread and use the verified host lock/unlock boundary for numerical access.
-// DestroyObject must run on the main thread when an editor exists. An off-main
-// attempt preserves the object/view until a main-thread retry; do not unload
+// DestroyObject in an optional-editor build must run on the main thread, even
+// before editor creation. An off-main attempt preserves the object/view until a
+// main-thread retry; do not unload
 // the module or its host before completing destruction. Tick/MIDI tick never
 // access GUI state. Hint flag 4 is for GUI calls outside the host mixer lock.
 namespace veggie_loops::balance::native {

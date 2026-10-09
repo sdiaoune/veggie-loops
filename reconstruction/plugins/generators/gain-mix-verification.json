@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "stereo_mix_cases": 48000,
+  "rendered_float_values_exact": 45099172,
+  "alignment_offsets_covered": 16,
+  "unequal_scalar_tail_verified": true,
+  "pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "gain-mix",
+  "source_sha256": {
+    "three_osc_gain_mix.hpp": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+    "three_osc_gain_mix.cpp": "98775ddf9b568fbfb02f94a26573a32b11553d1adaf0dce162e5c42a68fe46ee",
+    "test_three_osc_gain_mix.mm": "1bce9085c44bcb4f683c651af715d6b2c4f05f596813ea1afdf1fd2873eb3e81",
+    "verify-gain-mix.sh": "fc03446642d88ae57856cf72508ea88d811f60b19c00052aaac9c0b8aed8ddb8",
+    "summarize_mix_declick.py": "ad54cef0c7455a0128b297ae869f150a240455f5c0bb2197badadb8d701266d7",
+    "MIX_DECLICK.md": "c67196081d052dc179a2742f53141ddb5fe073f850b5490278c857a85165b165"
+  },
+  "compiled_dylib_sha256": "4fc3b25552027e6f5b84536a16de769e92b912a5b2ca69af5509bc0c8ba24016",
+  "reviewed_native_target": {
+    "name": "installed 3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "native_fruity_factory_rebuilt": false,
+    "voice_pipeline_integrated": false,
+    "filter_rebuilt": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Normal prepared-domain serial calls only; headers specify arithmetic and buffer preconditions.",
+    "The original wrapper is a read-only oracle; no native asset bytes or commercial DSP library is embedded.",
+    "Two isolated stereo accumulation routines and precomputed release/table arithmetic are not complete final voice DSP.",
+    "Native allocation/unwind/invalid inputs, GUI, host routing and complete generator/VST/AU equivalence remain open."
+  ]
+}

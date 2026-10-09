@@ -8,8 +8,8 @@
     "reconstruction/plugins/effects/balance_dsp.hpp": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
     "reconstruction/plugins/effects/balance_plugin.h": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
     "reconstruction/plugins/effects/balance_plugin.cpp": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
-    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
-    "reconstruction/plugins/effects/balance_native_abi.cpp": "1019f230d25f064178a359841cfd71496b38d79ba10d58bfc764a5769ef209f2",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/balance_native_abi.cpp": "43a7fa03aa2b2e3ecf19b0327e0f913d423b89c04baeeb51ae77809fac62cc3b",
     "reconstruction/plugins/effects/balance_editor.h": "b617928d22768ff1c96c04cf2bca2cfc0978b4819a7454e6ac4a52fda5d67a9f",
     "reconstruction/plugins/effects/balance_editor.mm": "97ae880d3b86364240d3002d5b6e4e61d84d353d21848d50961142e327ff64ae",
     "reconstruction/plugins/effects/test_balance_model.cpp": "660a08edf8aa1b18e0163c1cefed6467c8c49aa1dc61e2393801fff64187b43f",
@@ -19,11 +19,11 @@
     "reconstruction/plugins/effects/test_balance_native_abi.cpp": "527516f1b04bcb667569a26b21824686f4ac7ca4bf62fcd6658c4bc0036d3532",
     "reconstruction/plugins/effects/test_balance_engine_loader.mm": "b0ee2e5df30bbb427692f3a35bfe01281e0754c2887ad91f11fbea7639f37b83",
     "reconstruction/plugins/effects/test_balance_editor.mm": "ab7ad011fe52dbee056688a42e09dda7fc803c3e01f405f9af5abefa28653853",
-    "reconstruction/plugins/effects/test_balance_native_editor.mm": "8f9a352fc8eac9ed706d2b19f11a813880b1631bf162b8191c28b8ad3db40697",
+    "reconstruction/plugins/effects/test_balance_native_editor.mm": "186ae183e085c2a359d3283eb95c8e519762facf161fd434af98728dc659dce6",
     "reconstruction/plugins/effects/verify.sh": "43d9ba2c1b5b68992294c33859ace62d617c09dd8b6df4a1ce90acaca2285baf",
     "reconstruction/plugins/effects/verify_engine_loader.sh": "a9ffa392ca6c29dd115e3ef37fe390c9c4ab70418db804c36341adf911dce4a7",
     "reconstruction/plugins/effects/verify_editor.sh": "276a12da6763d4b6c3b9406b29e70fc73a3ff579d1810f9278ff6d8bc555450f",
-    "reconstruction/plugins/effects/README.md": "65bcf43a15337e37ec14ace4240fb920a376c958e41281737416d74db4f2b1a0",
+    "reconstruction/plugins/effects/README.md": "e60417ad32a43c85605446a4c831d668705881f14a9e26794b85ffdd5c41d520",
     "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
     "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
     "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
@@ -79,7 +79,30 @@
       "hint_notifications": 3,
       "resize_notifications": 2,
       "worker_tick_midi_tick_idle_skip_gui": true,
-      "off_main_destruction_preserves_attached_editor": true
+      "off_main_destruction_preserves_attached_editor": true,
+      "results": [
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "control_changes": 2,
+          "host_callbacks_after_unlock": true,
+          "off_main_destroy_refused": true,
+          "native_fl_editor_integration": false
+        },
+        {
+          "status": "passed",
+          "independently_written_appkit_editor": true,
+          "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
+          "worker_tick_idle_skipped_gui": true,
+          "control_changes": 2,
+          "hints": 3,
+          "resize_notifications": 2,
+          "source_gui_resources_copied": false,
+          "actual_fl_application_created": false,
+          "full_plugin_equivalence": false
+        }
+      ]
     },
     "actual_engine_stream_provider": {
       "command": "./reconstruction/plugins/effects/verify_engine_stream.sh",
@@ -105,17 +128,19 @@
     }
   },
   "independent_review": {
-    "fixed_editor_regression": "passed on current signed32 source",
-    "fixed_native_adapter": "passed on current signed32 source",
-    "fixed_intact_engine_loader": "passed on current signed32 source",
+    "fixed_editor_regression": "passed on independently copied final outer-thread-guard source",
+    "fixed_native_adapter": "passed on independently copied final outer-thread-guard source",
+    "fixed_intact_engine_loader": "passed on independently copied final outer-thread-guard source",
     "canonical_float_flags_numerical": "passed",
-    "signed32_hresult_and_real_stream_provider": "passed on independently copied final source",
-    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed"
+    "signed32_hresult_and_real_stream_provider": "passed on independently copied final outer-thread-guard source",
+    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed",
+    "worker_hint_main_thread_guard": "passed on independently copied final outer-thread-guard source",
+    "worker_hint_and_destroy_outer_guards": "passed on independently copied final outer-thread-guard source"
   },
   "limits": [
     "finite stereo inputs; separate or identical buffers; partial overlap excluded",
     "tested numerical parameter and frame domains described in headers and README",
-    "GUI operations and editor-present destruction require main thread; numeric access serial or locked",
+    "GUI operations and all native destruction in optional-editor builds require main thread; numeric access serial or locked",
     "actual FL application, project and mixer integration unverified",
     "original VCL/artwork parity unverified",
     "x86_64 and VST/AU formats unimplemented"

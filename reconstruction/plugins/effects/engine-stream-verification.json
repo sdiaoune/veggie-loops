@@ -8,12 +8,12 @@
     "reconstruction/plugins/effects/balance_dsp.hpp": "4929742eb436ad02b085fd3414b912d6e9560fea195648465c0b03760558fc00",
     "reconstruction/plugins/effects/balance_plugin.h": "cc24b19382c9ed83de6a0366364fa1e2960aea0110ff92dd8de262f695d0968f",
     "reconstruction/plugins/effects/balance_plugin.cpp": "20855cc39eeef06821b59b287c2fa331f90e5543bf3779ec41ea6d622efa0e08",
-    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
-    "reconstruction/plugins/effects/balance_native_abi.cpp": "1019f230d25f064178a359841cfd71496b38d79ba10d58bfc764a5769ef209f2",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+    "reconstruction/plugins/effects/balance_native_abi.cpp": "43a7fa03aa2b2e3ecf19b0327e0f913d423b89c04baeeb51ae77809fac62cc3b",
     "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
     "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
-    "reconstruction/plugins/effects/mute2_native_abi.h": "7edb6359523d8b850b2d7f1ec30fad428877b9886f701991a658be536ba8cd51",
-    "reconstruction/plugins/effects/mute2_native_abi.cpp": "7a8ec30e09c2c7935d81d5569b5e58d200baaf74f7018b42989255f5a6d49b0b",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "8eae81d971b81ac4dc5e69a9a84a8e3429c35b50dcaf459ea22b6ebc3f8dcd31",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "134b8fc9006c25c11a3632261853a4c2814a8b7550e7f4666abfbdbcb0bebd73",
     "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
     "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
     "reconstruction/plugins/effects/ENGINE_STREAMS.md": "3436bcb537cfd550ea1342813e55bdec518a75fec044225a81c81baff39cabd8"
@@ -46,7 +46,7 @@
     "hresult_return_bits": 32,
     "static_engine_caller_constructs_same_provider_and_passes_interface": true
   },
-  "independent_review": "passed on independently copied final source",
+  "independent_review": "passed on independently copied final outer-thread-guard source",
   "limits": [
     "calls serialized; numerical domain and lifecycle contracts in both native headers",
     "actual engine classes and wrappers called in a local process; full application caller unexecuted",

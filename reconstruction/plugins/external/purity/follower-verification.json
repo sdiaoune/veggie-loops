@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "component": "Purity mathematical envelope follower primitive",
+  "status": "native_differential_passed_and_independently_accepted",
+  "target": {
+    "name": "installed PurityVST1.4.5.1",
+    "universal_sha256": "ef2675ee69f9498ae10807820660e1158ba3c50684f44dea46b03efd7ceb1b07",
+    "arm64_sha256": "f05490472c0c170b99caa93ce9efa41eb712035bb253d53c29909ea00bc8816f",
+    "native_fixture_architecture": "macOSarm64"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "caller_owned_state_bytes": 32,
+    "native_class_abi": false,
+    "full_voice_pipeline": false,
+    "native_plugin_recompiled": false,
+    "gui": false,
+    "state_loader": false,
+    "vst_au_host_equivalence": false
+  },
+  "native_comparison": {
+    "status": "passed",
+    "state_cases": 970888,
+    "exact_state_bytes": 31068416,
+    "sequences": 414,
+    "random_cases": 10000,
+    "unit_overshoot_blocks": 109943,
+    "invalid_cases": 57,
+    "guarded": true,
+    "native_plugin_recompiled": false
+  },
+  "source_sha256": {
+    "envelope_follower.h": "bedfc9c0c4874cfc8a20552f191908fbe88b57ac80c26687c2effe17d3162f1e",
+    "envelope_follower.cpp": "56c6fbf6a475fce0bdc1aeb2eb0a958a8a741503898675fc1cae4874374c75d0",
+    "test_envelope_follower.mm": "db678351a6936162d027d100389da5da283fe0a1bb74006d268b6ffd59ee4875",
+    "verify-follower.sh": "07f8a4bd1d9f036802cd9788b7412d1a6a8bd82d0b0414d7064e737b836a6841",
+    "FOLLOWER.md": "fb11fd5acc96bef980115d43583d3068ff124bda9411834a208a4c38b2e4b38b",
+    "envelope_curve.h": "5f6205d85aa74bca73e89eebf7c179efaee9128a44323733238fefda9cef41a8",
+    "envelope_curve.cpp": "8106922e9723fd7ee34145395bc9b76a662a8dbb3ec89685f92964568ac1275b"
+  },
+  "compiled_library_sha256": "ff0ea3c0a82a30560fe5ed5293a3f8bbb411b156544413f78410c770476e47e0",
+  "sanitizers": {
+    "rebuilt_library_and_fixture": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "commercial_reference_instrumented": false
+  },
+  "native_asset_bytes_embedded": false,
+  "limitations": [
+    "Finite generated-curve corpus in default floating-point environment, not arbitrary curve equivalence.",
+    "Caller linear level accumulation and note-off initialization are outside the primitive.",
+    "Full plugin factory, state, engine and editor reconstruction remains incomplete."
+  ],
+  "repair": "Permit finite native-produced previous increment/level; release scale[-2,2]; repeated steep curve count1 with immediate overshoot capture at note-off.",
+  "independent_review": "Independent copied sanitizer replay of970888records/31068416bytes and both minimal repeated increment/level overshoot regressions passed; full plugin remains false."
+}

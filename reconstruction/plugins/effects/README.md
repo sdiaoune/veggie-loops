@@ -122,8 +122,8 @@ numerical state, then notify the host after unlocking. Host automation and meter
 refresh during GUI Idle. Resize notification is deferred until Idle so that the
 real engine adapter has copied the newly attached editor handle first.
 Tick and MIDI tick callbacks do no GUI work; Idle skips editor and host state
-when invoked off the main thread. All editor operations, hint flags and native
-plugin destruction while an editor exists must run on the main thread. An
+when invoked off the main thread. All editor operations, hint flags and all native
+plugin destruction in an optional-editor build must run on the main thread. An
 off-main destruction attempt preserves the object and attached view until a
 main-thread retry; the module and host must remain alive until that retry
 finishes. Numerical callbacks require serial access or the host's mix lock.
@@ -136,8 +136,10 @@ This check uses the intact engine's real plugin and host adapter classes with a
 synthetic Pascal host. It exercises control changes, hint flags, automation,
 audio/meter refresh, resize ordering, detach, reattach and destruction. Worker
 tick, MIDI tick and Idle calls are verified to leave a pending resize for main
-Idle, and off-main destruction is verified to preserve the attached editor.
+Idle. Concurrent worker hint calls overlap first attachment without accessing
+GUI-owned editor state. Worker detach and destruction before or after attachment
+preserve the editor and numerical instance for main-thread handling.
 No original
 VCL resources or artwork are included. Original GUI parity, actual FL application
-and mixer integration, x86_64, VST/AU formats and 82 other effect families remain
+and mixer integration, x86_64, VST/AU formats and 81 further effect families remain
 open; a complete plugin reconstruction is not certified by these checks.

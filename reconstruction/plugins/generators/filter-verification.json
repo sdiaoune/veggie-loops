@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "coefficient_cases": 54000,
+  "filter_render_cases": 54000,
+  "exact_float_state_values": 46446912,
+  "rate_contexts": 7,
+  "kernel_families": 3,
+  "in_place_and_disjoint": true,
+  "audio_pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "filter",
+  "source_sha256": {
+    "three_osc_filter.hpp": "16a34e38104319a14e1de0c6f338ab6fb9381817640054913e73513e1b6c53a5",
+    "three_osc_filter.cpp": "9bbeb0361080583ceda8c6ad78ad930b301bca151b9f05793d2526b1fd2887fc",
+    "test_three_osc_filter.mm": "f1ec65df6754cfcce3df4a04feb43bf55d94420160b95ef201d4d18540bdf02b",
+    "verify-filter.sh": "9d7bf876f18bbbaa73f2e45c0c9a3381e256f50780359fc021e94f9ff9b75f61",
+    "summarize_filter.py": "74ba7ac04d191149fe94f14ee4197272d76815a812a0ad1ced60494d8002224b",
+    "FILTER.md": "0012d4c09978a8459e8b1ee520f99a825e53e9304352664b5443297601e58ff0"
+  },
+  "compiled_dylib_sha256": "300fe0846ba6f0c2064add24475268b9649457068ff9c8dca8bd97557b2253b9",
+  "reviewed_native_target": {
+    "name": "3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "prepared_single_biquad_special_kernels_verified": true,
+    "native_context_production_rebuilt": false,
+    "filter_activation_routing_rebuilt": false,
+    "double_order_gain_compensation_rebuilt": false,
+    "audio_pipeline_integrated": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Finite prepared-domain coefficients/history/buffers only; header preconditions apply.",
+    "Initialized exponent/denormal context is explicitly checked; native context/preference production and actual host routing are not reconstructed.",
+    "Native coefficient inputs[-2,2], render preparation[0,1], frames0..4096, seven rate contexts8000..384000Hz. Other rates/domains are unproved.",
+    "Biquad coefficient type1..5 only; general design helper types6..8, filter activation, double-order compensation, lifecycle and voice audio integration remain open.",
+    "No commercial binary or native assets are embedded, and no complete Fruity/VST/AU/FL equivalence is claimed."
+  ]
+}

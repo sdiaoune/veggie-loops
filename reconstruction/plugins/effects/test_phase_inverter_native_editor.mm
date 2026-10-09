@@ -2,7 +2,7 @@
 #if !defined(__APPLE__) || !defined(__aarch64__)
 #error This identity-bound native editor test requires macOS arm64.
 #endif
-#include "mute2_native_abi.h"
+#include "phase_inverter_native_abi.h"
 #include <CommonCrypto/CommonDigest.h>
 #include <dlfcn.h>
 #include <array>
@@ -19,7 +19,7 @@
 #include <atomic>
 
 namespace {
-using namespace veggie_loops::mute2::native;
+using namespace veggie_loops::phase_inverter::native;
 void require(bool v,const char* m){if(!v)throw std::runtime_error(m);}
 std::string sourceHash(const char* path){
   std::ifstream in(path,std::ios::binary);require(in.good(),"Cannot read engine");
@@ -45,7 +45,7 @@ std::intptr_t hostDispatch(Host* h,std::intptr_t tag,std::intptr_t id,std::intpt
 }
 }
 int main(int argc,char** argv){@autoreleasepool{try{
- require(argc==3,"Usage: test_mute2_native_editor inspected-engine compiled-editor-plugin");
+ require(argc==3,"Usage: test_phase_inverter_native_editor inspected-engine compiled-editor-plugin");
  require(sourceHash(argv[1])=="22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37","Engine identity changed");
  [NSApplication sharedApplication];void* engine=dlopen(argv[1],RTLD_NOW|RTLD_LOCAL);require(engine,"Engine load failed");
  Dl_info image{};require(dladdr(dlsym(engine,"CreateFruityInstance"),&image),"Engine image unavailable");auto* base=static_cast<char*>(image.dli_fbase);
@@ -61,12 +61,12 @@ int main(int argc,char** argv){@autoreleasepool{try{
  auto parameter=method<std::int32_t(*)(void*,std::int32_t,std::int32_t,std::int32_t)>(wrapper,0xf8);
  // Optional-editor native destruction is main-thread even before first attachment.
  std::thread unattachedDestroyWorker([&]{method<void(*)(void*)>(wrapper,0xc8)(wrapper);});unattachedDestroyWorker.join();
- require(parameter(wrapper,0,0,2)==512,"Worker unattached destruction freed native state");
+ require(parameter(wrapper,0,0,2)==1024,"Worker unattached destruction freed native state");
  auto* parent=[[NSView alloc]initWithFrame:NSMakeRect(0,0,500,300)];
  // Worker hint/get calls overlap the editor's first creation. They must keep
  // numerical access working while skipping GUI-owned editor pointer access.
  std::atomic<bool> stopHints=false,hintNumericalFailed=false;std::atomic<size_t> workerHintCalls=0;
- std::thread attachmentWorker([&]{while(!stopHints.load(std::memory_order_acquire)){if(parameter(wrapper,0,0,6)!=512)hintNumericalFailed.store(true);workerHintCalls.fetch_add(1,std::memory_order_release);}});
+ std::thread attachmentWorker([&]{while(!stopHints.load(std::memory_order_acquire)){if(parameter(wrapper,0,0,6)!=1024)hintNumericalFailed.store(true);workerHintCalls.fetch_add(1,std::memory_order_release);}});
  while(workerHintCalls.load(std::memory_order_acquire)==0)std::this_thread::yield();
  dispatch(wrapper,0,0,reinterpret_cast<std::intptr_t>((__bridge void*)parent));
  stopHints.store(true,std::memory_order_release);attachmentWorker.join();
@@ -76,17 +76,20 @@ int main(int argc,char** argv){@autoreleasepool{try{
  std::thread worker([&]{method<void(*)(void*)>(wrapper,0x138)(wrapper);method<void(*)(void*)>(wrapper,0x140)(wrapper);idle(wrapper);dispatch(wrapper,0,0,0);});worker.join();
  require(host.resizes==0 && host.locks==locksBeforeWorker && parent.subviews.count==1 && get<std::intptr_t>(wrapper,24)!=0,"Worker tick/Idle accessed GUI/host state");
  idle(wrapper);require(host.resizes==1,"Deferred native editor resize notification failed");
- NSView* editor=parent.subviews[0];NSButton* enabled=nil;NSSegmentedControl* channels=nil;
- for(NSView* view in editor.subviews){if([view isKindOfClass:NSButton.class])enabled=(NSButton*)view;if([view isKindOfClass:NSSegmentedControl.class])channels=(NSSegmentedControl*)view;}
- require(enabled && channels,"Native editor widgets absent");
- enabled.state=NSControlStateValueOff;[enabled sendAction:enabled.action to:enabled.target];require(host.index==0 && host.value==0 && parameter(wrapper,0,0,2)==0,"Audio UI/native parameter mismatch");
- channels.selectedSegment=2;[channels sendAction:channels.action to:channels.target];require(host.index==1 && host.value==1024 && parameter(wrapper,1,0,2)==1024,"Channel UI/native parameter mismatch");
- require(host.changes==2 && host.hints==2 && host.hint=="Muted channels: Right","Native host UI notification failed");
+ NSView* editor=parent.subviews[0];NSSegmentedControl* inversion=nil;
+ for(NSView* view in editor.subviews)if([view isKindOfClass:NSSegmentedControl.class])inversion=(NSSegmentedControl*)view;
+ require(inversion && inversion.selectedSegment==2,"Native editor widget/default absent");
  std::array<float,2> input{1,2},output{};
- host.locked=true;method<void(*)(void*,const float*,float*,int32_t)>(wrapper,0x100)(wrapper,input.data(),output.data(),1);host.locked=false;
- require(output[0]==1 && output[1]==0,"UI channel selection did not affect native audio");
- parameter(wrapper,0,512,17);parameter(wrapper,1,342,17);idle(wrapper);require(enabled.state==NSControlStateValueOn && channels.selectedSegment==1,"Host automation/editor refresh failed");
- parameter(wrapper,0,0,6);require(host.hints==3 && host.hint=="Audio: Enabled","Native hint flag failed");
+ for(int32_t choice=0;choice<3;++choice){
+  inversion.selectedSegment=choice;[inversion sendAction:inversion.action to:inversion.target];require(host.index==0 && host.value==choice*512 && parameter(wrapper,0,0,2)==choice*512,"Inversion UI/native parameter mismatch");
+  host.locked=true;method<void(*)(void*,const float*,float*,int32_t)>(wrapper,0x100)(wrapper,input.data(),output.data(),1);host.locked=false;
+  require(output[0]==(choice==1?-1:1) && output[1]==(choice==2?-2:2),"UI selection did not affect native channel polarity");
+ }
+ require(host.changes==3 && host.hints==3 && host.hint=="Inversion: Right","Native host UI notification failed");
+ parameter(wrapper,0,341,17);idle(wrapper);require(inversion.selectedSegment==0,"Bypass edge automation display failed");
+ parameter(wrapper,0,342,17);idle(wrapper);require(inversion.selectedSegment==1,"Left edge automation display failed");
+ parameter(wrapper,0,683,17);idle(wrapper);require(inversion.selectedSegment==2,"Right edge automation display failed");
+ parameter(wrapper,0,512,17);idle(wrapper);parameter(wrapper,0,0,6);require(host.hints==4 && host.hint=="Inversion: Left","Native hint flag failed");
  const auto hintsBeforeWorker=host.hints;
  std::thread destroyWorker([&]{parameter(wrapper,0,0,6);method<void(*)(void*)>(wrapper,0xc8)(wrapper);});destroyWorker.join();
  require(parent.subviews.count==1 && host.hints==hintsBeforeWorker && parameter(wrapper,0,0,2)==512,"Worker hint/destruction accessed GUI or freed state");

@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "real_native_factory_fixtures": 180,
+  "two_live_voices": true,
+  "actual_GenRender_blocks": 2160,
+  "stereo_float_values_exact": 2046600,
+  "state_values_exact": 43200,
+  "actual_native441sample_release_tables": 180,
+  "default_editor_only": true,
+  "host_pan_callback_controlled": true,
+  "native_factory_rebuilt": false,
+  "modulation_filter_editor_rebuilt": false,
+  "full_plugin_recompiled": false,
+  "module": "default-voice",
+  "source_sha256": {
+    "three_osc_default_voice.h": "86a1b846287db436c12ffe35ffb54488567695fd5b3bbb8d4d22be690f4063ff",
+    "three_osc_default_voice.cpp": "d0f0a4c32f98839c055311b3a5c585ff27f7e0f07b0d499b5be094f4e79512f6",
+    "test_three_osc_default_voice.mm": "9f1bc16f229411685025359e1065dd8f18ad850084a9ccd39ea2fcbb79615c79",
+    "verify-default-voice.sh": "c6a462a7cb28d4c4d065e8edeea04e6a2e0804a72b87909cbf368c1adbfef392",
+    "summarize_default_voice.py": "bc69ac2b8ecbadc01ebd566423d0b41c454e4a26fb1fe5fdb619bacb69616147",
+    "DEFAULT_VOICE.md": "5a24302f90186d3bbc95d191845245bc394cc7d7f4ca774d8be3a6ba7a9aca99",
+    "three_osc_wrapper_core.h": "7c811e6ae33cb59ccf56ca231d468490a42556808cddae5b0ffc25d2586a1b5e",
+    "three_osc_wrapper_core.cpp": "495882f6d014e78d6d597610bccc49e3f8c10c44b862df6120ab638e5105af50",
+    "three_osc_engine.cpp": "860867b36885d4c612d10bcdeaf33a7a185809789f26943bd3e4bd2ca67854ea",
+    "three_osc.hpp": "eabb0f14671c3aeb451d3ecf18cce4d544f0e8b8e8384ab80b362848fcf319f9",
+    "three_osc_tables.hpp": "a1afa520a7e5420a9d9a341ac4e023e2a4b9bb1cfb0ca39ade99ac7d01bbd2bc",
+    "three_osc_declick.hpp": "aa287e8c26940bcf8b0cd5dea476c25f6a54e75105e6b97bc4462f8d356ee435",
+    "three_osc_declick.cpp": "93a5a48a9dacadacfc3fdbff5ab908ae4fb8ecb7d55dbb3daebceb39d7f2ce23",
+    "three_osc_envelope.hpp": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+    "three_osc_gain_mix.hpp": "bc2d71c000e0f412148ae80fc46cce52d6ebf1c214d0924906a5d8e0d8bee4e2",
+    "three_osc_voice_output.hpp": "3f17be324d6f79757303938ecdaab5ab1dd679cd48ab1eb5704d8f28e2dc8729",
+    "three_osc_legacy_tables.hpp": "838ee2842afe2f4f1b5ea14be0b866ede0de84e2d17a0715aae655da3ee3d119",
+    "three_osc_legacy_tables.cpp": "df33049821ef64472d904493c274ae077ba70f308a881212e6d701c8a86f0135"
+  },
+  "compiled_dylib_sha256": "c7316398c910c4908a70d981007c70b2afc114e28297690ac8db76f79ed93161",
+  "reviewed_native_targets": [
+    {
+      "name": "3x Osc Fruity wrapper",
+      "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+      "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27"
+    },
+    {
+      "name": "3x Osc engine.dylib",
+      "universal_sha256": "d7eda5267ae938c22ca36d11676ffd870d639aec6086954cd7e895b04be8e66f",
+      "arm64_sha256": "c90d11fe12c86d620aabd135078c7cca49cc2b007b0c750e0db63a1e7508db48"
+    },
+    {
+      "name": "dsp_ippv2_x64.dylib",
+      "universal_sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "arm64_sha256": "72a166d85676bc317bc3556b88f2eddb30fd955156bf8fbd696cb5de847aa1b3"
+    }
+  ],
+  "fixture_architecture_guard": "macOS arm64 only",
+  "scope": {
+    "new_c_abi": true,
+    "default_no_filter_no_modulation_voice_output_integrated": true,
+    "native_fruity_factory_rebuilt": false,
+    "actual_host_voice_notifications_integrated": false,
+    "host_tick_context_production_rebuilt": false,
+    "filter_modes_rebuilt": false,
+    "envelope_lfo_modulation_pipeline_rebuilt": false,
+    "gui_rebuilt": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Default integrated-editor controls, final ModX/ModY=0, observed circular master pan law0 only.",
+    "Native replay covers deterministic waveform controls0..4, oscillator random-phase0, HQ and legacy paths, and an initial44100Hz release context.",
+    "Other initializer rates/oscillator modes are independent generalizations, not additional native pipeline evidence.",
+    "Native pipeline replay uses static note pitches in[-2400,2400] cents. The API's broader[-9600,9600] range and mid-note pitch automation are not covered by this corpus.",
+    "Two live voices render in creation order into a positive-zero accumulator. Final host addition into preexisting audio remains outside this API.",
+    "The original host pan callback is controlled by the fixture, and original host-kill callbacks are no-ops; final native cleanup is explicit.",
+    "Borrowed raw core/voice must outlive the output object; caller pairs core and output sample-rate updates and serializes accesses across every raw-engine instance sharing factory/RNG state.",
+    "Native factories, invalid-call equivalence, allocation failures/unwind, voice stealing/host routing, modulation, filters, GUI and complete VST/AU/FL equivalence remain open."
+  ]
+}

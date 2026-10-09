@@ -5,7 +5,7 @@
 // This effect has a separate factory/dylib and its own numerical implementation.
 // The default build has no editor. VL_MUTE2_APPKIT_EDITOR adds an independent
 // AppKit editor using the verified host bridge; unused generator/voice callbacks
-// remain no-ops. GUI, hint flags and editor-present destruction require the main
+// remain no-ops. GUI, hint flags and native destruction in an optional-editor build require the main
 // thread. Refused off-main destruction preserves the instance/view until a main
 // retry; keep its numerical state, module and host alive until then. Tick and
 // MIDI tick never access GUI; off-main Idle returns before touching editor state.

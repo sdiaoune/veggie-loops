@@ -7,18 +7,18 @@
   "source_sha256": {
     "reconstruction/plugins/effects/mute2_plugin.h": "58eea489625a07e9014e1b4348b69d277d3793665186c0bc52d93081bd3931cb",
     "reconstruction/plugins/effects/mute2_plugin.cpp": "f55eb6c2620fdd346310944b43e991a3c74fe7ea1b97fa16cdc8395846b68dbc",
-    "reconstruction/plugins/effects/mute2_native_abi.h": "7edb6359523d8b850b2d7f1ec30fad428877b9886f701991a658be536ba8cd51",
-    "reconstruction/plugins/effects/mute2_native_abi.cpp": "7a8ec30e09c2c7935d81d5569b5e58d200baaf74f7018b42989255f5a6d49b0b",
+    "reconstruction/plugins/effects/mute2_native_abi.h": "8eae81d971b81ac4dc5e69a9a84a8e3429c35b50dcaf459ea22b6ebc3f8dcd31",
+    "reconstruction/plugins/effects/mute2_native_abi.cpp": "134b8fc9006c25c11a3632261853a4c2814a8b7550e7f4666abfbdbcb0bebd73",
     "reconstruction/plugins/effects/test_mute2_factory.mm": "431cd142ad794baacb327d09876f880e262a0d785d2ed696ed4a92140ed02d9e",
     "reconstruction/plugins/effects/test_mute2_engine_loader.mm": "f7ed4fafbdf929319503637ec1507aecb2fede82cd6c8ef2cf83824c636cb99c",
     "reconstruction/plugins/effects/verify_mute2.sh": "9a8c0461fbe6d18d3b54a10c61219e6f49ce667f17c94a358bc234a85e6a0a88",
     "reconstruction/plugins/effects/verify_mute2_engine_loader.sh": "debe30cd1b46136c6db1bcb6fb628df1132d4de4fd6a1d1b4344b38469616316",
-    "reconstruction/plugins/effects/MUTE2.md": "a1d91aa4f5e5a2f29665c0c9e2eb8d08f01ce2677eaf0fdec823e2b223c2a66b",
-    "reconstruction/plugins/effects/balance_native_abi.h": "22cb90ebbad8111f4b9bba4354d212a16ceb67f87e727f2aa34751d41bfe972f",
+    "reconstruction/plugins/effects/MUTE2.md": "fe2a741e34b4f19de60b75605ffd9f525dd2140dfe23120c3bcae7dc30ca9d81",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
     "reconstruction/plugins/effects/mute2_editor.h": "823d1ea8642ef0cabafffd096f612e56078a98bc0c2bc9a8509781b24e2f977b",
     "reconstruction/plugins/effects/mute2_editor.mm": "320e8ed57aeb57b6272bd7b461f421d008e0dbb0e3380911f532d7e64e37f939",
     "reconstruction/plugins/effects/test_mute2_editor.mm": "fef948c2dd7eff4627ccabe2b05163bd483127fba2c2d2d306de515231ced7ab",
-    "reconstruction/plugins/effects/test_mute2_native_editor.mm": "055215a644e66ae60681a3313301c03459ec81b081d9ad8e3f038d57b9747b4e",
+    "reconstruction/plugins/effects/test_mute2_native_editor.mm": "b688a2e535bae4bc3f8704c691b1dc92c599119f4c33b4dde40283aff6ed910c",
     "reconstruction/plugins/effects/verify_mute2_editor.sh": "35ea119f73ba7071bfacd67feb4ddb8deda4166be18cd64fee515a336e45f7b5",
     "reconstruction/plugins/effects/test_effects_engine_stream.mm": "183b21fde5691d1db9dfa5347fb106746d366a4b39de1193f95c33f5845f1c07",
     "reconstruction/plugins/effects/verify_engine_stream.sh": "9d971fd35bfdc968a5aec21a15af49885a8bab1e8a60a63ceaee976ec0c681e9",
@@ -85,6 +85,7 @@
           "status": "passed",
           "independently_written_appkit_editor": true,
           "actual_engine_plugin_and_host_adapters": true,
+          "concurrent_first_attachment_worker_hints_checked": true,
           "worker_tick_idle_skipped_gui": true,
           "off_main_destroy_preserves_state": true,
           "control_changes": 2,
@@ -121,10 +122,12 @@
   },
   "independent_review": {
     "source_factory_numerical": "passed",
-    "native_loader": "passed on independently copied current signed32/editor source",
-    "optional_editor": "passed on independently copied final DarkAqua source",
-    "signed32_hresult_and_real_stream_provider": "passed on independently copied final source",
-    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed"
+    "native_loader": "passed on independently copied final outer-thread-guard source",
+    "optional_editor": "passed on independently copied final outer-thread-guard source",
+    "signed32_hresult_and_real_stream_provider": "passed on independently copied final outer-thread-guard source",
+    "native_architecture_guards": "reviewed; local x86_64 compile refusal passed",
+    "worker_hint_main_thread_guard": "passed on independently copied final outer-thread-guard source",
+    "worker_hint_and_destroy_outer_guards": "passed on independently copied final outer-thread-guard source"
   },
   "limits": [
     "finite stereo inputs; separate or identical buffers; partial overlap excluded",
@@ -134,7 +137,7 @@
     "original VCL editor/hints equivalence unverified; own AppKit editor implemented; no commercial resources copied",
     "actual FL application/project/mixer hosting unverified",
     "x86_64 and VST/AU packaging unimplemented",
-    "GUI/hints/editor-present destruction main-thread; refused worker destruction preserves instance/view for main retry",
+    "GUI/hints/all native destruction in optional-editor builds main-thread; refused worker destruction preserves instance/view for main retry",
     "actual engine TStreamAdapter32-bit HRESULT/count stores verified; full application state routing and project/preset envelopes unexecuted"
   ]
 }

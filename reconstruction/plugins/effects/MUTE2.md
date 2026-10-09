@@ -77,8 +77,10 @@ automation values. The intact engine's real plugin and host adapters with a
 synthetic Pascal host exercise UI changes, numerical audio, automation, hints,
 resize ordering, detach, reattach and destruction. Notifications follow host
 unlocking. Worker tick, MIDI tick and Idle calls skip GUI; refused off-main
-destruction preserves the instance and view for a main-thread retry. GUI calls,
-hint flags and editor-present native destruction require the main thread. Keep
+destruction preserves the instance and view for a main-thread retry. Worker hints
+overlap first attachment without accessing GUI-owned editor state; worker detach
+and destruction before first attachment are also refused. GUI calls,
+hint flags and native destruction in an optional-editor build require the main thread. Keep
 the module, host and numerical instance alive until destruction succeeds.
 
 The numerical C API passed independent source review and factory replay. The

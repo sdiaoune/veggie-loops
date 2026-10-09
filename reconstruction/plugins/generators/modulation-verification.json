@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "compiled_dylib_replayed": true,
+  "prepared_five_group_fixtures": 1800,
+  "direct_tick_steps": 108000,
+  "release_calls": 3600,
+  "conditional_pitch_ticks": 216000,
+  "exact_state_values": 15940800,
+  "host_tick_production_rebuilt": false,
+  "audio_pipeline_integrated": false,
+  "full_plugin_recompiled": false,
+  "module": "modulation",
+  "source_sha256": {
+    "three_osc_modulation.hpp": "6f5877b93330326f106d5c76548644ba81ccce9504596062d169b8794288fa58",
+    "three_osc_modulation.cpp": "df1ec65c45e5d2802ceb8a11046e46d442aafcf0969a5e808b56b494c28e44ba",
+    "test_three_osc_modulation.mm": "ab879038e97e32077d643e7718c4ed7785e74f0926d23d87849133ad5d99d880",
+    "verify-modulation.sh": "c6e3cc6665bda3f30ae8adb3bdc73d2c5e9855147ed675cb3e1e20a8834d3cdc",
+    "summarize_modulation.py": "4c5f4dbb56f3c20669239758a14502e122f42f41a08e37389b993413920b1f07",
+    "MODULATION.md": "d1ad127a649a50e34e63fdb0ee60a76178a4c990fc300e7cc74e0976059718f4",
+    "three_osc_envelope.hpp": "265349af010d24840b12fb20055c7932a0e53752b4179e5cce0385b1c48fc61a",
+    "three_osc_envelope_coefficients.hpp": "fa1ec462eeab4a7918634a770033757befa6cfe9f37aeb5fab2e6fb0f64e5f57"
+  },
+  "compiled_dylib_sha256": "cd48b169e735038417fc6cbb9099db6e285b7a5c74e2ee4383bc44a265459c9f",
+  "reviewed_native_target": {
+    "name": "3x Osc Fruity wrapper",
+    "universal_sha256": "c4e64bada4f0e8866e8589cb6e7fd0586d83ec53de52491c6111d0bd9395805c",
+    "arm64_sha256": "bd5070df788f4c5ab88d7ed912951866682b0b318ff13f6d9e9936ea036a6e27",
+    "fixture_architecture_guard": "macOS arm64 only"
+  },
+  "scope": {
+    "new_c_abi": true,
+    "prepared_five_group_modulation_state_verified": true,
+    "native_object_lifecycle_rebuilt": false,
+    "host_tick_production_rebuilt": false,
+    "audio_pipeline_integrated": false,
+    "filter_rebuilt": false,
+    "full_plugin_recompiled": false
+  },
+  "limitations": [
+    "Prepared configurations/initialized states/readable tables and explicit host tick conditions only; successful coefficient preconditions apply.",
+    "Each LFO table has16384 readable finite samples in[-1,1], matching the controlled sine-table corpus.",
+    "Native comparison uses synthetic object layouts and controlled tables, rather than an original factory or actual host clock call.",
+    "Raw depth[-128,128] and finite final pitch magnitude<=24000; wider native editor depth controls remain unproved.",
+    "Constructor/lifecycle, automatic host timing, configuration update routing, voice limit/stealing, filtering, samples and audio pipeline integration remain open.",
+    "No native assets or commercial binaries are embedded; this component does not establish complete Fruity/VST/AU/FL equivalence."
+  ]
+}

@@ -38,6 +38,13 @@ for arbitrary host or preset input.
 
 The native hosts under `../../common/` can inspect the built bundles. Exact
 audio results and tested boundaries are recorded in `verification.json`.
+The independent [source-build matrix](../../review/VIAL_MATRIX.md) additionally
+passed56 disclosed sample-rate/block combinations and227 valid state pairs.
+It uses generated source-build state and loads no installed plugin. Its
+twenty-round cases settled after one PCM conversion to19 exact adjacent pairs;
+the initial-to-final PCM difference remained at most one unit. This is
+tolerant stability followed by a fixed point, rather than exact initial-state
+idempotence.
 Factory loading, source recompilation and one deterministic comparison do not
 establish installed-plugin version, GUI, preset-corpus or whole-plugin parity.
 

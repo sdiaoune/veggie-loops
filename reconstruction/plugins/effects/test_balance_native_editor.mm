@@ -16,6 +16,7 @@
 #include <string>
 #include <vector>
 #include <thread>
+#include <atomic>
 
 namespace {
 using namespace veggie_loops::balance::native;
@@ -58,11 +59,22 @@ int main(int argc,char** argv){@autoreleasepool{try{
  auto pluginConstructor=reinterpret_cast<Constructor>(base+0xb4c7c0);void* wrapper=pluginConstructor(base+0x1497618,1,plugin);require(wrapper,"Actual engine plugin class allocation failed");host.pluginWrapper=wrapper;
  auto dispatch=method<std::intptr_t(*)(void*,std::intptr_t,std::intptr_t,std::intptr_t)>(wrapper,0xd0);auto idle=method<void(*)(void*)>(wrapper,0xd8);
  auto parameter=method<std::int32_t(*)(void*,std::int32_t,std::int32_t,std::int32_t)>(wrapper,0xf8);
- auto* parent=[[NSView alloc]initWithFrame:NSMakeRect(0,0,500,300)];dispatch(wrapper,0,0,reinterpret_cast<std::intptr_t>((__bridge void*)parent));
+ // Optional-editor native destruction is main-thread even before first attachment.
+ std::thread unattachedDestroyWorker([&]{method<void(*)(void*)>(wrapper,0xc8)(wrapper);});unattachedDestroyWorker.join();
+ require(parameter(wrapper,0,0,2)==0,"Worker unattached destruction freed native state");
+ auto* parent=[[NSView alloc]initWithFrame:NSMakeRect(0,0,500,300)];
+ // Worker hint/get calls overlap the editor's first creation. They must keep
+ // numerical access working while skipping GUI-owned editor pointer access.
+ std::atomic<bool> stopHints=false,hintNumericalFailed=false;std::atomic<size_t> workerHintCalls=0;
+ std::thread attachmentWorker([&]{while(!stopHints.load(std::memory_order_acquire)){if(parameter(wrapper,0,0,6)!=0)hintNumericalFailed.store(true);workerHintCalls.fetch_add(1,std::memory_order_release);}});
+ while(workerHintCalls.load(std::memory_order_acquire)==0)std::this_thread::yield();
+ dispatch(wrapper,0,0,reinterpret_cast<std::intptr_t>((__bridge void*)parent));
+ stopHints.store(true,std::memory_order_release);attachmentWorker.join();
+ require(!hintNumericalFailed.load() && workerHintCalls.load()>0 && host.hints==0,"Worker first-attachment hint accessed GUI/host or skipped numerical work");
  require(parent.subviews.count==1 && get<std::intptr_t>(wrapper,24)!=0,"Native editor attachment failed");
  const auto locksBeforeWorker=host.locks;
- std::thread worker([&]{method<void(*)(void*)>(wrapper,0x138)(wrapper);method<void(*)(void*)>(wrapper,0x140)(wrapper);idle(wrapper);});worker.join();
- require(host.resizes==0 && host.locks==locksBeforeWorker,"Worker tick/Idle accessed GUI/host state");
+ std::thread worker([&]{method<void(*)(void*)>(wrapper,0x138)(wrapper);method<void(*)(void*)>(wrapper,0x140)(wrapper);idle(wrapper);dispatch(wrapper,0,0,0);});worker.join();
+ require(host.resizes==0 && host.locks==locksBeforeWorker && parent.subviews.count==1 && get<std::intptr_t>(wrapper,24)!=0,"Worker tick/Idle accessed GUI/host state");
  idle(wrapper);require(host.resizes==1,"Deferred native editor resize notification failed");
  NSView* editor=parent.subviews[0];NSSlider* pan=nil;NSSlider* volume=nil;NSMutableArray<NSLevelIndicator*>* meters=[NSMutableArray array];
  for(NSView* view in editor.subviews){if([view isKindOfClass:NSSlider.class]){NSSlider* s=(NSSlider*)view;if(s.tag==0)pan=s;else volume=s;}if([view isKindOfClass:NSLevelIndicator.class])[meters addObject:(NSLevelIndicator*)view];}
@@ -80,5 +92,5 @@ int main(int argc,char** argv){@autoreleasepool{try{
  method<void(*)(void*)>(wrapper,0xc8)(wrapper);require(parent.subviews.count==0,"Native editor destruction left an attached view");
  method<void(*)(void*,std::intptr_t)>(wrapper,0x60)(wrapper,1);method<void(*)(void*,std::intptr_t)>(hostWrapper,0x60)(hostWrapper,1);
  require(host.locks==host.unlocks && !host.locked,"Unbalanced host editor locks");dlclose(library);dlclose(engine);
- std::cout<<"{\"status\":\"passed\",\"independently_written_appkit_editor\":true,\"actual_engine_plugin_and_host_adapters\":true,\"worker_tick_idle_skipped_gui\":true,\"control_changes\":"<<host.changes<<",\"hints\":"<<host.hints<<",\"resize_notifications\":"<<host.resizes<<",\"source_gui_resources_copied\":false,\"actual_fl_application_created\":false,\"full_plugin_equivalence\":false}\n";
+ std::cout<<"{\"status\":\"passed\",\"independently_written_appkit_editor\":true,\"actual_engine_plugin_and_host_adapters\":true,\"concurrent_first_attachment_worker_hints_checked\":true,\"worker_tick_idle_skipped_gui\":true,\"control_changes\":"<<host.changes<<",\"hints\":"<<host.hints<<",\"resize_notifications\":"<<host.resizes<<",\"source_gui_resources_copied\":false,\"actual_fl_application_created\":false,\"full_plugin_equivalence\":false}\n";
 }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}}}
