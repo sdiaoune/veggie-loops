@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "component": "VL Fast Dist optional independently written AppKit editor and separate native factory wrapper",
+  "status": "verified_partial_optional_editor_independently_reviewed_maintained_paths",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/fast_dist_editor.h": "780900693d85f9a2e2c0b599a3bcce13f3e05b6a220b475b0896366618577521",
+    "reconstruction/plugins/effects/fast_dist_editor.mm": "843e6b2c0272935626dade540d161efde99696692e1451cc44c4cd7c68e4a5a6",
+    "reconstruction/plugins/effects/fast_dist_native_editor_candidate.h": "80af3d34040e9cffb5cdd5f44549fdcb0f4ba88c070cad9aa28a4771b384ba59",
+    "reconstruction/plugins/effects/fast_dist_native_editor_candidate.cpp": "a7cca43e65a27f1a77a7263067f09838ac44a86eb3be7954d57e3bd509732568",
+    "reconstruction/plugins/effects/test_fast_dist_editor.mm": "e4699cca99572041b97b37fbb57d907ea2dab8eff744327a0f892cb8470edd5e",
+    "reconstruction/plugins/effects/test_fast_dist_native_editor.mm": "5f6ba61eb83e6a3ddcc874a207f55e9f9679171917eb9c6eafcf66c7407313b2",
+    "reconstruction/plugins/effects/verify_fast_dist_editor.sh": "f4e04b314d02513262d9dacb44c7d62476eedb55ad90672eb7b3b799badb4c30",
+    "reconstruction/plugins/effects/FAST_DIST_EDITOR.md": "ad97512459684a7dbdd02dacf8ecb4f79cc5f7c8c135b00718f52ec69b73a12f"
+  },
+  "dependency_sha256": {
+    "reconstruction/plugins/effects/fast_dist_dsp.hpp": "fefd86bbf36844886f8c4b18283a12a34af9d42f9b40d49d625402ccd859f321",
+    "reconstruction/plugins/effects/fast_dist_plugin.h": "a9b53209c50dd0372a155dda78ebd0f1046382c28dc1ba59c7d8f779562adf4e",
+    "reconstruction/plugins/effects/fast_dist_plugin.cpp": "0349bc8c4476341e265a04bb7585c0c835ec786d244912e339b11a846e93785e",
+    "reconstruction/plugins/effects/fast_dist_native_abi.h": "32e9dc19a1af9af7ae1927971e6d28415e5cb27f777a69eb18426f79d9269408",
+    "reconstruction/plugins/effects/test_fast_dist_engine_loader.mm": "c68949df13760ae71fa3c6c2685512bf5ec0e1b9d594da771752329e22fb0c97",
+    "reconstruction/plugins/effects/test_fast_dist_engine_stream.mm": "28b9b56b6fca922e15fca473b038f2b86fd6898bf85e33e719157571cd072394",
+    "reconstruction/plugins/effects/balance_native_abi.h": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74"
+  },
+  "numerical_manifest": "fast-dist-verification.json",
+  "default_native_manifest": "fast-dist-native-verification.json",
+  "engine_sha256": {
+    "universal": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+    "arm64": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0"
+  },
+  "command": "./reconstruction/plugins/effects/verify_fast_dist_editor.sh",
+  "checks": {
+    "standalone_editor": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "automation_display_cases": 399,
+      "control_changes": 399,
+      "parameter_coefficient_preservation_cases": 399,
+      "quality_preservation_cases": 2,
+      "notifications_after_unlock": true,
+      "worker_ui_calls_skipped": true,
+      "off_main_destroy_preserves_view": true,
+      "full_plugin_equivalence": false
+    },
+    "actual_engine_host_and_plugin_adapters": {
+      "status": "passed",
+      "independently_written_appkit_editor": true,
+      "actual_engine_plugin_and_host_adapters": true,
+      "all_raw_control_action_cases": 399,
+      "automation_display_cases": 5,
+      "quality_state_refresh_cases": 32,
+      "optional_native_state_saves": 32,
+      "optional_native_state_restores": 32,
+      "quality_probe_discriminating": true,
+      "concurrent_first_attachment_worker_hints_checked": true,
+      "concurrent_enabled_render_reattach_cycles": 128,
+      "concurrent_main_hint_set_lock_cases": 128,
+      "every_worker_block_compared_to_independent_instance": true,
+      "worker_tick_idle_skipped_gui": true,
+      "off_main_destroy_preserves_state": true,
+      "control_changes": 527,
+      "hints": 656,
+      "resize_notifications": 129,
+      "actual_application_created": false,
+      "original_host_quality_production": false,
+      "full_plugin_equivalence": false
+    },
+    "same_conditional_wrapper_default_loader": {
+      "status": "passed",
+      "intact_original_engine_loaded": true,
+      "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+      "actual_engine_wrapper_allocated_and_freed": true,
+      "callback_slots_exercised": 20,
+      "state_saves": 1200,
+      "state_restores": 240,
+      "failed_read_preserves_state": true,
+      "parameter_calls": 6000,
+      "stereo_frames": 140700,
+      "default_integer_quality_checked": true,
+      "fl_application_host_created": false,
+      "full_plugin_equivalence": false
+    },
+    "same_conditional_wrapper_default_real_stream": {
+      "status": "passed",
+      "actual_engine_memory_and_stream_classes": true,
+      "actual_engine_plugin_wrapper": true,
+      "completion_store_bits": 32,
+      "adjacent_count_sentinel_preserved": true,
+      "hresult_return_bits": 32,
+      "actual_provider_invalid_pointer_error_checked": true,
+      "state_saves": 128,
+      "state_restores": 128,
+      "failed_hresult_full_count_rejections": 1,
+      "short_count_success_rejections": 1,
+      "single_twenty_byte_transfer_checked": true,
+      "coefficient_state_preserved_on_rejection": true,
+      "application_host_created": false,
+      "full_plugin_equivalence": false
+    }
+  },
+  "author_concurrent_replay": {
+    "cycles": 128,
+    "quality": 0,
+    "enabled_nonidentity_audio": true,
+    "main_hint_set_paired_lock_cases": 128,
+    "reference": "Every native8-frame worker block bitwise compared with worker-owned numerical instance restored from20byte snapshot under host mix mutex. Both detach/reattach and main hint/parameter changes run while rendering."
+  },
+  "independent_extra_replay": {
+    "report": "fast-dist-editor-independent.json",
+    "report_sha256": "73f70595093c104b486027f45a841de7ef5e8fee9acd3142370952ceb786b45d",
+    "enabled_cycles": 256,
+    "quality": 1,
+    "randomized_finite_stereo_input": true,
+    "every_worker_block_compared_bitwise": true,
+    "main_hint_set_paired_lock_cases": 256,
+    "optional_invalid_packets": 20,
+    "state_coefficients_quality_and_output_preserved": true,
+    "critic_fixture_sha256": "4c18613c96ca360879a3bfb9c44f714a8f6fd6773f59bf16d7960e621c9d684f",
+    "critic_script_sha256": "e34b5d41de0eaed3d9a0ec93d45b5104a1900b3ea0f07580eae01e5048e26232",
+    "threadsanitizer_exit_code": 0,
+    "threadsanitizer_scope": "Copied independently written numerical/native/editor module plus critic actual-adapter fixture, O1/g thread sanitizer, original FLEngine uninstrumented. TSAN_OPTIONS halt_on_error=1.",
+    "separate_from_maintained_author_counters": true
+  },
+  "private_candidate_review": {
+    "status": "accepted",
+    "report": "fast-dist-editor-independent.json",
+    "report_sha256": "73f70595093c104b486027f45a841de7ef5e8fee9acd3142370952ceb786b45d",
+    "reviewer": "Independent mixer_dsp critic",
+    "all_four_canonical_checks": true,
+    "additional_quality1_invalid_state_and_tsan": true,
+    "blocking_defects": [],
+    "bitmap_readable": true
+  },
+  "source_review": [
+    "All native optional GUI paths test main-thread status before reading editor fields; worker hint performs caller-locked numerical work without GUI pointer reads. Dispatcher attach/detach, Idle and destruction likewise guard before accesses.",
+    "Editor creation rejects unmatched lock pairs. Refresh snapshots all5 raw values under a paired host lock, then updates AppKit controls after unlock. Change sets numerical value under lock; changed/hint callbacks and follow-up refresh occur after unlock.",
+    "Main native hint calls internally lock their numerical get/set work, notify after unlock. Contract explicitly requires those main hint calls outside the caller nonrecursive mix lock. Worker numerical/state/render calls remain caller serialized.",
+    "Tick and MIDI tick are effect no-ops. Optional native off-main destruction, even before first attachment, leaves the numerical/native/view objects alive. Host wrapper, context and module must remain valid through main retry. Destruction/render lifetime excludes concurrent unsynchronized teardown.",
+    "Restore reads a single20-byte packet into local storage via uint32 transfer length, signed32 HRESULT and zeroed wide completion storage. C API validates all5 raw fields before committing state; host quality remains selected externally.",
+    "Default no-editor compiled candidate exercises all20 callbacks and actual intact-engine DLL loader. Real TMemoryStream/TStreamAdapter checks actual signed32 HRESULT and32-bit completion stores with adjacent sentinels.",
+    "Extra20 malformed optional-editor packets at min-1/max+1/INT_MIN/INT_MAX across all5 fields preserve raw bytes, coefficient bits and interpolated output. Numeric FP/alias/range contracts stay those of separately accepted bounded API."
+  ],
+  "caller_contracts": {
+    "numerical": "fast_dist_plugin.h preserved5raw/ranges,coef/state/default integer quality0 contracts.",
+    "main_thread": "Every GUI operation/read/destruction guarded before touching GUI-owned fields. Worker tick/MIDI/Idle/hint do not access GUI. Off-main native destruction even beforeattachment refuses, preserving native object/numerical state; caller retains original wrapper/host/context/modules until main retry.",
+    "mix_lock": "GUI snapshots/control changes under valid paired host32/33; notifications/resize/hints after unlock. Main hint4 calls outside caller lock; internal paired lock serializes numerical getter/set work. Worker numerical/native calls stay caller-serialized.",
+    "quality": "Standalone own quality0/1 discriminating probes, optional preset32saves/restores preserve selected mode; quality production remains caller controlled. Concurrent renderer uses explicit integer0, snapshots20bytes to worker-owned reference, compares every8frame block and sees nonidentity audio."
+  },
+  "negative_control": {
+    "kind": "Independent critic private runtime omitted main hint numerical paired host lock/unlock",
+    "exit_code": 1,
+    "expected_failure": "Main hint numerical work omitted paired lock",
+    "fixture_mutant_sha256": "61b4fcf3f14b97e37cd61f3d5fd116bc0c2ebf91495bdd8c6ad576b13086a9f5",
+    "log_sha256": "dcf13b005b0a48af63da51d563b56246916e465d830a14098d83d9edc6fb9936"
+  },
+  "compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-exp",
+    "-fno-builtin-log",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fobjc-arc -framework Cocoa for AppKit build",
+    "-DVL_FAST_DIST_APPKIT_EDITOR=1 for optional wrapper"
+  ],
+  "promotion": {
+    "six_runtime_headers_tests_byte_identical": true,
+    "script_changes": [
+      "new maintained script name",
+      "source inputs changed to maintained effects paths",
+      "separate ignored output path uses fast-dist-editor-check",
+      "new maintained script executable bit"
+    ],
+    "existing16_numerical_native_paths_unchanged": true,
+    "maintained_path_rebind_status": "accepted_root_independent_copy_replay",
+    "root_owns_final_rebind_and_git": true
+  },
+  "author_maintained_replay": {
+    "log_sha256": "a74949a1fbe03f816e97b3391ee7d55cae4ef7ef4dcca99ce27d164a2ea380e2",
+    "compiled_artifacts_sha256": {
+      "test_editor": "a2d565979a981343a8d2499ee6ed2df4d9fe81679133fd71472a07056ad4fc89",
+      "editor.png": "ef9989eedee3e25f0ca32019680aacd737dbeff9bed9e154bf305a0da9ab51ae",
+      "VLFastDistNativeEditor.dylib": "4781bec6c4be8a80b3b0f86980d6bc523a06a7b981bc4fe59bfeceeae2cd7245",
+      "test_native_editor": "b17270b753e563b6aed1c706b1392bbc1b4f60b1a1301723e6a0ca3fd9ccf260",
+      "default/VL Fast Dist/VL Fast Dist_X64.dylib": "e847260ae7c03d54995f0f8ed946dc9f0cee78ddeab376424fafdeb5b592ec43",
+      "test_default_loader": "71deb87a2b118a23a466ce3ccd13c104c063b2db968a578ebff47e006c90a72c",
+      "test_default_stream": "929ac781c6adc31d935ae02b274bb087796d78057e5c21f767869b04637bc47e"
+    }
+  },
+  "gates": {
+    "original_vcl_assets_art_gui_equivalence": false,
+    "actual_fl_application": false,
+    "actual_project_mixer_host_lifecycle": false,
+    "original_quality_production": false,
+    "x86_vst_au": false,
+    "full_plugin_equivalence": false,
+    "realtime_certificate": false
+  },
+  "actual_fl_application_created": false,
+  "original_gui_equivalence": false,
+  "general_realtime_concurrency_certificate": false,
+  "unresolved": [
+    "Original Pascal/VCL/resources/art/hints/metadata/name/events/remaining host behavior",
+    "Actual FL application/project/mixer lifecycle",
+    "Original host integer/interpolated quality production/delivery",
+    "Two extra complete/deleting C++ destructor slots and general failed-write/provider or reentrant callback behavior",
+    "x86/VST/AU,arbitrary native inputs/environments,realtime or unsynchronized concurrency",
+    "Whole-plugin equivalence"
+  ],
+  "maintained_path_independent_review": {
+    "status": "accepted_bounded_optional_editor",
+    "report": "root-fast-dist-editor-independent.json",
+    "sha256": "279775c226125866532906e60ac969a0aaea5530019346f3b68e69cf103d2b08",
+    "canonical_copied_results": [
+      {
+        "status": "passed",
+        "independently_written_appkit_editor": true,
+        "automation_display_cases": 399,
+        "control_changes": 399,
+        "parameter_coefficient_preservation_cases": 399,
+        "quality_preservation_cases": 2,
+        "notifications_after_unlock": true,
+        "worker_ui_calls_skipped": true,
+        "off_main_destroy_preserves_view": true,
+        "full_plugin_equivalence": false
+      },
+      {
+        "status": "passed",
+        "independently_written_appkit_editor": true,
+        "actual_engine_plugin_and_host_adapters": true,
+        "all_raw_control_action_cases": 399,
+        "automation_display_cases": 5,
+        "quality_state_refresh_cases": 32,
+        "optional_native_state_saves": 32,
+        "optional_native_state_restores": 32,
+        "quality_probe_discriminating": true,
+        "concurrent_first_attachment_worker_hints_checked": true,
+        "concurrent_enabled_render_reattach_cycles": 128,
+        "concurrent_main_hint_set_lock_cases": 128,
+        "every_worker_block_compared_to_independent_instance": true,
+        "worker_tick_idle_skipped_gui": true,
+        "off_main_destroy_preserves_state": true,
+        "control_changes": 527,
+        "hints": 656,
+        "resize_notifications": 129,
+        "actual_application_created": false,
+        "original_host_quality_production": false,
+        "full_plugin_equivalence": false
+      },
+      {
+        "status": "passed",
+        "intact_original_engine_loaded": true,
+        "actual_engine_dll_loader_accepted_rebuilt_plugin": true,
+        "actual_engine_wrapper_allocated_and_freed": true,
+        "callback_slots_exercised": 20,
+        "state_saves": 1200,
+        "state_restores": 240,
+        "failed_read_preserves_state": true,
+        "parameter_calls": 6000,
+        "stereo_frames": 140700,
+        "default_integer_quality_checked": true,
+        "fl_application_host_created": false,
+        "full_plugin_equivalence": false
+      },
+      {
+        "status": "passed",
+        "actual_engine_memory_and_stream_classes": true,
+        "actual_engine_plugin_wrapper": true,
+        "completion_store_bits": 32,
+        "adjacent_count_sentinel_preserved": true,
+        "hresult_return_bits": 32,
+        "actual_provider_invalid_pointer_error_checked": true,
+        "state_saves": 128,
+        "state_restores": 128,
+        "failed_hresult_full_count_rejections": 1,
+        "short_count_success_rejections": 1,
+        "single_twenty_byte_transfer_checked": true,
+        "coefficient_state_preserved_on_rejection": true,
+        "application_host_created": false,
+        "full_plugin_equivalence": false
+      }
+    ],
+    "canonical_copied_log_sha256": "a74949a1fbe03f816e97b3391ee7d55cae4ef7ef4dcca99ce27d164a2ea380e2",
+    "six_runtime_header_test_files_byte_identical": true,
+    "recipe_delta_only_source_output_paths": true,
+    "root_bitmap_readable": true,
+    "original_application_quality_production_and_whole_plugin_unproved": true
+  }
+}
