@@ -1,0 +1,592 @@
+{
+  "status": "independently_accepted_bounded_public_supplied_host_factory",
+  "source_files": {
+    "host_delegated_native.h": {
+      "path": "reconstruction/plugins/effects/host-delegated/host_delegated_native.h",
+      "sha256": "a66aa434091bd73a38f544e0b426e1c5fc1d399deee6f85f78d4e10339b7e515",
+      "bytes": 2014
+    },
+    "host_delegated_native.cpp": {
+      "path": "reconstruction/plugins/effects/host-delegated/host_delegated_native.cpp",
+      "sha256": "05c1309c92bd6e47823f452285d7958f7361d00a20dcebea85e84a3ce859b017",
+      "bytes": 5407
+    },
+    "test_host_delegated.mm": {
+      "path": "reconstruction/plugins/effects/host-delegated/test_host_delegated.mm",
+      "sha256": "3aeab7d065dcdd169a97caad2a17ac5be0d2df29aa9c0b9c1e94146e81c7cc07",
+      "bytes": 17114
+    },
+    "test_host_delegated_stream.mm": {
+      "path": "reconstruction/plugins/effects/host-delegated/test_host_delegated_stream.mm",
+      "sha256": "7fa96783eef16f53e85259793373e2a4b407b4941617f9a32d856b6f583607ce",
+      "bytes": 13514
+    },
+    "verify_host_delegated.sh": {
+      "path": "reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh",
+      "sha256": "8b762728cae1914159a7bf0bfa1b885cac5f82fd588c44145dd921b764b079d5",
+      "bytes": 3091
+    },
+    "host_delegated_wrong_count.cpp": {
+      "path": "reconstruction/plugins/effects/host-delegated/host_delegated_wrong_count.cpp",
+      "sha256": "27d59b0e54a85c37a4e1172964b4a45f34ad5a469d94a9f68018c15ceeb5ec79",
+      "bytes": 5405
+    },
+    "verify_wrong_argument.sh": {
+      "path": "reconstruction/plugins/effects/host-delegated/verify_wrong_argument.sh",
+      "sha256": "9d09b987df41eafaa3994d9706ef43befc6f1514dfc32746aa1a1712f1c43f56",
+      "bytes": 1677
+    },
+    "HOST_DELEGATED.md": {
+      "path": "reconstruction/plugins/effects/host-delegated/HOST_DELEGATED.md",
+      "sha256": "18fd67678acd4d81f465b820d7842307892e86dd91564e2b5735ba43c16442da",
+      "bytes": 6164
+    }
+  },
+  "public_compiled_dependencies": {
+    "reconstruction/plugins/effects/quality-provider/provider_original_probe.mm": {
+      "path": "reconstruction/plugins/effects/quality-provider/provider_original_probe.mm",
+      "sha256": "d03b72c8710417b884c383203c4bdd5d971c7009e10e76ca4b6137099c0d3a49",
+      "bytes": 16084
+    },
+    "reconstruction/plugins/effects/balance_native_abi.h": {
+      "path": "reconstruction/plugins/effects/balance_native_abi.h",
+      "sha256": "f9bcb7fe1ceadcbc7f4c4d328ba37a1d807fe2aebce565e2b4ff963088c41e74",
+      "bytes": 3446
+    },
+    "reconstruction/plugins/effects/fast_dist_dsp.hpp": {
+      "path": "reconstruction/plugins/effects/fast_dist_dsp.hpp",
+      "sha256": "fefd86bbf36844886f8c4b18283a12a34af9d42f9b40d49d625402ccd859f321",
+      "bytes": 4875
+    },
+    "reconstruction/plugins/effects/fast_dist_native_abi.h": {
+      "path": "reconstruction/plugins/effects/fast_dist_native_abi.h",
+      "sha256": "32e9dc19a1af9af7ae1927971e6d28415e5cb27f777a69eb18426f79d9269408",
+      "bytes": 1057
+    },
+    "reconstruction/plugins/effects/fast_dist_plugin.cpp": {
+      "path": "reconstruction/plugins/effects/fast_dist_plugin.cpp",
+      "sha256": "0349bc8c4476341e265a04bb7585c0c835ec786d244912e339b11a846e93785e",
+      "bytes": 4508
+    },
+    "reconstruction/plugins/effects/fast_dist_plugin.h": {
+      "path": "reconstruction/plugins/effects/fast_dist_plugin.h",
+      "sha256": "a9b53209c50dd0372a155dda78ebd0f1046382c28dc1ba59c7d8f779562adf4e",
+      "bytes": 2428
+    }
+  },
+  "private_candidate_map_sha256": "39f6a50262f6f8b87ab27f446b5a046a6ba10242be3ac489846f084d1d0843de",
+  "combined_independent_candidate_report_sha256": "b889c6fe65570f251142749c6fa67fcb28fb02645e8f010d4a16d35b212c830b",
+  "independent_candidate_reports": [
+    {
+      "name": "root-fast-dist-host-independent",
+      "sha256": "27909faa084a91d48c80d4dda822e4b951d0b8e74fd9dbdeb74582486f6abb4a"
+    },
+    {
+      "name": "fast-dist-host-mixer-independent",
+      "sha256": "c01d788734a90447f1836a73e50166972068320f4b140a8a303cf691f7248739"
+    }
+  ],
+  "native_identities": {
+    "/Applications/FL Studio 2024.app/Contents/Libs/FLEngine_x64.dylib": {
+      "sha256": "22d445ddae0bc9f6fe6ab1d53e8b59659b9a9e2a07d441371e3c27704317bd37",
+      "executed": true,
+      "role": "executed universal image arm64 slice"
+    },
+    ".tools/plugin-work/effects/FLEngine.arm64.dylib": {
+      "sha256": "04db862b730950c5e2b678e5477900bec29ab839bf35611dce92be1795636eb0",
+      "executed": false,
+      "role": "thin arm64 static provenance reference; absent files do not block ordinary replay"
+    },
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Plugins/Fruity/Effects/Fruity Fast Dist/Fruity Fast Dist_x64.dylib": {
+      "sha256": "22b0fc6fa9f3cc065587f5e142ec047d8877432454ca7c25aba9e4eb195c5b82",
+      "executed": true,
+      "role": "executed universal image arm64 slice"
+    },
+    ".tools/plugin-work/effects/FruityFastDist.arm64.dylib": {
+      "sha256": "f5f39eef0a0faaf653b3f5b5aad25570bdd3e05bd67bf01a42c8bf335c3d7a25",
+      "executed": false,
+      "role": "thin arm64 static provenance reference; absent files do not block ordinary replay"
+    },
+    "/Applications/FL Studio 2024.app/Contents/Resources/FL/Shared/dsp_ippv2_x64.dylib": {
+      "sha256": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1",
+      "executed": true,
+      "role": "executed universal image arm64 slice"
+    }
+  },
+  "compiler": "Apple clang21/macOS arm64",
+  "compiler_flags": "-std=c++20 -O2 -ffp-contract=off -fno-fast-math -fno-builtin-exp -fno-builtin-log -Wall -Wextra -Werror; Cocoa fixtures add -Wno-deprecated-declarations -framework Cocoa",
+  "fatal_sanitizer_flags": "-fsanitize=address,undefined,float-cast-overflow -fno-sanitize-recover=all -fno-omit-frame-pointer; ASAN_OPTIONS=halt_on_error=1 UBSAN_OPTIONS=halt_on_error=1",
+  "canonical_commands": [
+    "sh reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh",
+    "sh reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh --sanitize",
+    "sh reconstruction/plugins/effects/host-delegated/verify_wrong_argument.sh"
+  ],
+  "ignored_default_output_directory": ".tools/plugin-work/effects/fast-dist-host-delegated-public",
+  "negative_requires_successful_canonical_normal_build": true,
+  "private_evidence_or_thin_images_required_for_replay": false,
+  "promotion_rules": {
+    "byte_identical": [
+      "host_delegated_native.h",
+      "host_delegated_native.cpp",
+      "host_delegated_wrong_count.cpp",
+      "test_host_delegated_stream.mm"
+    ],
+    "single_quoted_include_change": "../quality-production-mapping/provider_original_probe.mm -> ../quality-provider/provider_original_probe.mm",
+    "recipe_changes": "Default ignored output paths and canonical-normal negative executable path only; compiler flags, fatal checks, counts and negative semantics unchanged",
+    "documentation_changes": "Public replay paths and precise separate negative-route qualifications"
+  },
+  "canonical_wrong_count_negative_route": "Original first, manual actual C++ host/plugin adapters second, intact loaded adapter third. Maintained mutant first fails manual adapter at case1 selector0 one stereo frame; loaded instance was constructed but its render was not reached in that failing iteration.",
+  "separate_reviewer_only_loader_first_negative_route": "Mixer independently reordered targets original then loaded then manual; the same wrong-count mutant fails through the intact loaded adapter. This is separate private evidence, not the maintained canonical negative recipe.",
+  "source_control_and_coefficient_reconstruction": true,
+  "provided_host_DSP_delegation": true,
+  "independent_own_DSP_in_runtime": false,
+  "actual_application_host_selector_production": false,
+  "all_native_runtime_state_restored": false,
+  "general_ABI_stream_ownership_GUI_FP_VST_AU_or_RT_certified": false,
+  "full_plugin_equivalence": false,
+  "whole_FL_recompilation": false,
+  "fresh_source_only_replay": "passed_normal_fatal_sanitizers_and_expected_negative",
+  "runs": {
+    "normal": {
+      "results": {
+        "host": {
+          "status": "passed_host_delegated_original_adapters_loader",
+          "parameter_calls": 18000,
+          "render_callbacks": 7200,
+          "stereo_frames": 844200,
+          "host_ordinal24_calls": 4800,
+          "total_original_and_delegated_DistWave_calls": 7200,
+          "callback_slots_exercised_across_two_adapters": 40,
+          "source_state_saves": 2400,
+          "all_target_state_restores": 720,
+          "atomic_failed_streams": 4,
+          "atomic_audio_rejections": 431,
+          "opposite_quality_differences": 45748,
+          "actual_adapters_and_DLL_loader": true,
+          "selected_globals_restored_after_instance_destruction": true,
+          "provided_host_DSP_delegation": true,
+          "independent_own_DSP_in_runtime": false,
+          "application_host_or_selector_production": false,
+          "full_plugin_equivalence": false
+        },
+        "stream": {
+          "status": "passed_host_delegated_real_stream",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 1,
+          "short_count_success_rejections": 1,
+          "single_twenty_byte_transfer_checked": true,
+          "coefficient_state_preserved_on_rejection": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      "artifacts": [
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/VL Host Dist/VL Host Dist_X64.dylib",
+          "sha256": "76047def4606813214408edfd8c03a4554e9e9aa99c50997bf882e7b69777ed8",
+          "bytes": 36024
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/host-result.json",
+          "sha256": "0048c95a4eda9089a5a218943365aac5634b535a3f4011c54a461469b6805c11",
+          "bytes": 664
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/host-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/results.json",
+          "sha256": "c8ea45a50c89569ceb5b1adea3bf46ebc0436859a7729b66d96d3448e6c815f8",
+          "bytes": 1442
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/stream-result.json",
+          "sha256": "e463d60691f5afac07bb6ad1088210a8f0a5837ebda5e28219016c220c346721",
+          "bytes": 547
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/stream-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/test_host",
+          "sha256": "ae929e946364898a2f6c666702015d4f5824bb5956c3573d2de4d0aeaaabce03",
+          "bytes": 93608
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/test_stream",
+          "sha256": "40539fbd49c2d6de45d76239907eaf65a47ad70f4d460184717b2328b9d46126",
+          "bytes": 57672
+        }
+      ],
+      "command": "sh reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh",
+      "exit_code": 0,
+      "log": {
+        "path": "analysis/plugins/review/root-fast-dist-host-public-normal.log",
+        "sha256": "e8a34cb533f8feaaebc29f6b078fb2f6b7d023f12728a81f6300ce9e7fbe34fb",
+        "bytes": 1296
+      }
+    },
+    "sanitized": {
+      "results": {
+        "host": {
+          "status": "passed_host_delegated_original_adapters_loader",
+          "parameter_calls": 18000,
+          "render_callbacks": 7200,
+          "stereo_frames": 844200,
+          "host_ordinal24_calls": 4800,
+          "total_original_and_delegated_DistWave_calls": 7200,
+          "callback_slots_exercised_across_two_adapters": 40,
+          "source_state_saves": 2400,
+          "all_target_state_restores": 720,
+          "atomic_failed_streams": 4,
+          "atomic_audio_rejections": 431,
+          "opposite_quality_differences": 45748,
+          "actual_adapters_and_DLL_loader": true,
+          "selected_globals_restored_after_instance_destruction": true,
+          "provided_host_DSP_delegation": true,
+          "independent_own_DSP_in_runtime": false,
+          "application_host_or_selector_production": false,
+          "full_plugin_equivalence": false
+        },
+        "stream": {
+          "status": "passed_host_delegated_real_stream",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 1,
+          "short_count_success_rejections": 1,
+          "single_twenty_byte_transfer_checked": true,
+          "coefficient_state_preserved_on_rejection": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      "artifacts": [
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/VL Host Dist/VL Host Dist_X64.dylib",
+          "sha256": "9a5098e4e03be2f276719053e150a0bcf0ba97d3f88709994d7a63730d5ae979",
+          "bytes": 56504
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/host-result.json",
+          "sha256": "0048c95a4eda9089a5a218943365aac5634b535a3f4011c54a461469b6805c11",
+          "bytes": 664
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/host-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/results.json",
+          "sha256": "c8ea45a50c89569ceb5b1adea3bf46ebc0436859a7729b66d96d3448e6c815f8",
+          "bytes": 1442
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/stream-result.json",
+          "sha256": "e463d60691f5afac07bb6ad1088210a8f0a5837ebda5e28219016c220c346721",
+          "bytes": 547
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/stream-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/test_host",
+          "sha256": "7f227cc53496c7f122fb0d64ce19b34aee5c4120e437fb4827b465e29882cdc5",
+          "bytes": 270840
+        },
+        {
+          "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/test_stream",
+          "sha256": "9ae385913d3affab06a573a1ad3e1661587ba0165a27af2d38c0f187a103e7bb",
+          "bytes": 117448
+        }
+      ],
+      "command": "sh reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh --sanitize",
+      "exit_code": 0,
+      "log": {
+        "path": "analysis/plugins/review/root-fast-dist-host-public-sanitized.log",
+        "sha256": "e8a34cb533f8feaaebc29f6b078fb2f6b7d023f12728a81f6300ce9e7fbe34fb",
+        "bytes": 1296
+      }
+    }
+  },
+  "maintained_path_final_independent_review": {
+    "path": "analysis/plugins/review/root-fast-dist-host-public-independent.json",
+    "sha256": "541bc57d1a903d800dfbba3f77a3302564b82d1d99c2ffd5a40f87e7cec64fc9",
+    "bytes": 16019
+  },
+  "fresh_source_tree": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source",
+  "negative_control": {
+    "result": {
+      "status": "expected_failure_wrong_host_count_argument",
+      "exit_code": 1,
+      "stderr": "Delegated native sample differs\n",
+      "mutation": "scalar sample count frames*2 -> frames; legal host signature and intact native callback/adapter retained",
+      "full_plugin_equivalence": false
+    },
+    "command": "sh .tools/plugin-work/effects/fast-dist-host-promotion-clean-source/reconstruction/plugins/effects/host-delegated/verify_wrong_argument.sh",
+    "recipe_exit_code": 0,
+    "mutant_exit_code": 1,
+    "artifacts": [
+      {
+        "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/VL Host Dist/VL Host Dist_X64.dylib",
+        "sha256": "71e9f08dbe12340b14af263ad865df1ace876328375c5efa98d6fc4b4c9858d3",
+        "bytes": 36024
+      },
+      {
+        "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/result.json",
+        "sha256": "359af9f97e42981c7098aa4e5e03dc6a198036fac446a81e5dbc4696c0fddf52",
+        "bytes": 286
+      },
+      {
+        "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/stderr.log",
+        "sha256": "bb3158006a9e0da081e015bf8900c25ce947cdf3364feb09a04e3fae9c18155c",
+        "bytes": 32
+      },
+      {
+        "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    ],
+    "log": {
+      "path": "analysis/plugins/effects/fast-dist-host-promotion-negative.log",
+      "sha256": "0729d891eea2ce5375c0e6adc6e4053bf400ed89b5ad92319b75071f7de8928d",
+      "bytes": 274
+    },
+    "first_detection_route": "manual actual C++ host/plugin adapter, case1 selector0 one stereo frame; loaded object constructed but loaded render not reached in that failing iteration",
+    "parent_public_replay_result": {
+      "status": "expected_failure_wrong_host_count_argument",
+      "exit_code": 1,
+      "stderr": "Delegated native sample differs\n",
+      "mutation": "scalar sample count frames*2 -> frames; legal host signature and intact native callback/adapter retained",
+      "full_plugin_equivalence": false
+    },
+    "parent_public_replay_artifacts": [
+      {
+        "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/VL Host Dist/VL Host Dist_X64.dylib",
+        "sha256": "8e0a7536d1c615d8f2d52d7fed2163ec1ee8566e58e0915c07727f22b9337d57",
+        "bytes": 36024
+      },
+      {
+        "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/result.json",
+        "sha256": "359af9f97e42981c7098aa4e5e03dc6a198036fac446a81e5dbc4696c0fddf52",
+        "bytes": 286
+      },
+      {
+        "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/stderr.log",
+        "sha256": "bb3158006a9e0da081e015bf8900c25ce947cdf3364feb09a04e3fae9c18155c",
+        "bytes": 32
+      },
+      {
+        "path": ".tools/plugin-work/review/fast-dist-host-public-root-snapshot/.tools/plugin-work/effects/fast-dist-host-delegated-public/negative-wrong-count/stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    ]
+  },
+  "source_only_tree_contents": "Nine promoted public paths and six exact public compiled dependencies, plus generated replay outputs; no private evidence or original/thin binaries copied.",
+  "private_candidate_and_existing_public_dependencies_unchanged": true,
+  "metadata_note": "Source hashes cover the eight compile/recipe/document files. This manifest is bound separately in the frozen nine-path promotion map; it does not contain its own circular hash. Final docs/verification metadata copied into source-only tree after successful code replay; compiled inputs remained identical.",
+  "initial_promotion_runs_reference_only": {
+    "normal": {
+      "results": {
+        "host": {
+          "status": "passed_host_delegated_original_adapters_loader",
+          "parameter_calls": 18000,
+          "render_callbacks": 7200,
+          "stereo_frames": 844200,
+          "host_ordinal24_calls": 4800,
+          "total_original_and_delegated_DistWave_calls": 7200,
+          "callback_slots_exercised_across_two_adapters": 40,
+          "source_state_saves": 2400,
+          "all_target_state_restores": 720,
+          "atomic_failed_streams": 4,
+          "atomic_audio_rejections": 431,
+          "opposite_quality_differences": 45748,
+          "actual_adapters_and_DLL_loader": true,
+          "selected_globals_restored_after_instance_destruction": true,
+          "provided_host_DSP_delegation": true,
+          "independent_own_DSP_in_runtime": false,
+          "application_host_or_selector_production": false,
+          "full_plugin_equivalence": false
+        },
+        "stream": {
+          "status": "passed_host_delegated_real_stream",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 1,
+          "short_count_success_rejections": 1,
+          "single_twenty_byte_transfer_checked": true,
+          "coefficient_state_preserved_on_rejection": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      "artifacts": [
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/VL Host Dist/VL Host Dist_X64.dylib",
+          "sha256": "b3e7f699e5e7c587e57dd5d92e0956de4e445db0ee1f18a5ccd4cd89876c7b5c",
+          "bytes": 36024
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/host-result.json",
+          "sha256": "0048c95a4eda9089a5a218943365aac5634b535a3f4011c54a461469b6805c11",
+          "bytes": 664
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/host-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/results.json",
+          "sha256": "c8ea45a50c89569ceb5b1adea3bf46ebc0436859a7729b66d96d3448e6c815f8",
+          "bytes": 1442
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/stream-result.json",
+          "sha256": "e463d60691f5afac07bb6ad1088210a8f0a5837ebda5e28219016c220c346721",
+          "bytes": 547
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/stream-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/test_host",
+          "sha256": "ae929e946364898a2f6c666702015d4f5824bb5956c3573d2de4d0aeaaabce03",
+          "bytes": 93608
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-normal/test_stream",
+          "sha256": "40539fbd49c2d6de45d76239907eaf65a47ad70f4d460184717b2328b9d46126",
+          "bytes": 57672
+        }
+      ],
+      "command": "sh .tools/plugin-work/effects/fast-dist-host-promotion-clean-source/reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh",
+      "exit_code": 0,
+      "log": {
+        "path": "analysis/plugins/effects/fast-dist-host-promotion-normal.log",
+        "sha256": "e8a34cb533f8feaaebc29f6b078fb2f6b7d023f12728a81f6300ce9e7fbe34fb",
+        "bytes": 1296
+      }
+    },
+    "sanitized": {
+      "results": {
+        "host": {
+          "status": "passed_host_delegated_original_adapters_loader",
+          "parameter_calls": 18000,
+          "render_callbacks": 7200,
+          "stereo_frames": 844200,
+          "host_ordinal24_calls": 4800,
+          "total_original_and_delegated_DistWave_calls": 7200,
+          "callback_slots_exercised_across_two_adapters": 40,
+          "source_state_saves": 2400,
+          "all_target_state_restores": 720,
+          "atomic_failed_streams": 4,
+          "atomic_audio_rejections": 431,
+          "opposite_quality_differences": 45748,
+          "actual_adapters_and_DLL_loader": true,
+          "selected_globals_restored_after_instance_destruction": true,
+          "provided_host_DSP_delegation": true,
+          "independent_own_DSP_in_runtime": false,
+          "application_host_or_selector_production": false,
+          "full_plugin_equivalence": false
+        },
+        "stream": {
+          "status": "passed_host_delegated_real_stream",
+          "actual_engine_memory_and_stream_classes": true,
+          "actual_engine_plugin_wrapper": true,
+          "completion_store_bits": 32,
+          "adjacent_count_sentinel_preserved": true,
+          "hresult_return_bits": 32,
+          "actual_provider_invalid_pointer_error_checked": true,
+          "state_saves": 128,
+          "state_restores": 128,
+          "failed_hresult_full_count_rejections": 1,
+          "short_count_success_rejections": 1,
+          "single_twenty_byte_transfer_checked": true,
+          "coefficient_state_preserved_on_rejection": true,
+          "application_host_created": false,
+          "full_plugin_equivalence": false
+        }
+      },
+      "artifacts": [
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/VL Host Dist/VL Host Dist_X64.dylib",
+          "sha256": "3877e148f0275530f6d4479fb6b0f8461bdde8f24afbff8628e72b78daa7c773",
+          "bytes": 56504
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/host-result.json",
+          "sha256": "0048c95a4eda9089a5a218943365aac5634b535a3f4011c54a461469b6805c11",
+          "bytes": 664
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/host-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/results.json",
+          "sha256": "c8ea45a50c89569ceb5b1adea3bf46ebc0436859a7729b66d96d3448e6c815f8",
+          "bytes": 1442
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/stream-result.json",
+          "sha256": "e463d60691f5afac07bb6ad1088210a8f0a5837ebda5e28219016c220c346721",
+          "bytes": 547
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/stream-stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/test_host",
+          "sha256": "a617c2804c6af710d5c2462f9d700b9d1a8e9f4eb0ac3e59d9888c6c40c04ebd",
+          "bytes": 270840
+        },
+        {
+          "path": ".tools/plugin-work/effects/fast-dist-host-promotion-clean-source/.tools/plugin-work/effects/fast-dist-host-delegated-public/canonical-sanitized/test_stream",
+          "sha256": "03ed67043ecfb3fd32673f251d3a2cd9ef20d26a523c13c7befa0fcb4491338e",
+          "bytes": 117448
+        }
+      ],
+      "command": "sh .tools/plugin-work/effects/fast-dist-host-promotion-clean-source/reconstruction/plugins/effects/host-delegated/verify_host_delegated.sh --sanitize",
+      "exit_code": 0,
+      "log": {
+        "path": "analysis/plugins/effects/fast-dist-host-promotion-sanitized.log",
+        "sha256": "e8a34cb533f8feaaebc29f6b078fb2f6b7d023f12728a81f6300ce9e7fbe34fb",
+        "bytes": 1296
+      }
+    }
+  },
+  "parent_final_path_review_does_not_certify_complete_host_or_plugin": true
+}
