@@ -12,6 +12,14 @@ class/application/format/real-time equivalence remains unproved. The 146
 family/format/application obligations are tracked separately from the 317
 Mach-O binary corpus, which retains nested engines and runtime dependencies.
 
+A later source audit found an open retained-editor lifetime issue in Balance,
+Mute 2, Phase Inverter, Soft Clipper and Stereo Shaper: successful teardown
+leaves cached host callbacks/context and control targets in a retained view.
+The earlier lifetime checks did not exercise the retained hint route. Private
+repairs and independent reviews are underway; these editor routes are not
+certified safe by the published milestones. Complete-destructor storage
+ownership in other experimental factories is also under separate review.
+
 | Component | Independently built and checked milestone | Remaining work |
 | --- | --- | --- |
 | Fruity Balance numerical core | Bitwise audio/parameter comparison, independently built C ABI, original-factory control/state/lifecycle comparison | Actual FL application loading and broader host integration |
