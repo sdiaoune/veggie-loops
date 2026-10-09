@@ -46,7 +46,7 @@ result.update({
         "Other initializer rates/oscillator modes are independent generalizations, not additional native pipeline evidence.",
         "Final pitch automation is replayed in[-2400,2400] cents; callers reset base final pitch before each block.",
         "Carried type0 filter history and measured finite working samples/gains extend smaller isolated primitive corpora, without an arbitrary-history or arbitrary-amplitude proof.",
-        "Two live voices render in creation order into positive zero. Final host addition into preexisting audio remains outside this API.",
+        "Two live voices render in creation order into positive zero. The original final host write overwrites output. This existing corpus used zero host destinations; nonzero-destination overwrite has a separate channel regression and remains outside this accumulation API.",
         "Original host-kill callbacks are no-ops; final native cleanup is explicit. Voice stealing and application voice notifications remain open.",
         "Borrowed raw core/voice and readable finite[-1,1] LFO tables outlive the composer. Caller serializes all raw-engine instances sharing factory/RNG state.",
         "Rejection-preservation checks concern the new C API, not invalid-call equivalence with the original. No injected allocation-failure/unwind proof.",

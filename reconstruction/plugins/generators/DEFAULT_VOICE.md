@@ -31,8 +31,10 @@ Each fixture checks that the native voice's filter stays inactive and its pan,
 volume and pitch modulation stay at their observed defaults. The host's raw
 oscillator pan callback is controlled, and its voice-kill callback is a no-op;
 native voice destruction is performed explicitly afterward. Rendering uses a
-zeroed internal accumulator in creation order. A separate final addition into
-preexisting host audio remains outside this function. Other initializer rates,
+zeroed internal accumulator in creation order. The original wrapper then
+overwrites its host output with that accumulator. This corpus used only zero
+host destinations; the overwrite of nonzero destinations remains outside this
+function and has a separate channel regression. Other initializer rates,
 noise/custom/random-phase modes, modulation, filter modes, voice stealing,
 host timing/notification routing, GUI and native factory ABI are not established
 by this corpus. This is not a complete Fruity, VST, AU or FL Studio rebuild.

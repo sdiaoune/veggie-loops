@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "component": "VL Soft Clipper numerical C API",
+  "status": "verified_partial_reconstruction",
+  "full_plugin_equivalence": false,
+  "architecture": "macOS arm64",
+  "source_sha256": {
+    "reconstruction/plugins/effects/soft_clipper_dsp.hpp": "ace380a6ea0478445e924a3b80e4850277172ebd0876e14314945f28ecadd17e",
+    "reconstruction/plugins/effects/soft_clipper_plugin.h": "b099652e6ae32507ec4b5c4e1789976db1a96a8acc7c7cd07a7b4d4560e0a0f3",
+    "reconstruction/plugins/effects/soft_clipper_plugin.cpp": "216907d562ce68cd69919b107cb6ccbe7c927f1c72fdafc1bde4e09c9ab14266",
+    "reconstruction/plugins/effects/test_soft_clipper_factory.mm": "1c94baffd27cf00c33f7bfc94c23967a6974dc5887264fb4c2483484db9c06fb",
+    "reconstruction/plugins/effects/verify_soft_clipper.sh": "c8e7dd8108136657e1c21dac2abf1bd760be071bd1ba51e5d09c1dcce0851048",
+    "reconstruction/plugins/effects/SOFT_CLIPPER.md": "6720b4e2f9fed1b4fc5bd24c3a1f2510167c27faf84798c1a7e0d24d80853480"
+  },
+  "inspected_binary_sha256": {
+    "Fruity Soft Clipper universal": "fe22c1b186c907333210f511f0aced4147d7842d72bd38df1d56661ff337aa8d",
+    "Fruity Soft Clipper arm64": "e7ee57a6c72528531a05bf6f5c165921014a8ef6d5c48314db23438f37dcbcd4",
+    "dsp_ippv2 universal": "f0a62121ba6e9fe38eb64a812adb3437a4204cbbc266bc95ff0aaf3df8a76cd1"
+  },
+  "tested_environment": {
+    "os": "macOS26.6.2",
+    "build": "25G83",
+    "compiler": "Apple clang21.0.0(clang-2100.3.34.2)",
+    "system_math": "Apple system libm",
+    "rounding": "nearest-even"
+  },
+  "numerical_compiler_flags": [
+    "-std=c++20",
+    "-O2",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fno-builtin-exp"
+  ],
+  "checks": {
+    "source_factory": {
+      "command": "./reconstruction/plugins/effects/verify_soft_clipper.sh",
+      "result": {
+        "status": "passed",
+        "actual_original_factory_created_and_destroyed": true,
+        "compiled_numerical_c_abi_compared": true,
+        "parameter_cases": 31480,
+        "render_callbacks": 31874,
+        "stereo_frames": 3422287,
+        "state_saves": 31994,
+        "state_restores": 512,
+        "synthetic_meter_state_cases": 40,
+        "atomic_rejection_cases": 75,
+        "full_plugin_equivalence": false
+      }
+    }
+  },
+  "supported_domain": {
+    "threshold_raw": [
+      1,
+      127
+    ],
+    "postgain_raw": [
+      0,
+      160
+    ],
+    "midi_integer": [
+      0,
+      1073741824
+    ],
+    "frames": [
+      0,
+      1024
+    ],
+    "samples": "finite float;abs(input)<=16",
+    "aliasing": "exact alias or disjoint;partial overlap rejected",
+    "synchronization": "all instance access serialized or host mix lock",
+    "state": "exactly8 LE bytes;2raw words;no version header",
+    "own_flag_combinations": [
+      0,
+      1,
+      2,
+      3,
+      32,
+      33,
+      34,
+      35
+    ],
+    "instance_aliasing": "caller result/sample/state/meter ranges outside live instance; overlapping ranges rejected atomically including zero-frame starts inside"
+  },
+  "independent_review": {
+    "status": "accepted_after_alias_repair",
+    "finding": "caller result alias could overwrite live raw state",
+    "repair": "all result/sample/state/meter buffer ranges checked against live instance before caller-buffer access",
+    "extension": "independent C ABI validation; no source malformed-input equivalence claim",
+    "report": "root-soft-clipper-independent.json",
+    "copied_source_native_replay": {
+      "status": "passed",
+      "actual_original_factory_created_and_destroyed": true,
+      "compiled_numerical_c_abi_compared": true,
+      "parameter_cases": 31480,
+      "render_callbacks": 31874,
+      "stereo_frames": 3422287,
+      "state_saves": 31994,
+      "state_restores": 512,
+      "synthetic_meter_state_cases": 40,
+      "atomic_rejection_cases": 75,
+      "full_plugin_equivalence": false
+    },
+    "root_sanitizer_result_alias_regression": "accepted=0 threshold_before=100 threshold_after=100"
+  },
+  "unresolved": [
+    "native FL factory/lifecycle/host ABI",
+    "original or independently rebuilt editor/hints/GUI meter timers",
+    "actual engine stream status/error lifecycle",
+    "actual FL application/project/mixer host integration",
+    "remaining original dispatch/events/names/metadata",
+    "x86/VST/AU",
+    "NaN/Inf and alternate FP/compiler environments",
+    "all remaining effects",
+    "whole-plugin equivalence"
+  ]
+}

@@ -41,7 +41,7 @@ result.update({
         "Native replay covers deterministic waveform controls0..4, oscillator random-phase0, HQ and legacy paths, and an initial44100Hz release context.",
         "Other initializer rates/oscillator modes are independent generalizations, not additional native pipeline evidence.",
         "Native pipeline replay uses static note pitches in[-2400,2400] cents. The API's broader[-9600,9600] range and mid-note pitch automation are not covered by this corpus.",
-        "Two live voices render in creation order into a positive-zero accumulator. Final host addition into preexisting audio remains outside this API.",
+        "Two live voices render in creation order into a positive-zero accumulator. The original final host write overwrites output. This existing corpus used zero host destinations; nonzero-destination overwrite has a separate channel regression and remains outside this accumulation API.",
         "The original host pan callback is controlled by the fixture, and original host-kill callbacks are no-ops; final native cleanup is explicit.",
         "Borrowed raw core/voice must outlive the output object; caller pairs core and output sample-rate updates and serializes accesses across every raw-engine instance sharing factory/RNG state.",
         "Native factories, invalid-call equivalence, allocation failures/unwind, voice stealing/host routing, modulation, filters, GUI and complete VST/AU/FL equivalence remain open.",
